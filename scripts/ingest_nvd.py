@@ -233,9 +233,8 @@ def main():
     for cve in cves:
         write_cve(parse_cve(cve))
         count += 1
-        if count % 100 == 0:
+        if count % 500 == 0:
             print(f"  {count} CVEs processed...")
-        time.sleep(REQUEST_DELAY)
 
     print(f"Done. {count} CVEs written to {DATA_DIR}")
 
