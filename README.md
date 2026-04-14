@@ -1,6 +1,8 @@
 # vuln-anarchy — Vulnerability Anarchy / The Consensus Engine
 
-**Lab:** [RogoLabs](https://rogolabs.net) · **Status:** Concept / Summer 2026 Circuit · **Launch:** DEF CON 34 (August 2026) · **Deployment:** 100% Static (GitHub Actions + GitHub Pages)
+> ⚠️ **Work in Progress** — This project is actively under development and not yet feature-complete. Data, schema, and UI are subject to change without notice.
+
+**Lab:** [RogoLabs](https://rogolabs.net) · **Status:** Work in Progress · **Launch:** DEF CON 34 (August 2026) · **Deployment:** 100% Static (GitHub Actions + GitHub Pages)
 
 > *The vulnerability management ecosystem is fracturing. With the rise of independent CNAs and the shifting role of the NVD, the "truth" of a vulnerability has become subjective.*
 
