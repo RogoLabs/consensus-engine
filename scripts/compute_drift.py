@@ -125,22 +125,34 @@ def source_conflict_count(sources: dict):
     )
 
 
-def compute_drift_score(cvss_variance: float, metadata_conflict: float, drift_type: str, other_source_count: int = 0):
+def compute_drift_score(
+    cvss_variance: float,
+    metadata_conflict: float,
+    drift_type: str,
+    other_source_count: int = 0,
+    max_other_score: float | None = None,
+):
     """
-    Weighted drift score:
-    - Rejected CVEs with data from other sources get 10.0 (true anarchy: NVD says doesn't
-      exist but others scored it). Rejected with no other source data score near 0 — they're
-      just NVD tombstones, not interesting drift.
-    - CVSS variance weighted 60%, metadata conflict 40%
-    - Scaled to a roughly 0–10 range (variance is already 0–10 on the CVSS scale)
+    Drift score (0–10):
+
+    Conflict/gap: variance is the primary signal, metadata adds a bonus.
+      drift_score = min(cvss_variance + metadata_conflict * 2.0, 10.0)
+      A Δ6.9 conflict scores ~7.5 — intuitive: score ≈ CVSS points of disagreement.
+
+    Rejected with other-source data: proportional to the other source's severity.
+      drift_score = 7.0 + (max_other_score / 10.0) * 3.0  → range 7.0–10.0
+      Rejected CVEs still rank high but compete fairly with real conflicts.
+
+    Rejected with no other data (tombstones): 0.1 — stays buried, not interesting.
     """
     if drift_type == "rejected":
-        # Only float to top if other sources actually have data on this CVE
-        return 10.0 if other_source_count > 0 else 0.1
+        if other_source_count == 0:
+            return 0.1
+        if max_other_score is not None:
+            return round(7.0 + (max_other_score / 10.0) * 3.0, 2)
+        return 8.0  # other sources have data but no CVSS score
 
-    # Normalize variance to 0–1 (CVSS max delta is 10)
-    variance_norm = min(cvss_variance / 10.0, 1.0)
-    score = (variance_norm * 0.6 + metadata_conflict * 0.4) * 10
+    score = min(cvss_variance + metadata_conflict * 2.0, 10.0)
     return round(score, 2)
 
 
@@ -153,7 +165,19 @@ def process_file(path: Path):
     metadata_conflict = compute_metadata_conflict(sources)
     drift_type = classify_drift_type(record, cvss_variance, by_version)
     other_source_count = source_conflict_count(sources)
-    drift_score = compute_drift_score(cvss_variance, metadata_conflict, drift_type, other_source_count)
+
+    # Max CVSS score from non-NVD sources (used for rejected CVE scoring)
+    max_other_score = None
+    for sname, s in sources.items():
+        if sname in ("nvd", "cisa_kev", "epss"):
+            continue
+        score = s.get("cvss_score")
+        if score is not None:
+            max_other_score = max(max_other_score or 0, score)
+
+    drift_score = compute_drift_score(
+        cvss_variance, metadata_conflict, drift_type, other_source_count, max_other_score
+    )
 
     record["drift_score"] = drift_score
     record["drift_type"] = drift_type

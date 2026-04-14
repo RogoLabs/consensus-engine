@@ -11,16 +11,13 @@ LEADERBOARD_PATH = INDEXES_DIR / "leaderboard.json"
 ANARCHY_MAP_PATH = INDEXES_DIR / "anarchy-map.json"
 REJECTED_CSV_PATH = DATA_DIR / "rejected-with-ghsa.csv"
 
-LEADERBOARD_SIZE = 50
+LEADERBOARD_SIZE = 100
+LEADERBOARD_REJECTED_CAP = 15  # Rejected CVEs are a different kind of anarchy; cap so real conflicts dominate
 
 
 def leaderboard_sort_key(record: dict):
-    """
-    Sort key for leaderboard: rejected always floats to top,
-    then by drift_score descending.
-    """
-    is_rejected = 1 if record.get("drift_type") == "rejected" else 0
-    return (-is_rejected, -record.get("drift_score", 0))
+    """Sort by drift_score descending — no special-casing for rejected type."""
+    return -record.get("drift_score", 0)
 
 
 def build_leaderboard_entry(record: dict):
@@ -73,9 +70,12 @@ def main():
         except Exception as e:
             print(f"  Error reading {path.name}: {e}")
 
-    # Leaderboard: top N sorted with rejected floated to top
-    sorted_records = sorted(all_records, key=leaderboard_sort_key)
-    leaderboard = [build_leaderboard_entry(r) for r in sorted_records[:LEADERBOARD_SIZE]]
+    # Leaderboard: cap rejected CVEs to avoid dominating; fill rest with conflict/gap
+    sorted_all = sorted(all_records, key=leaderboard_sort_key)
+    rejected = [r for r in sorted_all if r.get("drift_type") == "rejected"][:LEADERBOARD_REJECTED_CAP]
+    others = [r for r in sorted_all if r.get("drift_type") != "rejected"][:LEADERBOARD_SIZE - len(rejected)]
+    mixed = sorted(rejected + others, key=leaderboard_sort_key)
+    leaderboard = [build_leaderboard_entry(r) for r in mixed]
 
     INDEXES_DIR.mkdir(parents=True, exist_ok=True)
     LEADERBOARD_PATH.write_text(json.dumps(leaderboard, indent=2))
