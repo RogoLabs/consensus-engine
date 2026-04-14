@@ -125,15 +125,18 @@ def source_conflict_count(sources: dict):
     )
 
 
-def compute_drift_score(cvss_variance: float, metadata_conflict: float, drift_type: str):
+def compute_drift_score(cvss_variance: float, metadata_conflict: float, drift_type: str, other_source_count: int = 0):
     """
     Weighted drift score:
-    - Rejected CVEs get a fixed high score to ensure leaderboard visibility
+    - Rejected CVEs with data from other sources get 10.0 (true anarchy: NVD says doesn't
+      exist but others scored it). Rejected with no other source data score near 0 — they're
+      just NVD tombstones, not interesting drift.
     - CVSS variance weighted 60%, metadata conflict 40%
     - Scaled to a roughly 0–10 range (variance is already 0–10 on the CVSS scale)
     """
     if drift_type == "rejected":
-        return 10.0
+        # Only float to top if other sources actually have data on this CVE
+        return 10.0 if other_source_count > 0 else 0.1
 
     # Normalize variance to 0–1 (CVSS max delta is 10)
     variance_norm = min(cvss_variance / 10.0, 1.0)
@@ -149,12 +152,13 @@ def process_file(path: Path):
     cvss_variance = compute_cvss_variance(by_version)
     metadata_conflict = compute_metadata_conflict(sources)
     drift_type = classify_drift_type(record, cvss_variance, by_version)
-    drift_score = compute_drift_score(cvss_variance, metadata_conflict, drift_type)
+    other_source_count = source_conflict_count(sources)
+    drift_score = compute_drift_score(cvss_variance, metadata_conflict, drift_type, other_source_count)
 
     record["drift_score"] = drift_score
     record["drift_type"] = drift_type
     record["cvss_variance"] = cvss_variance
-    record["source_count"] = source_conflict_count(sources)
+    record["source_count"] = other_source_count
 
     path.write_text(json.dumps(record, indent=2))
     return drift_score, drift_type
