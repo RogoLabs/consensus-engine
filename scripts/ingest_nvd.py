@@ -8,14 +8,17 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
-from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception
 
 NVD_API_BASE = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
 API_KEY = os.environ.get("NVD_API_KEY")
 
-# 50 req/30s with key → 0.6s between requests (with small buffer)
+# 50 req/30s with key → 0.7s between requests (with small buffer)
 REQUEST_DELAY = 0.7 if API_KEY else 6.5
+
+# NVD API enforces a maximum date range of 120 days per request
+NVD_MAX_RANGE_DAYS = 120
 
 
 def build_headers():
@@ -25,43 +28,62 @@ def build_headers():
     return headers
 
 
+def _is_transient(exc):
+    """Retry on 429 and 5xx only — not on 404 or other client errors."""
+    if isinstance(exc, requests.HTTPError):
+        status = exc.response.status_code if exc.response is not None else 0
+        return status == 429 or status >= 500
+    return False
+
+
 @retry(
-    retry=retry_if_exception_type(requests.HTTPError),
+    retry=retry_if_exception(_is_transient),
     wait=wait_exponential(multiplier=1, min=4, max=60),
     stop=stop_after_attempt(5),
 )
 def fetch_page(params):
     resp = requests.get(NVD_API_BASE, headers=build_headers(), params=params, timeout=30)
-    if resp.status_code == 429:
-        raise requests.HTTPError("Rate limited", response=resp)
     resp.raise_for_status()
     return resp.json()
 
 
+def _date_windows(start: datetime, end: datetime):
+    """Split a date range into ≤120-day windows (NVD API enforced limit)."""
+    cursor = start
+    while cursor < end:
+        window_end = min(cursor + timedelta(days=NVD_MAX_RANGE_DAYS), end)
+        yield cursor, window_end
+        cursor = window_end
+
+
 def fetch_cves(start_date: datetime, end_date: datetime):
-    """Yield all CVE items in a date range, handling NVD pagination."""
-    params = {
-        "pubStartDate": start_date.strftime("%Y-%m-%dT%H:%M:%S.000"),
-        "pubEndDate": end_date.strftime("%Y-%m-%dT%H:%M:%S.000"),
-        "resultsPerPage": 2000,
-        "startIndex": 0,
-    }
-    total = None
-    fetched = 0
+    """Yield all CVE items in a date range, chunking into 120-day windows."""
+    for window_start, window_end in _date_windows(start_date, end_date):
+        print(f"  Fetching window {window_start.date()} → {window_end.date()}")
+        params = {
+            "pubStartDate": window_start.strftime("%Y-%m-%dT%H:%M:%S.000"),
+            "pubEndDate": window_end.strftime("%Y-%m-%dT%H:%M:%S.000"),
+            "resultsPerPage": 2000,
+            "startIndex": 0,
+        }
+        total = None
+        fetched = 0
 
-    while total is None or fetched < total:
-        data = fetch_page(params)
-        total = data["totalResults"]
-        vulnerabilities = data.get("vulnerabilities", [])
+        while total is None or fetched < total:
+            data = fetch_page(params)
+            total = data["totalResults"]
+            vulnerabilities = data.get("vulnerabilities", [])
 
-        for item in vulnerabilities:
-            yield item["cve"]
+            for item in vulnerabilities:
+                yield item["cve"]
 
-        fetched += len(vulnerabilities)
-        params["startIndex"] = fetched
+            fetched += len(vulnerabilities)
+            params["startIndex"] = fetched
 
-        if fetched < total:
-            time.sleep(REQUEST_DELAY)
+            if fetched < total:
+                time.sleep(REQUEST_DELAY)
+
+        time.sleep(REQUEST_DELAY)
 
 
 def fetch_modified_since(since: datetime):
