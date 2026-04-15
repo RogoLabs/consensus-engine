@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anarchy Map — Vulnerability Anarchy</title>
+  <meta name="description" content="Scatter plot of NVD vs GitHub Advisory CVSS scores. CVEs far from the diagonal are the most anarchic." />
+  <meta name="author" content="Jerry Gamblin / RogoLabs" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: { DEFAULT: '#3b82f6', dark: '#2563eb', light: '#60a5fa' },
+            surface: { DEFAULT: '#0f1117', card: '#1a1d2e', border: '#2d3748' },
+          }
+        }
+      }
+    }
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui; }
+    .card-accent::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      border-radius: 8px 8px 0 0;
+    }
+    #anarchyChart { cursor: crosshair; }
+  </style>
+</head>
+<body class="bg-surface text-gray-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="border-b border-surface-border bg-surface-card sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-bold text-brand">⚡</span>
+        <div>
+          <span class="font-bold text-white text-base leading-none">Vulnerability Anarchy</span>
+          <span class="text-gray-500 text-xs ml-2 hidden sm:inline">by RogoLabs</span>
+        </div>
+      </div>
+      <nav class="flex items-center gap-2 sm:gap-4 text-sm">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Leaderboard</a>
+        <span class="text-brand font-medium border-b border-brand pb-0.5">Anarchy Map</span>
+        <a href="https://github.com/RogoLabs/vuln-anarchy"
+           target="_blank" rel="noopener"
+           class="flex items-center gap-1.5 bg-surface-border hover:bg-gray-700 text-gray-300 hover:text-white px-3 py-1.5 rounded-md text-xs font-medium transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+          </svg>
+          GitHub
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div x-data="anarchyMap()" x-init="init()" class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+
+    <!-- Hero -->
+    <div class="mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Anarchy Map</h1>
+      <p class="text-gray-400 text-base max-w-3xl">
+        Each dot is a CVE where both NVD and GitHub Advisory have assigned a CVSS score.
+        The <span class="text-gray-300 font-medium">diagonal line</span> represents perfect agreement.
+        The further a dot falls from the line, the more the two authorities disagree.
+        Dots <span class="text-blue-400 font-medium">above</span> the line mean GitHub scores higher;
+        dots <span class="text-orange-400 font-medium">below</span> mean NVD scores higher.
+      </p>
+    </div>
+
+    <!-- Stat strip -->
+    <div class="flex flex-wrap gap-4 mb-6 text-sm">
+      <div class="bg-surface-card border border-surface-border rounded-lg px-4 py-2.5 flex items-center gap-2">
+        <span class="text-gray-500">CVEs plotted</span>
+        <span class="font-bold text-brand" x-text="entries.length.toLocaleString()"></span>
+      </div>
+      <div class="bg-surface-card border border-surface-border rounded-lg px-4 py-2.5 flex items-center gap-2">
+        <span class="text-gray-500">Largest gap</span>
+        <span class="font-bold text-orange-400" x-text="maxVariance ? `Δ${maxVariance.toFixed(1)}` : '—'"></span>
+        <span class="text-gray-600 text-xs" x-text="maxVarianceCve"></span>
+      </div>
+      <div class="bg-surface-card border border-surface-border rounded-lg px-4 py-2.5 flex items-center gap-2">
+        <span class="text-gray-500">NVD scores higher</span>
+        <span class="font-bold text-orange-400" x-text="nvdHigher.toLocaleString()"></span>
+      </div>
+      <div class="bg-surface-card border border-surface-border rounded-lg px-4 py-2.5 flex items-center gap-2">
+        <span class="text-gray-500">GitHub scores higher</span>
+        <span class="font-bold text-blue-400" x-text="ghHigher.toLocaleString()"></span>
+      </div>
+    </div>
+
+    <!-- Loading / Error -->
+    <div x-show="loading" class="text-gray-500 text-sm py-16 text-center">Loading map data…</div>
+    <div x-show="error" class="text-red-400 text-sm py-4" x-text="error"></div>
+
+    <!-- Chart -->
+    <div x-show="!loading && !error" class="bg-surface-card border border-surface-border rounded-lg p-4 sm:p-6">
+      <div class="relative" style="height: 560px;">
+        <canvas id="anarchyChart"></canvas>
+      </div>
+
+      <!-- Tooltip -->
+      <div x-show="tooltip.visible"
+           :style="`left:${tooltip.x}px; top:${tooltip.y}px`"
+           class="absolute pointer-events-none bg-surface-card border border-surface-border rounded-lg px-3 py-2 text-xs shadow-xl z-20 min-w-[160px]"
+           style="position:fixed; transform: translate(12px, -50%);">
+        <div class="font-bold text-brand mb-1" x-text="tooltip.cve_id"></div>
+        <div class="text-gray-400">NVD: <span class="text-gray-200 font-semibold" x-text="tooltip.nvd"></span></div>
+        <div class="text-gray-400">GitHub: <span class="text-gray-200 font-semibold" x-text="tooltip.gh"></span></div>
+        <div class="text-gray-400">Δ <span class="text-orange-400 font-semibold" x-text="tooltip.variance"></span></div>
+        <div class="text-gray-600 mt-1 truncate max-w-[160px]" x-text="tooltip.cna ? `CNA: ${tooltip.cna}` : ''"></div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div x-show="!loading && !error" class="mt-4 flex flex-wrap gap-4 text-xs text-gray-500">
+      <div class="flex items-center gap-1.5">
+        <span class="inline-block w-8 border-t border-dashed border-gray-600"></span>
+        <span>y = x (perfect agreement)</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="inline-block w-3 h-3 rounded-full bg-blue-500 opacity-70"></span>
+        <span>GitHub scores higher (above diagonal)</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="inline-block w-3 h-3 rounded-full bg-orange-500 opacity-70"></span>
+        <span>NVD scores higher (below diagonal)</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="inline-block w-3 h-3 rounded-full bg-red-500 opacity-90"></span>
+        <span>Critical gap (Δ ≥ 4.0)</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-surface-border mt-12 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-600">
+      <div class="flex items-center gap-4">
+        <span>Built by <a href="https://github.com/jgamblin" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">Jerry Gamblin</a> at <a href="https://rogolabs.net" target="_blank" rel="noopener" class="text-brand hover:text-brand-light transition-colors">RogoLabs</a></span>
+        <span class="text-gray-700">·</span>
+        <a href="https://github.com/RogoLabs/vuln-anarchy" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">View on GitHub</a>
+        <span class="text-gray-700">·</span>
+        <span>Data: NVD API 2.0 · GitHub Advisory Database</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function anarchyMap() {
+      return {
+        loading: true,
+        error: null,
+        entries: [],
+        chart: null,
+        tooltip: { visible: false, x: 0, y: 0, cve_id: '', nvd: '', gh: '', variance: '', cna: '' },
+
+        get maxVariance() {
+          if (!this.entries.length) return null;
+          return Math.max(...this.entries.map(e => e.cvss_variance ?? 0));
+        },
+        get maxVarianceCve() {
+          if (!this.entries.length) return '';
+          return this.entries.reduce((a, b) => (a.cvss_variance ?? 0) > (b.cvss_variance ?? 0) ? a : b).cve_id;
+        },
+        get nvdHigher() {
+          return this.entries.filter(e => (e.nvd_score ?? 0) > (e.github_score ?? 0)).length;
+        },
+        get ghHigher() {
+          return this.entries.filter(e => (e.github_score ?? 0) > (e.nvd_score ?? 0)).length;
+        },
+
+        async init() {
+          try {
+            const res = await fetch('data/indexes/anarchy-map.json');
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            this.entries = await res.json();
+          } catch (e) {
+            this.error = `Failed to load map data: ${e.message}`;
+            this.loading = false;
+            return;
+          }
+          this.loading = false;
+          await this.$nextTick();
+          this.buildChart();
+        },
+
+        buildChart() {
+          const pointColor = (e) => {
+            const v = e.cvss_variance ?? 0;
+            if (v >= 4.0) return 'rgba(239,68,68,0.85)';   // red — critical gap
+            if ((e.github_score ?? 0) > (e.nvd_score ?? 0)) return 'rgba(96,165,250,0.65)'; // blue — GH higher
+            return 'rgba(251,146,60,0.65)'; // orange — NVD higher
+          };
+
+          const points = this.entries
+            .filter(e => e.nvd_score != null && e.github_score != null)
+            .map(e => ({ x: e.nvd_score, y: e.github_score, _entry: e }));
+
+          const diag = [{ x: 0, y: 0 }, { x: 10, y: 10 }];
+
+          const ctx = document.getElementById('anarchyChart').getContext('2d');
+          this.chart = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+              datasets: [
+                {
+                  label: 'CVEs',
+                  data: points,
+                  backgroundColor: points.map(p => pointColor(p._entry)),
+                  pointRadius: 4,
+                  pointHoverRadius: 6,
+                },
+                {
+                  label: 'Perfect agreement',
+                  data: diag,
+                  type: 'line',
+                  borderColor: 'rgba(148,163,184,0.4)',
+                  borderDash: [6, 4],
+                  borderWidth: 1.5,
+                  pointRadius: 0,
+                  fill: false,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              animation: false,
+              plugins: {
+                legend: { display: false },
+                tooltip: { enabled: false },
+              },
+              scales: {
+                x: {
+                  title: { display: true, text: 'NVD CVSS Score', color: '#9ca3af', font: { family: 'Inter', size: 12 } },
+                  min: 0, max: 10,
+                  ticks: { color: '#6b7280', stepSize: 1 },
+                  grid: { color: 'rgba(45,55,72,0.8)' },
+                },
+                y: {
+                  title: { display: true, text: 'GitHub Advisory CVSS Score', color: '#9ca3af', font: { family: 'Inter', size: 12 } },
+                  min: 0, max: 10,
+                  ticks: { color: '#6b7280', stepSize: 1 },
+                  grid: { color: 'rgba(45,55,72,0.8)' },
+                },
+              },
+              onHover: (event, elements) => {
+                if (elements.length && elements[0].datasetIndex === 0) {
+                  const idx = elements[0].index;
+                  const pt = points[idx];
+                  const e = pt._entry;
+                  this.tooltip = {
+                    visible: true,
+                    x: event.native.clientX,
+                    y: event.native.clientY,
+                    cve_id: e.cve_id,
+                    nvd: e.nvd_score?.toFixed(1) ?? '—',
+                    gh: e.github_score?.toFixed(1) ?? '—',
+                    variance: (e.cvss_variance ?? 0).toFixed(1),
+                    cna: e.assigning_cna ?? '',
+                  };
+                } else {
+                  this.tooltip.visible = false;
+                }
+              },
+            },
+          });
+        },
+      };
+    }
+  </script>
+
+</body>
+</html>

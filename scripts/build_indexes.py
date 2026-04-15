@@ -43,16 +43,15 @@ def build_leaderboard_entry(record: dict):
 
 
 def build_anarchy_map_entry(record: dict):
-    epss = record.get("sources", {}).get("epss", {})
+    nvd = record.get("sources", {}).get("nvd", {})
+    github = record.get("sources", {}).get("github", {})
     return {
         "cve_id": record["cve_id"],
+        "nvd_score": nvd.get("cvss_score"),
+        "github_score": github.get("cvss_score"),
         "cvss_variance": record.get("cvss_variance", 0),
         "drift_score": record.get("drift_score", 0),
-        "drift_type": record.get("drift_type", "gap"),
-        "source_count": record.get("source_count", 0),
-        # EPSS fields null in Phase 1; populated in Phase 2
-        "epss_score": epss.get("score"),
-        "epss_percentile": epss.get("percentile"),
+        "assigning_cna": record.get("assigning_cna"),
     }
 
 
@@ -85,8 +84,8 @@ def main():
     LEADERBOARD_PATH.write_text(json.dumps(leaderboard, indent=2))
     print(f"Leaderboard written: {LEADERBOARD_PATH} ({len(leaderboard)} entries)")
 
-    # Anarchy Map: all CVEs with variance and EPSS data
-    anarchy_map = [build_anarchy_map_entry(r) for r in all_records]
+    # Anarchy Map: conflict CVEs only (both NVD and GitHub have scores)
+    anarchy_map = [build_anarchy_map_entry(r) for r in conflict_records]
     ANARCHY_MAP_PATH.write_text(json.dumps(anarchy_map, indent=2))
     print(f"Anarchy Map written: {ANARCHY_MAP_PATH} ({len(anarchy_map)} entries)")
 
@@ -113,6 +112,11 @@ def main():
         writer.writerows(rejected_rows)
     print(f"Rejected-with-GHSA CSV written: {REJECTED_CSV_PATH} ({len(rejected_rows)} entries)")
 
+    # Stats aggregates (needed by both CSV and stats.json below)
+    conflict_records = [r for r in all_records if r.get("drift_type") == "conflict"]
+    gap_records = [r for r in all_records if r.get("drift_type") == "gap"]
+    rejected_scored = [r for r in all_records if r.get("drift_type") == "rejected" and r.get("drift_score", 0) > 0.5]
+
     # Conflicts CSV: all CVEs where NVD and GitHub have conflicting CVSS scores
     conflict_rows = []
     for r in conflict_records:
@@ -137,10 +141,6 @@ def main():
     print(f"Conflicts CSV written: {CONFLICTS_CSV_PATH} ({len(conflict_rows)} entries)")
 
     # Stats JSON: aggregate numbers for the UI stat cards
-    conflict_records = [r for r in all_records if r.get("drift_type") == "conflict"]
-    gap_records = [r for r in all_records if r.get("drift_type") == "gap"]
-    rejected_scored = [r for r in all_records if r.get("drift_type") == "rejected" and r.get("drift_score", 0) > 0.5]
-
     top_by_score = max(all_records, key=lambda r: r.get("drift_score", 0), default={})
     top_by_variance = max(all_records, key=lambda r: r.get("cvss_variance", 0), default={})
 
