@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Build pre-computed index files: leaderboard.json, anarchy-map.json, and rejected-with-ghsa.csv."""
+"""Build pre-computed index files: leaderboard.json, anarchy-map.json, stats.json, and rejected-with-ghsa.csv."""
 
 import csv
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
@@ -13,6 +14,8 @@ REJECTED_CSV_PATH = DATA_DIR / "rejected-with-ghsa.csv"
 
 LEADERBOARD_SIZE = 100
 LEADERBOARD_REJECTED_CAP = 15  # Rejected CVEs are a different kind of anarchy; cap so real conflicts dominate
+
+STATS_PATH = INDEXES_DIR / "stats.json"
 
 
 def leaderboard_sort_key(record: dict):
@@ -108,6 +111,28 @@ def main():
         writer.writeheader()
         writer.writerows(rejected_rows)
     print(f"Rejected-with-GHSA CSV written: {REJECTED_CSV_PATH} ({len(rejected_rows)} entries)")
+
+    # Stats JSON: aggregate numbers for the UI stat cards
+    conflict_records = [r for r in all_records if r.get("drift_type") == "conflict"]
+    gap_records = [r for r in all_records if r.get("drift_type") == "gap"]
+    rejected_scored = [r for r in all_records if r.get("drift_type") == "rejected" and r.get("drift_score", 0) > 0.5]
+
+    top_by_score = max(all_records, key=lambda r: r.get("drift_score", 0), default={})
+    top_by_variance = max(all_records, key=lambda r: r.get("cvss_variance", 0), default={})
+
+    stats = {
+        "total_cves": len(all_records),
+        "conflict_count": len(conflict_records),
+        "gap_count": len(gap_records),
+        "rejected_scored_count": len(rejected_scored),
+        "max_drift_score": top_by_score.get("drift_score", 0),
+        "max_drift_cve": top_by_score.get("cve_id", ""),
+        "max_variance": top_by_variance.get("cvss_variance", 0),
+        "max_variance_cve": top_by_variance.get("cve_id", ""),
+        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+    STATS_PATH.write_text(json.dumps(stats, indent=2))
+    print(f"Stats written: {STATS_PATH}")
 
 
 if __name__ == "__main__":

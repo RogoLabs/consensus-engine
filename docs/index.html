@@ -1,135 +1,265 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-950 text-gray-100">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vulnerability Anarchy — Drift Leaderboard</title>
+  <meta name="description" content="Track CVEs where NVD and GitHub Advisory Database assign different CVSS scores for the same vulnerability. The bigger the delta, the more anarchy." />
+  <meta name="author" content="Jerry Gamblin / RogoLabs" />
+  <meta property="og:title" content="Vulnerability Anarchy — Drift Leaderboard" />
+  <meta property="og:description" content="CVEs where vulnerability authorities can't agree on a score." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: { DEFAULT: '#3b82f6', dark: '#2563eb', light: '#60a5fa' },
+            surface: { DEFAULT: '#0f1117', card: '#1a1d2e', border: '#2d3748' },
+          }
+        }
+      }
+    }
+  </script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui; }
+    .card-accent::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      border-radius: 8px 8px 0 0;
+    }
+    .stat-card:hover { transform: translateY(-2px); }
+    .stat-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    tr:hover td { background-color: rgba(59, 130, 246, 0.05); }
+  </style>
 </head>
-<body class="min-h-screen font-mono">
+<body class="bg-surface text-gray-100 min-h-screen">
 
-  <div x-data="leaderboard()" x-init="init()" class="max-w-6xl mx-auto px-4 py-10">
-
-    <header class="mb-8">
-      <h1 class="text-3xl font-bold tracking-tight text-red-400">⚡ Vulnerability Anarchy</h1>
-      <p class="mt-1 text-gray-400 text-sm">
-        CVEs where NVD and GitHub Advisory disagree on the score — the bigger the delta, the more anarchy.
-      </p>
-    </header>
-
-    <!-- Loading state -->
-    <div x-show="loading" class="text-gray-500 text-sm">Loading leaderboard…</div>
-
-    <!-- Error state -->
-    <div x-show="error" class="text-red-400 text-sm" x-text="error"></div>
-
-    <!-- Table -->
-    <div x-show="!loading && !error">
-      <!-- Stats bar -->
-      <div class="flex flex-wrap items-center gap-x-6 gap-y-1 mb-4 text-xs text-gray-500">
-        <span x-text="`${entries.length} entries`"></span>
-        <span x-text="`🔴 ${typeCounts.conflict || 0} score conflicts`" class="text-yellow-500"></span>
-        <span x-text="`💀 ${typeCounts.rejected || 0} rejected-but-scored`" class="text-red-500"></span>
-        <span x-text="`⬜ ${typeCounts.gap || 0} data gaps`" class="text-gray-500"></span>
-        <span class="ml-auto">Sort by:
-          <button @click="sortBy('drift_score')" :class="sort === 'drift_score' ? 'text-red-400' : 'hover:text-gray-300'" class="ml-1 underline">Drift Score</button>
-          <button @click="sortBy('github_score')" :class="sort === 'github_score' ? 'text-red-400' : 'hover:text-gray-300'" class="ml-1 underline">GitHub Score</button>
-          <button @click="sortBy('cvss_variance')" :class="sort === 'cvss_variance' ? 'text-red-400' : 'hover:text-gray-300'" class="ml-1 underline">CVSS Δ</button>
-        </span>
+  <!-- Header -->
+  <header class="border-b border-surface-border bg-surface-card sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-bold text-brand">⚡</span>
+        <div>
+          <span class="font-bold text-white text-base leading-none">Vulnerability Anarchy</span>
+          <span class="text-gray-500 text-xs ml-2 hidden sm:inline">by RogoLabs</span>
+        </div>
       </div>
+      <nav class="flex items-center gap-2 sm:gap-4 text-sm">
+        <span class="text-brand font-medium border-b border-brand pb-0.5">Leaderboard</span>
+        <span class="text-gray-600 cursor-not-allowed" title="Coming soon">Anarchy Map</span>
+        <a href="https://github.com/RogoLabs/vuln-anarchy"
+           target="_blank" rel="noopener"
+           class="flex items-center gap-1.5 bg-surface-border hover:bg-gray-700 text-gray-300 hover:text-white px-3 py-1.5 rounded-md text-xs font-medium transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+          </svg>
+          GitHub
+        </a>
+      </nav>
+    </div>
+  </header>
 
-      <table class="w-full text-sm border-collapse">
-        <thead>
-          <tr class="text-left text-gray-500 border-b border-gray-800">
-            <th class="py-2 pr-4">#</th>
-            <th class="py-2 pr-4">CVE ID</th>
-            <th class="py-2 pr-4">Type</th>
-            <th class="py-2 pr-4">Drift Score</th>
-            <th class="py-2 pr-4 text-yellow-600">CVSS Δ ⚡</th>
-            <th class="py-2 pr-4">NVD Score</th>
-            <th class="py-2 pr-4">GitHub Score</th>
-            <th class="py-2 pr-4">CNA</th>
-            <th class="py-2">NVD Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <template x-for="(entry, i) in sorted" :key="entry.cve_id">
-            <tr class="border-b border-gray-900 hover:bg-gray-900 transition-colors">
-              <td class="py-2 pr-4 text-gray-600" x-text="i + 1"></td>
-              <td class="py-2 pr-4">
-                <a :href="`cve.html?id=${entry.cve_id}`" class="text-blue-400 hover:text-blue-300 hover:underline" x-text="entry.cve_id"></a>
-              </td>
-              <td class="py-2 pr-4">
-                <span :class="driftTypeBadge(entry.drift_type)" class="px-2 py-0.5 rounded text-xs font-semibold" x-text="entry.drift_type"></span>
-              </td>
-              <td class="py-2 pr-4 font-bold" :class="scoreColor(entry.drift_score)" x-text="entry.drift_score.toFixed(1)"></td>
-              <td class="py-2 pr-4 font-bold text-yellow-400" x-text="entry.cvss_variance > 0 ? `Δ${entry.cvss_variance.toFixed(1)}` : (entry.drift_type === 'rejected' ? 'rejected' : '—')"></td>
-              <td class="py-2 pr-4" :class="entry.nvd_score != null ? 'text-gray-300' : 'text-gray-600'" x-text="entry.nvd_score != null ? entry.nvd_score.toFixed(1) : '—'"></td>
-              <td class="py-2 pr-4" :class="entry.github_score != null ? 'text-yellow-300' : 'text-gray-600'" x-text="entry.github_score != null ? entry.github_score.toFixed(1) : '—'"></td>
-              <td class="py-2 pr-4 text-gray-500 text-xs" x-text="entry.assigning_cna ?? '—'"></td>
-              <td class="py-2 text-xs" :class="statusColor(entry.nvd_status)" x-text="entry.nvd_status ?? '—'"></td>
-            </tr>
-          </template>
-        </tbody>
-      </table>
+  <div x-data="dashboard()" x-init="init()" class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+
+    <!-- Hero -->
+    <div class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Drift Leaderboard</h1>
+      <p class="text-gray-400 text-base max-w-3xl">
+        CVEs where the <strong class="text-gray-200">NVD</strong> and
+        <strong class="text-gray-200">GitHub Advisory Database</strong>
+        assign meaningfully different CVSS scores to the same vulnerability.
+        The <span class="text-brand font-semibold">Drift Score</span> measures how much the authorities disagree —
+        a score of <span class="text-brand">6.9</span> means a 6.9-point gap on the same 0–10 scale.
+      </p>
     </div>
 
-    <footer class="mt-10 text-xs text-gray-700">
-      Built by <a href="https://github.com/jgamblin" class="hover:text-gray-500">Jerry Gamblin</a> at RogoLabs ·
-      Data sourced from NVD, GitHub Advisory Database, OSV.dev, CISA KEV, EPSS.
-    </footer>
+    <!-- Stat Cards -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="stat-card card-accent relative bg-surface-card border border-surface-border rounded-lg p-5 text-center overflow-hidden">
+        <div class="text-3xl font-bold text-brand mb-1" x-text="stats ? stats.total_cves.toLocaleString() : '—'"></div>
+        <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">CVEs Tracked</div>
+      </div>
+      <div class="stat-card card-accent relative bg-surface-card border border-surface-border rounded-lg p-5 text-center overflow-hidden">
+        <div class="text-3xl font-bold text-yellow-400 mb-1" x-text="stats ? stats.conflict_count.toLocaleString() : '—'"></div>
+        <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">Score Conflicts</div>
+      </div>
+      <div class="stat-card card-accent relative bg-surface-card border border-surface-border rounded-lg p-5 text-center overflow-hidden">
+        <div class="text-3xl font-bold text-orange-400 mb-1" x-text="stats ? `Δ${stats.max_variance.toFixed(1)}` : '—'"></div>
+        <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">Largest Score Gap</div>
+        <div class="text-xs text-gray-600 mt-1 truncate" x-text="stats?.max_variance_cve ?? ''"></div>
+      </div>
+      <div class="stat-card card-accent relative bg-surface-card border border-surface-border rounded-lg p-5 text-center overflow-hidden">
+        <div class="text-3xl font-bold text-red-400 mb-1" x-text="stats ? stats.rejected_scored_count.toLocaleString() : '—'"></div>
+        <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">Rejected-but-Scored</div>
+      </div>
+    </div>
+
+    <!-- Explainer callout -->
+    <div class="bg-surface-card border border-surface-border rounded-lg p-4 mb-6 flex gap-3">
+      <span class="text-brand text-lg shrink-0">ℹ️</span>
+      <div class="text-sm text-gray-400 leading-relaxed">
+        <strong class="text-gray-200">How to read this:</strong>
+        <span class="text-yellow-400 font-semibold">conflict</span> rows show CVEs where both sources scored the same CVSS version but disagree on the value — the gap is real.
+        <span class="text-red-400 font-semibold">rejected</span> rows show CVEs that NVD has withdrawn, but GitHub Advisory still actively scores — the most extreme form of anarchy.
+        <span class="text-gray-500 font-semibold">gap</span> rows indicate missing data from one or more sources.
+        The <span class="text-brand font-medium">↑NVD</span> / <span class="text-yellow-300 font-medium">↑GH</span> badges show which authority scores the CVE higher.
+      </div>
+    </div>
+
+    <!-- Loading / Error states -->
+    <div x-show="loading" class="text-gray-500 text-sm py-8 text-center">Loading leaderboard…</div>
+    <div x-show="error" class="text-red-400 text-sm py-4" x-text="error"></div>
+
+    <!-- Leaderboard -->
+    <div x-show="!loading && !error" class="bg-surface-card border border-surface-border rounded-lg overflow-hidden">
+
+      <!-- Table toolbar -->
+      <div class="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-b border-surface-border">
+        <span class="text-sm font-medium text-gray-300" x-text="`Top ${entries.length} most disputed CVEs`"></span>
+        <div class="flex items-center gap-1 text-xs text-gray-500">
+          Sort:
+          <template x-for="[field, label] in [['drift_score','Drift Score'],['cvss_variance','CVSS Δ'],['github_score','GitHub Score']]" :key="field">
+            <button @click="sortBy(field)"
+                    :class="sort === field ? 'bg-brand text-white' : 'bg-surface-border text-gray-300 hover:text-white'"
+                    class="px-2.5 py-1 rounded ml-1 transition-colors font-medium"
+                    x-text="label"></button>
+          </template>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-xs text-gray-500 uppercase tracking-wide border-b border-surface-border bg-surface">
+              <th class="px-4 py-3 w-10">#</th>
+              <th class="px-4 py-3">CVE</th>
+              <th class="px-4 py-3">Type</th>
+              <th class="px-4 py-3">Drift Score</th>
+              <th class="px-4 py-3">Score Conflict</th>
+              <th class="px-4 py-3">CNA</th>
+              <th class="px-4 py-3">NVD Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-border">
+            <template x-for="(entry, i) in sorted" :key="entry.cve_id">
+              <tr class="transition-colors">
+                <td class="px-4 py-3 text-gray-600 text-xs" x-text="i + 1"></td>
+                <td class="px-4 py-3">
+                  <a :href="`cve.html?id=${entry.cve_id}`"
+                     class="text-brand hover:text-brand-light font-medium hover:underline"
+                     x-text="entry.cve_id"></a>
+                </td>
+                <td class="px-4 py-3">
+                  <span :class="driftTypeBadge(entry.drift_type)"
+                        class="px-2 py-0.5 rounded-full text-xs font-semibold"
+                        x-text="entry.drift_type"></span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="font-bold text-base" :class="scoreColor(entry.drift_score)"
+                        x-text="entry.drift_score.toFixed(1)"></span>
+                </td>
+                <td class="px-4 py-3">
+                  <div x-show="entry.drift_type !== 'rejected' && entry.nvd_score != null && entry.github_score != null"
+                       class="flex items-center gap-1.5 font-mono text-sm">
+                    <span class="text-gray-300" x-text="entry.nvd_score?.toFixed(1)"></span>
+                    <span class="text-gray-600">→</span>
+                    <span class="text-yellow-300" x-text="entry.github_score?.toFixed(1)"></span>
+                    <span :class="entry.nvd_score > entry.github_score ? 'bg-red-900 text-red-300' : 'bg-yellow-900 text-yellow-300'"
+                          class="ml-1 px-1.5 py-0.5 rounded text-xs font-semibold"
+                          x-text="entry.nvd_score > entry.github_score ? '↑NVD' : '↑GH'"></span>
+                  </div>
+                  <div x-show="entry.drift_type === 'rejected'" class="text-sm text-gray-500">
+                    NVD: <span class="text-red-400 font-semibold">Rejected</span>
+                    <span x-show="entry.github_score != null">
+                      → GH: <span class="text-yellow-300 font-semibold" x-text="entry.github_score?.toFixed(1)"></span>
+                    </span>
+                  </div>
+                  <div x-show="entry.drift_type === 'gap' && (entry.nvd_score == null || entry.github_score == null)"
+                       class="text-gray-600 text-xs">
+                    <span x-show="entry.nvd_score != null" x-text="`NVD ${entry.nvd_score?.toFixed(1)}`"></span>
+                    <span x-show="entry.nvd_score == null" class="italic">NVD: no data</span>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-gray-500 text-xs" x-text="entry.assigning_cna ?? '—'"></td>
+                <td class="px-4 py-3 text-xs" :class="statusColor(entry.nvd_status)" x-text="entry.nvd_status ?? '—'"></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 
+  <!-- Footer -->
+  <footer class="border-t border-surface-border mt-12 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-600">
+      <div class="flex items-center gap-4">
+        <span>Built by <a href="https://github.com/jgamblin" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">Jerry Gamblin</a> at <a href="https://rogolabs.net" target="_blank" rel="noopener" class="text-brand hover:text-brand-light transition-colors">RogoLabs</a></span>
+        <span class="text-gray-700">·</span>
+        <a href="https://github.com/RogoLabs/vuln-anarchy" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">View on GitHub</a>
+        <span class="text-gray-700">·</span>
+        <span>Data: NVD API 2.0 · GitHub Advisory Database</span>
+      </div>
+      <div x-show="stats" x-text="stats ? `Updated ${new Date(stats.generated_at).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'})}` : ''" class="text-gray-700"></div>
+    </div>
+  </footer>
+
   <script>
-    function leaderboard() {
+    function dashboard() {
       return {
         loading: true,
         error: null,
         entries: [],
+        stats: null,
         sort: 'drift_score',
 
         async init() {
           try {
-            const res = await fetch('data/indexes/leaderboard.json');
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            this.entries = await res.json();
+            const [lbRes, statsRes] = await Promise.all([
+              fetch('data/indexes/leaderboard.json'),
+              fetch('data/indexes/stats.json'),
+            ]);
+            if (!lbRes.ok) throw new Error(`Leaderboard HTTP ${lbRes.status}`);
+            this.entries = await lbRes.json();
+            if (statsRes.ok) this.stats = await statsRes.json();
           } catch (e) {
-            this.error = `Failed to load leaderboard: ${e.message}`;
+            this.error = `Failed to load data: ${e.message}`;
           } finally {
             this.loading = false;
           }
         },
 
-        sortBy(field) {
-          this.sort = field;
-        },
+        sortBy(field) { this.sort = field; },
 
         get sorted() {
-          return [...this.entries].sort((a, b) => {
-            return (b[this.sort] ?? 0) - (a[this.sort] ?? 0);
-          });
-        },
-
-        get typeCounts() {
-          return this.entries.reduce((acc, e) => {
-            acc[e.drift_type] = (acc[e.drift_type] || 0) + 1;
-            return acc;
-          }, {});
+          return [...this.entries].sort((a, b) => (b[this.sort] ?? 0) - (a[this.sort] ?? 0));
         },
 
         driftTypeBadge(type) {
           return {
-            'rejected': 'bg-red-900 text-red-300',
-            'conflict': 'bg-yellow-900 text-yellow-300',
-            'gap':      'bg-gray-800 text-gray-400',
+            rejected: 'bg-red-900/60 text-red-300 border border-red-800',
+            conflict: 'bg-yellow-900/60 text-yellow-300 border border-yellow-800',
+            gap:      'bg-gray-800 text-gray-400 border border-gray-700',
           }[type] ?? 'bg-gray-800 text-gray-400';
         },
 
         scoreColor(score) {
-          if (score >= 7) return 'text-red-400';
+          if (score >= 8) return 'text-red-400';
+          if (score >= 6) return 'text-orange-400';
           if (score >= 4) return 'text-yellow-400';
-          return 'text-green-400';
+          return 'text-gray-400';
         },
 
         statusColor(status) {
