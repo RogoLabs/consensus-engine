@@ -302,7 +302,10 @@
             if ((e.nvd_score ?? 0) > (e.github_score ?? 0)) byYear[year].nvdHigher++;
             else byYear[year].ghHigher++;
           }
-          const years = Object.keys(byYear).filter(y => y !== 'Unknown').sort();
+          // Drop years with fewer than 5 conflicts — likely outliers from outside the ingestion window
+          const years = Object.keys(byYear)
+            .filter(y => y !== 'Unknown' && (byYear[y].nvdHigher + byYear[y].ghHigher) >= 5)
+            .sort();
           const nvdData = years.map(y => byYear[y].nvdHigher);
           const ghData = years.map(y => byYear[y].ghHigher);
 
