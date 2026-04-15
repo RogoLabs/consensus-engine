@@ -73,6 +73,11 @@ def main():
         except Exception as e:
             print(f"  Error reading {path.name}: {e}")
 
+    # Classify records by drift type (used throughout)
+    conflict_records = [r for r in all_records if r.get("drift_type") == "conflict"]
+    gap_records = [r for r in all_records if r.get("drift_type") == "gap"]
+    rejected_scored = [r for r in all_records if r.get("drift_type") == "rejected" and r.get("drift_score", 0) > 0.5]
+
     # Leaderboard: cap rejected CVEs to avoid dominating; fill rest with conflict/gap
     sorted_all = sorted(all_records, key=leaderboard_sort_key)
     rejected = [r for r in sorted_all if r.get("drift_type") == "rejected"][:LEADERBOARD_REJECTED_CAP]
@@ -112,11 +117,7 @@ def main():
         writer.writerows(rejected_rows)
     print(f"Rejected-with-GHSA CSV written: {REJECTED_CSV_PATH} ({len(rejected_rows)} entries)")
 
-    # Stats aggregates (needed by both CSV and stats.json below)
-    conflict_records = [r for r in all_records if r.get("drift_type") == "conflict"]
-    gap_records = [r for r in all_records if r.get("drift_type") == "gap"]
-    rejected_scored = [r for r in all_records if r.get("drift_type") == "rejected" and r.get("drift_score", 0) > 0.5]
-
+    # Stats aggregates already computed above; conflicts CSV below
     # Conflicts CSV: all CVEs where NVD and GitHub have conflicting CVSS scores
     conflict_rows = []
     for r in conflict_records:
