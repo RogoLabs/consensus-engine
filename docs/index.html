@@ -145,7 +145,7 @@
         </div>
         <div class="flex items-center gap-2 text-xs text-gray-500 overflow-x-auto pb-0.5">
           <span class="shrink-0">Sort:</span>
-          <template x-for="[field, label] in [['drift_score','Drift Score'],['cvss_variance','CVSS Δ'],['github_score','GitHub Score'],['published_date','Date']]" :key="field">
+          <template x-for="[field, label] in [['drift_score','Drift Score'],['github_score','GitHub Score'],['nvd_score','NVD Score'],['published_date','Date']]" :key="field">
             <button @click="sortBy(field)"
                     :class="sort === field ? 'bg-brand text-white' : 'bg-surface-border text-gray-300 hover:text-white'"
                     class="px-2.5 py-1 rounded transition-colors font-medium shrink-0"
