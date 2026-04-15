@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vulnerability Anarchy — Drift Leaderboard</title>
-  <meta name="description" content="Track CVEs where NVD and GitHub Advisory Database assign different CVSS scores for the same vulnerability. The bigger the delta, the more anarchy." />
+  <title>Vulnerability Anarchy — The Vulnerability Data Integrity Gap</title>
+  <meta name="description" content="Visualizing scoring divergence between NVD and GitHub Advisory databases to identify CVE prioritization risks. A high Drift Score signals significant discrepancy in risk assessment between sources." />
   <meta name="author" content="Jerry Gamblin / RogoLabs" />
-  <meta property="og:title" content="Vulnerability Anarchy — Drift Leaderboard" />
-  <meta property="og:description" content="CVEs where vulnerability authorities can't agree on a score." />
+  <meta property="og:title" content="Vulnerability Anarchy — The Vulnerability Data Integrity Gap" />
+  <meta property="og:description" content="Authoritative vulnerability sources frequently provide conflicting CVSS data. Relying on a single provider may lead to misaligned patching priorities." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,14 +73,14 @@
 
     <!-- Hero -->
     <div class="mb-8">
-      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Drift Leaderboard</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-1">The Vulnerability Data Integrity Gap</h1>
+      <p class="text-brand text-sm font-medium mb-3">Visualizing scoring divergence between NVD and GitHub Advisory databases to identify prioritization risks.</p>
       <p class="text-gray-400 text-base leading-relaxed">
-        NVD and the GitHub Advisory Database both score the same CVEs — and they frequently disagree.
-        The <span class="text-brand font-semibold">Drift Score</span> is the gap:
-        <span class="font-mono text-gray-300">|GitHub − NVD|</span> on the same 0–10 CVSS scale.
-        A score of <span class="text-brand font-semibold">6.9</span> means two authoritative sources
-        are nearly 7 points apart on the same vulnerability.
-        If you're using either score to prioritize patching, you might be prioritizing the wrong things.
+        Vulnerability management depends on accurate severity scoring — but authoritative sources frequently provide conflicting CVSS data.
+        The <span class="text-brand font-semibold">Drift Score</span> is the absolute variance
+        (<span class="font-mono text-gray-300">|GitHub − NVD|</span>) representing the delta in perceived risk between the two providers.
+        A high Drift Score indicates a significant discrepancy in risk assessment, suggesting that relying on either source alone
+        may lead to misaligned patching priorities.
       </p>
     </div>
 
@@ -109,9 +109,9 @@
     <div class="bg-surface-card border border-surface-border rounded-lg p-4 mb-6 flex gap-3">
       <span class="text-brand text-lg shrink-0">ℹ️</span>
       <div class="text-sm text-gray-400 leading-relaxed">
-        <span class="text-yellow-400 font-semibold">conflict</span> — both sources assigned a score for the same CVSS version but reached different numbers. Drift Score = <span class="font-mono text-gray-300">|GitHub − NVD|</span>.
-        <span class="ml-3 text-red-400 font-semibold">rejected</span> — NVD has withdrawn the CVE entirely, but GitHub Advisory still actively scores it as a real vulnerability. Drift Score = the GitHub score itself.
-        <span class="ml-3 text-brand font-medium">↑NVD</span> / <span class="text-yellow-300 font-medium">↑GH</span> — which authority scores higher.
+        <span class="text-yellow-400 font-semibold">Scoring Conflict</span> — both providers assign a CVSS score for the same version but reach different conclusions on severity. Drift Score = <span class="font-mono text-gray-300">|GitHub − NVD|</span>.
+        <span class="ml-3 text-red-400 font-semibold">NVD Rejected / GH Active</span> — the NVD has withdrawn the CVE, but GitHub Advisory continues to track and score it as a viable threat. Drift Score = the GitHub score itself.
+        <span class="ml-3 text-brand font-medium">↑NVD</span> / <span class="text-yellow-300 font-medium">↑GH</span> — which provider assesses the higher risk.
       </div>
     </div>
 
@@ -141,7 +141,7 @@
             Export CSV
           </a>
           <span>Sort:</span>
-          <template x-for="[field, label] in [['drift_score','Drift Score'],['cvss_variance','CVSS Δ'],['github_score','GitHub Score']]" :key="field">
+          <template x-for="[field, label] in [['drift_score','Drift Score'],['cvss_variance','CVSS Δ'],['github_score','GitHub Score'],['published_date','Date']]" :key="field">
             <button @click="sortBy(field)"
                     :class="sort === field ? 'bg-brand text-white' : 'bg-surface-border text-gray-300 hover:text-white'"
                     class="px-2.5 py-1 rounded transition-colors font-medium"
@@ -263,7 +263,15 @@
           const rows = this.hideRejected
             ? this.entries.filter(e => e.drift_type !== 'rejected')
             : this.entries;
-          return [...rows].sort((a, b) => (b[this.sort] ?? 0) - (a[this.sort] ?? 0));
+          return [...rows].sort((a, b) => {
+            if (this.sort === 'published_date') {
+              // Sort newest first; nulls go to the end
+              const da = a.published_date ?? '';
+              const db = b.published_date ?? '';
+              return db < da ? -1 : db > da ? 1 : 0;
+            }
+            return (b[this.sort] ?? 0) - (a[this.sort] ?? 0);
+          });
         },
 
         driftTypeBadge(type) {
