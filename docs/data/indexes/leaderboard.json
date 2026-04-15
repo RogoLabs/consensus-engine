@@ -450,7 +450,7 @@
   {
     "cve_id": "CVE-2024-32037",
     "drift_score": 5.3,
-    "drift_type": "conflict",
+    "drift_type": "gap",
     "cvss_variance": 5.3,
     "source_count": 2,
     "assigning_cna": "github",

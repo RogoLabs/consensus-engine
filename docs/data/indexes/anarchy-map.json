@@ -968,14 +968,6 @@
     "published_date": "2024-04-15"
   },
   {
-    "cve_id": "CVE-2024-32037",
-    "nvd_score": 0.0,
-    "github_score": 5.3,
-    "cvss_variance": 5.3,
-    "assigning_cna": "github",
-    "published_date": "2025-02-11"
-  },
-  {
     "cve_id": "CVE-2024-32152",
     "nvd_score": 4.3,
     "github_score": 3.1,
