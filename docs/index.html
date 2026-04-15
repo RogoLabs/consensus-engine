@@ -76,24 +76,28 @@
     <div class="mb-8">
       <h1 class="text-3xl sm:text-4xl font-bold text-white mb-1">The Vulnerability Data Integrity Gap</h1>
       <p class="text-brand text-sm font-medium mb-3">Visualizing scoring divergence between NVD and GitHub Advisory databases to identify prioritization risks.</p>
-      <p class="text-gray-400 text-base leading-relaxed">
-        Vulnerability management depends on accurate severity scoring — but authoritative sources frequently provide conflicting CVSS data.
-        The <span class="text-brand font-semibold">Drift Score</span> is the absolute variance
-        (<span class="font-mono text-gray-300">|GitHub − NVD|</span>) representing the delta in perceived risk between the two providers.
-        A high Drift Score indicates a significant discrepancy in risk assessment, suggesting that relying on either source alone
-        may lead to misaligned patching priorities.
-      </p>
+        <p class="text-gray-400 text-base leading-relaxed">
+        Of the <span class="text-white font-semibold" x-text="stats ? stats.comparable_count.toLocaleString() : '—'"></span> CVEs
+        scored by <em>both</em> NVD and the GitHub Advisory Database,
+        <span class="text-yellow-400 font-semibold" x-text="stats ? `${stats.conflict_rate}%` : '—'"></span> have conflicting CVSS scores.
+        The <span class="text-brand font-semibold">Drift Score</span>
+        (<span class="font-mono text-gray-300">|GitHub − NVD|</span>) quantifies the disagreement.
+        A high Drift Score means two authoritative sources have reached materially different conclusions on severity —
+        a direct risk to any organisation using a single source for patch prioritisation.
+        </p>
     </div>
 
     <!-- Stat Cards -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
       <div class="stat-card card-accent relative bg-surface-card border border-surface-border rounded-lg p-5 text-center overflow-hidden">
-        <div class="text-3xl font-bold text-brand mb-1" x-text="stats ? stats.total_cves.toLocaleString() : '—'"></div>
-        <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">CVEs Tracked</div>
+        <div class="text-3xl font-bold text-brand mb-1" x-text="stats ? stats.comparable_count.toLocaleString() : '—'"></div>
+        <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">Dual-Scored CVEs</div>
+        <div class="text-xs text-gray-600 mt-1">Both NVD &amp; GitHub</div>
       </div>
       <div class="stat-card card-accent relative bg-surface-card border border-surface-border rounded-lg p-5 text-center overflow-hidden">
-        <div class="text-3xl font-bold text-yellow-400 mb-1" x-text="stats ? stats.conflict_count.toLocaleString() : '—'"></div>
-        <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">Score Conflicts</div>
+        <div class="text-3xl font-bold text-yellow-400 mb-1" x-text="stats ? `${stats.conflict_rate}%` : '—'"></div>
+        <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">Conflict Rate</div>
+        <div class="text-xs text-gray-600 mt-1" x-text="stats ? `${stats.conflict_count.toLocaleString()} CVEs` : ''"></div>
       </div>
       <div class="stat-card card-accent relative bg-surface-card border border-surface-border rounded-lg p-5 text-center overflow-hidden">
         <div class="text-3xl font-bold text-orange-400 mb-1" x-text="stats ? `Δ${stats.max_variance.toFixed(1)}` : '—'"></div>
@@ -111,9 +115,9 @@
     <div class="bg-surface-card border border-surface-border rounded-lg p-4 mb-6 flex gap-3">
       <span class="text-brand text-lg shrink-0">ℹ️</span>
       <div class="text-sm text-gray-400 leading-relaxed">
-        <span class="text-yellow-400 font-semibold">Scoring Conflict</span> — both providers assign a CVSS score for the same version but reach different conclusions on severity. Drift Score = <span class="font-mono text-gray-300">|GitHub − NVD|</span>.
-        <span class="ml-3 text-red-400 font-semibold">NVD Rejected / GH Active</span> — the NVD has withdrawn the CVE, but GitHub Advisory continues to track and score it as a viable threat. Drift Score = the GitHub score itself.
-        <span class="ml-3 text-brand font-medium">↑NVD</span> / <span class="text-yellow-300 font-medium">↑GH</span> — which provider assesses the higher risk.
+        This leaderboard shows only CVEs where <span class="text-gray-300 font-medium">both NVD and GitHub Advisory have assigned a CVSS score</span> — and they disagree.
+        <span class="text-brand font-semibold">Drift Score</span> = <span class="font-mono text-gray-300">|GitHub − NVD|</span>.
+        <span class="ml-2 text-brand font-medium">↑NVD</span> / <span class="text-yellow-300 font-medium">↑GH</span> — which provider assesses the higher risk.
       </div>
     </div>
 
@@ -129,11 +133,6 @@
         <div class="flex items-center justify-between gap-3">
           <div class="flex items-center gap-3 flex-wrap">
             <span class="text-sm font-medium text-gray-300" x-text="`${sorted.length} most disputed CVEs`"></span>
-            <label class="flex items-center gap-2 text-xs text-gray-400 cursor-pointer select-none">
-              <input type="checkbox" x-model="hideRejected"
-                     class="w-3.5 h-3.5 accent-brand rounded" />
-              <span>Hide Rejected</span>
-            </label>
           </div>
           <a href="data/conflicts.csv" download
              class="flex items-center gap-1.5 bg-surface-border hover:bg-gray-700 text-gray-300 hover:text-white px-2.5 py-1 rounded transition-colors font-medium text-xs shrink-0">
@@ -162,7 +161,6 @@
             <tr class="text-left text-xs text-gray-500 uppercase tracking-wide border-b border-surface-border bg-surface">
               <th class="px-4 py-3 w-10 hidden sm:table-cell">#</th>
               <th class="px-4 py-3">CVE</th>
-              <th class="px-4 py-3 hidden sm:table-cell">Type</th>
               <th class="px-4 py-3">Drift Score</th>
               <th class="px-4 py-3">Score Conflict</th>
               <th class="px-4 py-3 hidden md:table-cell">Published</th>
@@ -179,35 +177,18 @@
                      class="text-brand hover:text-brand-light font-medium hover:underline"
                      x-text="entry.cve_id"></a>
                 </td>
-                <td class="px-4 py-3 hidden sm:table-cell">
-                  <span :class="driftTypeBadge(entry.drift_type)"
-                        class="px-2 py-0.5 rounded-full text-xs font-semibold"
-                        x-text="entry.drift_type"></span>
-                </td>
                 <td class="px-4 py-3">
                   <span class="font-bold text-base" :class="scoreColor(entry.drift_score)"
                         x-text="entry.drift_score.toFixed(1)"></span>
                 </td>
                 <td class="px-4 py-3">
-                  <div x-show="entry.drift_type !== 'rejected' && entry.nvd_score != null && entry.github_score != null"
-                       class="flex items-center gap-1.5 font-mono text-sm">
+                  <div class="flex items-center gap-1.5 font-mono text-sm">
                     <span class="text-gray-300" x-text="entry.nvd_score?.toFixed(1)"></span>
                     <span class="text-gray-600">→</span>
                     <span class="text-yellow-300" x-text="entry.github_score?.toFixed(1)"></span>
                     <span :class="entry.nvd_score > entry.github_score ? 'bg-red-900 text-red-300' : 'bg-yellow-900 text-yellow-300'"
                           class="ml-1 px-1.5 py-0.5 rounded text-xs font-semibold"
                           x-text="entry.nvd_score > entry.github_score ? '↑NVD' : '↑GH'"></span>
-                  </div>
-                  <div x-show="entry.drift_type === 'rejected'" class="text-sm text-gray-500">
-                    NVD: <span class="text-red-400 font-semibold">Rejected</span>
-                    <span x-show="entry.github_score != null">
-                      → GH: <span class="text-yellow-300 font-semibold" x-text="entry.github_score?.toFixed(1)"></span>
-                    </span>
-                  </div>
-                  <div x-show="entry.drift_type === 'gap' && (entry.nvd_score == null || entry.github_score == null)"
-                       class="text-gray-600 text-xs">
-                    <span x-show="entry.nvd_score != null" x-text="`NVD ${entry.nvd_score?.toFixed(1)}`"></span>
-                    <span x-show="entry.nvd_score == null" class="italic">NVD: no data</span>
                   </div>
                 </td>
                 <td class="px-4 py-3 text-gray-500 text-xs font-mono hidden md:table-cell" x-text="entry.published_date ?? '—'"></td>
@@ -244,7 +225,6 @@
         entries: [],
         stats: null,
         sort: 'drift_score',
-        hideRejected: true,
 
         async init() {
           try {
@@ -265,26 +245,14 @@
         sortBy(field) { this.sort = field; },
 
         get sorted() {
-          const rows = this.hideRejected
-            ? this.entries.filter(e => e.drift_type !== 'rejected')
-            : this.entries;
-          return [...rows].sort((a, b) => {
+          return [...this.entries].sort((a, b) => {
             if (this.sort === 'published_date') {
-              // Sort newest first; nulls go to the end
               const da = a.published_date ?? '';
               const db = b.published_date ?? '';
               return db < da ? -1 : db > da ? 1 : 0;
             }
             return (b[this.sort] ?? 0) - (a[this.sort] ?? 0);
           });
-        },
-
-        driftTypeBadge(type) {
-          return {
-            rejected: 'bg-red-900/60 text-red-300 border border-red-800',
-            conflict: 'bg-yellow-900/60 text-yellow-300 border border-yellow-800',
-            gap:      'bg-gray-800 text-gray-400 border border-gray-700',
-          }[type] ?? 'bg-gray-800 text-gray-400';
         },
 
         scoreColor(score) {

@@ -1,13 +1,15 @@
 {
-  "total_cves": 117721,
-  "conflict_count": 1549,
-  "gap_count": 112835,
+  "total_cves": 117633,
+  "comparable_count": 6084,
+  "conflict_count": 1548,
+  "conflict_rate": 25.4,
+  "gap_count": 112750,
   "rejected_scored_count": 25,
   "max_drift_score": 9.8,
   "max_drift_cve": "CVE-2022-50807",
   "max_variance": 6.9,
   "max_variance_cve": "CVE-2025-47735",
-  "avg_variance": 1.52,
+  "avg_variance": 1.53,
   "median_variance": 1.2,
-  "generated_at": "2026-04-15T23:03:20Z"
+  "generated_at": "2026-04-15T23:15:15Z"
 }

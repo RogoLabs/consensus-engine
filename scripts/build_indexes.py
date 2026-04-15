@@ -14,8 +14,7 @@ ANARCHY_MAP_PATH = INDEXES_DIR / "anarchy-map.json"
 REJECTED_CSV_PATH = DATA_DIR / "rejected-with-ghsa.csv"
 CONFLICTS_CSV_PATH = DATA_DIR / "conflicts.csv"
 
-LEADERBOARD_SIZE = 100       # Non-rejected entries — always 100 shown when Hide Rejected is on
-LEADERBOARD_REJECTED_CAP = 15  # Rejected CVEs shown when Hide Rejected is off
+LEADERBOARD_SIZE = 100       # Conflict CVEs only (both NVD and GitHub have a CVSS score)
 
 STATS_PATH = INDEXES_DIR / "stats.json"
 VECTOR_ANALYSIS_PATH = INDEXES_DIR / "vector-analysis.json"
@@ -170,12 +169,17 @@ def main():
     gap_records = [r for r in all_records if r.get("drift_type") == "gap"]
     rejected_scored = [r for r in all_records if r.get("drift_type") == "rejected" and r.get("drift_score", 0) > 0.5]
 
-    # Leaderboard: cap rejected CVEs to avoid dominating; fill rest with conflict/gap
-    sorted_all = sorted(all_records, key=leaderboard_sort_key)
-    rejected = [r for r in sorted_all if r.get("drift_type") == "rejected"][:LEADERBOARD_REJECTED_CAP]
-    others = [r for r in sorted_all if r.get("drift_type") != "rejected"][:LEADERBOARD_SIZE]
-    mixed = sorted(rejected + others, key=leaderboard_sort_key)
-    leaderboard = [build_leaderboard_entry(r) for r in mixed]
+    # Comparable = CVEs where BOTH NVD and GitHub have a CVSS score (conflicts + those gaps where both scored)
+    def _has_both_scores(r: dict) -> bool:
+        nvd_s = r.get("sources", {}).get("nvd", {}).get("cvss_score")
+        gh_s = r.get("sources", {}).get("github", {}).get("cvss_score")
+        return bool(nvd_s and nvd_s > 0 and gh_s)
+
+    comparable_records = [r for r in all_records if _has_both_scores(r)]
+
+    # Leaderboard: conflict CVEs only — both NVD and GitHub have a CVSS score and disagree
+    sorted_conflicts = sorted(conflict_records, key=leaderboard_sort_key)
+    leaderboard = [build_leaderboard_entry(r) for r in sorted_conflicts[:LEADERBOARD_SIZE]]
 
     INDEXES_DIR.mkdir(parents=True, exist_ok=True)
     LEADERBOARD_PATH.write_text(json.dumps(leaderboard, indent=2))
@@ -251,7 +255,9 @@ def main():
 
     stats = {
         "total_cves": len(all_records),
+        "comparable_count": len(comparable_records),
         "conflict_count": len(conflict_records),
+        "conflict_rate": round(len(conflict_records) / len(comparable_records) * 100, 1) if comparable_records else 0,
         "gap_count": len(gap_records),
         "rejected_scored_count": len(rejected_scored),
         "max_drift_score": top_by_score.get("drift_score", 0),
