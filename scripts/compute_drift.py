@@ -83,8 +83,8 @@ def classify_drift_type(record: dict, cvss_variance: float, by_version: dict):
     """
     Determine drift_type:
     - 'rejected'  — NVD status is Rejected
-    - 'conflict'  — sources disagree on CVSS value (same version, variance > 0)
-    - 'gap'       — one or more sources have no data, or cross-version comparison would be needed
+    - 'conflict'  — both NVD and GitHub have a score and disagree (same version, variance > 0)
+    - 'gap'       — NVD has no CVSS score, or one source is missing, or cross-version mismatch
     """
     nvd = record.get("sources", {}).get("nvd", {})
     status = nvd.get("status", "")
@@ -92,29 +92,23 @@ def classify_drift_type(record: dict, cvss_variance: float, by_version: dict):
     if status == "Rejected":
         return "rejected"
 
-    # Cross-version gap: sources have scores but in different CVSS versions
-    all_versions = set()
-    sources = record.get("sources", {})
-    for sname, s in sources.items():
-        if sname in ("cisa_kev", "epss"):
-            continue
-        if s.get("cvss_score") is not None and s.get("cvss_version") is not None:
-            all_versions.add(s.get("cvss_version"))
-    if len(all_versions) > 1:
+    # No NVD score → nothing to compare against; not drift, just a data gap
+    if nvd.get("cvss_score") is None:
+        return "gap"
+
+    # GitHub must also have a score for a real conflict
+    github = record.get("sources", {}).get("github", {})
+    if github.get("cvss_score") is None:
+        return "gap"
+
+    # Cross-version gap: scores exist but in different CVSS versions
+    if len(by_version) > 1:
         return "gap"
 
     if cvss_variance > 0:
         return "conflict"
 
-    # Check for outright missing data
-    source_names = [k for k in sources if k not in ("cisa_kev", "epss")]
-    sources_with_score = sum(
-        1 for k in source_names if sources[k].get("cvss_score") is not None
-    )
-    if sources_with_score < len(source_names):
-        return "gap"
-
-    return "gap" if sources_with_score <= 1 else "conflict"
+    return "gap"
 
 
 def source_conflict_count(sources: dict):
