@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T18:30:17Z",
+  "generated_at": "2026-04-16T19:28:37Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -159,10 +159,10 @@
       "name": "github",
       "total": 8392,
       "comparable": 2989,
-      "conflicts": 943,
-      "conflict_rate": 31.5,
-      "avg_drift": 1.62,
-      "nvd_higher_count": 498,
+      "conflicts": 945,
+      "conflict_rate": 31.6,
+      "avg_drift": 1.63,
+      "nvd_higher_count": 500,
       "gh_higher_count": 445,
       "top_cve": "CVE-2024-47821"
     },
@@ -178,17 +178,6 @@
       "top_cve": "CVE-2024-10491"
     },
     {
-      "name": "googlegroups",
-      "total": 126,
-      "comparable": 125,
-      "conflicts": 37,
-      "conflict_rate": 29.6,
-      "avg_drift": 2.02,
-      "nvd_higher_count": 33,
-      "gh_higher_count": 4,
-      "top_cve": "CVE-2024-47805"
-    },
-    {
       "name": "puiterwijk",
       "total": 138,
       "comparable": 81,
@@ -198,6 +187,17 @@
       "nvd_higher_count": 15,
       "gh_higher_count": 9,
       "top_cve": "CVE-2025-67856"
+    },
+    {
+      "name": "googlegroups",
+      "total": 126,
+      "comparable": 125,
+      "conflicts": 37,
+      "conflict_rate": 29.6,
+      "avg_drift": 2.02,
+      "nvd_higher_count": 33,
+      "gh_higher_count": 4,
+      "top_cve": "CVE-2024-47805"
     },
     {
       "name": "mitre",
@@ -453,17 +453,6 @@
       "top_cve": "CVE-2024-9594"
     },
     {
-      "name": "vulncheck",
-      "total": 3491,
-      "comparable": 170,
-      "conflicts": 1,
-      "conflict_rate": 0.6,
-      "avg_drift": 0.9,
-      "nvd_higher_count": 1,
-      "gh_higher_count": 0,
-      "top_cve": "CVE-2024-9440"
-    },
-    {
       "name": "vuldb",
       "total": 9406,
       "comparable": 166,
@@ -475,42 +464,20 @@
       "top_cve": "CVE-2024-4596"
     },
     {
-      "name": "596c5446-0ce5-4ba2-aa66-48b3b757a647",
-      "total": 12,
-      "comparable": 5,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
+      "name": "vulncheck",
+      "total": 3491,
+      "comparable": 170,
+      "conflicts": 1,
+      "conflict_rate": 0.6,
+      "avg_drift": 0.9,
+      "nvd_higher_count": 1,
       "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "or",
-      "total": 574,
-      "comparable": 8,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
+      "top_cve": "CVE-2024-9440"
     },
     {
       "name": "6a34fbeb-21d4-45e7-8e0a-62b95bc12c92",
       "total": 17,
       "comparable": 10,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "vuldb.com",
-      "total": 345,
-      "comparable": 6,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -544,6 +511,39 @@
       "name": "trendmicro",
       "total": 1868,
       "comparable": 12,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "596c5446-0ce5-4ba2-aa66-48b3b757a647",
+      "total": 12,
+      "comparable": 5,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "vuldb.com",
+      "total": 345,
+      "comparable": 6,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "or",
+      "total": 574,
+      "comparable": 8,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
