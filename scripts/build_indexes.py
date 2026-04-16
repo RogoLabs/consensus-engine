@@ -3,12 +3,37 @@
 
 import csv
 import json
+import re
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
 DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
 INDEXES_DIR = DATA_DIR / "indexes"
+
+_UUID_RE = re.compile(
+    r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", re.I
+)
+
+
+def _load_cna_uuid_map() -> dict[str, str]:
+    """Load the UUID → short name map produced by build_cna_map.py."""
+    map_path = INDEXES_DIR / "cna-uuid-map.json"
+    if map_path.exists():
+        try:
+            return json.loads(map_path.read_text())
+        except Exception:
+            pass
+    return {}
+
+
+def resolve_cna(raw: str | None, uuid_map: dict[str, str]) -> str | None:
+    """Return a human-readable CNA name, resolving UUID-style identifiers."""
+    if not raw:
+        return None
+    if _UUID_RE.match(raw):
+        return uuid_map.get(raw, raw)  # fall back to UUID if not in map
+    return raw
 LEADERBOARD_PATH = INDEXES_DIR / "leaderboard.json"
 CONFLICT_MAP_PATH = INDEXES_DIR / "conflict-map.json"
 REJECTED_CSV_PATH = DATA_DIR / "rejected-with-ghsa.csv"
@@ -330,12 +355,17 @@ def main():
 
     print(f"Building indexes from {len(cve_files)} CVE files...")
 
+    uuid_map = _load_cna_uuid_map()
+    print(f"Loaded {len(uuid_map)} CNA UUID mappings")
+
     all_records = []
     for path in cve_files:
         try:
             record = json.loads(path.read_text())
             if "drift_score" not in record:
                 continue
+            # Resolve UUID-style assigning_cna to human-readable name
+            record["assigning_cna"] = resolve_cna(record.get("assigning_cna"), uuid_map)
             all_records.append(record)
         except Exception as e:
             print(f"  Error reading {path.name}: {e}")

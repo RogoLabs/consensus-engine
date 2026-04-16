@@ -50,6 +50,9 @@ jobs:
       - name: Compute Drift Scores
         run: python scripts/compute_drift.py
 
+      - name: Build CNA UUID Map
+        run: python scripts/build_cna_map.py
+
       - name: Build Indexes
         run: python scripts/build_indexes.py
 
