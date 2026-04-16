@@ -12320,6 +12320,14 @@
     "published_date": "2026-04-03"
   },
   {
+    "cve_id": "CVE-2026-35607",
+    "nvd_score": 8.8,
+    "github_score": 8.1,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2026-04-07"
+  },
+  {
     "cve_id": "CVE-2026-39305",
     "nvd_score": 10.0,
     "github_score": 9.0,
