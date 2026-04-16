@@ -29,20 +29,25 @@ def build_headers():
 
 
 def _is_transient(exc):
-    """Retry on 429 and 5xx only — not on 404 or other client errors."""
+    """Retry on 429, 5xx, and transient network errors (dropped connections, protocol errors)."""
     if isinstance(exc, requests.HTTPError):
         status = exc.response.status_code if exc.response is not None else 0
         return status == 429 or status >= 500
+    # NVD sometimes drops connections mid-stream; these are always safe to retry
+    if isinstance(exc, (requests.exceptions.ChunkedEncodingError,
+                        requests.exceptions.ConnectionError,
+                        requests.exceptions.ReadTimeout)):
+        return True
     return False
 
 
 @retry(
     retry=retry_if_exception(_is_transient),
-    wait=wait_exponential(multiplier=1, min=4, max=60),
-    stop=stop_after_attempt(5),
+    wait=wait_exponential(multiplier=2, min=5, max=120),
+    stop=stop_after_attempt(7),
 )
 def fetch_page(params):
-    resp = requests.get(NVD_API_BASE, headers=build_headers(), params=params, timeout=30)
+    resp = requests.get(NVD_API_BASE, headers=build_headers(), params=params, timeout=60)
     resp.raise_for_status()
     return resp.json()
 
