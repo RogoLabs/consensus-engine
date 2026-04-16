@@ -27,7 +27,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <style> body { font-family: 'Inter', sans-serif; } </style>
 </head>
-<body class="min-h-full bg-surface text-gray-100" x-data="cnaPage()" x-init="init()">
+<body class="min-h-full bg-surface text-gray-100" x-data="cnaPage()">
 
   <!-- Header -->
   <header class="border-b border-surface-border sticky top-0 z-40 bg-surface">
@@ -39,7 +39,7 @@
           <span class="sm:hidden">VulnAnarchy</span>
         </a>
         <nav class="flex items-center gap-4 text-sm">
-          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Leaderboard</a>
+          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Score Conflicts</a>
           <a href="anarchy-map.html" class="text-gray-400 hover:text-white transition-colors">Anarchy Map</a>
           <a href="vector-breakdown.html" class="text-gray-400 hover:text-white transition-colors hidden sm:inline">Vector Breakdown</a>
           <a href="cna.html" class="text-white font-medium">CNAs</a>
@@ -69,91 +69,89 @@
 
     <!-- Loading/error -->
     <div x-show="loading" class="text-center py-24 text-gray-500 text-sm">Loading CNA data…</div>
-    <div x-show="error" class="bg-red-950 border border-red-800 text-red-300 px-4 py-3 rounded-lg text-sm mb-6" x-text="error"></div>
+    <div x-show="error && !loading" class="bg-red-950 border border-red-800 text-red-300 px-4 py-3 rounded-lg text-sm mb-6" x-text="error"></div>
 
-    <!-- Stats cards -->
-    <template x-if="!loading && data">
-      <div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div class="bg-surface-card border border-surface-border rounded-xl p-4">
-            <div class="text-2xl font-bold text-brand" x-text="data.cnas.length"></div>
-            <div class="text-gray-400 text-xs mt-1">CNAs with conflicts</div>
-          </div>
-          <div class="bg-surface-card border border-surface-border rounded-xl p-4">
-            <div class="text-2xl font-bold text-red-400"
-                 x-text="topCNA?.name ?? '—'"></div>
-            <div class="text-gray-400 text-xs mt-1">Highest conflict rate CNA</div>
-          </div>
-          <div class="bg-surface-card border border-surface-border rounded-xl p-4">
-            <div class="text-2xl font-bold text-orange-400"
-                 x-text="topCNA ? (topCNA.conflict_rate * 100).toFixed(0) + '%' : '—'"></div>
-            <div class="text-gray-400 text-xs mt-1">Peak conflict rate</div>
-          </div>
-          <div class="bg-surface-card border border-surface-border rounded-xl p-4">
-            <div class="text-2xl font-bold text-yellow-400"
-                 x-text="data.generated_at ? data.generated_at.slice(0, 10) : '—'"></div>
-            <div class="text-gray-400 text-xs mt-1">Data as of</div>
-          </div>
+    <!-- Stats cards + table -->
+    <div x-show="!loading && !error">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-surface-card border border-surface-border rounded-xl p-4">
+          <div class="text-2xl font-bold text-brand" x-text="cnas.length"></div>
+          <div class="text-gray-400 text-xs mt-1">CNAs with conflicts</div>
         </div>
-
-        <!-- Table -->
-        <div class="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
-          <div class="px-4 py-3 border-b border-surface-border flex items-center gap-3">
-            <span class="text-sm font-medium text-gray-300" x-text="`${filtered.length} CNAs`"></span>
-            <input x-model="search" type="search" placeholder="Filter by CNA name…"
-                   class="ml-auto bg-surface border border-surface-border text-gray-200 placeholder-gray-600 rounded px-2.5 py-1 text-xs focus:outline-none focus:border-brand w-44" />
-          </div>
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm">
-              <thead>
-                <tr class="border-b border-surface-border text-gray-500 text-xs uppercase tracking-wider">
-                  <th class="px-4 py-3 text-left">#</th>
-                  <th class="px-4 py-3 text-left">CNA</th>
-                  <th class="px-4 py-3 text-right cursor-pointer hover:text-white" @click="sortBy('conflict_rate')">
-                    Conflict Rate <span x-show="sort === 'conflict_rate'">↓</span>
-                  </th>
-                  <th class="px-4 py-3 text-right cursor-pointer hover:text-white hidden sm:table-cell" @click="sortBy('conflict_count')">
-                    Conflicts <span x-show="sort === 'conflict_count'">↓</span>
-                  </th>
-                  <th class="px-4 py-3 text-right hidden md:table-cell">Total CVEs</th>
-                  <th class="px-4 py-3 text-right hidden md:table-cell">Avg Drift</th>
-                  <th class="px-4 py-3 text-right hidden lg:table-cell">NVD Higher %</th>
-                  <th class="px-4 py-3 text-right hidden lg:table-cell">GH Higher %</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-surface-border">
-                <template x-for="(row, i) in filtered" :key="row.name">
-                  <tr class="transition-colors hover:bg-surface">
-                    <td class="px-4 py-3 text-gray-600 text-xs" x-text="i + 1"></td>
-                    <td class="px-4 py-3 font-medium" x-text="row.name"></td>
-                    <td class="px-4 py-3 text-right">
-                      <div class="flex items-center justify-end gap-2">
-                        <div class="h-2 rounded-full bg-surface-border w-20 hidden sm:block">
-                          <div class="h-2 rounded-full"
-                               :class="row.conflict_rate >= 30 ? 'bg-red-500' : row.conflict_rate >= 15 ? 'bg-orange-500' : 'bg-yellow-500'"
-                               :style="`width: ${Math.min(row.conflict_rate, 100)}%`"></div>
-                        </div>
-                        <span :class="row.conflict_rate >= 30 ? 'text-red-400' : row.conflict_rate >= 15 ? 'text-orange-400' : 'text-yellow-400'"
-                              x-text="`${row.conflict_rate.toFixed(1)}%`"></span>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3 text-right text-gray-300 hidden sm:table-cell" x-text="row.conflicts"></td>
-                    <td class="px-4 py-3 text-right text-gray-500 hidden md:table-cell" x-text="row.comparable"></td>
-                    <td class="px-4 py-3 text-right font-mono hidden md:table-cell"
-                        :class="row.avg_drift >= 3 ? 'text-red-400' : row.avg_drift >= 1.5 ? 'text-orange-400' : 'text-gray-300'"
-                        x-text="row.avg_drift.toFixed(2)"></td>
-                    <td class="px-4 py-3 text-right text-red-400 hidden lg:table-cell"
-                        x-text="row.conflicts ? `${(row.nvd_higher_count / row.conflicts * 100).toFixed(0)}%` : '—'"></td>
-                    <td class="px-4 py-3 text-right text-yellow-400 hidden lg:table-cell"
-                        x-text="row.conflicts ? `${(row.gh_higher_count / row.conflicts * 100).toFixed(0)}%` : '—'"></td>
-                  </tr>
-                </template>
-              </tbody>
-            </table>
-          </div>
+        <div class="bg-surface-card border border-surface-border rounded-xl p-4">
+          <div class="text-2xl font-bold text-red-400"
+               x-text="cnas[0]?.name ?? '—'"></div>
+          <div class="text-gray-400 text-xs mt-1">Highest conflict rate CNA</div>
+        </div>
+        <div class="bg-surface-card border border-surface-border rounded-xl p-4">
+          <div class="text-2xl font-bold text-orange-400"
+               x-text="cnas[0] ? cnas[0].conflict_rate.toFixed(1) + '%' : '—'"></div>
+          <div class="text-gray-400 text-xs mt-1">Peak conflict rate</div>
+        </div>
+        <div class="bg-surface-card border border-surface-border rounded-xl p-4">
+          <div class="text-2xl font-bold text-yellow-400"
+               x-text="generatedAt ? generatedAt.slice(0, 10) : '—'"></div>
+          <div class="text-gray-400 text-xs mt-1">Data as of</div>
         </div>
       </div>
-    </template>
+
+      <!-- Table -->
+      <div class="bg-surface-card border border-surface-border rounded-xl overflow-hidden">
+        <div class="px-4 py-3 border-b border-surface-border flex items-center gap-3">
+          <span class="text-sm font-medium text-gray-300" x-text="`${filtered.length} CNAs`"></span>
+          <input x-model="search" type="search" placeholder="Filter by CNA name…"
+                 class="ml-auto bg-surface border border-surface-border text-gray-200 placeholder-gray-600 rounded px-2.5 py-1 text-xs focus:outline-none focus:border-brand w-44" />
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-surface-border text-gray-500 text-xs uppercase tracking-wider">
+                <th class="px-4 py-3 text-left">#</th>
+                <th class="px-4 py-3 text-left">CNA</th>
+                <th class="px-4 py-3 text-right cursor-pointer hover:text-white" @click="sortBy('conflict_rate')">
+                  Conflict Rate <span x-show="sort === 'conflict_rate'">↓</span>
+                </th>
+                <th class="px-4 py-3 text-right cursor-pointer hover:text-white hidden sm:table-cell" @click="sortBy('conflicts')">
+                  Conflicts <span x-show="sort === 'conflicts'">↓</span>
+                </th>
+                <th class="px-4 py-3 text-right hidden md:table-cell">Total CVEs</th>
+                <th class="px-4 py-3 text-right hidden md:table-cell">Avg Drift</th>
+                <th class="px-4 py-3 text-right hidden lg:table-cell">NVD Higher %</th>
+                <th class="px-4 py-3 text-right hidden lg:table-cell">GH Higher %</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-surface-border">
+              <template x-for="(row, i) in filtered" :key="row.name">
+                <tr class="transition-colors hover:bg-surface">
+                  <td class="px-4 py-3 text-gray-600 text-xs" x-text="i + 1"></td>
+                  <td class="px-4 py-3 font-medium" x-text="row.name"></td>
+                  <td class="px-4 py-3 text-right">
+                    <div class="flex items-center justify-end gap-2">
+                      <div class="h-2 rounded-full bg-surface-border w-20 hidden sm:block">
+                        <div class="h-2 rounded-full"
+                             :class="row.conflict_rate >= 30 ? 'bg-red-500' : row.conflict_rate >= 15 ? 'bg-orange-500' : 'bg-yellow-500'"
+                             :style="`width: ${Math.min(row.conflict_rate, 100)}%`"></div>
+                      </div>
+                      <span :class="row.conflict_rate >= 30 ? 'text-red-400' : row.conflict_rate >= 15 ? 'text-orange-400' : 'text-yellow-400'"
+                            x-text="`${row.conflict_rate.toFixed(1)}%`"></span>
+                    </div>
+                  </td>
+                  <td class="px-4 py-3 text-right text-gray-300 hidden sm:table-cell" x-text="row.conflicts"></td>
+                  <td class="px-4 py-3 text-right text-gray-500 hidden md:table-cell" x-text="row.comparable"></td>
+                  <td class="px-4 py-3 text-right font-mono hidden md:table-cell"
+                      :class="row.avg_drift >= 3 ? 'text-red-400' : row.avg_drift >= 1.5 ? 'text-orange-400' : 'text-gray-300'"
+                      x-text="row.avg_drift.toFixed(2)"></td>
+                  <td class="px-4 py-3 text-right text-red-400 hidden lg:table-cell"
+                      x-text="row.conflicts ? `${(row.nvd_higher_count / row.conflicts * 100).toFixed(0)}%` : '—'"></td>
+                  <td class="px-4 py-3 text-right text-yellow-400 hidden lg:table-cell"
+                      x-text="row.conflicts ? `${(row.gh_higher_count / row.conflicts * 100).toFixed(0)}%` : '—'"></td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="border-t border-surface-border mt-12 py-6 text-center text-gray-600 text-xs">
@@ -166,7 +164,8 @@
       return {
         loading: true,
         error: null,
-        data: null,
+        cnas: [],
+        generatedAt: null,
         sort: 'conflict_rate',
         search: '',
 
@@ -174,7 +173,9 @@
           try {
             const res = await fetch('data/indexes/cna-stats.json');
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            this.data = await res.json();
+            const json = await res.json();
+            this.cnas = json.cnas ?? [];
+            this.generatedAt = json.generated_at ?? null;
           } catch (e) {
             this.error = `Failed to load CNA data: ${e.message}`;
           } finally {
@@ -184,14 +185,8 @@
 
         sortBy(field) { this.sort = field; },
 
-        get topCNA() {
-          if (!this.data?.cnas?.length) return null;
-          return [...this.data.cnas].sort((a, b) => b.conflict_rate - a.conflict_rate)[0];
-        },
-
         get filtered() {
-          if (!this.data?.cnas) return [];
-          let result = [...this.data.cnas].sort((a, b) => (b[this.sort] ?? 0) - (a[this.sort] ?? 0));
+          let result = [...this.cnas].sort((a, b) => (b[this.sort] ?? 0) - (a[this.sort] ?? 0));
           const q = this.search.trim().toLowerCase();
           if (q) result = result.filter(r => r.name.toLowerCase().includes(q));
           return result;
