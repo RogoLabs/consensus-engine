@@ -22,7 +22,7 @@ NVD_MAX_RANGE_DAYS = 120
 
 
 def build_headers():
-    headers = {"User-Agent": "vuln-anarchy/1.0"}
+    headers = {"User-Agent": "consensus-engine/1.0"}
     if API_KEY:
         headers["apiKey"] = API_KEY
     return headers

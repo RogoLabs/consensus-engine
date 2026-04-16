@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CVE Nutrition Label — Vulnerability Anarchy</title>
+  <title>CVE Nutrition Label — The Consensus Engine</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -206,7 +206,7 @@
           const id = params.get('id');
           if (!id) { this.error = 'No CVE ID provided.'; this.loading = false; return; }
 
-          document.title = `${id} — Vulnerability Anarchy`;
+          document.title = `${id} — The Consensus Engine`;
           const year = id.split('-')[1];
 
           try {

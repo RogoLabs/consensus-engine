@@ -1,4 +1,4 @@
-# Vulnerability Anarchy
+# The Consensus Engine
 
 ### The Vulnerability Data Integrity Gap
 
@@ -9,9 +9,9 @@
 [![Data Updated](https://img.shields.io/badge/Data-Daily-brightgreen.svg)](https://rogolabs.github.io/vuln-anarchy/)
 [![Built by RogoLabs](https://img.shields.io/badge/Built%20by-RogoLabs-orange.svg)](https://rogolabs.net)
 
-**Vulnerability Anarchy** is an open-source data project by [RogoLabs](https://rogolabs.net) that continuously measures **scoring divergence** between the [National Vulnerability Database (NVD)](https://nvd.nist.gov/) and the [GitHub Advisory Database](https://github.com/advisories). It surfaces every CVE where these two authoritative sources reach meaningfully different conclusions — and makes that data freely available for research, tooling, and advocacy.
+**The Consensus Engine** is an open-source data project by [RogoLabs](https://rogolabs.net) that continuously measures **scoring divergence** between the [National Vulnerability Database (NVD)](https://nvd.nist.gov/) and the [GitHub Advisory Database](https://github.com/advisories). It surfaces every CVE where these two authoritative sources reach meaningfully different conclusions — and makes that data freely available for research, tooling, and advocacy.
 
-**[→ Drift Leaderboard](https://rogolabs.github.io/vuln-anarchy/)** · **[→ Anarchy Map](https://rogolabs.github.io/vuln-anarchy/anarchy-map.html)** · **[→ Download CSV](https://rogolabs.github.io/vuln-anarchy/data/conflicts.csv)**
+**[→ Score Conflicts](https://rogolabs.github.io/vuln-anarchy/)** · **[→ Conflict Map](https://rogolabs.github.io/vuln-anarchy/conflict-map.html)** · **[→ Download CSV](https://rogolabs.github.io/vuln-anarchy/data/conflicts.csv)**
 
 ---
 
@@ -31,7 +31,7 @@ The NVD and the GitHub Advisory Database independently score thousands of the sa
 
 - **Drift Leaderboard** — top 100 CVEs ranked by scoring divergence, updated daily
 - **NVD Rejected / GH Active tracking** — CVEs that NVD has withdrawn but GitHub Advisory continues to score as a live threat; the most extreme data integrity failures in the corpus
-- **Anarchy Map** — scatter plot of NVD vs. GitHub CVSS scores with year-over-year conflict trends
+- **Conflict Map** — scatter plot of NVD vs. GitHub CVSS scores with year-over-year conflict trends
 - **Bulk CSV export** — all scoring conflicts as a flat file, ready for SIEM ingestion, research, or further analysis
 - **100% static** — no backend, no database; the repository *is* the dataset
 
@@ -96,7 +96,7 @@ GitHub Actions (Python)        /docs/data/{year}/CVE-ID.json    GitHub Pages (St
 └─────────────────────────┘
 ```
 
-All aggregate indexes (leaderboard, Anarchy Map data) are **pre-computed by CI and committed to the repository** — never ranked or computed client-side. This ensures reproducibility and keeps the UI dependency-free.
+All aggregate indexes (leaderboard, Conflict Map data) are **pre-computed by CI and committed to the repository** — never ranked or computed client-side. This ensures reproducibility and keeps the UI dependency-free.
 
 ---
 
@@ -123,7 +123,7 @@ export GH_TOKEN="your-github-token"
 # Ingest data (runs NVD + GitHub Advisory fetches, computes Drift Scores)
 python scripts/ingest.py
 
-# Build pre-computed indexes (leaderboard, anarchy-map, CSV)
+# Build pre-computed indexes (leaderboard, conflict-map, CSV)
 python scripts/build_indexes.py
 ```
 

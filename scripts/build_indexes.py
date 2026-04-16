@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build pre-computed index files: leaderboard.json, anarchy-map.json, stats.json, vector-analysis.json, cna-stats.json, backlog.json, coverage-gap.json, and CSV exports."""
+"""Build pre-computed index files: leaderboard.json, conflict-map.json, stats.json, vector-analysis.json, cna-stats.json, backlog.json, coverage-gap.json, and CSV exports."""
 
 import csv
 import json
@@ -10,7 +10,7 @@ from pathlib import Path
 DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
 INDEXES_DIR = DATA_DIR / "indexes"
 LEADERBOARD_PATH = INDEXES_DIR / "leaderboard.json"
-ANARCHY_MAP_PATH = INDEXES_DIR / "anarchy-map.json"
+CONFLICT_MAP_PATH = INDEXES_DIR / "conflict-map.json"
 REJECTED_CSV_PATH = DATA_DIR / "rejected-with-ghsa.csv"
 CONFLICTS_CSV_PATH = DATA_DIR / "conflicts.csv"
 
@@ -147,7 +147,7 @@ def build_leaderboard_entry(record: dict):
     }
 
 
-def build_anarchy_map_entry(record: dict):
+def build_conflict_map_entry(record: dict):
     nvd = record.get("sources", {}).get("nvd", {})
     github = record.get("sources", {}).get("github", {})
     return {
@@ -357,9 +357,9 @@ def main():
     print(f"Leaderboard written: {LEADERBOARD_PATH} ({len(leaderboard)} entries)")
 
     # Anarchy Map: conflict CVEs only (both NVD and GitHub have scores)
-    anarchy_map = [build_anarchy_map_entry(r) for r in conflict_records]
-    ANARCHY_MAP_PATH.write_text(json.dumps(anarchy_map, indent=2))
-    print(f"Anarchy Map written: {ANARCHY_MAP_PATH} ({len(anarchy_map)} entries)")
+    conflict_map = [build_conflict_map_entry(r) for r in conflict_records]
+    CONFLICT_MAP_PATH.write_text(json.dumps(conflict_map, indent=2))
+    print(f"Conflict Map written: {CONFLICT_MAP_PATH} ({len(conflict_map)} entries)")
 
     # Vector Analysis: per-metric CVSS disagreement breakdown
     vector_analysis = build_vector_analysis(conflict_records)
