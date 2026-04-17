@@ -29,6 +29,8 @@ A deep audit of all four pipeline scripts and seven HTML pages identified issues
 
 **Impact:** Top leaderboard entries drop from 7.1 to 6.9. All stats recalculate. The formula becomes reproducible by anyone who downloads the CSV.
 
+**Note:** After this fix, `drift_score` == `cvss_variance` for all non-rejected CVEs. The `drift_score` field is retained for now (it could diverge again if the formula evolves), but the methodology page should note they are currently equivalent.
+
 ### 1B. Fix rejected CVE scoring
 
 **Problem:** Rejected CVE drift_score = GitHub CVSS score (e.g., 9.8). This conflates "how severe GitHub thinks it is" with "how much sources disagree." CVE-2022-50807 gets drift_score 9.8 with cvss_variance 0.0.
@@ -68,6 +70,7 @@ The callout auto-updates as data changes.
 **Fix (frontend only, no classification change):**
 
 - Add a variance range filter to the leaderboard toolbar: `All | Δ >= 0.5 | Δ >= 1.0 | Δ >= 2.0` (toggle buttons, same style as existing sort buttons). Default: `All`
+- Add a Deferred filter toggle: `Hide CNA pass-through` checkbox that excludes CVEs where `nvd_status == "Deferred"`. This lets users see only genuine NVD-independent-vs-GitHub disagreements.
 - Update the conflict count stat card subtitle to show both raw and filtered: "1,567 total · 1,048 at Δ >= 1.0"
 
 **Rationale:** Changing the conflict classification threshold would be opinionated. Showing the distribution lets users draw their own line.
@@ -93,9 +96,12 @@ The callout auto-updates as data changes.
 4. **Data sources** — NVD API 2.0 (with note about CNA pass-through for Deferred status) and GitHub Advisory Database
 5. **Known limitations:**
    - Ecosystem bias: GitHub Advisory covers software packages (npm, Maven, pip, Go, NuGet, etc.) but not hardware, firmware, or network appliances. The conflict rate is representative of these ecosystems, not all CVEs.
+   - Survivorship bias: Only 4.5% of CVEs (6,163 / 137,803) have scores from both NVD and GitHub. The 25.4% conflict rate applies to this small, non-random subset. Do not generalize to "25% of all CVEs."
    - Deferred CVEs: ~7% of conflicts use CNA-provided scores via NVD, not NVD's independent analysis.
+   - GitHub upstream sources: GitHub Advisory scores are not always independent assessments — many come from maintainer-submitted advisories or CNA-provided vectors. When GitHub and the CNA agree but NVD independently re-scores, the "disagreement" is NVD-vs-CNA, not NVD-vs-GitHub.
    - Temporal alignment: NVD and GitHub data are fetched in the same CI run but not simultaneously; scores for very new CVEs could shift between fetches.
-   - Rounding: CVSS calculators can produce Δ0.1 differences from identical vector assessments. ~8% of conflicts are Δ0.1.
+   - Rounding: CVSS calculators can produce Δ0.1 differences from identical vector assessments. ~8% of conflicts are Δ0.1. Deltas of 0.2-0.3 may also be implementation artifacts.
+   - Terminology: `cvss_variance` in the data is the _range_ (max − min), not statistical variance. It is equivalent to `|GitHub CVSS − NVD CVSS|`.
 6. **Update frequency** — daily at 02:00 UTC, incremental
 7. **How to cite** — suggested citation format for researchers
 
@@ -129,23 +135,25 @@ The callout auto-updates as data changes.
 - `build_indexes.py`: compute `severity_flip_matrix` as a dict of `"NVD_band→GH_band": count` pairs
 - Add to `stats.json`
 
-**Frontend:** HTML table or CSS grid with background color intensity. No Chart.js needed — a styled 4x4 grid is cleaner and more readable for this data shape.
+**Frontend:** HTML table or CSS grid with background color intensity. No Chart.js needed — a styled 4x4 grid is cleaner and more readable for this data shape. Include marginal totals (row and column sums) so readers can compute conditional probabilities (e.g., "given NVD says Critical, what fraction does GitHub also say Critical?").
 
 ### 3C. Directional Bias Over Time
 
-**What:** Line chart showing NVD-higher count vs GH-higher count by year.
+**What:** Line chart showing NVD-higher vs GH-higher conflict _rate_ by year, normalized by comparable CVEs per year.
 
 **Where:** New section on `conflict-map.html`, below existing "Conflicts by Year" bar chart. The bar chart shows volume; this shows direction. Natural pairing.
 
 **Data changes:**
 
-- `build_indexes.py`: extend conflict-by-year computation to split by direction
+- `build_indexes.py`: extend conflict-by-year computation to split by direction AND track comparable count per year
 - Add `conflict_direction_by_year` to `stats.json`:
   ```json
-  {"2024": {"nvd_higher": 310, "gh_higher": 245}, ...}
+  {"2024": {"nvd_higher": 310, "gh_higher": 245, "comparable": 1800}, ...}
   ```
 
-**Frontend:** Chart.js line chart, two lines (orange for NVD-higher, blue for GH-higher).
+**Frontend:** Chart.js line chart, two lines (orange for NVD-higher %, blue for GH-higher %). Y-axis is percentage of comparable CVEs, not raw counts — raw counts would show growth that reflects data volume, not changing disagreement patterns.
+
+**Important:** Years with fewer than ~20 comparable CVEs should be excluded to avoid noisy rates from small samples.
 
 ### 3D. Drift by CWE Category
 
