@@ -9,7 +9,16 @@ DATA_DIR = Path(__file__).parent.parent / "docs" / "data"
 # CWEs that are effectively meaningless for defenders
 WEAK_CWES = {"NVD-CWE-noinfo", "NVD-CWE-Other", "CWE-noinfo", "CWE-Other"}
 # Mid-level/generic CWEs — present but not specific
-GENERIC_CWES = {"CWE-693", "CWE-664", "CWE-682", "CWE-435", "CWE-691", "CWE-703", "CWE-707", "CWE-710"}
+GENERIC_CWES = {
+    "CWE-693",
+    "CWE-664",
+    "CWE-682",
+    "CWE-435",
+    "CWE-691",
+    "CWE-703",
+    "CWE-707",
+    "CWE-710",
+}
 
 # CVSS severity bands (CVSS v3 thresholds)
 _SEVERITY_BANDS = [
@@ -135,7 +144,8 @@ def classify_drift_type(record: dict, cvss_variance: float, by_version: dict):
 def source_conflict_count(sources: dict):
     """Count how many sources have data (for Anarchy Map color intensity)."""
     return sum(
-        1 for k, v in sources.items()
+        1
+        for k, v in sources.items()
         if k not in ("cisa_kev", "epss") and v.get("cvss_score") is not None
     )
 
@@ -147,14 +157,14 @@ def compute_drift_score(
     max_other_score: float | None = None,
 ):
     """
-    Drift score = |GH − NVD| + metadata_conflict (capped at 10.0) for conflict/gap CVEs.
-    metadata_conflict (0.0–1.0) adds up to 1 additional point for CWE/version-range gaps.
-    For rejected CVEs: the GitHub score itself (NVD has no score to compare).
+    Drift score = |GH − NVD| (capped at 10.0) for conflict/gap CVEs.
+    metadata_conflict is computed and stored but does not affect drift_score.
+    For rejected CVEs: 0.0 (existence dispute, not score dispute).
     Tombstones (rejected, no other source): 0.0.
     """
     if drift_type == "rejected":
-        return round(max_other_score, 2) if max_other_score is not None else 0.0
-    return round(min(cvss_variance + metadata_conflict, 10.0), 2)
+        return 0.0
+    return round(min(cvss_variance, 10.0), 2)
 
 
 def process_file(path: Path):
@@ -192,7 +202,9 @@ def process_file(path: Path):
         gh_severity = get_severity_band(gh_score)
         if nvd_severity and gh_severity and nvd_severity != gh_severity:
             severity_flip = True
-            severity_flip_direction = "NVD_higher" if nvd_score > gh_score else "GH_higher"
+            severity_flip_direction = (
+                "NVD_higher" if nvd_score > gh_score else "GH_higher"
+            )
 
     record["drift_score"] = drift_score
     record["drift_type"] = drift_type
@@ -236,7 +248,9 @@ def main():
             print(f"  {total} CVEs processed...")
 
     print(f"Done. {total} CVEs scored.")
-    print(f"  conflict: {counts['conflict']}  gap: {counts['gap']}  rejected: {counts['rejected']}")
+    print(
+        f"  conflict: {counts['conflict']}  gap: {counts['gap']}  rejected: {counts['rejected']}"
+    )
 
 
 if __name__ == "__main__":
