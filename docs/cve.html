@@ -1,328 +1,932 @@
-<!DOCTYPE html>
-<html lang="en" class="bg-gray-950 text-gray-100">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CVE Nutrition Label — The Consensus Engine</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body class="min-h-screen font-mono">
-
-  <div x-data="cvePage()" x-init="init()" class="max-w-3xl mx-auto px-4 py-10">
-
-    <nav class="mb-6 text-sm">
-      <a href="index.html" class="text-blue-400 hover:text-blue-300">← Leaderboard</a>
-    </nav>
-
-    <!-- Loading / error -->
-    <div x-show="loading" class="text-gray-500 text-sm">Loading CVE data…</div>
-    <div x-show="error" class="text-red-400 text-sm" x-text="error"></div>
-
-    <div x-show="!loading && !error && cve">
-
-      <!-- Header -->
-      <div class="mb-6">
-        <div class="flex items-center gap-3 flex-wrap">
-          <h1 class="text-2xl font-bold text-white" x-text="cve.cve_id"></h1>
-          <span :class="driftTypeBadge(cve.drift_type)" class="px-2 py-0.5 rounded text-xs font-semibold" x-text="cve.drift_type"></span>
-          <span class="text-xs text-gray-500">CNA: <span class="text-gray-300" x-text="cve.assigning_cna ?? 'unknown'"></span></span>
-        </div>
-        <p class="mt-1 text-sm text-gray-400">
-          Drift Score: <span class="font-bold" :class="scoreColor(cve.drift_score)" x-text="cve.drift_score?.toFixed(1)"></span>
-          · CVSS Variance: <span x-text="cve.cvss_variance?.toFixed(1) ?? '—'"></span>
-          · Sources with data: <span x-text="cve.source_count ?? '—'"></span>
-        </p>
-      </div>
-
-      <!-- Nutrition Label -->
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold mb-3 text-gray-300">🥦 CVE Nutrition Label</h2>
-
-        <div class="space-y-2">
-          <!-- Coverage -->
-          <template x-if="nutrition">
-            <div class="space-y-2">
-
-              <div class="flex items-center gap-3 p-3 bg-gray-900 rounded">
-                <span :class="trafficLight(nutrition.coverage.color)" class="text-lg">●</span>
-                <div class="flex-1">
-                  <span class="text-sm font-medium">Coverage</span>
-                  <span class="ml-2 text-xs text-gray-500" x-text="nutrition.coverage.detail"></span>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3 bg-gray-900 rounded">
-                <span :class="trafficLight(nutrition.agreement.color)" class="text-lg">●</span>
-                <div class="flex-1">
-                  <span class="text-sm font-medium">Agreement</span>
-                  <span class="ml-2 text-xs text-gray-500" x-text="nutrition.agreement.detail"></span>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3 bg-gray-900 rounded">
-                <span :class="trafficLight(nutrition.timeliness.color)" class="text-lg">●</span>
-                <div class="flex-1">
-                  <span class="text-sm font-medium">Timeliness</span>
-                  <span class="ml-2 text-xs text-gray-500" x-text="nutrition.timeliness.detail"></span>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3 bg-gray-900 rounded border border-gray-800">
-                <span :class="trafficLight(nutrition.exploitation.color)" class="text-lg">●</span>
-                <div class="flex-1">
-                  <span class="text-sm font-medium">Exploitation Signal</span>
-                  <span class="ml-2 text-xs text-gray-500" x-text="nutrition.exploitation.detail"></span>
-                </div>
-                <span class="text-xs text-yellow-600 italic">⚠ red = high risk (act now)</span>
-              </div>
-
-              <div class="flex items-center gap-3 p-3 bg-gray-900 rounded">
-                <span :class="trafficLight(nutrition.remediation.color)" class="text-lg">●</span>
-                <div class="flex-1">
-                  <span class="text-sm font-medium">Remediation Clarity</span>
-                  <span class="ml-2 text-xs text-gray-500" x-text="nutrition.remediation.detail"></span>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3 bg-gray-900 rounded">
-                <span :class="trafficLight(nutrition.cwe_quality.color)" class="text-lg">●</span>
-                <div class="flex-1">
-                  <span class="text-sm font-medium">CWE Quality</span>
-                  <span class="ml-2 text-xs text-gray-500" x-text="nutrition.cwe_quality.detail"></span>
-                </div>
-              </div>
-
-            </div>
-          </template>
-        </div>
-      </section>
-
-      <!-- Per-source scores -->
-      <section class="mb-8">
-        <h2 class="text-lg font-semibold mb-3 text-gray-300">Source Scores</h2>
-        <div class="space-y-2">
-
-          <!-- NVD -->
-          <template x-if="cve.sources?.nvd">
-            <div class="p-3 bg-gray-900 rounded">
-              <div class="flex items-center justify-between flex-wrap gap-2">
-                <span class="text-sm font-medium">NVD</span>
-                <div class="flex items-center gap-2 text-xs">
-                  <template x-if="cve.sources.nvd.cvss_score != null">
-                    <span class="font-bold text-white" x-text="cve.sources.nvd.cvss_score"></span>
-                  </template>
-                  <template x-if="cve.sources.nvd.cvss_score == null">
-                    <span class="text-gray-600">no score</span>
-                  </template>
-                  <template x-if="cve.sources.nvd.cvss_version">
-                    <span class="px-1.5 py-0.5 bg-gray-800 rounded text-gray-400" x-text="`v${cve.sources.nvd.cvss_version}`"></span>
-                  </template>
-                  <span :class="statusColor(cve.sources.nvd.status)" x-text="cve.sources.nvd.status"></span>
-                </div>
-              </div>
-              <template x-if="cve.sources.nvd.days_to_analysis != null">
-                <p class="text-xs text-gray-600 mt-1">NVD analysis lag: <span class="text-gray-400" x-text="`${cve.sources.nvd.days_to_analysis} days`"></span></p>
-              </template>
-              <template x-if="cve.sources.nvd.cwe?.length">
-                <p class="text-xs text-gray-600 mt-1">CWE: <span class="text-gray-400" x-text="cve.sources.nvd.cwe.join(', ')"></span></p>
-              </template>
-            </div>
-          </template>
-
-          <!-- GitHub -->
-          <template x-if="cve.sources?.github">
-            <div class="p-3 bg-gray-900 rounded">
-              <div class="flex items-center justify-between flex-wrap gap-2">
-                <span class="text-sm font-medium">GitHub Advisory</span>
-                <div class="flex items-center gap-2 text-xs">
-                  <template x-if="cve.sources.github.cvss_score != null">
-                    <span class="font-bold text-white" x-text="cve.sources.github.cvss_score"></span>
-                  </template>
-                  <template x-if="cve.sources.github.cvss_score == null">
-                    <span class="text-gray-600">no score</span>
-                  </template>
-                  <template x-if="cve.sources.github.cvss_version">
-                    <span class="px-1.5 py-0.5 bg-gray-800 rounded text-gray-400" x-text="`v${cve.sources.github.cvss_version}`"></span>
-                  </template>
-                  <template x-if="cve.sources.github.ghsa_id">
-                    <a :href="`https://github.com/advisories/${cve.sources.github.ghsa_id}`" target="_blank" class="text-blue-500 hover:underline" x-text="cve.sources.github.ghsa_id"></a>
-                  </template>
-                </div>
-              </div>
-            </div>
-          </template>
-
-          <!-- CISA KEV -->
-          <template x-if="cve.sources?.cisa_kev">
-            <div class="p-3 bg-gray-900 rounded">
-              <div class="flex items-center justify-between">
-                <span class="text-sm font-medium">CISA KEV</span>
-                <span x-show="cve.sources.cisa_kev.in_kev" class="text-xs px-2 py-0.5 bg-red-900 text-red-300 rounded font-semibold">ACTIVELY EXPLOITED</span>
-              </div>
-              <template x-if="cve.sources.cisa_kev.date_added">
-                <p class="text-xs text-gray-600 mt-1">Added: <span class="text-gray-400" x-text="cve.sources.cisa_kev.date_added"></span></p>
-              </template>
-            </div>
-          </template>
-
-          <!-- EPSS -->
-          <template x-if="cve.sources?.epss">
-            <div class="p-3 bg-gray-900 rounded">
-              <div class="flex items-center justify-between">
-                <span class="text-sm font-medium">EPSS</span>
-                <span class="text-xs text-white font-bold" x-text="cve.sources.epss.score != null ? `${(cve.sources.epss.score * 100).toFixed(1)}%` : '—'"></span>
-              </div>
-              <template x-if="cve.sources.epss.percentile != null">
-                <p class="text-xs text-gray-600 mt-1">Percentile: <span class="text-gray-400" x-text="`${(cve.sources.epss.percentile * 100).toFixed(0)}th`"></span></p>
-              </template>
-            </div>
-          </template>
-
-        </div>
-      </section>
-
-    </div><!-- end main content -->
-
-    <footer class="mt-10 text-xs text-gray-700">
-      Built by <a href="https://github.com/jgamblin" class="hover:text-gray-500">Jerry Gamblin</a> at RogoLabs ·
-      Data sourced from NVD, GitHub Advisory Database, OSV.dev, CISA KEV, EPSS.
-    </footer>
-  </div>
-
-  <script>
-    const WEAK_CWES = new Set(['NVD-CWE-noinfo', 'NVD-CWE-Other', 'CWE-noinfo', 'CWE-Other']);
-    const GENERIC_CWES = new Set(['CWE-693','CWE-664','CWE-682','CWE-435','CWE-691','CWE-703','CWE-707','CWE-710']);
-
-    function cvePage() {
-      return {
-        loading: true,
-        error: null,
-        cve: null,
-        nutrition: null,
-
-        async init() {
-          const params = new URLSearchParams(window.location.search);
-          const id = params.get('id');
-          if (!id) { this.error = 'No CVE ID provided.'; this.loading = false; return; }
-
-          document.title = `${id} — The Consensus Engine`;
-          const year = id.split('-')[1];
-
-          try {
-            const res = await fetch(`data/${year}/${id}.json`);
-            if (!res.ok) throw new Error(`HTTP ${res.status} — CVE not found`);
-            this.cve = await res.json();
-            this.nutrition = this.computeNutrition(this.cve);
-          } catch (e) {
-            this.error = `Failed to load ${id}: ${e.message}`;
-          } finally {
-            this.loading = false;
-          }
-        },
-
-        computeNutrition(cve) {
-          const sources = cve.sources ?? {};
-          const nvd = sources.nvd ?? {};
-          const github = sources.github ?? {};
-          const kev = sources.cisa_kev ?? {};
-          const epss = sources.epss ?? {};
-
-          // Coverage
-          const sourceCount = cve.source_count ?? 0;
-          const coverageColor = sourceCount >= 4 ? 'green' : sourceCount >= 2 ? 'yellow' : 'red';
-
-          // Agreement
-          let agreementColor, agreementDetail;
-          if (cve.drift_type === 'rejected') {
-            agreementColor = 'red'; agreementDetail = 'CVE status: REJECTED';
-          } else {
-            const v = cve.cvss_variance ?? 0;
-            agreementColor = v <= 0.5 ? 'green' : v <= 3.0 ? 'yellow' : 'red';
-            agreementDetail = `CVSS variance: ${v.toFixed(1)}`;
-          }
-
-          // Timeliness
-          const dta = nvd.days_to_analysis;
-          let timelinessColor, timelinessDetail;
-          if (dta == null) {
-            timelinessColor = 'red';
-            timelinessDetail = nvd.status === 'Awaiting Analysis' ? 'Awaiting NVD analysis' : 'Analysis date unknown';
-          } else {
-            timelinessColor = dta <= 7 ? 'green' : dta <= 90 ? 'yellow' : 'red';
-            timelinessDetail = `${dta} days to NVD analysis`;
-          }
-
-          // Exploitation Signal (inverted: red = high risk)
-          const inKev = kev.in_kev === true;
-          const epssPercentile = epss.percentile ?? 0;
-          let exploitColor, exploitDetail;
-          if (inKev || epssPercentile >= 0.9) {
-            exploitColor = 'red';
-            exploitDetail = inKev ? 'In CISA KEV' : `EPSS ${(epssPercentile * 100).toFixed(0)}th percentile`;
-          } else if (epssPercentile >= 0.5) {
-            exploitColor = 'yellow';
-            exploitDetail = `EPSS ${(epssPercentile * 100).toFixed(0)}th percentile`;
-          } else {
-            exploitColor = 'green';
-            exploitDetail = epss.score != null ? `EPSS ${(epss.score * 100).toFixed(1)}%` : 'No exploitation signal';
-          }
-
-          // Remediation Clarity
-          const hasVersionRanges = (github.affected ?? []).some(a => a.vulnerable_version_range || a.patched_versions);
-          const hasCpeOnly = !hasVersionRanges && nvd.cpe;
-          let remediationColor, remediationDetail;
-          if (hasVersionRanges) {
-            remediationColor = 'green'; remediationDetail = 'Version ranges available';
-          } else if (hasCpeOnly) {
-            remediationColor = 'yellow'; remediationDetail = 'CPE strings only';
-          } else {
-            remediationColor = 'red'; remediationDetail = 'No version data';
-          }
-
-          // CWE Quality
-          const cwes = nvd.cwe ?? [];
-          let cweColor, cweDetail;
-          if (!cwes.length || cwes.every(c => WEAK_CWES.has(c))) {
-            cweColor = 'red'; cweDetail = cwes.length ? cwes.join(', ') : 'No CWE assigned';
-          } else if (cwes.some(c => GENERIC_CWES.has(c))) {
-            cweColor = 'yellow'; cweDetail = cwes.join(', ');
-          } else {
-            cweColor = 'green'; cweDetail = cwes.join(', ');
-          }
-
-          return {
-            coverage:    { color: coverageColor,    detail: `${sourceCount}/4 sources` },
-            agreement:   { color: agreementColor,   detail: agreementDetail },
-            timeliness:  { color: timelinessColor,  detail: timelinessDetail },
-            exploitation:{ color: exploitColor,     detail: exploitDetail },
-            remediation: { color: remediationColor, detail: remediationDetail },
-            cwe_quality: { color: cweColor,         detail: cweDetail },
-          };
-        },
-
-        trafficLight(color) {
-          return { green: 'text-green-500', yellow: 'text-yellow-500', red: 'text-red-500' }[color] ?? 'text-gray-600';
-        },
-
-        driftTypeBadge(type) {
-          return { rejected: 'bg-red-900 text-red-300', conflict: 'bg-yellow-900 text-yellow-300', gap: 'bg-gray-800 text-gray-400' }[type] ?? 'bg-gray-800 text-gray-400';
-        },
-
-        scoreColor(score) {
-          if (score >= 7) return 'text-red-400';
-          if (score >= 4) return 'text-yellow-400';
-          return 'text-green-400';
-        },
-
-        statusColor(status) {
-          if (status === 'Analyzed') return 'text-green-600';
-          if (status === 'Rejected') return 'text-red-500';
-          return 'text-yellow-600';
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CVE Detail — The Consensus Engine</title>
+    <meta
+      name="description"
+      content="CVE detail page showing scoring divergence between NVD and GitHub Advisory."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+            colors: {
+              surface: {
+                DEFAULT: "var(--bg-primary)",
+                card: "var(--bg-card)",
+                border: "var(--border)",
+              },
+              brand: {
+                DEFAULT: "var(--brand)",
+                light: "var(--brand-light)",
+              },
+            },
+          },
         },
       };
-    }
-  </script>
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      :root {
+        --bg-primary: #f8fafc;
+        --bg-card: #ffffff;
+        --border: #e2e8f0;
+        --text-primary: #0f172a;
+        --text-secondary: #64748b;
+        --text-muted: #94a3b8;
+        --brand: #2563eb;
+        --brand-light: #3b82f6;
+        --danger: #dc2626;
+        --warning: #d97706;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(148, 163, 184, 0.2);
+        --chart-text: #64748b;
+      }
+      .dark {
+        --bg-primary: #0f1117;
+        --bg-card: #1a1d2e;
+        --border: #2d3748;
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --text-muted: #6b7280;
+        --brand: #3b82f6;
+        --brand-light: #60a5fa;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(45, 55, 72, 0.8);
+        --chart-text: #6b7280;
+      }
+      body {
+        font-family: "Inter", ui-sans-serif, system-ui;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+      }
+    </style>
+  </head>
+  <body class="min-h-full">
+    <!-- Header -->
+    <header
+      class="border-b sticky top-0 z-40"
+      style="border-color: var(--border); background: var(--bg-primary)"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-6">
+          <a
+            href="index.html"
+            class="font-semibold text-sm tracking-wide uppercase"
+            style="color: var(--text-muted); letter-spacing: 0.1em"
+            >The Consensus Engine</a
+          >
+          <nav
+            class="hidden sm:flex items-center gap-4 text-sm"
+            style="color: var(--text-secondary)"
+          >
+            <a href="patterns.html" class="hover:opacity-80 transition-opacity"
+              >How They Disagree</a
+            >
+            <a href="sources.html" class="hover:opacity-80 transition-opacity"
+              >Who Disagrees</a
+            >
+            <a href="data.html" class="hover:opacity-80 transition-opacity"
+              >The Data</a
+            >
+            <a
+              href="methodology.html"
+              class="hover:opacity-80 transition-opacity"
+              >Methodology</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            onclick="
+              document.documentElement.classList.toggle('dark');
+              localStorage.setItem(
+                'theme',
+                document.documentElement.classList.contains('dark')
+                  ? 'dark'
+                  : 'light',
+              );
+            "
+            class="p-1.5 rounded-md hover:opacity-80 transition-opacity"
+            style="color: var(--text-muted)"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="w-4 h-4 dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <svg
+              class="w-4 h-4 hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+          <!-- Mobile menu button -->
+          <button
+            class="sm:hidden p-1.5 rounded-md hover:opacity-80"
+            style="color: var(--text-muted)"
+            onclick="
+              document.getElementById('mobile-nav').classList.toggle('hidden')
+            "
+            aria-label="Menu"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            target="_blank"
+            rel="noopener"
+            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-opacity hover:opacity-80"
+            style="
+              border: 1px solid var(--border);
+              color: var(--text-secondary);
+            "
+          >
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <!-- Mobile nav dropdown -->
+      <div
+        id="mobile-nav"
+        class="hidden sm:hidden border-t px-4 py-3 space-y-2 text-sm"
+        style="border-color: var(--border); color: var(--text-secondary)"
+      >
+        <a href="patterns.html" class="block py-1">How They Disagree</a>
+        <a href="sources.html" class="block py-1">Who Disagrees</a>
+        <a href="data.html" class="block py-1">The Data</a>
+        <a href="methodology.html" class="block py-1">Methodology</a>
+        <a
+          href="https://github.com/RogoLabs/consensus-engine"
+          target="_blank"
+          rel="noopener"
+          class="block py-1"
+          >GitHub</a
+        >
+      </div>
+    </header>
 
-</body>
+    <main
+      class="max-w-5xl mx-auto px-4 sm:px-6 py-10"
+      x-data="cvePage()"
+      x-init="init()"
+    >
+      <!-- Back link -->
+      <nav class="mb-6 text-sm">
+        <a
+          href="data.html"
+          class="hover:opacity-80 transition-opacity"
+          style="color: var(--brand)"
+          >&larr; Back to The Data</a
+        >
+      </nav>
+
+      <!-- Loading / error -->
+      <div x-show="loading" class="text-sm" style="color: var(--text-muted)">
+        Loading CVE data...
+      </div>
+      <div
+        x-show="error"
+        class="text-sm"
+        style="color: var(--danger)"
+        x-text="error"
+      ></div>
+
+      <div x-show="!loading && !error && cve">
+        <!-- CVE Header -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 flex-wrap">
+            <h1
+              class="text-2xl font-bold font-mono"
+              style="color: var(--text-primary)"
+              x-text="cve.cve_id"
+            ></h1>
+            <span
+              :class="driftTypeBadge(cve.drift_type)"
+              class="px-2 py-0.5 rounded text-xs font-semibold"
+              x-text="cve.drift_type"
+            ></span>
+          </div>
+          <div
+            class="mt-2 text-sm flex flex-wrap gap-x-4 gap-y-1"
+            style="color: var(--text-secondary)"
+          >
+            <span
+              >CNA:
+              <span
+                style="color: var(--text-primary)"
+                x-text="cve.assigning_cna ?? 'unknown'"
+              ></span
+            ></span>
+            <span
+              >Drift Score:
+              <span
+                class="font-bold font-mono"
+                :class="scoreColor(cve.drift_score)"
+                x-text="cve.drift_score?.toFixed(1)"
+              ></span
+            ></span>
+            <span
+              >CVSS Variance:
+              <span
+                class="font-mono"
+                x-text="cve.cvss_variance?.toFixed(1) ?? '—'"
+              ></span
+            ></span>
+            <span>Sources: <span x-text="cve.source_count ?? '—'"></span></span>
+          </div>
+        </div>
+
+        <!-- Nutrition Label -->
+        <section class="mb-10">
+          <h2
+            class="text-lg font-semibold mb-4"
+            style="color: var(--text-primary)"
+          >
+            &#x1F966; CVE Nutrition Label
+          </h2>
+
+          <template x-if="nutrition">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <!-- Coverage -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <span
+                  :class="trafficLight(nutrition.coverage.color)"
+                  class="text-lg"
+                  >&#9679;</span
+                >
+                <div class="flex-1 min-w-0">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >Coverage</span
+                  >
+                  <span
+                    class="ml-2 text-xs"
+                    style="color: var(--text-muted)"
+                    x-text="nutrition.coverage.detail"
+                  ></span>
+                </div>
+              </div>
+
+              <!-- Agreement -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <span
+                  :class="trafficLight(nutrition.agreement.color)"
+                  class="text-lg"
+                  >&#9679;</span
+                >
+                <div class="flex-1 min-w-0">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >Agreement</span
+                  >
+                  <span
+                    class="ml-2 text-xs"
+                    style="color: var(--text-muted)"
+                    x-text="nutrition.agreement.detail"
+                  ></span>
+                </div>
+              </div>
+
+              <!-- Timeliness -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <span
+                  :class="trafficLight(nutrition.timeliness.color)"
+                  class="text-lg"
+                  >&#9679;</span
+                >
+                <div class="flex-1 min-w-0">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >Timeliness</span
+                  >
+                  <span
+                    class="ml-2 text-xs"
+                    style="color: var(--text-muted)"
+                    x-text="nutrition.timeliness.detail"
+                  ></span>
+                </div>
+              </div>
+
+              <!-- Exploitation Signal (warning border) -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid
+                    color-mix(in srgb, var(--warning) 30%, var(--border));
+                  border-radius: 8px;
+                "
+              >
+                <span
+                  :class="trafficLight(nutrition.exploitation.color)"
+                  class="text-lg"
+                  >&#9679;</span
+                >
+                <div class="flex-1 min-w-0">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >Exploitation Signal</span
+                  >
+                  <span
+                    class="ml-2 text-xs"
+                    style="color: var(--text-muted)"
+                    x-text="nutrition.exploitation.detail"
+                  ></span>
+                </div>
+                <span
+                  class="text-xs italic shrink-0"
+                  style="color: var(--warning)"
+                  >&#9888; red = high risk</span
+                >
+              </div>
+
+              <!-- Remediation Clarity -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <span
+                  :class="trafficLight(nutrition.remediation.color)"
+                  class="text-lg"
+                  >&#9679;</span
+                >
+                <div class="flex-1 min-w-0">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >Remediation Clarity</span
+                  >
+                  <span
+                    class="ml-2 text-xs"
+                    style="color: var(--text-muted)"
+                    x-text="nutrition.remediation.detail"
+                  ></span>
+                </div>
+              </div>
+
+              <!-- CWE Quality -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <span
+                  :class="trafficLight(nutrition.cwe_quality.color)"
+                  class="text-lg"
+                  >&#9679;</span
+                >
+                <div class="flex-1 min-w-0">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >CWE Quality</span
+                  >
+                  <span
+                    class="ml-2 text-xs"
+                    style="color: var(--text-muted)"
+                    x-text="nutrition.cwe_quality.detail"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </template>
+        </section>
+
+        <!-- Source Scores -->
+        <section class="mb-10">
+          <h2
+            class="text-lg font-semibold mb-4"
+            style="color: var(--text-primary)"
+          >
+            Source Scores
+          </h2>
+          <div class="space-y-3">
+            <!-- NVD -->
+            <template x-if="cve.sources?.nvd">
+              <div
+                class="p-4 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >NVD</span
+                  >
+                  <div class="flex items-center gap-2 text-xs">
+                    <template x-if="cve.sources.nvd.cvss_score != null">
+                      <span
+                        class="font-bold font-mono"
+                        style="color: var(--text-primary)"
+                        x-text="cve.sources.nvd.cvss_score"
+                      ></span>
+                    </template>
+                    <template x-if="cve.sources.nvd.cvss_score == null">
+                      <span style="color: var(--text-muted)">no score</span>
+                    </template>
+                    <template x-if="cve.sources.nvd.cvss_version">
+                      <span
+                        class="px-1.5 py-0.5 rounded font-mono"
+                        style="
+                          background: var(--bg-primary);
+                          border: 1px solid var(--border);
+                          color: var(--text-secondary);
+                        "
+                        x-text="`v${cve.sources.nvd.cvss_version}`"
+                      ></span>
+                    </template>
+                    <span
+                      :class="statusColor(cve.sources.nvd.status)"
+                      x-text="cve.sources.nvd.status"
+                    ></span>
+                  </div>
+                </div>
+                <template x-if="cve.sources.nvd.days_to_analysis != null">
+                  <p class="text-xs mt-2" style="color: var(--text-muted)">
+                    NVD analysis lag:
+                    <span
+                      style="color: var(--text-secondary)"
+                      x-text="`${cve.sources.nvd.days_to_analysis} days`"
+                    ></span>
+                  </p>
+                </template>
+                <template x-if="cve.sources.nvd.cwe?.length">
+                  <p class="text-xs mt-1" style="color: var(--text-muted)">
+                    CWE:
+                    <span
+                      class="font-mono"
+                      style="color: var(--text-secondary)"
+                      x-text="cve.sources.nvd.cwe.join(', ')"
+                    ></span>
+                  </p>
+                </template>
+              </div>
+            </template>
+
+            <!-- GitHub -->
+            <template x-if="cve.sources?.github">
+              <div
+                class="p-4 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >GitHub Advisory</span
+                  >
+                  <div class="flex items-center gap-2 text-xs">
+                    <template x-if="cve.sources.github.cvss_score != null">
+                      <span
+                        class="font-bold font-mono"
+                        style="color: var(--text-primary)"
+                        x-text="cve.sources.github.cvss_score"
+                      ></span>
+                    </template>
+                    <template x-if="cve.sources.github.cvss_score == null">
+                      <span style="color: var(--text-muted)">no score</span>
+                    </template>
+                    <template x-if="cve.sources.github.cvss_version">
+                      <span
+                        class="px-1.5 py-0.5 rounded font-mono"
+                        style="
+                          background: var(--bg-primary);
+                          border: 1px solid var(--border);
+                          color: var(--text-secondary);
+                        "
+                        x-text="`v${cve.sources.github.cvss_version}`"
+                      ></span>
+                    </template>
+                    <template x-if="cve.sources.github.ghsa_id">
+                      <a
+                        :href="`https://github.com/advisories/${cve.sources.github.ghsa_id}`"
+                        target="_blank"
+                        class="hover:underline"
+                        style="color: var(--brand)"
+                        x-text="cve.sources.github.ghsa_id"
+                      ></a>
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <!-- CISA KEV -->
+            <template x-if="cve.sources?.cisa_kev">
+              <div
+                class="p-4 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >CISA KEV</span
+                  >
+                  <span
+                    x-show="cve.sources.cisa_kev.in_kev"
+                    class="text-xs px-2 py-0.5 rounded font-semibold"
+                    style="
+                      background: color-mix(
+                        in srgb,
+                        var(--danger) 15%,
+                        var(--bg-card)
+                      );
+                      color: var(--danger);
+                      border: 1px solid
+                        color-mix(in srgb, var(--danger) 30%, var(--border));
+                    "
+                    >ACTIVELY EXPLOITED</span
+                  >
+                </div>
+                <template x-if="cve.sources.cisa_kev.date_added">
+                  <p class="text-xs mt-2" style="color: var(--text-muted)">
+                    Added:
+                    <span
+                      style="color: var(--text-secondary)"
+                      x-text="cve.sources.cisa_kev.date_added"
+                    ></span>
+                  </p>
+                </template>
+              </div>
+            </template>
+
+            <!-- EPSS -->
+            <template x-if="cve.sources?.epss">
+              <div
+                class="p-4 rounded-lg"
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                "
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-sm font-medium"
+                    style="color: var(--text-primary)"
+                    >EPSS</span
+                  >
+                  <span
+                    class="text-xs font-bold font-mono"
+                    style="color: var(--text-primary)"
+                    x-text="cve.sources.epss.score != null ? `${(cve.sources.epss.score * 100).toFixed(1)}%` : '—'"
+                  ></span>
+                </div>
+                <template x-if="cve.sources.epss.percentile != null">
+                  <p class="text-xs mt-2" style="color: var(--text-muted)">
+                    Percentile:
+                    <span
+                      class="font-mono"
+                      style="color: var(--text-secondary)"
+                      x-text="`${(cve.sources.epss.percentile * 100).toFixed(0)}th`"
+                    ></span>
+                  </p>
+                </template>
+              </div>
+            </template>
+          </div>
+        </section>
+      </div>
+      <!-- end main content -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t py-6" style="border-color: var(--border)">
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs"
+        style="color: var(--text-muted)"
+      >
+        <div class="flex items-center gap-3 flex-wrap justify-center">
+          <span>
+            Built by
+            <a
+              href="https://rogolabs.net"
+              class="hover:underline"
+              style="color: var(--brand)"
+              >Jerry Gamblin at RogoLabs</a
+            >
+          </span>
+          <span>&middot;</span>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            class="hover:underline"
+            style="color: var(--brand)"
+            >GitHub</a
+          >
+          <span>&middot;</span>
+          <span>Data: NVD API 2.0 &middot; GitHub Advisory Database</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const WEAK_CWES = new Set([
+        "NVD-CWE-noinfo",
+        "NVD-CWE-Other",
+        "CWE-noinfo",
+        "CWE-Other",
+      ]);
+      const GENERIC_CWES = new Set([
+        "CWE-693",
+        "CWE-664",
+        "CWE-682",
+        "CWE-435",
+        "CWE-691",
+        "CWE-703",
+        "CWE-707",
+        "CWE-710",
+      ]);
+
+      function cvePage() {
+        return {
+          loading: true,
+          error: null,
+          cve: null,
+          nutrition: null,
+
+          async init() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+            if (!id) {
+              this.error = "No CVE ID provided.";
+              this.loading = false;
+              return;
+            }
+
+            document.title = `${id} — The Consensus Engine`;
+            const year = id.split("-")[1];
+
+            try {
+              const res = await fetch(`data/${year}/${id}.json`);
+              if (!res.ok)
+                throw new Error(`HTTP ${res.status} — CVE not found`);
+              this.cve = await res.json();
+              this.nutrition = this.computeNutrition(this.cve);
+            } catch (e) {
+              this.error = `Failed to load ${id}: ${e.message}`;
+            } finally {
+              this.loading = false;
+            }
+          },
+
+          computeNutrition(cve) {
+            const sources = cve.sources ?? {};
+            const nvd = sources.nvd ?? {};
+            const github = sources.github ?? {};
+            const kev = sources.cisa_kev ?? {};
+            const epss = sources.epss ?? {};
+
+            // Coverage
+            const sourceCount = cve.source_count ?? 0;
+            const coverageColor =
+              sourceCount >= 4 ? "green" : sourceCount >= 2 ? "yellow" : "red";
+
+            // Agreement
+            let agreementColor, agreementDetail;
+            if (cve.drift_type === "rejected") {
+              agreementColor = "red";
+              agreementDetail = "CVE status: REJECTED";
+            } else {
+              const v = cve.cvss_variance ?? 0;
+              agreementColor = v <= 0.5 ? "green" : v <= 3.0 ? "yellow" : "red";
+              agreementDetail = `CVSS variance: ${v.toFixed(1)}`;
+            }
+
+            // Timeliness
+            const dta = nvd.days_to_analysis;
+            let timelinessColor, timelinessDetail;
+            if (dta == null) {
+              timelinessColor = "red";
+              timelinessDetail =
+                nvd.status === "Awaiting Analysis"
+                  ? "Awaiting NVD analysis"
+                  : "Analysis date unknown";
+            } else {
+              timelinessColor =
+                dta <= 7 ? "green" : dta <= 90 ? "yellow" : "red";
+              timelinessDetail = `${dta} days to NVD analysis`;
+            }
+
+            // Exploitation Signal (inverted: red = high risk)
+            const inKev = kev.in_kev === true;
+            const epssPercentile = epss.percentile ?? 0;
+            let exploitColor, exploitDetail;
+            if (inKev || epssPercentile >= 0.9) {
+              exploitColor = "red";
+              exploitDetail = inKev
+                ? "In CISA KEV"
+                : `EPSS ${(epssPercentile * 100).toFixed(0)}th percentile`;
+            } else if (epssPercentile >= 0.5) {
+              exploitColor = "yellow";
+              exploitDetail = `EPSS ${(epssPercentile * 100).toFixed(0)}th percentile`;
+            } else {
+              exploitColor = "green";
+              exploitDetail =
+                epss.score != null
+                  ? `EPSS ${(epss.score * 100).toFixed(1)}%`
+                  : "No exploitation signal";
+            }
+
+            // Remediation Clarity
+            const hasVersionRanges = (github.affected ?? []).some(
+              (a) => a.vulnerable_version_range || a.patched_versions,
+            );
+            const hasCpeOnly = !hasVersionRanges && nvd.cpe;
+            let remediationColor, remediationDetail;
+            if (hasVersionRanges) {
+              remediationColor = "green";
+              remediationDetail = "Version ranges available";
+            } else if (hasCpeOnly) {
+              remediationColor = "yellow";
+              remediationDetail = "CPE strings only";
+            } else {
+              remediationColor = "red";
+              remediationDetail = "No version data";
+            }
+
+            // CWE Quality
+            const cwes = nvd.cwe ?? [];
+            let cweColor, cweDetail;
+            if (!cwes.length || cwes.every((c) => WEAK_CWES.has(c))) {
+              cweColor = "red";
+              cweDetail = cwes.length ? cwes.join(", ") : "No CWE assigned";
+            } else if (cwes.some((c) => GENERIC_CWES.has(c))) {
+              cweColor = "yellow";
+              cweDetail = cwes.join(", ");
+            } else {
+              cweColor = "green";
+              cweDetail = cwes.join(", ");
+            }
+
+            return {
+              coverage: {
+                color: coverageColor,
+                detail: `${sourceCount}/4 sources`,
+              },
+              agreement: {
+                color: agreementColor,
+                detail: agreementDetail,
+              },
+              timeliness: {
+                color: timelinessColor,
+                detail: timelinessDetail,
+              },
+              exploitation: {
+                color: exploitColor,
+                detail: exploitDetail,
+              },
+              remediation: {
+                color: remediationColor,
+                detail: remediationDetail,
+              },
+              cwe_quality: { color: cweColor, detail: cweDetail },
+            };
+          },
+
+          trafficLight(color) {
+            return (
+              {
+                green: "text-green-500 dark:text-green-400",
+                yellow: "text-yellow-600 dark:text-yellow-400",
+                red: "text-red-500 dark:text-red-400",
+              }[color] ?? "text-gray-400 dark:text-gray-600"
+            );
+          },
+
+          driftTypeBadge(type) {
+            return (
+              {
+                rejected: "bg-red-900/30 text-red-600 dark:text-red-400",
+                conflict:
+                  "bg-yellow-900/30 text-yellow-700 dark:text-yellow-300",
+                gap: "bg-gray-500/10 text-gray-500 dark:text-gray-400",
+              }[type] ?? "bg-gray-500/10 text-gray-500 dark:text-gray-400"
+            );
+          },
+
+          scoreColor(score) {
+            if (score >= 7) return "text-red-500 dark:text-red-400";
+            if (score >= 4) return "text-yellow-600 dark:text-yellow-400";
+            return "text-green-500 dark:text-green-400";
+          },
+
+          statusColor(status) {
+            if (status === "Analyzed")
+              return "text-green-600 dark:text-green-500";
+            if (status === "Rejected") return "text-red-500 dark:text-red-400";
+            return "text-yellow-600 dark:text-yellow-500";
+          },
+        };
+      }
+    </script>
+  </body>
 </html>
