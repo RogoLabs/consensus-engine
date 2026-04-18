@@ -50,6 +50,7 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0/dist/chartjs-plugin-annotation.min.js"></script>
     <style>
       :root {
         --bg-primary: #f8fafc;
@@ -314,8 +315,32 @@
         </div>
       </div>
 
-      <!-- Hero chart: Conflicts by Year -->
+      <!-- Scatter plot: Severity band crossings -->
       <div class="py-10">
+        <p class="text-sm mb-4" style="color: var(--text-secondary)">
+          <span
+            x-text="stats ? stats.severity_flip_count.toLocaleString() : '...'"
+            style="font-weight: 600; color: var(--danger)"
+          ></span>
+          CVEs cross severity band boundaries.
+        </p>
+        <div
+          class="rounded-lg p-4 sm:p-6"
+          style="background: var(--bg-card); border: 1px solid var(--border)"
+        >
+          <div class="relative" style="height: 360px">
+            <canvas id="scatterChart"></canvas>
+          </div>
+        </div>
+        <p class="text-xs mt-2" style="color: var(--text-muted)">
+          Each dot is a CVE scored by both NVD and GitHub.
+          <span style="color: var(--danger)">Red dots</span> cross a severity
+          boundary — a High in one source is a Medium or Critical in the other.
+        </p>
+      </div>
+
+      <!-- Hero chart: Conflicts by Year -->
+      <div class="pb-10">
         <p class="text-sm mb-4" style="color: var(--text-secondary)">
           The problem is growing.
         </p>
@@ -429,7 +454,193 @@
             } catch (e) {
               console.error("Failed to load data:", e);
             }
-            if (this.stats) this.$nextTick(() => this.buildYearChart());
+            if (this.stats)
+              this.$nextTick(() => {
+                this.buildScatterChart();
+                this.buildYearChart();
+              });
+          },
+
+          buildScatterChart() {
+            const bands = [0, 4.0, 7.0, 9.0, 10.0];
+            const bandOf = (s) => {
+              if (s >= 9.0) return 3;
+              if (s >= 7.0) return 2;
+              if (s >= 4.0) return 1;
+              return 0;
+            };
+
+            const flips = [];
+            const same = [];
+            for (const e of this.entries) {
+              const n = e.nvd_score ?? 0;
+              const g = e.github_score ?? 0;
+              const pt = { x: n, y: g };
+              if (bandOf(n) !== bandOf(g)) flips.push(pt);
+              else same.push(pt);
+            }
+
+            const cs = getComputedStyle(document.documentElement);
+            const dangerColor = cs.getPropertyValue("--danger").trim();
+            const mutedColor = cs.getPropertyValue("--text-muted").trim();
+            const gridColor = cs.getPropertyValue("--chart-grid").trim();
+            const textColor = cs.getPropertyValue("--chart-text").trim();
+
+            const ctx = document.getElementById("scatterChart");
+            if (!ctx) return;
+            new Chart(ctx, {
+              type: "scatter",
+              data: {
+                datasets: [
+                  {
+                    label: "Severity flip",
+                    data: flips,
+                    backgroundColor: dangerColor + "cc",
+                    pointRadius: 3.5,
+                    pointHoverRadius: 6,
+                    order: 1,
+                  },
+                  {
+                    label: "Same band",
+                    data: same,
+                    backgroundColor: mutedColor + "55",
+                    pointRadius: 2.5,
+                    pointHoverRadius: 5,
+                    order: 2,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                plugins: {
+                  legend: {
+                    display: true,
+                    labels: {
+                      color: textColor,
+                      font: { family: "Inter", size: 11 },
+                      usePointStyle: true,
+                      pointStyle: "circle",
+                    },
+                  },
+                  tooltip: {
+                    callbacks: {
+                      label: (ctx) =>
+                        `NVD: ${ctx.parsed.x} / GitHub: ${ctx.parsed.y}`,
+                    },
+                  },
+                  annotation: {
+                    annotations: {
+                      diag: {
+                        type: "line",
+                        xMin: 0,
+                        xMax: 10,
+                        yMin: 0,
+                        yMax: 10,
+                        borderColor: mutedColor + "44",
+                        borderWidth: 1,
+                        borderDash: [4, 4],
+                        label: {
+                          display: true,
+                          content: "Agreement",
+                          position: "end",
+                          color: mutedColor,
+                          font: { size: 10, family: "Inter" },
+                          backgroundColor: "transparent",
+                        },
+                      },
+                      band1x: {
+                        type: "line",
+                        xMin: 4,
+                        xMax: 4,
+                        yMin: 0,
+                        yMax: 10,
+                        borderColor: gridColor,
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                      },
+                      band2x: {
+                        type: "line",
+                        xMin: 7,
+                        xMax: 7,
+                        yMin: 0,
+                        yMax: 10,
+                        borderColor: gridColor,
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                      },
+                      band3x: {
+                        type: "line",
+                        xMin: 9,
+                        xMax: 9,
+                        yMin: 0,
+                        yMax: 10,
+                        borderColor: gridColor,
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                      },
+                      band1y: {
+                        type: "line",
+                        yMin: 4,
+                        yMax: 4,
+                        xMin: 0,
+                        xMax: 10,
+                        borderColor: gridColor,
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                      },
+                      band2y: {
+                        type: "line",
+                        yMin: 7,
+                        yMax: 7,
+                        xMin: 0,
+                        xMax: 10,
+                        borderColor: gridColor,
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                      },
+                      band3y: {
+                        type: "line",
+                        yMin: 9,
+                        yMax: 9,
+                        xMin: 0,
+                        xMax: 10,
+                        borderColor: gridColor,
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                      },
+                    },
+                  },
+                },
+                scales: {
+                  x: {
+                    min: 0,
+                    max: 10,
+                    title: {
+                      display: true,
+                      text: "NVD Score",
+                      color: textColor,
+                      font: { family: "Inter", size: 12 },
+                    },
+                    ticks: { color: textColor },
+                    grid: { color: gridColor },
+                  },
+                  y: {
+                    min: 0,
+                    max: 10,
+                    title: {
+                      display: true,
+                      text: "GitHub Score",
+                      color: textColor,
+                      font: { family: "Inter", size: 12 },
+                    },
+                    ticks: { color: textColor },
+                    grid: { color: gridColor },
+                  },
+                },
+              },
+            });
           },
 
           buildYearChart() {
