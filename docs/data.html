@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Data — The Consensus Engine</title>
+    <meta
+      name="description"
+      content="CVSS scoring disagreement between NVD and GitHub Advisory is systematic, not random. Tracking divergence across 130,000+ CVEs."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+            colors: {
+              surface: {
+                DEFAULT: "var(--bg-primary)",
+                card: "var(--bg-card)",
+                border: "var(--border)",
+              },
+              brand: {
+                DEFAULT: "var(--brand)",
+                light: "var(--brand-light)",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      :root {
+        --bg-primary: #f8fafc;
+        --bg-card: #ffffff;
+        --border: #e2e8f0;
+        --text-primary: #0f172a;
+        --text-secondary: #64748b;
+        --text-muted: #94a3b8;
+        --brand: #2563eb;
+        --brand-light: #3b82f6;
+        --danger: #dc2626;
+        --warning: #d97706;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(148, 163, 184, 0.2);
+        --chart-text: #64748b;
+      }
+      .dark {
+        --bg-primary: #0f1117;
+        --bg-card: #1a1d2e;
+        --border: #2d3748;
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --text-muted: #6b7280;
+        --brand: #3b82f6;
+        --brand-light: #60a5fa;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(45, 55, 72, 0.8);
+        --chart-text: #6b7280;
+      }
+      body {
+        font-family: "Inter", ui-sans-serif, system-ui;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+      }
+    </style>
+  </head>
+  <body class="min-h-full">
+    <!-- Header -->
+    <header
+      class="border-b sticky top-0 z-40"
+      style="border-color: var(--border); background: var(--bg-primary)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-6">
+          <a
+            href="index.html"
+            class="font-semibold text-sm tracking-wide uppercase"
+            style="color: var(--text-muted); letter-spacing: 0.1em"
+            >The Consensus Engine</a
+          >
+          <nav
+            class="hidden sm:flex items-center gap-4 text-sm"
+            style="color: var(--text-secondary)"
+          >
+            <a href="patterns.html" class="hover:opacity-80 transition-opacity"
+              >How They Disagree</a
+            >
+            <a href="sources.html" class="hover:opacity-80 transition-opacity"
+              >Who Disagrees</a
+            >
+            <span style="font-weight: 600; color: var(--text-primary)"
+              >The Data</span
+            >
+            <a
+              href="methodology.html"
+              class="hover:opacity-80 transition-opacity"
+              >Methodology</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            onclick="
+              document.documentElement.classList.toggle('dark');
+              localStorage.setItem(
+                'theme',
+                document.documentElement.classList.contains('dark')
+                  ? 'dark'
+                  : 'light',
+              );
+            "
+            class="p-1.5 rounded-md hover:opacity-80 transition-opacity"
+            style="color: var(--text-muted)"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="w-4 h-4 dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <svg
+              class="w-4 h-4 hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+          <!-- Mobile menu button -->
+          <button
+            class="sm:hidden p-1.5 rounded-md hover:opacity-80"
+            style="color: var(--text-muted)"
+            onclick="
+              document.getElementById('mobile-nav').classList.toggle('hidden')
+            "
+            aria-label="Menu"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            target="_blank"
+            rel="noopener"
+            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-opacity hover:opacity-80"
+            style="
+              border: 1px solid var(--border);
+              color: var(--text-secondary);
+            "
+          >
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <!-- Mobile nav dropdown -->
+      <div
+        id="mobile-nav"
+        class="hidden sm:hidden border-t px-4 py-3 space-y-2 text-sm"
+        style="border-color: var(--border); color: var(--text-secondary)"
+      >
+        <a href="patterns.html" class="block py-1">How They Disagree</a>
+        <a href="sources.html" class="block py-1">Who Disagrees</a>
+        <span
+          class="block py-1"
+          style="font-weight: 600; color: var(--text-primary)"
+          >The Data</span
+        >
+        <a href="methodology.html" class="block py-1">Methodology</a>
+        <a
+          href="https://github.com/RogoLabs/consensus-engine"
+          target="_blank"
+          rel="noopener"
+          class="block py-1"
+          >GitHub</a
+        >
+      </div>
+    </header>
+
+    <main
+      class="max-w-7xl mx-auto px-4 sm:px-6 py-10"
+      x-data="dataPage()"
+      x-init="init()"
+    >
+      <!-- Page title -->
+      <div class="mb-10">
+        <h1
+          class="text-[28px] sm:text-[32px] font-bold leading-tight mb-3"
+          style="color: var(--text-primary)"
+        >
+          The Data
+        </h1>
+        <p
+          class="text-sm leading-relaxed max-w-2xl"
+          style="color: var(--text-secondary)"
+        >
+          Search, filter, and explore all scoring conflicts. Updated every six
+          hours.
+        </p>
+      </div>
+
+      <!-- Loading -->
+      <div
+        x-show="loading"
+        class="text-center py-24 text-sm"
+        style="color: var(--text-muted)"
+      >
+        Loading data...
+      </div>
+
+      <!-- Error -->
+      <div
+        x-show="error && !loading"
+        class="rounded-lg px-4 py-3 text-sm mb-6"
+        style="
+          background: rgba(220, 38, 38, 0.1);
+          border: 1px solid rgba(220, 38, 38, 0.3);
+          color: var(--danger);
+        "
+        x-text="error"
+      ></div>
+
+      <!-- Content -->
+      <div x-show="!loading && !error" x-cloak>
+        <!-- Filter bar -->
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <!-- Search -->
+          <input
+            x-model="search"
+            type="search"
+            placeholder="Search by CVE or CNA..."
+            class="rounded px-3 py-1.5 text-sm focus:outline-none w-56"
+            style="
+              background: var(--bg-card);
+              border: 1px solid var(--border);
+              color: var(--text-primary);
+            "
+          />
+          <!-- Min variance buttons -->
+          <div
+            class="flex items-center rounded overflow-hidden text-xs"
+            style="border: 1px solid var(--border)"
+          >
+            <button
+              @click="minVariance = 0"
+              class="px-3 py-1.5 transition-colors"
+              :style="minVariance === 0 ? 'background: var(--brand); color: #fff;' : 'background: var(--bg-card); color: var(--text-secondary);'"
+            >
+              All
+            </button>
+            <button
+              @click="minVariance = 0.5"
+              class="px-3 py-1.5 transition-colors"
+              :style="minVariance === 0.5 ? 'background: var(--brand); color: #fff;' : 'background: var(--bg-card); color: var(--text-secondary);'"
+              style="border-left: 1px solid var(--border)"
+            >
+              &ge;0.5
+            </button>
+            <button
+              @click="minVariance = 1.0"
+              class="px-3 py-1.5 transition-colors"
+              :style="minVariance === 1.0 ? 'background: var(--brand); color: #fff;' : 'background: var(--bg-card); color: var(--text-secondary);'"
+              style="border-left: 1px solid var(--border)"
+            >
+              &ge;1.0
+            </button>
+            <button
+              @click="minVariance = 2.0"
+              class="px-3 py-1.5 transition-colors"
+              :style="minVariance === 2.0 ? 'background: var(--brand); color: #fff;' : 'background: var(--bg-card); color: var(--text-secondary);'"
+              style="border-left: 1px solid var(--border)"
+            >
+              &ge;2.0
+            </button>
+          </div>
+          <!-- Toggle buttons -->
+          <button
+            @click="flipOnly = !flipOnly"
+            class="px-3 py-1.5 rounded text-xs transition-colors"
+            :style="flipOnly ? 'background: var(--brand); color: #fff;' : 'background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border);'"
+          >
+            Severity flips only
+          </button>
+          <button
+            @click="hideDeferred = !hideDeferred"
+            class="px-3 py-1.5 rounded text-xs transition-colors"
+            :style="hideDeferred ? 'background: var(--brand); color: #fff;' : 'background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border);'"
+          >
+            Hide deferred
+          </button>
+        </div>
+
+        <!-- Count indicator -->
+        <div class="mb-4 text-xs" style="color: var(--text-muted)">
+          <span
+            x-text="entries.length + ' total \u00b7 ' + filtered.length + ' shown'"
+          ></span>
+        </div>
+
+        <!-- Conflict table -->
+        <div
+          class="rounded-lg overflow-hidden mb-12"
+          style="background: var(--bg-card); border: 1px solid var(--border)"
+        >
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr
+                  class="text-xs uppercase tracking-wider"
+                  style="
+                    border-bottom: 1px solid var(--border);
+                    color: var(--text-muted);
+                  "
+                >
+                  <th class="px-4 py-3 text-left">#</th>
+                  <th class="px-4 py-3 text-left">CVE ID</th>
+                  <th
+                    class="px-4 py-3 text-right cursor-pointer hover:opacity-80 transition-opacity"
+                    @click="sortBy('nvd_score')"
+                  >
+                    NVD Score
+                    <span
+                      x-show="sort === 'nvd_score'"
+                      x-text="sortAsc ? '\u2191' : '\u2193'"
+                    ></span>
+                  </th>
+                  <th
+                    class="px-4 py-3 text-right cursor-pointer hover:opacity-80 transition-opacity"
+                    @click="sortBy('github_score')"
+                  >
+                    GitHub Score
+                    <span
+                      x-show="sort === 'github_score'"
+                      x-text="sortAsc ? '\u2191' : '\u2193'"
+                    ></span>
+                  </th>
+                  <th
+                    class="px-4 py-3 text-right cursor-pointer hover:opacity-80 transition-opacity"
+                    @click="sortBy('drift_score')"
+                  >
+                    Drift
+                    <span
+                      x-show="sort === 'drift_score'"
+                      x-text="sortAsc ? '\u2191' : '\u2193'"
+                    ></span>
+                  </th>
+                  <th class="px-4 py-3 text-left hidden sm:table-cell">CNA</th>
+                  <th class="px-4 py-3 text-left hidden md:table-cell">
+                    NVD Status
+                  </th>
+                  <th
+                    class="px-4 py-3 text-left hidden md:table-cell cursor-pointer hover:opacity-80 transition-opacity"
+                    @click="sortBy('published_date')"
+                  >
+                    Published
+                    <span
+                      x-show="sort === 'published_date'"
+                      x-text="sortAsc ? '\u2191' : '\u2193'"
+                    ></span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <template x-for="(row, i) in filtered" :key="row.cve_id">
+                  <tr
+                    class="transition-colors hover:opacity-80"
+                    style="border-bottom: 1px solid var(--border)"
+                  >
+                    <td
+                      class="px-4 py-3 text-xs"
+                      style="color: var(--text-muted)"
+                      x-text="i + 1"
+                    ></td>
+                    <td class="px-4 py-3">
+                      <a
+                        :href="'cve.html?id=' + row.cve_id"
+                        class="font-mono text-sm hover:underline"
+                        style="color: var(--brand)"
+                        x-text="row.cve_id"
+                      ></a>
+                      <span
+                        x-show="row.severity_flip"
+                        class="ml-1.5 inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase"
+                        style="background: var(--danger); color: #fff"
+                        >FLIP</span
+                      >
+                    </td>
+                    <td class="px-4 py-3 text-right">
+                      <span
+                        class="font-mono"
+                        :style="scoreColor(row.nvd_score)"
+                        x-text="row.nvd_score"
+                      ></span>
+                      <div
+                        class="hidden sm:block text-[11px] mt-0.5"
+                        style="color: var(--text-muted)"
+                        x-text="row.nvd_severity"
+                      ></div>
+                    </td>
+                    <td class="px-4 py-3 text-right">
+                      <span
+                        class="font-mono"
+                        :style="scoreColor(row.github_score)"
+                        x-text="row.github_score"
+                      ></span>
+                      <div
+                        class="hidden sm:block text-[11px] mt-0.5"
+                        style="color: var(--text-muted)"
+                        x-text="row.gh_severity"
+                      ></div>
+                    </td>
+                    <td class="px-4 py-3 text-right">
+                      <span
+                        class="font-mono font-bold"
+                        :style="`color: ${row.drift_score >= 5 ? 'var(--danger)' : row.drift_score >= 2 ? 'var(--warning)' : 'var(--text-secondary)'}`"
+                        x-text="'\u0394 ' + row.drift_score.toFixed(1)"
+                      ></span>
+                    </td>
+                    <td
+                      class="px-4 py-3 hidden sm:table-cell"
+                      style="color: var(--text-secondary)"
+                      x-text="row.assigning_cna ?? '\u2014'"
+                    ></td>
+                    <td class="px-4 py-3 hidden md:table-cell">
+                      <span
+                        class="text-xs"
+                        :style="statusColor(row.nvd_status)"
+                        x-text="row.nvd_status"
+                      ></span>
+                    </td>
+                    <td
+                      class="px-4 py-3 hidden md:table-cell"
+                      style="color: var(--text-muted)"
+                      x-text="row.published_date ?? '\u2014'"
+                    ></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="mb-12" style="border-color: var(--border)" />
+
+        <!-- Coverage Gaps section -->
+        <div class="mb-12">
+          <div
+            class="text-[11px] font-semibold uppercase tracking-[0.15em] mb-3"
+            style="color: var(--text-muted)"
+          >
+            Coverage Gaps
+          </div>
+          <p
+            class="text-sm leading-relaxed max-w-2xl mb-2"
+            style="color: var(--text-secondary)"
+          >
+            CVEs scored by GitHub but missing from NVD — invisible to NVD-only
+            tools.
+          </p>
+          <div class="mb-5 text-xs" style="color: var(--text-muted)">
+            <span
+              x-text="gaps ? gaps.total + ' GitHub-only CVEs' : '...'"
+            ></span>
+          </div>
+
+          <!-- Coverage gap table -->
+          <div
+            class="rounded-lg overflow-hidden"
+            style="background: var(--bg-card); border: 1px solid var(--border)"
+          >
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr
+                    class="text-xs uppercase tracking-wider"
+                    style="
+                      border-bottom: 1px solid var(--border);
+                      color: var(--text-muted);
+                    "
+                  >
+                    <th class="px-4 py-3 text-left">#</th>
+                    <th class="px-4 py-3 text-left">CVE ID</th>
+                    <th class="px-4 py-3 text-right">GitHub Score</th>
+                    <th class="px-4 py-3 text-left hidden sm:table-cell">
+                      Severity
+                    </th>
+                    <th class="px-4 py-3 text-left hidden sm:table-cell">
+                      NVD Status
+                    </th>
+                    <th class="px-4 py-3 text-left hidden md:table-cell">
+                      Published
+                    </th>
+                    <th class="px-4 py-3 text-left hidden md:table-cell">
+                      GHSA ID
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template
+                    x-for="(row, i) in (gaps ? gaps.entries : [])"
+                    :key="row.cve_id"
+                  >
+                    <tr
+                      class="transition-colors hover:opacity-80"
+                      style="border-bottom: 1px solid var(--border)"
+                    >
+                      <td
+                        class="px-4 py-3 text-xs"
+                        style="color: var(--text-muted)"
+                        x-text="i + 1"
+                      ></td>
+                      <td class="px-4 py-3">
+                        <a
+                          :href="'cve.html?id=' + row.cve_id"
+                          class="font-mono text-sm hover:underline"
+                          style="color: var(--brand)"
+                          x-text="row.cve_id"
+                        ></a>
+                      </td>
+                      <td class="px-4 py-3 text-right">
+                        <span
+                          class="font-mono"
+                          :style="scoreColor(row.github_score)"
+                          x-text="row.github_score"
+                        ></span>
+                      </td>
+                      <td class="px-4 py-3 hidden sm:table-cell">
+                        <span
+                          class="text-xs font-medium"
+                          :style="severityColor(row.github_score >= 9.0 ? 'Critical' : row.github_score >= 7.0 ? 'High' : row.github_score >= 4.0 ? 'Medium' : 'Low')"
+                          x-text="row.github_score >= 9.0 ? 'Critical' : row.github_score >= 7.0 ? 'High' : row.github_score >= 4.0 ? 'Medium' : 'Low'"
+                        ></span>
+                      </td>
+                      <td
+                        class="px-4 py-3 hidden sm:table-cell"
+                        style="color: var(--text-secondary)"
+                        x-text="row.nvd_status"
+                      ></td>
+                      <td
+                        class="px-4 py-3 hidden md:table-cell"
+                        style="color: var(--text-muted)"
+                        x-text="row.published_date ?? '\u2014'"
+                      ></td>
+                      <td class="px-4 py-3 hidden md:table-cell">
+                        <a
+                          x-show="row.ghsa_id"
+                          :href="'https://github.com/advisories/' + row.ghsa_id"
+                          target="_blank"
+                          rel="noopener"
+                          class="font-mono text-xs hover:underline"
+                          style="color: var(--brand)"
+                          x-text="row.ghsa_id"
+                        ></a>
+                        <span
+                          x-show="!row.ghsa_id"
+                          style="color: var(--text-muted)"
+                          >&mdash;</span
+                        >
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t py-6" style="border-color: var(--border)">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs"
+        style="color: var(--text-muted)"
+      >
+        <div class="flex items-center gap-3 flex-wrap justify-center">
+          <span>
+            Built by
+            <a
+              href="https://rogolabs.net"
+              class="hover:underline"
+              style="color: var(--brand)"
+              >Jerry Gamblin at RogoLabs</a
+            >
+          </span>
+          <span>&middot;</span>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            class="hover:underline"
+            style="color: var(--brand)"
+            >GitHub</a
+          >
+          <span>&middot;</span>
+          <span>Data: NVD API 2.0 &middot; GitHub Advisory Database</span>
+        </div>
+        <div id="footer-date"></div>
+      </div>
+    </footer>
+
+    <script>
+      function dataPage() {
+        return {
+          loading: true,
+          error: null,
+          entries: [],
+          stats: null,
+          gaps: null,
+          sort: "drift_score",
+          sortAsc: false,
+          search: "",
+          minVariance: 0,
+          flipOnly: false,
+          hideDeferred: false,
+          generatedAt: null,
+
+          async init() {
+            try {
+              const [leaderboardRes, statsRes, gapsRes] = await Promise.all([
+                fetch("data/indexes/leaderboard.json"),
+                fetch("data/indexes/stats.json"),
+                fetch("data/indexes/coverage-gap.json"),
+              ]);
+              if (!leaderboardRes.ok)
+                throw new Error(
+                  `Leaderboard fetch failed: HTTP ${leaderboardRes.status}`,
+                );
+              this.entries = await leaderboardRes.json();
+              if (statsRes.ok) this.stats = await statsRes.json();
+              if (gapsRes.ok) this.gaps = await gapsRes.json();
+              this.generatedAt =
+                (this.stats && this.stats.generated_at) ||
+                (this.gaps && this.gaps.generated_at) ||
+                null;
+            } catch (e) {
+              this.error = `Failed to load data: ${e.message}`;
+            } finally {
+              this.loading = false;
+            }
+            if (this.generatedAt) {
+              const el = document.getElementById("footer-date");
+              if (el)
+                el.textContent = `Updated ${new Date(this.generatedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`;
+            }
+          },
+
+          sortBy(field) {
+            if (this.sort === field) {
+              this.sortAsc = !this.sortAsc;
+            } else {
+              this.sort = field;
+              this.sortAsc = false;
+            }
+          },
+
+          scoreColor(score) {
+            if (score >= 9.0) return "color: var(--danger)";
+            if (score >= 7.0) return "color: var(--nvd-higher)";
+            if (score >= 4.0) return "color: var(--warning)";
+            return "color: var(--text-secondary)";
+          },
+
+          severityColor(severity) {
+            if (severity === "Critical") return "color: var(--danger)";
+            if (severity === "High") return "color: var(--nvd-higher)";
+            if (severity === "Medium") return "color: var(--warning)";
+            return "color: var(--text-secondary)";
+          },
+
+          statusColor(status) {
+            if (status === "Analyzed") return "color: #22c55e";
+            if (status === "Modified" || status === "Undergoing Analysis")
+              return "color: var(--warning)";
+            if (status === "Deferred") return "color: var(--text-muted)";
+            return "color: var(--text-secondary)";
+          },
+
+          get filtered() {
+            let result = [...this.entries];
+            const q = this.search.trim().toLowerCase();
+            if (q) {
+              result = result.filter(
+                (r) =>
+                  r.cve_id.toLowerCase().includes(q) ||
+                  (r.assigning_cna &&
+                    r.assigning_cna.toLowerCase().includes(q)),
+              );
+            }
+            if (this.flipOnly) {
+              result = result.filter((r) => r.severity_flip === true);
+            }
+            if (this.minVariance > 0) {
+              result = result.filter((r) => r.drift_score >= this.minVariance);
+            }
+            if (this.hideDeferred) {
+              result = result.filter((r) => r.nvd_status !== "Deferred");
+            }
+            const sortField = this.sort;
+            const asc = this.sortAsc;
+            result.sort((a, b) => {
+              const av = a[sortField] ?? "";
+              const bv = b[sortField] ?? "";
+              if (typeof av === "string") {
+                return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+              }
+              return asc ? av - bv : bv - av;
+            });
+            return result;
+          },
+        };
+      }
+    </script>
+  </body>
+</html>
