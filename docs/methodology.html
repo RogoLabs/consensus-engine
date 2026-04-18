@@ -11,113 +11,249 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: "class",
         theme: {
           extend: {
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
             colors: {
-              surface: "#0f1117",
-              "surface-card": "#1a1d2e",
-              "surface-border": "#2d3748",
-              brand: "#3b82f6",
-              "brand-light": "#60a5fa",
+              surface: {
+                DEFAULT: "var(--bg-primary)",
+                card: "var(--bg-card)",
+                border: "var(--border)",
+              },
+              brand: {
+                DEFAULT: "var(--brand)",
+                light: "var(--brand-light)",
+              },
             },
-            fontFamily: { sans: ["Inter", "sans-serif"] },
           },
         },
       };
     </script>
     <style>
+      :root {
+        --bg-primary: #f8fafc;
+        --bg-card: #ffffff;
+        --border: #e2e8f0;
+        --text-primary: #0f172a;
+        --text-secondary: #64748b;
+        --text-muted: #94a3b8;
+        --brand: #2563eb;
+        --brand-light: #3b82f6;
+        --danger: #dc2626;
+        --warning: #d97706;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(148, 163, 184, 0.2);
+        --chart-text: #64748b;
+      }
+      .dark {
+        --bg-primary: #0f1117;
+        --bg-card: #1a1d2e;
+        --border: #2d3748;
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --text-muted: #6b7280;
+        --brand: #3b82f6;
+        --brand-light: #60a5fa;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(45, 55, 72, 0.8);
+        --chart-text: #6b7280;
+      }
       body {
-        font-family: "Inter", sans-serif;
+        font-family: "Inter", ui-sans-serif, system-ui;
+        background: var(--bg-primary);
+        color: var(--text-primary);
       }
     </style>
   </head>
-  <body class="min-h-full bg-surface text-gray-100">
+  <body class="min-h-full">
     <!-- Header -->
-    <header class="border-b border-surface-border bg-surface sticky top-0 z-40">
+    <header
+      class="border-b sticky top-0 z-40"
+      style="border-color: var(--border); background: var(--bg-primary)"
+    >
       <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
+        class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
       >
         <div class="flex items-center gap-6">
           <a
             href="index.html"
-            class="flex items-center gap-2 font-bold text-lg text-white hover:text-brand-light transition-colors"
+            class="font-semibold text-sm tracking-wide uppercase"
+            style="color: var(--text-muted); letter-spacing: 0.1em"
+            >The Consensus Engine</a
           >
-            <span class="text-brand">⚡</span>
-            <span class="hidden sm:inline">The Consensus Engine</span>
-            <span class="sm:hidden">CE</span>
-          </a>
-          <nav class="flex items-center gap-4 text-sm whitespace-nowrap">
-            <a
-              href="index.html"
-              class="text-gray-400 hover:text-white transition-colors"
-              >Score Conflicts</a
+          <nav
+            class="hidden sm:flex items-center gap-4 text-sm"
+            style="color: var(--text-secondary)"
+          >
+            <a href="patterns.html" class="hover:opacity-80 transition-opacity"
+              >How They Disagree</a
             >
-            <a
-              href="conflict-map.html"
-              class="text-gray-400 hover:text-white transition-colors"
-              >Conflict Map</a
+            <a href="sources.html" class="hover:opacity-80 transition-opacity"
+              >Who Disagrees</a
             >
-            <a
-              href="vector-breakdown.html"
-              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
-              >Vector Breakdown</a
+            <a href="data.html" class="hover:opacity-80 transition-opacity"
+              >The Data</a
             >
-            <a
-              href="cna.html"
-              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
-              >CNAs</a
-            >
-            <a
-              href="cwe.html"
-              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
-              >CWEs</a
-            >
-            <a
-              href="coverage-gap.html"
-              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
-              >Coverage Gap</a
-            >
-            <span class="text-white font-medium hidden sm:inline"
+            <span class="font-semibold" style="color: var(--text-primary)"
               >Methodology</span
             >
           </nav>
         </div>
+        <div class="flex items-center gap-3">
+          <button
+            onclick="
+              document.documentElement.classList.toggle('dark');
+              localStorage.setItem(
+                'theme',
+                document.documentElement.classList.contains('dark')
+                  ? 'dark'
+                  : 'light',
+              );
+            "
+            class="p-1.5 rounded-md hover:opacity-80 transition-opacity"
+            style="color: var(--text-muted)"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="w-4 h-4 dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <svg
+              class="w-4 h-4 hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+          <!-- Mobile menu button -->
+          <button
+            class="sm:hidden p-1.5 rounded-md hover:opacity-80"
+            style="color: var(--text-muted)"
+            onclick="
+              document.getElementById('mobile-nav').classList.toggle('hidden')
+            "
+            aria-label="Menu"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            target="_blank"
+            rel="noopener"
+            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-opacity hover:opacity-80"
+            style="
+              border: 1px solid var(--border);
+              color: var(--text-secondary);
+            "
+          >
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <!-- Mobile nav dropdown -->
+      <div
+        id="mobile-nav"
+        class="hidden sm:hidden border-t px-4 py-3 space-y-2 text-sm"
+        style="border-color: var(--border); color: var(--text-secondary)"
+      >
+        <a href="patterns.html" class="block py-1">How They Disagree</a>
+        <a href="sources.html" class="block py-1">Who Disagrees</a>
+        <a href="data.html" class="block py-1">The Data</a>
+        <span
+          class="block py-1 font-semibold"
+          style="color: var(--text-primary)"
+          >Methodology</span
+        >
         <a
           href="https://github.com/RogoLabs/consensus-engine"
           target="_blank"
           rel="noopener"
-          class="flex items-center gap-1.5 bg-surface-border hover:bg-gray-700 text-gray-300 hover:text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
+          class="block py-1"
+          >GitHub</a
         >
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
-            />
-          </svg>
-          GitHub
-        </a>
       </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-4 py-10">
-      <h1 class="text-3xl font-bold text-white mb-6">Methodology</h1>
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+      <h1 class="text-2xl font-bold mb-8" style="color: var(--text-primary)">
+        Methodology
+      </h1>
 
-      <div
-        class="prose prose-invert max-w-none space-y-8 text-gray-300 text-sm leading-relaxed"
-      >
+      <div class="space-y-0">
+        <!-- What the Drift Score measures -->
         <section>
-          <h2 class="text-xl font-semibold text-white mb-3">
+          <h2
+            class="text-lg font-semibold mb-3"
+            style="color: var(--text-primary)"
+          >
             What the Drift Score measures
           </h2>
-          <p>
+          <p
+            class="text-sm leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
             The Drift Score is
-            <span class="text-white font-medium font-mono"
-              >|GitHub CVSS - NVD CVSS|</span
+            <code
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                padding: 1px 4px;
+              "
+              >|GitHub CVSS - NVD CVSS|</code
             >
             — the absolute difference between the CVSS base scores assigned by
             NVD and the GitHub Advisory Database for the same CVE. Scores are
@@ -126,76 +262,147 @@
             comparisons (v3.1 vs. v4.0) are classified as data gaps, not
             conflicts.
           </p>
-          <p class="text-gray-500 mt-2">
-            Note: The <span class="font-mono">drift_score</span> and
-            <span class="font-mono">cvss_variance</span> fields in the data are
-            currently equivalent. Both represent the raw score delta. The
-            project retains both fields in case the formula evolves in the
-            future.
+          <p
+            class="text-sm leading-relaxed mt-2"
+            style="color: var(--text-muted)"
+          >
+            Note: The
+            <code
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                padding: 1px 4px;
+              "
+              >drift_score</code
+            >
+            and
+            <code
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                padding: 1px 4px;
+              "
+              >cvss_variance</code
+            >
+            fields in the data are currently equivalent. Both represent the raw
+            score delta. The project retains both fields in case the formula
+            evolves in the future.
           </p>
         </section>
 
+        <hr style="border-color: var(--border)" class="my-8" />
+
+        <!-- Classification -->
         <section>
-          <h2 class="text-xl font-semibold text-white mb-3">Classification</h2>
-          <p>
+          <h2
+            class="text-lg font-semibold mb-3"
+            style="color: var(--text-primary)"
+          >
+            Classification
+          </h2>
+          <p
+            class="text-sm leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
             Every CVE in the dataset is assigned a
-            <span class="font-mono text-white">drift_type</span>:
+            <code
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                padding: 1px 4px;
+              "
+              >drift_type</code
+            >:
           </p>
-          <ul class="list-disc list-inside space-y-1 mt-2">
+          <ul
+            class="list-disc pl-5 space-y-2 mt-3 text-sm leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
             <li>
-              <strong class="text-yellow-400">conflict</strong> — Both NVD and
-              GitHub have assigned a CVSS score using the same version, and the
-              scores differ.
+              <strong style="color: var(--warning)">conflict</strong> — Both NVD
+              and GitHub have assigned a CVSS score using the same version, and
+              the scores differ.
             </li>
             <li>
-              <strong class="text-gray-400">gap</strong> — One or both sources
-              have not assigned a score, or the scores use different CVSS
-              versions (cross-version mismatch).
+              <strong style="color: var(--text-muted)">gap</strong> — One or
+              both sources have not assigned a score, or the scores use
+              different CVSS versions (cross-version mismatch).
             </li>
             <li>
-              <strong class="text-red-400">rejected</strong> — NVD has marked
-              the CVE as Rejected, but GitHub still maintains an advisory for
-              it. This is an existence dispute, not a score dispute, so the
+              <strong style="color: var(--danger)">rejected</strong> — NVD has
+              marked the CVE as Rejected, but GitHub still maintains an advisory
+              for it. This is an existence dispute, not a score dispute, so the
               Drift Score is 0.0.
             </li>
           </ul>
         </section>
 
+        <hr style="border-color: var(--border)" class="my-8" />
+
+        <!-- Data sources -->
         <section>
-          <h2 class="text-xl font-semibold text-white mb-3">Data sources</h2>
-          <ul class="list-disc list-inside space-y-2 mt-2">
+          <h2
+            class="text-lg font-semibold mb-3"
+            style="color: var(--text-primary)"
+          >
+            Data sources
+          </h2>
+          <ul
+            class="list-disc pl-5 space-y-2 mt-3 text-sm leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
             <li>
-              <strong class="text-white">NVD API 2.0</strong> — CVSS scores, CWE
-              assignments, CPE strings, publication dates, and analysis status.
-              For CVEs with status "Analyzed" or "Modified," the score reflects
-              NVD's independent assessment. For CVEs with status
+              <strong style="color: var(--text-primary)">NVD API 2.0</strong>
+              — CVSS scores, CWE assignments, CPE strings, publication dates,
+              and analysis status. For CVEs with status "Analyzed" or
+              "Modified," the score reflects NVD's independent assessment. For
+              CVEs with status
               <strong>"Deferred,"</strong> NVD did not independently analyze the
               CVE — the score is the CNA-provided score passed through the NVD
               API. Approximately 7% of conflicts in this dataset fall into this
               category.
             </li>
             <li>
-              <strong class="text-white">GitHub Advisory Database</strong> —
-              CVSS scores (primarily v3.1), affected package versions, and GHSA
-              identifiers. GitHub's scores are not always independent
+              <strong style="color: var(--text-primary)"
+                >GitHub Advisory Database</strong
+              >
+              — CVSS scores (primarily v3.1), affected package versions, and
+              GHSA identifiers. GitHub's scores are not always independent
               assessments — many come from maintainer-submitted advisories or
               CNA-provided vectors.
             </li>
           </ul>
-          <p class="mt-2">
-            Both sources are fetched daily at 02:00 UTC via GitHub Actions.
-            After the initial backfill, only incremental updates are fetched
-            (last 25 hours for NVD, last 48 hours for GitHub).
+          <p
+            class="text-sm leading-relaxed mt-3"
+            style="color: var(--text-secondary)"
+          >
+            Both sources are fetched every six hours via GitHub Actions. After
+            the initial backfill, only incremental updates are fetched (last 25
+            hours for NVD, last 48 hours for GitHub).
           </p>
         </section>
 
+        <hr style="border-color: var(--border)" class="my-8" />
+
+        <!-- Known limitations -->
         <section>
-          <h2 class="text-xl font-semibold text-white mb-3">
+          <h2
+            class="text-lg font-semibold mb-3"
+            style="color: var(--text-primary)"
+          >
             Known limitations
           </h2>
-          <ul class="list-disc list-inside space-y-3 mt-2">
+          <ul
+            class="list-disc pl-5 space-y-2 mt-3 text-sm leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
             <li>
-              <strong class="text-white">Ecosystem bias.</strong>
+              <strong style="color: var(--text-primary)"
+                >Ecosystem bias.</strong
+              >
               GitHub Advisory Database covers software package ecosystems (npm,
               Maven, pip, Go, NuGet, Composer, RubyGems, Rust). CVEs for
               hardware, firmware, network appliances, and non-packaged software
@@ -203,34 +410,44 @@
               representative of these ecosystems, not all CVEs.
             </li>
             <li>
-              <strong class="text-white">Survivorship bias.</strong>
+              <strong style="color: var(--text-primary)"
+                >Survivorship bias.</strong
+              >
               Only ~4.5% of CVEs in the dataset have scores from both NVD and
               GitHub Advisory. The conflict rate applies to this small,
               non-random subset of dual-scored CVEs. It should not be
               generalized to "X% of all CVEs have conflicting scores."
             </li>
             <li>
-              <strong class="text-white">CNA pass-through.</strong>
+              <strong style="color: var(--text-primary)"
+                >CNA pass-through.</strong
+              >
               ~7% of conflict CVEs have NVD status "Deferred." For these, the
               "NVD score" is actually the CNA-provided score — not an
               independent NVD assessment. The leaderboard provides a filter to
               exclude these.
             </li>
             <li>
-              <strong class="text-white">GitHub upstream sources.</strong>
+              <strong style="color: var(--text-primary)"
+                >GitHub upstream sources.</strong
+              >
               GitHub Advisory scores are not always independent assessments.
               When GitHub and the assigning CNA agree on a score but NVD
               independently re-scores differently, the measured "disagreement"
               is NVD-vs-CNA rather than NVD-vs-GitHub.
             </li>
             <li>
-              <strong class="text-white">Temporal alignment.</strong>
+              <strong style="color: var(--text-primary)"
+                >Temporal alignment.</strong
+              >
               NVD and GitHub data are fetched in the same CI run but not
               simultaneously. For very new CVEs, one source may have been
               updated between fetch times.
             </li>
             <li>
-              <strong class="text-white">CVSS calculator rounding.</strong>
+              <strong style="color: var(--text-primary)"
+                >CVSS calculator rounding.</strong
+              >
               Different implementations of the CVSS specification can produce
               slightly different scores from identical vector strings. ~8% of
               conflicts have a variance of exactly 0.1, and deltas of 0.2-0.3
@@ -238,14 +455,33 @@
               analytical disagreements.
             </li>
             <li>
-              <strong class="text-white">Terminology.</strong>
-              The field <span class="font-mono">cvss_variance</span> in the data
-              is the <em>range</em> (max - min), not the statistical variance
-              (mean of squared deviations). It is equivalent to
-              <span class="font-mono">|GitHub CVSS - NVD CVSS|</span>.
+              <strong style="color: var(--text-primary)">Terminology.</strong>
+              The field
+              <code
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 4px;
+                  padding: 1px 4px;
+                "
+                >cvss_variance</code
+              >
+              in the data is the <em>range</em> (max - min), not the statistical
+              variance (mean of squared deviations). It is equivalent to
+              <code
+                style="
+                  background: var(--bg-card);
+                  border: 1px solid var(--border);
+                  border-radius: 4px;
+                  padding: 1px 4px;
+                "
+                >|GitHub CVSS - NVD CVSS|</code
+              >.
             </li>
             <li>
-              <strong class="text-white">CNA minimum threshold.</strong>
+              <strong style="color: var(--text-primary)"
+                >CNA minimum threshold.</strong
+              >
               The CNA analysis page only includes CNAs with 5 or more
               dual-scored CVEs to avoid misleading statistics from small
               samples. The CWE analysis page applies the same threshold.
@@ -253,44 +489,86 @@
           </ul>
         </section>
 
+        <hr style="border-color: var(--border)" class="my-8" />
+
+        <!-- Update frequency -->
         <section>
-          <h2 class="text-xl font-semibold text-white mb-3">
+          <h2
+            class="text-lg font-semibold mb-3"
+            style="color: var(--text-primary)"
+          >
             Update frequency
           </h2>
-          <p>
-            Data is updated daily at 02:00 UTC via a GitHub Actions pipeline.
+          <p
+            class="text-sm leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            Data is updated every six hours (00:00, 06:00, 12:00, 18:00 UTC) and
+            on every push to the main branch via a GitHub Actions pipeline.
             After the initial historical backfill, only CVEs modified in the
             last 25 hours (NVD) or 48 hours (GitHub) are re-fetched. All
             aggregate indexes are recomputed from scratch on every run.
           </p>
         </section>
 
+        <hr style="border-color: var(--border)" class="my-8" />
+
+        <!-- How to cite -->
         <section>
-          <h2 class="text-xl font-semibold text-white mb-3">How to cite</h2>
-          <div
-            class="bg-surface-card border border-surface-border rounded-lg p-4 font-mono text-xs text-gray-400 leading-relaxed"
+          <h2
+            class="text-lg font-semibold mb-3"
+            style="color: var(--text-primary)"
+          >
+            How to cite
+          </h2>
+          <blockquote
+            class="text-sm leading-relaxed"
+            style="
+              background: var(--bg-card);
+              border-left: 3px solid var(--brand);
+              padding: 16px;
+              border-radius: 4px;
+              color: var(--text-secondary);
+              font-family:
+                ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo,
+                monospace;
+            "
           >
             Gamblin, J. (2026). The Consensus Engine: Tracking CVSS Scoring
             Divergence Between NVD and GitHub Advisory Database. RogoLabs.
             https://github.com/RogoLabs/consensus-engine
-          </div>
+          </blockquote>
         </section>
       </div>
     </main>
 
-    <footer
-      class="border-t border-surface-border mt-12 py-6 text-center text-gray-600 text-xs"
-    >
-      Built by
-      <a href="https://rogolabs.net" class="text-brand hover:underline"
-        >Jerry Gamblin at RogoLabs</a
+    <!-- Footer -->
+    <footer class="border-t py-6" style="border-color: var(--border)">
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs"
+        style="color: var(--text-muted)"
       >
-      ·
-      <a
-        href="https://github.com/RogoLabs/consensus-engine"
-        class="text-brand hover:underline"
-        >GitHub</a
-      >
+        <div class="flex items-center gap-3 flex-wrap justify-center">
+          <span>
+            Built by
+            <a
+              href="https://rogolabs.net"
+              class="hover:underline"
+              style="color: var(--brand)"
+              >Jerry Gamblin at RogoLabs</a
+            >
+          </span>
+          <span>·</span>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            class="hover:underline"
+            style="color: var(--brand)"
+            >GitHub</a
+          >
+          <span>·</span>
+          <span>Data: NVD API 2.0 · GitHub Advisory Database</span>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
