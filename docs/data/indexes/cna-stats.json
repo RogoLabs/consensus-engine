@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T00:22:18Z",
+  "generated_at": "2026-04-18T03:18:41Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -46,17 +46,6 @@
       "top_cve": "CVE-2024-29073"
     },
     {
-      "name": "elastic",
-      "total": 86,
-      "comparable": 18,
-      "conflicts": 9,
-      "conflict_rate": 50.0,
-      "avg_drift": 1.46,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2024-23444"
-    },
-    {
       "name": "WSO2",
       "total": 48,
       "comparable": 10,
@@ -66,6 +55,17 @@
       "nvd_higher_count": 4,
       "gh_higher_count": 1,
       "top_cve": "CVE-2025-10713"
+    },
+    {
+      "name": "elastic",
+      "total": 86,
+      "comparable": 18,
+      "conflicts": 9,
+      "conflict_rate": 50.0,
+      "avg_drift": 1.46,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2024-23444"
     },
     {
       "name": "mattermost",
@@ -157,8 +157,8 @@
     },
     {
       "name": "github",
-      "total": 8469,
-      "comparable": 3030,
+      "total": 8500,
+      "comparable": 3034,
       "conflicts": 964,
       "conflict_rate": 31.8,
       "avg_drift": 1.41,
@@ -213,24 +213,13 @@
     {
       "name": "hashicorp",
       "total": 52,
-      "comparable": 42,
+      "comparable": 46,
       "conflicts": 12,
-      "conflict_rate": 28.6,
+      "conflict_rate": 26.1,
       "avg_drift": 1.88,
       "nvd_higher_count": 9,
       "gh_higher_count": 3,
       "top_cve": "CVE-2024-5798"
-    },
-    {
-      "name": "openssl",
-      "total": 39,
-      "comparable": 5,
-      "conflicts": 1,
-      "conflict_rate": 20.0,
-      "avg_drift": 2.3,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2022-3602"
     },
     {
       "name": "incibe",
@@ -242,6 +231,17 @@
       "nvd_higher_count": 0,
       "gh_higher_count": 1,
       "top_cve": "CVE-2024-5520"
+    },
+    {
+      "name": "openssl",
+      "total": 39,
+      "comparable": 5,
+      "conflicts": 1,
+      "conflict_rate": 20.0,
+      "avg_drift": 2.3,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2022-3602"
     },
     {
       "name": "suse",
@@ -277,17 +277,6 @@
       "top_cve": "CVE-2024-42447"
     },
     {
-      "name": "cert",
-      "total": 415,
-      "comparable": 19,
-      "conflicts": 3,
-      "conflict_rate": 15.8,
-      "avg_drift": 1.57,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2025-14894"
-    },
-    {
       "name": "mitre.org",
       "total": 411,
       "comparable": 19,
@@ -297,6 +286,17 @@
       "nvd_higher_count": 0,
       "gh_higher_count": 3,
       "top_cve": "CVE-2025-54314"
+    },
+    {
+      "name": "cert",
+      "total": 415,
+      "comparable": 19,
+      "conflicts": 3,
+      "conflict_rate": 15.8,
+      "avg_drift": 1.57,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2025-14894"
     },
     {
       "name": "vmware",
@@ -400,9 +400,9 @@
     {
       "name": "snyk",
       "total": 108,
-      "comparable": 91,
+      "comparable": 92,
       "conflicts": 6,
-      "conflict_rate": 6.6,
+      "conflict_rate": 6.5,
       "avg_drift": 1.32,
       "nvd_higher_count": 5,
       "gh_higher_count": 1,
@@ -433,7 +433,7 @@
     {
       "name": "huntr",
       "total": 739,
-      "comparable": 289,
+      "comparable": 290,
       "conflicts": 14,
       "conflict_rate": 4.8,
       "avg_drift": 1.36,
@@ -466,13 +466,24 @@
     {
       "name": "vulncheck",
       "total": 3498,
-      "comparable": 171,
+      "comparable": 179,
       "conflicts": 1,
       "conflict_rate": 0.6,
       "avg_drift": 0.7,
       "nvd_higher_count": 1,
       "gh_higher_count": 0,
       "top_cve": "CVE-2024-9440"
+    },
+    {
+      "name": "trendmicro",
+      "total": 1868,
+      "comparable": 12,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
     },
     {
       "name": "DSF",
@@ -497,9 +508,9 @@
       "top_cve": null
     },
     {
-      "name": "trendmicro",
-      "total": 1868,
-      "comparable": 12,
+      "name": "AMZN",
+      "total": 73,
+      "comparable": 24,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -511,17 +522,6 @@
       "name": "or",
       "total": 577,
       "comparable": 8,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "AMZN",
-      "total": 73,
-      "comparable": 23,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
