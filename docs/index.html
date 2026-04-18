@@ -463,12 +463,16 @@
                   {
                     label: "NVD scores higher",
                     data: nvdData,
-                    backgroundColor: "var(--nvd-higher)",
+                    backgroundColor: getComputedStyle(document.documentElement)
+                      .getPropertyValue("--nvd-higher")
+                      .trim(),
                   },
                   {
                     label: "GitHub scores higher",
                     data: ghData,
-                    backgroundColor: "var(--gh-higher)",
+                    backgroundColor: getComputedStyle(document.documentElement)
+                      .getPropertyValue("--gh-higher")
+                      .trim(),
                   },
                 ],
               },
