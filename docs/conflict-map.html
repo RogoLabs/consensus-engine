@@ -290,82 +290,134 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Directional Bias Over Time -->
-    <div x-show="!loading && !error && stats?.conflict_direction_by_year" class="mt-10">
-      <h2 class="text-xl font-bold text-white mb-1">Directional Bias Over Time</h2>
-      <p class="text-gray-400 text-sm mb-4">
-        When scores conflict, which source rates higher? Shown as a percentage of
-        comparable CVEs per year (years with &lt;20 comparable CVEs excluded).
-      </p>
-      <div class="bg-surface-card border border-surface-border rounded-lg p-4 sm:p-6">
-        <div class="relative" style="height: 280px;">
-          <canvas id="directionChart"></canvas>
+      <!-- Directional Bias Over Time -->
+      <div
+        x-show="!loading && !error && stats?.conflict_direction_by_year"
+        class="mt-10"
+      >
+        <h2 class="text-xl font-bold text-white mb-1">
+          Directional Bias Over Time
+        </h2>
+        <p class="text-gray-400 text-sm mb-4">
+          When scores conflict, which source rates higher? Shown as a percentage
+          of comparable CVEs per year (years with &lt;20 comparable CVEs
+          excluded).
+        </p>
+        <div
+          class="bg-surface-card border border-surface-border rounded-lg p-4 sm:p-6"
+        >
+          <div class="relative" style="height: 280px">
+            <canvas id="directionChart"></canvas>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Drift Distribution Histogram -->
-    <div x-show="!loading && !error && stats?.variance_distribution" class="mt-10">
-      <h2 class="text-xl font-bold text-white mb-1">Drift Score Distribution</h2>
-      <p class="text-gray-400 text-sm mb-4">
-        How many conflicts fall in each score-gap bucket. A third of conflicts are
-        below Δ1.0 — possible noise from CVSS calculator rounding.
-      </p>
-      <div class="bg-surface-card border border-surface-border rounded-lg p-4 sm:p-6">
-        <div class="relative" style="height: 280px;">
-          <canvas id="histogramChart"></canvas>
+      <!-- Drift Distribution Histogram -->
+      <div
+        x-show="!loading && !error && stats?.variance_distribution"
+        class="mt-10"
+      >
+        <h2 class="text-xl font-bold text-white mb-1">
+          Drift Score Distribution
+        </h2>
+        <p class="text-gray-400 text-sm mb-4">
+          How many conflicts fall in each score-gap bucket. A third of conflicts
+          are below Δ1.0 — possible noise from CVSS calculator rounding.
+        </p>
+        <div
+          class="bg-surface-card border border-surface-border rounded-lg p-4 sm:p-6"
+        >
+          <div class="relative" style="height: 280px">
+            <canvas id="histogramChart"></canvas>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Severity Flip Matrix -->
-    <div x-show="!loading && !error && stats?.severity_flip_matrix" class="mt-10">
-      <h2 class="text-xl font-bold text-white mb-1">Severity Flip Matrix</h2>
-      <p class="text-gray-400 text-sm mb-4">
-        How many conflicts cross each severity band boundary. Rows = NVD severity,
-        columns = GitHub severity. Diagonal = same band (not a flip).
-      </p>
-      <div class="bg-surface-card border border-surface-border rounded-lg p-4 sm:p-6 overflow-x-auto">
-        <table class="text-sm mx-auto">
-          <thead>
-            <tr>
-              <th class="px-3 py-2 text-gray-500 text-xs"></th>
-              <template x-for="band in ['Critical','High','Medium','Low']" :key="'gh-' + band">
-                <th class="px-3 py-2 text-xs text-gray-400 font-medium text-center" x-text="'GH: ' + band"></th>
-              </template>
-              <th class="px-3 py-2 text-xs text-gray-600 font-medium text-center">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template x-for="nvdBand in ['Critical','High','Medium','Low']" :key="'nvd-' + nvdBand">
+      <!-- Severity Flip Matrix -->
+      <div
+        x-show="!loading && !error && stats?.severity_flip_matrix"
+        class="mt-10"
+      >
+        <h2 class="text-xl font-bold text-white mb-1">Severity Flip Matrix</h2>
+        <p class="text-gray-400 text-sm mb-4">
+          How many conflicts cross each severity band boundary. Rows = NVD
+          severity, columns = GitHub severity. Diagonal = same band (not a
+          flip).
+        </p>
+        <div
+          class="bg-surface-card border border-surface-border rounded-lg p-4 sm:p-6 overflow-x-auto"
+        >
+          <table class="text-sm mx-auto">
+            <thead>
               <tr>
-                <td class="px-3 py-2 text-xs text-gray-400 font-medium" x-text="'NVD: ' + nvdBand"></td>
-                <template x-for="ghBand in ['Critical','High','Medium','Low']" :key="nvdBand + '-' + ghBand">
-                  <td class="px-3 py-2 text-center rounded"
-                      :style="`background-color: rgba(${nvdBand === ghBand ? '74,222,128' : '248,113,113'}, ${matrixOpacity(nvdBand, ghBand)})`">
-                    <span class="font-bold text-sm"
-                          :class="matrixCell(nvdBand, ghBand) > 0 ? 'text-white' : 'text-gray-700'"
-                          x-text="matrixCell(nvdBand, ghBand)"></span>
-                  </td>
+                <th class="px-3 py-2 text-gray-500 text-xs"></th>
+                <template
+                  x-for="band in ['Critical','High','Medium','Low']"
+                  :key="'gh-' + band"
+                >
+                  <th
+                    class="px-3 py-2 text-xs text-gray-400 font-medium text-center"
+                    x-text="'GH: ' + band"
+                  ></th>
                 </template>
-                <td class="px-3 py-2 text-center text-xs text-gray-500"
-                    x-text="stats?.severity_matrix_totals?.nvd?.[nvdBand] ?? 0"></td>
+                <th
+                  class="px-3 py-2 text-xs text-gray-600 font-medium text-center"
+                >
+                  Total
+                </th>
               </tr>
-            </template>
-            <tr class="border-t border-surface-border">
-              <td class="px-3 py-2 text-xs text-gray-600 font-medium">Total</td>
-              <template x-for="ghBand in ['Critical','High','Medium','Low']" :key="'total-' + ghBand">
-                <td class="px-3 py-2 text-center text-xs text-gray-500"
-                    x-text="stats?.severity_matrix_totals?.gh?.[ghBand] ?? 0"></td>
+            </thead>
+            <tbody>
+              <template
+                x-for="nvdBand in ['Critical','High','Medium','Low']"
+                :key="'nvd-' + nvdBand"
+              >
+                <tr>
+                  <td
+                    class="px-3 py-2 text-xs text-gray-400 font-medium"
+                    x-text="'NVD: ' + nvdBand"
+                  ></td>
+                  <template
+                    x-for="ghBand in ['Critical','High','Medium','Low']"
+                    :key="nvdBand + '-' + ghBand"
+                  >
+                    <td
+                      class="px-3 py-2 text-center rounded"
+                      :style="`background-color: rgba(${nvdBand === ghBand ? '74,222,128' : '248,113,113'}, ${matrixOpacity(nvdBand, ghBand)})`"
+                    >
+                      <span
+                        class="font-bold text-sm"
+                        :class="matrixCell(nvdBand, ghBand) > 0 ? 'text-white' : 'text-gray-700'"
+                        x-text="matrixCell(nvdBand, ghBand)"
+                      ></span>
+                    </td>
+                  </template>
+                  <td
+                    class="px-3 py-2 text-center text-xs text-gray-500"
+                    x-text="stats?.severity_matrix_totals?.nvd?.[nvdBand] ?? 0"
+                  ></td>
+                </tr>
               </template>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+              <tr class="border-t border-surface-border">
+                <td class="px-3 py-2 text-xs text-gray-600 font-medium">
+                  Total
+                </td>
+                <template
+                  x-for="ghBand in ['Critical','High','Medium','Low']"
+                  :key="'total-' + ghBand"
+                >
+                  <td
+                    class="px-3 py-2 text-center text-xs text-gray-500"
+                    x-text="stats?.severity_matrix_totals?.gh?.[ghBand] ?? 0"
+                  ></td>
+                </template>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
     </div>
 
     <!-- Footer -->
