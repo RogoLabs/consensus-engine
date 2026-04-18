@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Methodology — The Consensus Engine</title>
+    <meta
+      name="description"
+      content="How the Drift Score is computed, what data sources are used, and known limitations of The Consensus Engine."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              surface: "#0f1117",
+              "surface-card": "#1a1d2e",
+              "surface-border": "#2d3748",
+              brand: "#3b82f6",
+              "brand-light": "#60a5fa",
+            },
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="min-h-full bg-surface text-gray-100">
+    <!-- Header -->
+    <header class="border-b border-surface-border bg-surface sticky top-0 z-40">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-6">
+          <a
+            href="index.html"
+            class="flex items-center gap-2 font-bold text-lg text-white hover:text-brand-light transition-colors"
+          >
+            <span class="text-brand">⚡</span>
+            <span class="hidden sm:inline">The Consensus Engine</span>
+            <span class="sm:hidden">CE</span>
+          </a>
+          <nav class="flex items-center gap-4 text-sm whitespace-nowrap">
+            <a
+              href="index.html"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Score Conflicts</a
+            >
+            <a
+              href="conflict-map.html"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Conflict Map</a
+            >
+            <a
+              href="vector-breakdown.html"
+              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
+              >Vector Breakdown</a
+            >
+            <a
+              href="cna.html"
+              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
+              >CNAs</a
+            >
+            <a
+              href="cwe.html"
+              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
+              >CWEs</a
+            >
+            <a
+              href="coverage-gap.html"
+              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
+              >Coverage Gap</a
+            >
+            <span class="text-white font-medium hidden sm:inline"
+              >Methodology</span
+            >
+          </nav>
+        </div>
+        <a
+          href="https://github.com/RogoLabs/consensus-engine"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-1.5 bg-surface-border hover:bg-gray-700 text-gray-300 hover:text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
+        >
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+            />
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-10">
+      <h1 class="text-3xl font-bold text-white mb-6">Methodology</h1>
+
+      <div
+        class="prose prose-invert max-w-none space-y-8 text-gray-300 text-sm leading-relaxed"
+      >
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">
+            What the Drift Score measures
+          </h2>
+          <p>
+            The Drift Score is
+            <span class="text-white font-medium font-mono"
+              >|GitHub CVSS - NVD CVSS|</span
+            >
+            — the absolute difference between the CVSS base scores assigned by
+            NVD and the GitHub Advisory Database for the same CVE. Scores are
+            only compared when both sources use the
+            <strong>same CVSS version</strong> (e.g., both v3.1). Cross-version
+            comparisons (v3.1 vs. v4.0) are classified as data gaps, not
+            conflicts.
+          </p>
+          <p class="text-gray-500 mt-2">
+            Note: The <span class="font-mono">drift_score</span> and
+            <span class="font-mono">cvss_variance</span> fields in the data are
+            currently equivalent. Both represent the raw score delta. The
+            project retains both fields in case the formula evolves in the
+            future.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">Classification</h2>
+          <p>
+            Every CVE in the dataset is assigned a
+            <span class="font-mono text-white">drift_type</span>:
+          </p>
+          <ul class="list-disc list-inside space-y-1 mt-2">
+            <li>
+              <strong class="text-yellow-400">conflict</strong> — Both NVD and
+              GitHub have assigned a CVSS score using the same version, and the
+              scores differ.
+            </li>
+            <li>
+              <strong class="text-gray-400">gap</strong> — One or both sources
+              have not assigned a score, or the scores use different CVSS
+              versions (cross-version mismatch).
+            </li>
+            <li>
+              <strong class="text-red-400">rejected</strong> — NVD has marked
+              the CVE as Rejected, but GitHub still maintains an advisory for
+              it. This is an existence dispute, not a score dispute, so the
+              Drift Score is 0.0.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">Data sources</h2>
+          <ul class="list-disc list-inside space-y-2 mt-2">
+            <li>
+              <strong class="text-white">NVD API 2.0</strong> — CVSS scores, CWE
+              assignments, CPE strings, publication dates, and analysis status.
+              For CVEs with status "Analyzed" or "Modified," the score reflects
+              NVD's independent assessment. For CVEs with status
+              <strong>"Deferred,"</strong> NVD did not independently analyze the
+              CVE — the score is the CNA-provided score passed through the NVD
+              API. Approximately 7% of conflicts in this dataset fall into this
+              category.
+            </li>
+            <li>
+              <strong class="text-white">GitHub Advisory Database</strong> —
+              CVSS scores (primarily v3.1), affected package versions, and GHSA
+              identifiers. GitHub's scores are not always independent
+              assessments — many come from maintainer-submitted advisories or
+              CNA-provided vectors.
+            </li>
+          </ul>
+          <p class="mt-2">
+            Both sources are fetched daily at 02:00 UTC via GitHub Actions.
+            After the initial backfill, only incremental updates are fetched
+            (last 25 hours for NVD, last 48 hours for GitHub).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">
+            Known limitations
+          </h2>
+          <ul class="list-disc list-inside space-y-3 mt-2">
+            <li>
+              <strong class="text-white">Ecosystem bias.</strong>
+              GitHub Advisory Database covers software package ecosystems (npm,
+              Maven, pip, Go, NuGet, Composer, RubyGems, Rust). CVEs for
+              hardware, firmware, network appliances, and non-packaged software
+              are largely absent. The conflict rate reported here is
+              representative of these ecosystems, not all CVEs.
+            </li>
+            <li>
+              <strong class="text-white">Survivorship bias.</strong>
+              Only ~4.5% of CVEs in the dataset have scores from both NVD and
+              GitHub Advisory. The conflict rate applies to this small,
+              non-random subset of dual-scored CVEs. It should not be
+              generalized to "X% of all CVEs have conflicting scores."
+            </li>
+            <li>
+              <strong class="text-white">CNA pass-through.</strong>
+              ~7% of conflict CVEs have NVD status "Deferred." For these, the
+              "NVD score" is actually the CNA-provided score — not an
+              independent NVD assessment. The leaderboard provides a filter to
+              exclude these.
+            </li>
+            <li>
+              <strong class="text-white">GitHub upstream sources.</strong>
+              GitHub Advisory scores are not always independent assessments.
+              When GitHub and the assigning CNA agree on a score but NVD
+              independently re-scores differently, the measured "disagreement"
+              is NVD-vs-CNA rather than NVD-vs-GitHub.
+            </li>
+            <li>
+              <strong class="text-white">Temporal alignment.</strong>
+              NVD and GitHub data are fetched in the same CI run but not
+              simultaneously. For very new CVEs, one source may have been
+              updated between fetch times.
+            </li>
+            <li>
+              <strong class="text-white">CVSS calculator rounding.</strong>
+              Different implementations of the CVSS specification can produce
+              slightly different scores from identical vector strings. ~8% of
+              conflicts have a variance of exactly 0.1, and deltas of 0.2-0.3
+              may also be implementation artifacts rather than genuine
+              analytical disagreements.
+            </li>
+            <li>
+              <strong class="text-white">Terminology.</strong>
+              The field <span class="font-mono">cvss_variance</span> in the data
+              is the <em>range</em> (max - min), not the statistical variance
+              (mean of squared deviations). It is equivalent to
+              <span class="font-mono">|GitHub CVSS - NVD CVSS|</span>.
+            </li>
+            <li>
+              <strong class="text-white">CNA minimum threshold.</strong>
+              The CNA analysis page only includes CNAs with 5 or more
+              dual-scored CVEs to avoid misleading statistics from small
+              samples. The CWE analysis page applies the same threshold.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">
+            Update frequency
+          </h2>
+          <p>
+            Data is updated daily at 02:00 UTC via a GitHub Actions pipeline.
+            After the initial historical backfill, only CVEs modified in the
+            last 25 hours (NVD) or 48 hours (GitHub) are re-fetched. All
+            aggregate indexes are recomputed from scratch on every run.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">How to cite</h2>
+          <div
+            class="bg-surface-card border border-surface-border rounded-lg p-4 font-mono text-xs text-gray-400 leading-relaxed"
+          >
+            Gamblin, J. (2026). The Consensus Engine: Tracking CVSS Scoring
+            Divergence Between NVD and GitHub Advisory Database. RogoLabs.
+            https://github.com/RogoLabs/consensus-engine
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer
+      class="border-t border-surface-border mt-12 py-6 text-center text-gray-600 text-xs"
+    >
+      Built by
+      <a href="https://rogolabs.net" class="text-brand hover:underline"
+        >Jerry Gamblin at RogoLabs</a
+      >
+      ·
+      <a
+        href="https://github.com/RogoLabs/consensus-engine"
+        class="text-brand hover:underline"
+        >GitHub</a
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CWE Conflict Analysis — The Consensus Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              surface: "#0f1117",
+              "surface-card": "#1a1d2e",
+              "surface-border": "#2d3748",
+              brand: "#3b82f6",
+              "brand-light": "#60a5fa",
+            },
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-full bg-surface text-gray-100"
+    x-data="cwePage()"
+    x-init="init()"
+  >
+    <!-- Header -->
+    <header class="border-b border-surface-border bg-surface sticky top-0 z-40">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-6">
+          <a
+            href="index.html"
+            class="flex items-center gap-2 font-bold text-lg text-white hover:text-brand-light transition-colors"
+          >
+            <span class="text-brand">⚡</span>
+            <span class="hidden sm:inline">The Consensus Engine</span>
+            <span class="sm:hidden">CE</span>
+          </a>
+          <nav class="flex items-center gap-4 text-sm whitespace-nowrap">
+            <a
+              href="index.html"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Score Conflicts</a
+            >
+            <a
+              href="conflict-map.html"
+              class="text-gray-400 hover:text-white transition-colors"
+              >Conflict Map</a
+            >
+            <a
+              href="vector-breakdown.html"
+              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
+              >Vector Breakdown</a
+            >
+            <a
+              href="cna.html"
+              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
+              >CNAs</a
+            >
+            <span class="text-white font-medium hidden sm:inline">CWEs</span>
+            <a
+              href="coverage-gap.html"
+              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
+              >Coverage Gap</a
+            >
+            <a
+              href="methodology.html"
+              class="text-gray-400 hover:text-white transition-colors hidden sm:inline"
+              >Methodology</a
+            >
+          </nav>
+        </div>
+        <a
+          href="https://github.com/RogoLabs/consensus-engine"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-1.5 bg-surface-border hover:bg-gray-700 text-gray-300 hover:text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
+        >
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+            />
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold text-white mb-2">
+          CWE Conflict Analysis
+        </h1>
+        <p class="text-gray-400 max-w-2xl text-sm leading-relaxed">
+          Which vulnerability types have the most CVSS scoring disagreement
+          between NVD and GitHub? Only CWEs with 5+ conflict CVEs are shown.
+          Weak/generic CWEs (NVD-CWE-noinfo, etc.) are excluded.
+        </p>
+      </div>
+
+      <div x-show="loading" class="text-center py-24 text-gray-500 text-sm">
+        Loading CWE data...
+      </div>
+      <div
+        x-show="error && !loading"
+        class="bg-red-950 border border-red-800 text-red-300 px-4 py-3 rounded-lg text-sm mb-6"
+        x-text="error"
+      ></div>
+
+      <div x-show="!loading && !error">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div
+            class="bg-surface-card border border-surface-border rounded-xl p-4"
+          >
+            <div
+              class="text-2xl font-bold text-brand"
+              x-text="cwes.length"
+            ></div>
+            <div class="text-gray-400 text-xs mt-1">CWEs with conflicts</div>
+          </div>
+          <div
+            class="bg-surface-card border border-surface-border rounded-xl p-4"
+          >
+            <div
+              class="text-2xl font-bold text-red-400"
+              x-text="cwes[0]?.cwe_id ?? '—'"
+            ></div>
+            <div class="text-gray-400 text-xs mt-1">Most conflicts</div>
+          </div>
+          <div
+            class="bg-surface-card border border-surface-border rounded-xl p-4"
+          >
+            <div
+              class="text-2xl font-bold text-orange-400"
+              x-text="highestAvg ? `Δ${highestAvg.avg_variance.toFixed(2)}` : '—'"
+            ></div>
+            <div
+              class="text-gray-400 text-xs mt-1"
+              x-text="highestAvg ? highestAvg.cwe_id : ''"
+            >
+              Highest avg drift
+            </div>
+          </div>
+          <div
+            class="bg-surface-card border border-surface-border rounded-xl p-4"
+          >
+            <div
+              class="text-2xl font-bold text-yellow-400"
+              x-text="generatedAt ? generatedAt.slice(0, 10) : '—'"
+            ></div>
+            <div class="text-gray-400 text-xs mt-1">Data as of</div>
+          </div>
+        </div>
+
+        <!-- Bar chart -->
+        <div
+          class="bg-surface-card border border-surface-border rounded-xl p-5 sm:p-6 mb-8"
+        >
+          <h2 class="text-lg font-semibold text-white mb-1">
+            Avg Drift by CWE (top 15)
+          </h2>
+          <p class="text-gray-500 text-xs mb-4">
+            Average CVSS variance among conflict CVEs, grouped by NVD CWE
+            assignment
+          </p>
+          <div class="relative" style="height: 320px">
+            <canvas id="cweChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div
+          class="bg-surface-card border border-surface-border rounded-xl overflow-hidden"
+        >
+          <div
+            class="px-4 py-3 border-b border-surface-border flex items-center gap-3"
+          >
+            <span
+              class="text-sm font-medium text-gray-300"
+              x-text="`${filtered.length} CWEs`"
+            ></span>
+            <input
+              x-model="search"
+              type="search"
+              placeholder="Filter by CWE ID or name..."
+              class="ml-auto bg-surface border border-surface-border text-gray-200 placeholder-gray-600 rounded px-2.5 py-1 text-xs focus:outline-none focus:border-brand w-52"
+            />
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr
+                  class="border-b border-surface-border text-gray-500 text-xs uppercase tracking-wider"
+                >
+                  <th class="px-4 py-3 text-left">#</th>
+                  <th class="px-4 py-3 text-left">CWE</th>
+                  <th class="px-4 py-3 text-left hidden sm:table-cell">Name</th>
+                  <th
+                    class="px-4 py-3 text-right cursor-pointer hover:text-white"
+                    @click="sortBy('conflict_count')"
+                  >
+                    Conflicts
+                    <span x-show="sort === 'conflict_count'">&#8595;</span>
+                  </th>
+                  <th
+                    class="px-4 py-3 text-right cursor-pointer hover:text-white"
+                    @click="sortBy('avg_variance')"
+                  >
+                    Avg Drift
+                    <span x-show="sort === 'avg_variance'">&#8595;</span>
+                  </th>
+                  <th class="px-4 py-3 text-right hidden md:table-cell">
+                    NVD Higher %
+                  </th>
+                  <th class="px-4 py-3 text-right hidden md:table-cell">
+                    GH Higher %
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-border">
+                <template x-for="(row, i) in filtered" :key="row.cwe_id">
+                  <tr class="transition-colors hover:bg-surface">
+                    <td
+                      class="px-4 py-3 text-gray-600 text-xs"
+                      x-text="i + 1"
+                    ></td>
+                    <td
+                      class="px-4 py-3 font-mono font-medium text-brand"
+                      x-text="row.cwe_id"
+                    ></td>
+                    <td
+                      class="px-4 py-3 text-gray-400 text-xs hidden sm:table-cell"
+                      x-text="row.name"
+                    ></td>
+                    <td
+                      class="px-4 py-3 text-right text-gray-300"
+                      x-text="row.conflict_count"
+                    ></td>
+                    <td
+                      class="px-4 py-3 text-right font-mono"
+                      :class="row.avg_variance >= 3 ? 'text-red-400' : row.avg_variance >= 1.5 ? 'text-orange-400' : 'text-gray-300'"
+                      x-text="row.avg_variance.toFixed(2)"
+                    ></td>
+                    <td
+                      class="px-4 py-3 text-right text-orange-400 hidden md:table-cell"
+                      x-text="row.conflict_count ? `${(row.nvd_higher_count / row.conflict_count * 100).toFixed(0)}%` : '—'"
+                    ></td>
+                    <td
+                      class="px-4 py-3 text-right text-blue-400 hidden md:table-cell"
+                      x-text="row.conflict_count ? `${(row.gh_higher_count / row.conflict_count * 100).toFixed(0)}%` : '—'"
+                    ></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="border-t border-surface-border mt-12 py-6 text-center text-gray-600 text-xs"
+    >
+      Built by
+      <a href="https://rogolabs.net" class="text-brand hover:underline"
+        >Jerry Gamblin at RogoLabs</a
+      >
+      ·
+      <a
+        href="https://github.com/RogoLabs/consensus-engine"
+        class="text-brand hover:underline"
+        >GitHub</a
+      >
+    </footer>
+
+    <script>
+      function cwePage() {
+        return {
+          loading: true,
+          error: null,
+          cwes: [],
+          generatedAt: null,
+          sort: "conflict_count",
+          search: "",
+
+          async init() {
+            try {
+              const res = await fetch("data/indexes/cwe-stats.json");
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              const json = await res.json();
+              this.cwes = json.cwes ?? [];
+              this.generatedAt = json.generated_at ?? null;
+            } catch (e) {
+              this.error = `Failed to load CWE data: ${e.message}`;
+            } finally {
+              this.loading = false;
+            }
+            if (!this.error) this.$nextTick(() => this.buildChart());
+          },
+
+          sortBy(field) {
+            this.sort = field;
+          },
+
+          get filtered() {
+            let result = [...this.cwes].sort(
+              (a, b) => (b[this.sort] ?? 0) - (a[this.sort] ?? 0),
+            );
+            const q = this.search.trim().toLowerCase();
+            if (q)
+              result = result.filter(
+                (r) =>
+                  r.cwe_id.toLowerCase().includes(q) ||
+                  r.name.toLowerCase().includes(q),
+              );
+            return result;
+          },
+
+          get highestAvg() {
+            if (!this.cwes.length) return null;
+            return this.cwes.reduce((a, b) =>
+              a.avg_variance > b.avg_variance ? a : b,
+            );
+          },
+
+          buildChart() {
+            const top = [...this.cwes]
+              .sort((a, b) => b.avg_variance - a.avg_variance)
+              .slice(0, 15);
+            const labels = top.map((c) => `${c.cwe_id} — ${c.name}`);
+            const data = top.map((c) => c.avg_variance);
+            const colors = data.map((v) =>
+              v >= 3 ? "#f87171" : v >= 1.5 ? "#facc15" : "#4ade80",
+            );
+
+            const ctx = document.getElementById("cweChart");
+            if (!ctx) return;
+            new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels,
+                datasets: [
+                  {
+                    label: "Avg Drift (Δ)",
+                    data,
+                    backgroundColor: colors,
+                    borderRadius: 4,
+                    borderSkipped: false,
+                  },
+                ],
+              },
+              options: {
+                indexAxis: "y",
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { display: false },
+                  tooltip: {
+                    callbacks: {
+                      label: (ctx) => ` Avg Δ${ctx.raw.toFixed(2)}`,
+                    },
+                  },
+                },
+                scales: {
+                  x: {
+                    min: 0,
+                    ticks: { color: "#9ca3af", callback: (v) => `Δ${v}` },
+                    grid: { color: "#2d3748" },
+                  },
+                  y: {
+                    ticks: { color: "#d1d5db", font: { size: 10 } },
+                    grid: { display: false },
+                  },
+                },
+              },
+            });
+          },
+        };
+      }
+    </script>
+  </body>
+</html>
