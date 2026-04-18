@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who Disagrees — The Consensus Engine</title>
+    <meta
+      name="description"
+      content="CVSS scoring disagreement between NVD and GitHub Advisory is systematic, not random. Tracking divergence across 130,000+ CVEs."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+            colors: {
+              surface: {
+                DEFAULT: "var(--bg-primary)",
+                card: "var(--bg-card)",
+                border: "var(--border)",
+              },
+              brand: {
+                DEFAULT: "var(--brand)",
+                light: "var(--brand-light)",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <style>
+      :root {
+        --bg-primary: #f8fafc;
+        --bg-card: #ffffff;
+        --border: #e2e8f0;
+        --text-primary: #0f172a;
+        --text-secondary: #64748b;
+        --text-muted: #94a3b8;
+        --brand: #2563eb;
+        --brand-light: #3b82f6;
+        --danger: #dc2626;
+        --warning: #d97706;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(148, 163, 184, 0.2);
+        --chart-text: #64748b;
+      }
+      .dark {
+        --bg-primary: #0f1117;
+        --bg-card: #1a1d2e;
+        --border: #2d3748;
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --text-muted: #6b7280;
+        --brand: #3b82f6;
+        --brand-light: #60a5fa;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(45, 55, 72, 0.8);
+        --chart-text: #6b7280;
+      }
+      body {
+        font-family: "Inter", ui-sans-serif, system-ui;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+      }
+    </style>
+  </head>
+  <body class="min-h-full">
+    <!-- Header -->
+    <header
+      class="border-b sticky top-0 z-40"
+      style="border-color: var(--border); background: var(--bg-primary)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-6">
+          <a
+            href="index.html"
+            class="font-semibold text-sm tracking-wide uppercase"
+            style="color: var(--text-muted); letter-spacing: 0.1em"
+            >The Consensus Engine</a
+          >
+          <nav
+            class="hidden sm:flex items-center gap-4 text-sm"
+            style="color: var(--text-secondary)"
+          >
+            <a href="patterns.html" class="hover:opacity-80 transition-opacity"
+              >How They Disagree</a
+            >
+            <span style="font-weight: 600; color: var(--text-primary)"
+              >Who Disagrees</span
+            >
+            <a href="data.html" class="hover:opacity-80 transition-opacity"
+              >The Data</a
+            >
+            <a
+              href="methodology.html"
+              class="hover:opacity-80 transition-opacity"
+              >Methodology</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            onclick="
+              document.documentElement.classList.toggle('dark');
+              localStorage.setItem(
+                'theme',
+                document.documentElement.classList.contains('dark')
+                  ? 'dark'
+                  : 'light',
+              );
+            "
+            class="p-1.5 rounded-md hover:opacity-80 transition-opacity"
+            style="color: var(--text-muted)"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="w-4 h-4 dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <svg
+              class="w-4 h-4 hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+          <!-- Mobile menu button -->
+          <button
+            class="sm:hidden p-1.5 rounded-md hover:opacity-80"
+            style="color: var(--text-muted)"
+            onclick="
+              document.getElementById('mobile-nav').classList.toggle('hidden')
+            "
+            aria-label="Menu"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            target="_blank"
+            rel="noopener"
+            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-opacity hover:opacity-80"
+            style="
+              border: 1px solid var(--border);
+              color: var(--text-secondary);
+            "
+          >
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <!-- Mobile nav dropdown -->
+      <div
+        id="mobile-nav"
+        class="hidden sm:hidden border-t px-4 py-3 space-y-2 text-sm"
+        style="border-color: var(--border); color: var(--text-secondary)"
+      >
+        <a href="patterns.html" class="block py-1">How They Disagree</a>
+        <span
+          class="block py-1"
+          style="font-weight: 600; color: var(--text-primary)"
+          >Who Disagrees</span
+        >
+        <a href="data.html" class="block py-1">The Data</a>
+        <a href="methodology.html" class="block py-1">Methodology</a>
+        <a
+          href="https://github.com/RogoLabs/consensus-engine"
+          target="_blank"
+          rel="noopener"
+          class="block py-1"
+          >GitHub</a
+        >
+      </div>
+    </header>
+
+    <main
+      class="max-w-7xl mx-auto px-4 sm:px-6 py-10"
+      x-data="sourcesPage()"
+      x-init="init()"
+    >
+      <!-- Page title -->
+      <div class="mb-10">
+        <h1
+          class="text-[28px] sm:text-[32px] font-bold leading-tight mb-3"
+          style="color: var(--text-primary)"
+        >
+          Who Disagrees
+        </h1>
+        <p
+          class="text-sm leading-relaxed max-w-2xl"
+          style="color: var(--text-secondary)"
+        >
+          Conflict isn't uniformly distributed. Certain CVE Numbering
+          Authorities and vulnerability types account for disproportionate
+          disagreement.
+        </p>
+      </div>
+
+      <!-- Loading -->
+      <div
+        x-show="loading"
+        class="text-center py-24 text-sm"
+        style="color: var(--text-muted)"
+      >
+        Loading source data...
+      </div>
+
+      <!-- Error -->
+      <div
+        x-show="error && !loading"
+        class="rounded-lg px-4 py-3 text-sm mb-6"
+        style="
+          background: rgba(220, 38, 38, 0.1);
+          border: 1px solid rgba(220, 38, 38, 0.3);
+          color: var(--danger);
+        "
+        x-text="error"
+      ></div>
+
+      <!-- Content -->
+      <div x-show="!loading && !error" x-cloak>
+        <!-- ═══════════════════════════════════ CNA Section ═══════════════════════════════════ -->
+        <div class="mb-12">
+          <div
+            class="text-[11px] font-semibold uppercase tracking-[0.15em] mb-5"
+            style="color: var(--text-muted)"
+          >
+            By CNA (Scoring Organization)
+          </div>
+
+          <!-- CNA Chart -->
+          <div
+            class="rounded-lg p-4 sm:p-6 mb-6"
+            style="background: var(--bg-card); border: 1px solid var(--border)"
+          >
+            <div class="relative" style="height: 420px">
+              <canvas id="cnaChart"></canvas>
+            </div>
+          </div>
+
+          <!-- CNA Table -->
+          <div
+            class="rounded-lg overflow-hidden"
+            style="background: var(--bg-card); border: 1px solid var(--border)"
+          >
+            <!-- Toolbar -->
+            <div
+              class="px-4 py-3 flex items-center gap-3"
+              style="border-bottom: 1px solid var(--border)"
+            >
+              <span
+                class="text-sm font-medium"
+                style="color: var(--text-secondary)"
+                x-text="`${filteredCnas.length} CNAs`"
+              ></span>
+              <input
+                x-model="cnaSearch"
+                type="search"
+                placeholder="Filter by CNA name..."
+                class="ml-auto rounded px-2.5 py-1 text-xs focus:outline-none w-44"
+                style="
+                  background: var(--bg-primary);
+                  border: 1px solid var(--border);
+                  color: var(--text-primary);
+                "
+              />
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr
+                    class="text-xs uppercase tracking-wider"
+                    style="
+                      border-bottom: 1px solid var(--border);
+                      color: var(--text-muted);
+                    "
+                  >
+                    <th class="px-4 py-3 text-left">#</th>
+                    <th class="px-4 py-3 text-left">CNA</th>
+                    <th
+                      class="px-4 py-3 text-right cursor-pointer hover:opacity-80 transition-opacity"
+                      @click="sortCnas('conflict_rate')"
+                    >
+                      Conflict Rate
+                      <span
+                        x-show="cnaSort === 'conflict_rate'"
+                        x-text="cnaSortAsc ? '↑' : '↓'"
+                      ></span>
+                    </th>
+                    <th
+                      class="px-4 py-3 text-right cursor-pointer hover:opacity-80 transition-opacity"
+                      @click="sortCnas('conflicts')"
+                    >
+                      Conflicts
+                      <span
+                        x-show="cnaSort === 'conflicts'"
+                        x-text="cnaSortAsc ? '↑' : '↓'"
+                      ></span>
+                    </th>
+                    <th class="px-4 py-3 text-right hidden md:table-cell">
+                      Total CVEs
+                    </th>
+                    <th
+                      class="px-4 py-3 text-right hidden md:table-cell cursor-pointer hover:opacity-80 transition-opacity"
+                      @click="sortCnas('avg_drift')"
+                    >
+                      Avg Drift
+                      <span
+                        x-show="cnaSort === 'avg_drift'"
+                        x-text="cnaSortAsc ? '↑' : '↓'"
+                      ></span>
+                    </th>
+                    <th class="px-4 py-3 text-right hidden md:table-cell">
+                      NVD Higher %
+                    </th>
+                    <th class="px-4 py-3 text-right hidden md:table-cell">
+                      GH Higher %
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template x-for="(row, i) in filteredCnas" :key="row.name">
+                    <tr
+                      class="transition-colors hover:opacity-80"
+                      style="border-bottom: 1px solid var(--border)"
+                    >
+                      <td
+                        class="px-4 py-3 text-xs"
+                        style="color: var(--text-muted)"
+                        x-text="i + 1"
+                      ></td>
+                      <td
+                        class="px-4 py-3 font-medium"
+                        style="color: var(--text-primary)"
+                        x-text="row.name"
+                      ></td>
+                      <td class="px-4 py-3 text-right">
+                        <div class="flex items-center justify-end gap-2">
+                          <div
+                            class="hidden sm:block rounded-sm"
+                            style="
+                              width: 80px;
+                              height: 4px;
+                              background: var(--border);
+                              border-radius: 2px;
+                            "
+                          >
+                            <div
+                              style="
+                                height: 4px;
+                                border-radius: 2px;
+                                background: var(--brand);
+                              "
+                              :style="`width: ${Math.min(row.conflict_rate, 100)}%`"
+                            ></div>
+                          </div>
+                          <span
+                            style="color: var(--text-primary)"
+                            x-text="`${row.conflict_rate.toFixed(1)}%`"
+                          ></span>
+                        </div>
+                      </td>
+                      <td
+                        class="px-4 py-3 text-right"
+                        style="color: var(--text-secondary)"
+                        x-text="row.conflicts"
+                      ></td>
+                      <td
+                        class="px-4 py-3 text-right hidden md:table-cell"
+                        style="color: var(--text-muted)"
+                        x-text="row.comparable"
+                      ></td>
+                      <td
+                        class="px-4 py-3 text-right font-mono hidden md:table-cell"
+                        :style="`color: ${row.avg_drift >= 3 ? 'var(--danger)' : row.avg_drift >= 1.5 ? 'var(--warning)' : 'var(--text-secondary)'}`"
+                        x-text="row.avg_drift.toFixed(2)"
+                      ></td>
+                      <td
+                        class="px-4 py-3 text-right hidden md:table-cell"
+                        style="color: var(--nvd-higher)"
+                        x-text="row.conflicts ? `${(row.nvd_higher_count / row.conflicts * 100).toFixed(0)}%` : '—'"
+                      ></td>
+                      <td
+                        class="px-4 py-3 text-right hidden md:table-cell"
+                        style="color: var(--gh-higher)"
+                        x-text="row.conflicts ? `${(row.gh_higher_count / row.conflicts * 100).toFixed(0)}%` : '—'"
+                      ></td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="mb-12" style="border-color: var(--border)" />
+
+        <!-- ═══════════════════════════════════ CWE Section ═══════════════════════════════════ -->
+        <div class="mb-12">
+          <div
+            class="text-[11px] font-semibold uppercase tracking-[0.15em] mb-5"
+            style="color: var(--text-muted)"
+          >
+            By CWE (Vulnerability Type)
+          </div>
+
+          <!-- CWE Chart -->
+          <div
+            class="rounded-lg p-4 sm:p-6 mb-6"
+            style="background: var(--bg-card); border: 1px solid var(--border)"
+          >
+            <div class="relative" style="height: 420px">
+              <canvas id="cweChart"></canvas>
+            </div>
+          </div>
+
+          <!-- CWE Table -->
+          <div
+            class="rounded-lg overflow-hidden"
+            style="background: var(--bg-card); border: 1px solid var(--border)"
+          >
+            <!-- Toolbar -->
+            <div
+              class="px-4 py-3 flex items-center gap-3"
+              style="border-bottom: 1px solid var(--border)"
+            >
+              <span
+                class="text-sm font-medium"
+                style="color: var(--text-secondary)"
+                x-text="`${filteredCwes.length} CWEs`"
+              ></span>
+              <input
+                x-model="cweSearch"
+                type="search"
+                placeholder="Filter by CWE ID or name..."
+                class="ml-auto rounded px-2.5 py-1 text-xs focus:outline-none w-52"
+                style="
+                  background: var(--bg-primary);
+                  border: 1px solid var(--border);
+                  color: var(--text-primary);
+                "
+              />
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr
+                    class="text-xs uppercase tracking-wider"
+                    style="
+                      border-bottom: 1px solid var(--border);
+                      color: var(--text-muted);
+                    "
+                  >
+                    <th class="px-4 py-3 text-left">#</th>
+                    <th class="px-4 py-3 text-left">CWE ID</th>
+                    <th class="px-4 py-3 text-left hidden sm:table-cell">
+                      Name
+                    </th>
+                    <th
+                      class="px-4 py-3 text-right cursor-pointer hover:opacity-80 transition-opacity"
+                      @click="sortCwes('conflict_count')"
+                    >
+                      Conflicts
+                      <span
+                        x-show="cweSort === 'conflict_count'"
+                        x-text="cweSortAsc ? '↑' : '↓'"
+                      ></span>
+                    </th>
+                    <th
+                      class="px-4 py-3 text-right cursor-pointer hover:opacity-80 transition-opacity"
+                      @click="sortCwes('avg_variance')"
+                    >
+                      Avg Drift
+                      <span
+                        x-show="cweSort === 'avg_variance'"
+                        x-text="cweSortAsc ? '↑' : '↓'"
+                      ></span>
+                    </th>
+                    <th class="px-4 py-3 text-right hidden md:table-cell">
+                      NVD Higher %
+                    </th>
+                    <th class="px-4 py-3 text-right hidden md:table-cell">
+                      GH Higher %
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template x-for="(row, i) in filteredCwes" :key="row.cwe_id">
+                    <tr
+                      class="transition-colors hover:opacity-80"
+                      style="border-bottom: 1px solid var(--border)"
+                    >
+                      <td
+                        class="px-4 py-3 text-xs"
+                        style="color: var(--text-muted)"
+                        x-text="i + 1"
+                      ></td>
+                      <td
+                        class="px-4 py-3 font-mono font-medium"
+                        style="color: var(--text-primary)"
+                        x-text="row.cwe_id"
+                      ></td>
+                      <td
+                        class="px-4 py-3 hidden sm:table-cell"
+                        style="color: var(--text-secondary)"
+                        x-text="row.name"
+                      ></td>
+                      <td
+                        class="px-4 py-3 text-right"
+                        style="color: var(--text-secondary)"
+                        x-text="row.conflict_count"
+                      ></td>
+                      <td
+                        class="px-4 py-3 text-right font-mono"
+                        :style="`color: ${row.avg_variance >= 3 ? 'var(--danger)' : row.avg_variance >= 1.5 ? 'var(--warning)' : 'var(--text-secondary)'}`"
+                        x-text="row.avg_variance.toFixed(2)"
+                      ></td>
+                      <td
+                        class="px-4 py-3 text-right hidden md:table-cell"
+                        style="color: var(--nvd-higher)"
+                        x-text="row.conflict_count ? `${(row.nvd_higher_count / row.conflict_count * 100).toFixed(0)}%` : '—'"
+                      ></td>
+                      <td
+                        class="px-4 py-3 text-right hidden md:table-cell"
+                        style="color: var(--gh-higher)"
+                        x-text="row.conflict_count ? `${(row.gh_higher_count / row.conflict_count * 100).toFixed(0)}%` : '—'"
+                      ></td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t py-6" style="border-color: var(--border)">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs"
+        style="color: var(--text-muted)"
+      >
+        <div class="flex items-center gap-3 flex-wrap justify-center">
+          <span>
+            Built by
+            <a
+              href="https://rogolabs.net"
+              class="hover:underline"
+              style="color: var(--brand)"
+              >Jerry Gamblin at RogoLabs</a
+            >
+          </span>
+          <span>&middot;</span>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            class="hover:underline"
+            style="color: var(--brand)"
+            >GitHub</a
+          >
+          <span>&middot;</span>
+          <span>Data: NVD API 2.0 &middot; GitHub Advisory Database</span>
+        </div>
+        <div id="footer-date"></div>
+      </div>
+    </footer>
+
+    <script>
+      function sourcesPage() {
+        return {
+          loading: true,
+          error: null,
+          cnas: [],
+          cwes: [],
+          cnaSort: "conflict_rate",
+          cweSort: "conflict_count",
+          cnaSortAsc: false,
+          cweSortAsc: false,
+          cnaSearch: "",
+          cweSearch: "",
+          generatedAt: null,
+
+          async init() {
+            try {
+              const [cnaRes, cweRes] = await Promise.all([
+                fetch("data/indexes/cna-stats.json"),
+                fetch("data/indexes/cwe-stats.json"),
+              ]);
+              if (!cnaRes.ok)
+                throw new Error(`CNA fetch failed: HTTP ${cnaRes.status}`);
+              if (!cweRes.ok)
+                throw new Error(`CWE fetch failed: HTTP ${cweRes.status}`);
+              const cnaJson = await cnaRes.json();
+              const cweJson = await cweRes.json();
+              this.cnas = cnaJson.cnas ?? [];
+              this.cwes = cweJson.cwes ?? [];
+              this.generatedAt =
+                cnaJson.generated_at ?? cweJson.generated_at ?? null;
+            } catch (e) {
+              this.error = `Failed to load data: ${e.message}`;
+            } finally {
+              this.loading = false;
+            }
+            if (!this.error) {
+              this.$nextTick(() => {
+                this.buildCnaChart();
+                this.buildCweChart();
+              });
+            }
+            if (this.generatedAt) {
+              const el = document.getElementById("footer-date");
+              if (el)
+                el.textContent = `Updated ${new Date(this.generatedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`;
+            }
+          },
+
+          buildCnaChart() {
+            const sorted = [...this.cnas]
+              .sort((a, b) => b.conflict_rate - a.conflict_rate)
+              .slice(0, 15);
+
+            const labels = sorted.map((c) => c.name);
+            const data = sorted.map((c) => c.conflict_rate);
+            const colors = sorted.map((c) =>
+              c.conflict_rate >= 30
+                ? getComputedStyle(document.documentElement)
+                    .getPropertyValue("--danger")
+                    .trim()
+                : c.conflict_rate >= 15
+                  ? getComputedStyle(document.documentElement)
+                      .getPropertyValue("--warning")
+                      .trim()
+                  : "#22c55e",
+            );
+
+            const ctx = document.getElementById("cnaChart");
+            if (!ctx) return;
+            new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: labels,
+                datasets: [
+                  {
+                    label: "Conflict Rate (%)",
+                    data: data,
+                    backgroundColor: colors,
+                    borderRadius: 3,
+                  },
+                ],
+              },
+              options: {
+                indexAxis: "y",
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                plugins: {
+                  legend: { display: false },
+                },
+                scales: {
+                  x: {
+                    title: {
+                      display: true,
+                      text: "Conflict Rate (%)",
+                      color: getComputedStyle(document.documentElement)
+                        .getPropertyValue("--chart-text")
+                        .trim(),
+                      font: { family: "Inter", size: 12 },
+                    },
+                    ticks: {
+                      color: getComputedStyle(document.documentElement)
+                        .getPropertyValue("--chart-text")
+                        .trim(),
+                    },
+                    grid: {
+                      color: getComputedStyle(document.documentElement)
+                        .getPropertyValue("--chart-grid")
+                        .trim(),
+                    },
+                  },
+                  y: {
+                    ticks: {
+                      color: getComputedStyle(document.documentElement)
+                        .getPropertyValue("--chart-text")
+                        .trim(),
+                      font: { family: "Inter", size: 11 },
+                    },
+                    grid: { display: false },
+                  },
+                },
+              },
+            });
+          },
+
+          buildCweChart() {
+            const sorted = [...this.cwes]
+              .sort((a, b) => b.avg_variance - a.avg_variance)
+              .slice(0, 15);
+
+            const labels = sorted.map((c) => c.cwe_id);
+            const data = sorted.map((c) => c.avg_variance);
+            const colors = sorted.map((c) =>
+              c.avg_variance >= 3.0
+                ? getComputedStyle(document.documentElement)
+                    .getPropertyValue("--danger")
+                    .trim()
+                : c.avg_variance >= 1.5
+                  ? getComputedStyle(document.documentElement)
+                      .getPropertyValue("--warning")
+                      .trim()
+                  : "#22c55e",
+            );
+
+            const ctx = document.getElementById("cweChart");
+            if (!ctx) return;
+            new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: labels,
+                datasets: [
+                  {
+                    label: "Avg Drift",
+                    data: data,
+                    backgroundColor: colors,
+                    borderRadius: 3,
+                  },
+                ],
+              },
+              options: {
+                indexAxis: "y",
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                plugins: {
+                  legend: { display: false },
+                },
+                scales: {
+                  x: {
+                    title: {
+                      display: true,
+                      text: "Average Drift (CVSS points)",
+                      color: getComputedStyle(document.documentElement)
+                        .getPropertyValue("--chart-text")
+                        .trim(),
+                      font: { family: "Inter", size: 12 },
+                    },
+                    ticks: {
+                      color: getComputedStyle(document.documentElement)
+                        .getPropertyValue("--chart-text")
+                        .trim(),
+                    },
+                    grid: {
+                      color: getComputedStyle(document.documentElement)
+                        .getPropertyValue("--chart-grid")
+                        .trim(),
+                    },
+                  },
+                  y: {
+                    ticks: {
+                      color: getComputedStyle(document.documentElement)
+                        .getPropertyValue("--chart-text")
+                        .trim(),
+                      font: { family: "Inter", size: 11 },
+                    },
+                    grid: { display: false },
+                  },
+                },
+              },
+            });
+          },
+
+          sortCnas(field) {
+            if (this.cnaSort === field) {
+              this.cnaSortAsc = !this.cnaSortAsc;
+            } else {
+              this.cnaSort = field;
+              this.cnaSortAsc = false;
+            }
+          },
+
+          sortCwes(field) {
+            if (this.cweSort === field) {
+              this.cweSortAsc = !this.cweSortAsc;
+            } else {
+              this.cweSort = field;
+              this.cweSortAsc = false;
+            }
+          },
+
+          get filteredCnas() {
+            let result = [...this.cnas];
+            const q = this.cnaSearch.trim().toLowerCase();
+            if (q) {
+              result = result.filter((r) => r.name.toLowerCase().includes(q));
+            }
+            const sortField = this.cnaSort;
+            const asc = this.cnaSortAsc;
+            result.sort((a, b) => {
+              const av = a[sortField] ?? 0;
+              const bv = b[sortField] ?? 0;
+              return asc ? av - bv : bv - av;
+            });
+            return result;
+          },
+
+          get filteredCwes() {
+            let result = [...this.cwes];
+            const q = this.cweSearch.trim().toLowerCase();
+            if (q) {
+              result = result.filter(
+                (r) =>
+                  r.cwe_id.toLowerCase().includes(q) ||
+                  (r.name && r.name.toLowerCase().includes(q)),
+              );
+            }
+            const sortField = this.cweSort;
+            const asc = this.cweSortAsc;
+            result.sort((a, b) => {
+              const av = a[sortField] ?? 0;
+              const bv = b[sortField] ?? 0;
+              return asc ? av - bv : bv - av;
+            });
+            return result;
+          },
+        };
+      }
+    </script>
+  </body>
+</html>
