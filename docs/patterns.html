@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How They Disagree — The Consensus Engine</title>
+    <meta
+      name="description"
+      content="CVSS scoring disagreement between NVD and GitHub Advisory is systematic, not random. Tracking divergence across 130,000+ CVEs."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+            colors: {
+              surface: {
+                DEFAULT: "var(--bg-primary)",
+                card: "var(--bg-card)",
+                border: "var(--border)",
+              },
+              brand: {
+                DEFAULT: "var(--brand)",
+                light: "var(--brand-light)",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <style>
+      :root {
+        --bg-primary: #f8fafc;
+        --bg-card: #ffffff;
+        --border: #e2e8f0;
+        --text-primary: #0f172a;
+        --text-secondary: #64748b;
+        --text-muted: #94a3b8;
+        --brand: #2563eb;
+        --brand-light: #3b82f6;
+        --danger: #dc2626;
+        --warning: #d97706;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(148, 163, 184, 0.2);
+        --chart-text: #64748b;
+      }
+      .dark {
+        --bg-primary: #0f1117;
+        --bg-card: #1a1d2e;
+        --border: #2d3748;
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --text-muted: #6b7280;
+        --brand: #3b82f6;
+        --brand-light: #60a5fa;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --nvd-higher: #fb923c;
+        --gh-higher: #60a5fa;
+        --chart-grid: rgba(45, 55, 72, 0.8);
+        --chart-text: #6b7280;
+      }
+      body {
+        font-family: "Inter", ui-sans-serif, system-ui;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+      }
+    </style>
+  </head>
+  <body class="min-h-full">
+    <!-- Header -->
+    <header
+      class="border-b sticky top-0 z-40"
+      style="border-color: var(--border); background: var(--bg-primary)"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-6">
+          <a
+            href="index.html"
+            class="font-semibold text-sm tracking-wide uppercase"
+            style="color: var(--text-muted); letter-spacing: 0.1em"
+            >The Consensus Engine</a
+          >
+          <nav
+            class="hidden sm:flex items-center gap-4 text-sm"
+            style="color: var(--text-secondary)"
+          >
+            <span class="font-semibold" style="color: var(--text-primary)"
+              >How They Disagree</span
+            >
+            <a href="sources.html" class="hover:opacity-80 transition-opacity"
+              >Who Disagrees</a
+            >
+            <a href="data.html" class="hover:opacity-80 transition-opacity"
+              >The Data</a
+            >
+            <a
+              href="methodology.html"
+              class="hover:opacity-80 transition-opacity"
+              >Methodology</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            onclick="
+              document.documentElement.classList.toggle('dark');
+              localStorage.setItem(
+                'theme',
+                document.documentElement.classList.contains('dark')
+                  ? 'dark'
+                  : 'light',
+              );
+            "
+            class="p-1.5 rounded-md hover:opacity-80 transition-opacity"
+            style="color: var(--text-muted)"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="w-4 h-4 dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <svg
+              class="w-4 h-4 hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+          <!-- Mobile menu button -->
+          <button
+            class="sm:hidden p-1.5 rounded-md hover:opacity-80"
+            style="color: var(--text-muted)"
+            onclick="
+              document.getElementById('mobile-nav').classList.toggle('hidden')
+            "
+            aria-label="Menu"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            target="_blank"
+            rel="noopener"
+            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-opacity hover:opacity-80"
+            style="
+              border: 1px solid var(--border);
+              color: var(--text-secondary);
+            "
+          >
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <!-- Mobile nav dropdown -->
+      <div
+        id="mobile-nav"
+        class="hidden sm:hidden border-t px-4 py-3 space-y-2 text-sm"
+        style="border-color: var(--border); color: var(--text-secondary)"
+      >
+        <span
+          class="block py-1 font-semibold"
+          style="color: var(--text-primary)"
+          >How They Disagree</span
+        >
+        <a href="sources.html" class="block py-1">Who Disagrees</a>
+        <a href="data.html" class="block py-1">The Data</a>
+        <a href="methodology.html" class="block py-1">Methodology</a>
+        <a
+          href="https://github.com/RogoLabs/consensus-engine"
+          target="_blank"
+          rel="noopener"
+          class="block py-1"
+          >GitHub</a
+        >
+      </div>
+    </header>
+
+    <main
+      class="max-w-5xl mx-auto px-4 sm:px-6 py-10"
+      x-data="patternsPage()"
+      x-init="init()"
+    >
+      <!-- Loading state -->
+      <div x-show="loading" class="text-center py-12">
+        <div
+          class="inline-block animate-spin rounded-full h-8 w-8 border-b-2"
+          style="border-color: var(--brand)"
+        ></div>
+      </div>
+
+      <!-- Error state -->
+      <div
+        x-show="error"
+        class="rounded-lg p-6 text-center"
+        style="background: var(--bg-card); border: 1px solid var(--border)"
+      >
+        <p style="color: var(--danger)" x-text="error"></p>
+      </div>
+
+      <!-- Content -->
+      <div x-show="!loading && !error">
+        <!-- Page Title -->
+        <h1 class="text-3xl font-bold mb-3" style="color: var(--text-primary)">
+          How They Disagree
+        </h1>
+        <p
+          class="text-base leading-relaxed mb-8"
+          style="color: var(--text-secondary)"
+        >
+          The disagreement between NVD and GitHub Advisory is not random noise.
+          It follows systematic patterns across individual CVSS metrics and
+          exhibits persistent directional bias.
+        </p>
+
+        <!-- Strongest Directional Bias Callout -->
+        <div
+          x-show="topSkew"
+          class="mb-10"
+          style="
+            background: color-mix(in srgb, var(--warning) 8%, transparent);
+            border: 1px solid
+              color-mix(in srgb, var(--warning) 20%, transparent);
+            border-radius: 8px;
+            padding: 20px;
+          "
+        >
+          <p class="text-sm leading-relaxed" style="color: var(--text-primary)">
+            <span class="font-semibold">Strongest directional bias:</span>
+            When NVD and GitHub disagree on
+            <span x-text="topSkew?.name" class="font-semibold"></span>,
+            <span
+              x-text="topSkew && (topSkew.nvd_higher_count > topSkew.gh_higher_count ? 'NVD' : 'GitHub')"
+              class="font-semibold"
+            ></span>
+            assigns the more severe value
+            <span x-text="topSkew?.skewPct + '%'" class="font-semibold"></span>
+            of the time. This is systematic, not noise.
+          </p>
+        </div>
+
+        <!-- Section Label -->
+        <div
+          class="text-xs font-semibold uppercase tracking-wider mb-3"
+          style="color: var(--text-muted); letter-spacing: 1px"
+        >
+          Per-metric disagreement rate
+        </div>
+
+        <!-- 8 Metric Cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+          <template
+            x-for="metric in vectorData?.metrics || []"
+            :key="metric.key"
+          >
+            <div
+              class="rounded-lg"
+              style="
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                padding: 16px;
+              "
+            >
+              <!-- Metric key -->
+              <div
+                class="font-mono font-bold text-sm mb-0.5"
+                style="color: var(--brand)"
+                x-text="metric.key"
+              ></div>
+              <!-- Metric name -->
+              <div
+                class="text-xs mb-3"
+                style="color: var(--text-secondary)"
+                x-text="metric.name"
+              ></div>
+              <!-- Disagreement rate -->
+              <div
+                class="text-2xl font-bold mb-3"
+                :style="rateColor(metric.disagree_rate)"
+                x-text="metric.disagree_rate + '%'"
+              ></div>
+              <!-- Directional bar -->
+              <div class="flex gap-1 mb-2" style="height: 6px">
+                <div
+                  class="rounded-full"
+                  style="background: var(--nvd-higher)"
+                  :style="`width: ${directionPct(metric, 'nvd')}%`"
+                ></div>
+                <div
+                  class="rounded-full"
+                  style="background: var(--gh-higher)"
+                  :style="`width: ${directionPct(metric, 'gh')}%`"
+                ></div>
+              </div>
+              <!-- Counts -->
+              <div
+                class="text-xs space-y-0.5"
+                style="color: var(--text-secondary)"
+              >
+                <div>
+                  <span style="color: var(--nvd-higher)">NVD higher:</span>
+                  <span x-text="metric.nvd_higher_count"></span>
+                </div>
+                <div>
+                  <span style="color: var(--gh-higher)">GH higher:</span>
+                  <span x-text="metric.gh_higher_count"></span>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Directional Bias Over Time -->
+        <div class="mb-10">
+          <div
+            class="text-xs font-semibold uppercase tracking-wider mb-3"
+            style="color: var(--text-muted); letter-spacing: 1px"
+          >
+            Directional bias over time
+          </div>
+          <p class="text-sm mb-4" style="color: var(--text-secondary)">
+            When NVD and GitHub disagree, which one tends to assign the higher
+            score? The answer has shifted over time.
+          </p>
+          <div
+            class="rounded-lg p-4 sm:p-6"
+            style="background: var(--bg-card); border: 1px solid var(--border)"
+          >
+            <div class="relative" style="height: 280px">
+              <canvas id="directionChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Severity Flip Callout -->
+        <div
+          class="rounded-lg p-5"
+          style="background: var(--bg-card); border: 1px solid var(--border)"
+        >
+          <p
+            class="text-sm leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            <span
+              x-text="stats?.severity_flip_count?.toLocaleString()"
+              class="font-semibold"
+              style="color: var(--text-primary)"
+            ></span>
+            CVEs cross severity band boundaries — a High in one source is a
+            Medium or Critical in the other.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t py-6" style="border-color: var(--border)">
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs"
+        style="color: var(--text-muted)"
+      >
+        <div class="flex items-center gap-3 flex-wrap justify-center">
+          <span>
+            Built by
+            <a
+              href="https://rogolabs.net"
+              class="hover:underline"
+              style="color: var(--brand)"
+              >Jerry Gamblin at RogoLabs</a
+            >
+          </span>
+          <span>·</span>
+          <a
+            href="https://github.com/RogoLabs/consensus-engine"
+            class="hover:underline"
+            style="color: var(--brand)"
+            >GitHub</a
+          >
+          <span>·</span>
+          <span>Data: NVD API 2.0 · GitHub Advisory Database</span>
+        </div>
+        <div
+          x-show="stats"
+          x-text="stats ? `Updated ${new Date(stats.generated_at).toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'})}` : ''"
+        ></div>
+      </div>
+    </footer>
+
+    <script>
+      function patternsPage() {
+        return {
+          loading: true,
+          error: null,
+          stats: null,
+          vectorData: null,
+
+          get topSkew() {
+            if (!this.vectorData) return null;
+            let best = null,
+              bestSkew = 0;
+            for (const m of this.vectorData.metrics) {
+              const total = m.nvd_higher_count + m.gh_higher_count;
+              if (total < 10) continue;
+              const skew =
+                Math.abs(m.nvd_higher_count - m.gh_higher_count) / total;
+              if (skew > bestSkew) {
+                bestSkew = skew;
+                best = m;
+              }
+            }
+            if (!best) return null;
+            const total = best.nvd_higher_count + best.gh_higher_count;
+            const dominant = Math.max(
+              best.nvd_higher_count,
+              best.gh_higher_count,
+            );
+            return { ...best, skewPct: Math.round((dominant / total) * 100) };
+          },
+
+          async init() {
+            try {
+              const [statsRes, vectorRes] = await Promise.all([
+                fetch("data/indexes/stats.json"),
+                fetch("data/indexes/vector-analysis.json"),
+              ]);
+              if (!statsRes.ok || !vectorRes.ok) {
+                throw new Error("Failed to load data");
+              }
+              this.stats = await statsRes.json();
+              this.vectorData = await vectorRes.json();
+              this.loading = false;
+              this.$nextTick(() => this.buildDirectionChart());
+            } catch (e) {
+              this.error = "Failed to load data: " + e.message;
+              this.loading = false;
+              console.error("Failed to load data:", e);
+            }
+          },
+
+          rateColor(rate) {
+            if (rate >= 25) return "color: var(--danger)";
+            if (rate >= 12) return "color: var(--warning)";
+            return "color: #22c55e";
+          },
+
+          directionPct(m, which) {
+            const total = m.nvd_higher_count + m.gh_higher_count;
+            if (!total) return 50;
+            return which === "nvd"
+              ? Math.round((m.nvd_higher_count / total) * 100)
+              : Math.round((m.gh_higher_count / total) * 100);
+          },
+
+          buildDirectionChart() {
+            if (!this.stats?.conflict_direction_by_year) return;
+
+            const yearData = this.stats.conflict_direction_by_year;
+            const years = Object.keys(yearData).sort();
+
+            const nvdPctData = years.map((year) => {
+              const d = yearData[year];
+              const total = d.nvd_higher + d.gh_higher;
+              return total ? Math.round((d.nvd_higher / total) * 100) : 0;
+            });
+
+            const ghPctData = years.map((year) => {
+              const d = yearData[year];
+              const total = d.nvd_higher + d.gh_higher;
+              return total ? Math.round((d.gh_higher / total) * 100) : 0;
+            });
+
+            const nvdColor = getComputedStyle(document.documentElement)
+              .getPropertyValue("--nvd-higher")
+              .trim();
+            const ghColor = getComputedStyle(document.documentElement)
+              .getPropertyValue("--gh-higher")
+              .trim();
+            const chartText = getComputedStyle(document.documentElement)
+              .getPropertyValue("--chart-text")
+              .trim();
+            const chartGrid = getComputedStyle(document.documentElement)
+              .getPropertyValue("--chart-grid")
+              .trim();
+
+            const ctx = document.getElementById("directionChart");
+            if (!ctx) return;
+
+            new Chart(ctx, {
+              type: "line",
+              data: {
+                labels: years,
+                datasets: [
+                  {
+                    label: "NVD scores higher (%)",
+                    data: nvdPctData,
+                    borderColor: nvdColor,
+                    backgroundColor: nvdColor + "40",
+                    fill: true,
+                    tension: 0.2,
+                  },
+                  {
+                    label: "GitHub scores higher (%)",
+                    data: ghPctData,
+                    borderColor: ghColor,
+                    backgroundColor: ghColor + "40",
+                    fill: true,
+                    tension: 0.2,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                plugins: {
+                  legend: {
+                    display: true,
+                    labels: {
+                      color: chartText,
+                      font: { family: "Inter", size: 11 },
+                    },
+                  },
+                },
+                scales: {
+                  x: {
+                    ticks: { color: chartText },
+                    grid: { color: chartGrid },
+                  },
+                  y: {
+                    min: 0,
+                    max: 100,
+                    ticks: {
+                      color: chartText,
+                      callback: function (value) {
+                        return value + "%";
+                      },
+                    },
+                    grid: { color: chartGrid },
+                  },
+                },
+              },
+            });
+          },
+        };
+      }
+    </script>
+  </body>
+</html>
