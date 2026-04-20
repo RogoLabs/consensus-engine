@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T16:06:57Z",
+  "generated_at": "2026-04-20T16:19:46Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -52,9 +52,9 @@
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 49,
-      "avg_variance": 1.7,
-      "nvd_higher_count": 26,
+      "conflict_count": 50,
+      "avg_variance": 1.71,
+      "nvd_higher_count": 27,
       "gh_higher_count": 23
     },
     {
@@ -98,20 +98,20 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-287",
+      "name": "Improper Authentication",
+      "conflict_count": 29,
+      "avg_variance": 1.42,
+      "nvd_higher_count": 18,
+      "gh_higher_count": 11
+    },
+    {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
       "conflict_count": 29,
       "avg_variance": 1.61,
       "nvd_higher_count": 20,
       "gh_higher_count": 9
-    },
-    {
-      "cwe_id": "CWE-287",
-      "name": "Improper Authentication",
-      "conflict_count": 28,
-      "avg_variance": 1.39,
-      "nvd_higher_count": 17,
-      "gh_higher_count": 11
     },
     {
       "cwe_id": "CWE-862",
@@ -218,6 +218,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-290",
+      "name": "CWE-290",
+      "conflict_count": 14,
+      "avg_variance": 1.41,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-190",
       "name": "CWE-190",
       "conflict_count": 14,
@@ -290,14 +298,6 @@
       "gh_higher_count": 3
     },
     {
-      "cwe_id": "CWE-290",
-      "name": "CWE-290",
-      "conflict_count": 12,
-      "avg_variance": 1.42,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 5
-    },
-    {
       "cwe_id": "CWE-295",
       "name": "CWE-295",
       "conflict_count": 12,
@@ -322,20 +322,20 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-347",
+      "name": "CWE-347",
+      "conflict_count": 11,
+      "avg_variance": 1.65,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-59",
       "name": "CWE-59",
       "conflict_count": 11,
       "avg_variance": 1.39,
       "nvd_higher_count": 8,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-347",
-      "name": "CWE-347",
-      "conflict_count": 10,
-      "avg_variance": 1.58,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-23",
@@ -416,6 +416,14 @@
       "avg_variance": 1.59,
       "nvd_higher_count": 7,
       "gh_higher_count": 1
+    },
+    {
+      "cwe_id": "CWE-345",
+      "name": "CWE-345",
+      "conflict_count": 8,
+      "avg_variance": 0.68,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-312",
@@ -504,14 +512,6 @@
       "avg_variance": 2.0,
       "nvd_higher_count": 5,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-345",
-      "name": "CWE-345",
-      "conflict_count": 6,
-      "avg_variance": 0.45,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-266",
