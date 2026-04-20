@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T16:19:46Z",
+  "generated_at": "2026-04-20T18:26:39Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 69,
-      "avg_variance": 1.21,
-      "nvd_higher_count": 43,
+      "conflict_count": 71,
+      "avg_variance": 1.24,
+      "nvd_higher_count": 45,
       "gh_higher_count": 26
     },
     {
@@ -194,20 +194,20 @@
       "gh_higher_count": 8
     },
     {
+      "cwe_id": "CWE-693",
+      "name": "CWE-693",
+      "conflict_count": 16,
+      "avg_variance": 0.86,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 7
+    },
+    {
       "cwe_id": "CWE-787",
       "name": "Out-of-bounds Write",
       "conflict_count": 15,
       "avg_variance": 2.1,
       "nvd_higher_count": 10,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-693",
-      "name": "CWE-693",
-      "conflict_count": 15,
-      "avg_variance": 0.87,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-306",
@@ -426,6 +426,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-668",
+      "name": "Exposure of Resource to Wrong Sphere",
+      "conflict_count": 7,
+      "avg_variance": 1.67,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-312",
       "name": "CWE-312",
       "conflict_count": 7,
@@ -456,14 +464,6 @@
       "avg_variance": 1.4,
       "nvd_higher_count": 7,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-668",
-      "name": "Exposure of Resource to Wrong Sphere",
-      "conflict_count": 6,
-      "avg_variance": 1.48,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-552",
@@ -608,6 +608,14 @@
       "avg_variance": 0.96,
       "nvd_higher_count": 3,
       "gh_higher_count": 2
+    },
+    {
+      "cwe_id": "CWE-346",
+      "name": "CWE-346",
+      "conflict_count": 5,
+      "avg_variance": 1.14,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-1284",
