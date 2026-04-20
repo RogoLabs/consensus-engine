@@ -135,7 +135,7 @@ def _parse_cvss_vector(vector: str) -> dict:
 def build_vector_analysis(conflict_records: list) -> dict:
     """
     Compare NVD vs GitHub CVSS vectors for every conflict CVE (same version only).
-    Returns a dict suitable for vector-analysis.json.
+    Includes both score-difference conflicts and same-score-different-vector conflicts.
     """
     metric_total: dict[str, int] = {m: 0 for m in CVSS_METRICS}
     metric_disagree: dict[str, int] = {m: 0 for m in CVSS_METRICS}
@@ -143,6 +143,7 @@ def build_vector_analysis(conflict_records: list) -> dict:
     metric_gh_higher: dict[str, int] = {m: 0 for m in CVSS_METRICS}
     transitions: dict[str, Counter] = {m: Counter() for m in CVSS_METRICS}
     comparable = 0
+    vector_only_count = 0
 
     for record in conflict_records:
         nvd_vec = record.get("sources", {}).get("nvd", {}).get("cvss_vector", "")
@@ -150,8 +151,10 @@ def build_vector_analysis(conflict_records: list) -> dict:
         if not nvd_vec or not gh_vec:
             continue
         if nvd_vec.split("/")[0] != gh_vec.split("/")[0]:
-            continue  # skip cross-version comparisons
+            continue
         comparable += 1
+        if record.get("cvss_variance", 0) == 0:
+            vector_only_count += 1
         nvd_m = _parse_cvss_vector(nvd_vec)
         gh_m = _parse_cvss_vector(gh_vec)
         for key, (_, severity) in CVSS_METRICS.items():
@@ -161,7 +164,7 @@ def build_vector_analysis(conflict_records: list) -> dict:
             metric_total[key] += 1
             if nv != gv:
                 metric_disagree[key] += 1
-                transitions[key][f"{nv}→{gv}"] += 1
+                transitions[key][f"{nv}\u2192{gv}"] += 1
                 ns, gs = severity.get(nv, -99), severity.get(gv, -99)
                 if ns > gs:
                     metric_nvd_higher[key] += 1
@@ -187,12 +190,11 @@ def build_vector_analysis(conflict_records: list) -> dict:
                 "top_transitions": top,
             }
         )
-
-    # Sort by disagree_rate descending for the chart
     metrics_out.sort(key=lambda x: -x["disagree_rate"])
 
     return {
         "comparable_conflicts": comparable,
+        "vector_only_conflicts": vector_only_count,
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "metrics": metrics_out,
     }
@@ -533,8 +535,9 @@ def main():
     # Vector Analysis: per-metric CVSS disagreement breakdown
     vector_analysis = build_vector_analysis(conflict_records)
     VECTOR_ANALYSIS_PATH.write_text(json.dumps(vector_analysis, indent=2))
+    vec_only = vector_analysis["vector_only_conflicts"]
     print(
-        f"Vector Analysis written: {VECTOR_ANALYSIS_PATH} ({vector_analysis['comparable_conflicts']} comparable conflicts)"
+        f"Vector Analysis written: {VECTOR_ANALYSIS_PATH} ({vector_analysis['comparable_conflicts']} conflicts, {vec_only} vector-only)"
     )
 
     # Rejected-with-GHSA CSV: all CVEs rejected by NVD that still have a live GHSA

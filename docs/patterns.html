@@ -298,6 +298,27 @@
           </p>
         </div>
 
+        <!-- Vector-Only Conflicts Callout -->
+        <div
+          x-show="vectorData?.vector_only_conflicts > 0"
+          class="mb-10 rounded-lg p-5"
+          style="background: var(--bg-card); border: 1px solid var(--border)"
+        >
+          <p
+            class="text-sm leading-relaxed"
+            style="color: var(--text-secondary)"
+          >
+            <span
+              x-text="vectorData?.vector_only_conflicts"
+              class="font-semibold"
+              style="color: var(--text-primary)"
+            ></span>
+            conflicts have identical final scores but different CVSS vector
+            strings. The math cancels out, but the underlying risk assessment
+            differs.
+          </p>
+        </div>
+
         <!-- Section Label -->
         <div
           class="text-xs font-semibold uppercase tracking-wider mb-3"

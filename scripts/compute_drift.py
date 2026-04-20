@@ -106,11 +106,23 @@ def compute_metadata_conflict(sources: dict):
     return round(min(conflict, 1.0), 3)
 
 
+def _vectors_differ_same_version(nvd: dict, github: dict) -> bool:
+    """True if both sources have CVSS vectors of the same version that differ."""
+    nvd_vec = nvd.get("cvss_vector", "")
+    gh_vec = github.get("cvss_vector", "")
+    if not nvd_vec or not gh_vec:
+        return False
+    if nvd_vec.split("/")[0] != gh_vec.split("/")[0]:
+        return False
+    return nvd_vec != gh_vec
+
+
 def classify_drift_type(record: dict, cvss_variance: float, by_version: dict):
     """
     Determine drift_type:
     - 'rejected'  — NVD status is Rejected
-    - 'conflict'  — both NVD and GitHub have a score and disagree (same version, variance > 0)
+    - 'conflict'  — both NVD and GitHub have a score and disagree (same version,
+                     variance > 0 OR same score but different vector strings)
     - 'gap'       — NVD has no CVSS score, or one source is missing, or cross-version mismatch
     """
     nvd = record.get("sources", {}).get("nvd", {})
@@ -119,8 +131,8 @@ def classify_drift_type(record: dict, cvss_variance: float, by_version: dict):
     if status == "Rejected":
         return "rejected"
 
-    # No NVD score → nothing to compare against; not drift, just a data gap
-    # A score of 0.0 is also treated as absent — NVD records this when the
+    # No NVD score -> nothing to compare against; not drift, just a data gap
+    # A score of 0.0 is also treated as absent: NVD records this when the
     # CVE is Deferred/unanalyzed with an all-None impact vector, not a real assessment
     nvd_score = nvd.get("cvss_score")
     if nvd_score is None or nvd_score <= 0:
@@ -136,6 +148,10 @@ def classify_drift_type(record: dict, cvss_variance: float, by_version: dict):
         return "gap"
 
     if cvss_variance > 0:
+        return "conflict"
+
+    # Same score but different vector strings is still a conflict
+    if _vectors_differ_same_version(nvd, github):
         return "conflict"
 
     return "gap"

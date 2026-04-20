@@ -1,0 +1,18 @@
+25.6% of CVEs scored by both NVD and GitHub Advisory have meaningful scoring conflicts.
+
+I built something to track this at scale.
+
+The Consensus Engine checks every CVE scored by both NVD and GitHub Advisory Database. When both sources score the same vulnerability differently, I flag it — and the results are wild:
+
+→ 1,585 active scoring conflicts
+→ 849 CVEs that cross severity band boundaries (Critical → Medium, etc.)
+→ Maximum observed drift: 6.9 points on the same CVE
+→ NVD and GitHub disagree on MongoDB's CVEs 88.9% of the time
+
+The stack: No backend. No database. The repo IS the database — flat JSON files, GitHub Actions pipeline running every 6 hours, and a static frontend on GitHub Pages. All open source.
+
+If your patching SLA says "Critical = 7 days" but one source says Critical and the other says Medium... which clock are you on?
+
+🔗 https://rogolabs.github.io/consensus-engine/
+
+#cybersecurity #vulnerabilitymanagement #cvss #opensource #infosec
