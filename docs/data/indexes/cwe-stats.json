@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T18:26:39Z",
+  "generated_at": "2026-04-21T00:31:11Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -28,10 +28,10 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 69,
+      "conflict_count": 70,
       "avg_variance": 0.91,
       "nvd_higher_count": 29,
-      "gh_higher_count": 40
+      "gh_higher_count": 41
     },
     {
       "cwe_id": "CWE-918",
@@ -90,20 +90,20 @@
       "gh_higher_count": 13
     },
     {
+      "cwe_id": "CWE-287",
+      "name": "Improper Authentication",
+      "conflict_count": 30,
+      "avg_variance": 1.43,
+      "nvd_higher_count": 19,
+      "gh_higher_count": 11
+    },
+    {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
       "conflict_count": 30,
       "avg_variance": 2.02,
       "nvd_higher_count": 26,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-287",
-      "name": "Improper Authentication",
-      "conflict_count": 29,
-      "avg_variance": 1.42,
-      "nvd_higher_count": 18,
-      "gh_higher_count": 11
     },
     {
       "cwe_id": "CWE-20",
@@ -186,20 +186,20 @@
       "gh_higher_count": 14
     },
     {
+      "cwe_id": "CWE-693",
+      "name": "CWE-693",
+      "conflict_count": 17,
+      "avg_variance": 0.85,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 8
+    },
+    {
       "cwe_id": "CWE-122",
       "name": "CWE-122",
       "conflict_count": 16,
       "avg_variance": 1.89,
       "nvd_higher_count": 8,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-693",
-      "name": "CWE-693",
-      "conflict_count": 16,
-      "avg_variance": 0.86,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-787",
