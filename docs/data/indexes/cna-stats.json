@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T00:31:11Z",
+  "generated_at": "2026-04-21T06:44:29Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -157,12 +157,12 @@
     },
     {
       "name": "github",
-      "total": 8530,
+      "total": 8546,
       "comparable": 3035,
-      "conflicts": 1009,
-      "conflict_rate": 33.2,
+      "conflicts": 1012,
+      "conflict_rate": 33.3,
       "avg_drift": 1.37,
-      "nvd_higher_count": 520,
+      "nvd_higher_count": 523,
       "gh_higher_count": 489,
       "top_cve": "CVE-2024-47821"
     },
@@ -354,17 +354,6 @@
       "top_cve": "CVE-2024-8980"
     },
     {
-      "name": "microsoft",
-      "total": 2456,
-      "comparable": 40,
-      "conflicts": 4,
-      "conflict_rate": 10.0,
-      "avg_drift": 0.8,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 2,
-      "top_cve": "CVE-2024-38229"
-    },
-    {
       "name": "google",
       "total": 899,
       "comparable": 10,
@@ -374,6 +363,17 @@
       "nvd_higher_count": 1,
       "gh_higher_count": 0,
       "top_cve": "CVE-2024-4128"
+    },
+    {
+      "name": "microsoft",
+      "total": 2456,
+      "comparable": 40,
+      "conflicts": 4,
+      "conflict_rate": 10.0,
+      "avg_drift": 0.8,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 2,
+      "top_cve": "CVE-2024-38229"
     },
     {
       "name": "adobe",
@@ -475,9 +475,9 @@
       "top_cve": "CVE-2024-4596"
     },
     {
-      "name": "VulDB",
-      "total": 28,
-      "comparable": 10,
+      "name": "trendmicro",
+      "total": 1869,
+      "comparable": 12,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -497,9 +497,9 @@
       "top_cve": null
     },
     {
-      "name": "vuldb.com",
-      "total": 345,
-      "comparable": 6,
+      "name": "DSF",
+      "total": 17,
+      "comparable": 10,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -508,20 +508,9 @@
       "top_cve": null
     },
     {
-      "name": "trendmicro",
-      "total": 1869,
-      "comparable": 12,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "AMZN",
-      "total": 74,
-      "comparable": 24,
+      "name": "VulDB",
+      "total": 28,
+      "comparable": 10,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -541,9 +530,20 @@
       "top_cve": null
     },
     {
-      "name": "DSF",
-      "total": 17,
-      "comparable": 10,
+      "name": "AMZN",
+      "total": 74,
+      "comparable": 24,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "vuldb.com",
+      "total": 345,
+      "comparable": 6,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
