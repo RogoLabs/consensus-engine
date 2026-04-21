@@ -1,14 +1,14 @@
 {
-  "comparable_conflicts": 1658,
-  "vector_only_conflicts": 58,
-  "generated_at": "2026-04-21T12:28:44Z",
+  "comparable_conflicts": 1673,
+  "vector_only_conflicts": 66,
+  "generated_at": "2026-04-21T18:29:16Z",
   "metrics": [
     {
       "key": "A",
       "name": "Availability",
-      "total": 1658,
+      "total": 1673,
       "disagree_count": 517,
-      "disagree_rate": 31.2,
+      "disagree_rate": 30.9,
       "nvd_higher_count": 307,
       "gh_higher_count": 210,
       "top_transitions": [
@@ -37,15 +37,15 @@
     {
       "key": "C",
       "name": "Confidentiality",
-      "total": 1658,
-      "disagree_count": 485,
-      "disagree_rate": 29.3,
-      "nvd_higher_count": 241,
+      "total": 1673,
+      "disagree_count": 486,
+      "disagree_rate": 29.0,
+      "nvd_higher_count": 242,
       "gh_higher_count": 244,
       "top_transitions": [
         {
           "transition": "H\u2192L",
-          "count": 153
+          "count": 154
         },
         {
           "transition": "L\u2192H",
@@ -68,10 +68,10 @@
     {
       "key": "S",
       "name": "Scope",
-      "total": 1658,
-      "disagree_count": 463,
-      "disagree_rate": 27.9,
-      "nvd_higher_count": 181,
+      "total": 1673,
+      "disagree_count": 464,
+      "disagree_rate": 27.7,
+      "nvd_higher_count": 182,
       "gh_higher_count": 282,
       "top_transitions": [
         {
@@ -80,16 +80,16 @@
         },
         {
           "transition": "C\u2192U",
-          "count": 181
+          "count": 182
         }
       ]
     },
     {
       "key": "I",
       "name": "Integrity",
-      "total": 1658,
+      "total": 1673,
       "disagree_count": 457,
-      "disagree_rate": 27.6,
+      "disagree_rate": 27.3,
       "nvd_higher_count": 256,
       "gh_higher_count": 201,
       "top_transitions": [
@@ -118,15 +118,15 @@
     {
       "key": "AC",
       "name": "Attack Complexity",
-      "total": 1658,
-      "disagree_count": 441,
-      "disagree_rate": 26.6,
-      "nvd_higher_count": 406,
+      "total": 1673,
+      "disagree_count": 442,
+      "disagree_rate": 26.4,
+      "nvd_higher_count": 407,
       "gh_higher_count": 35,
       "top_transitions": [
         {
           "transition": "L\u2192H",
-          "count": 406
+          "count": 407
         },
         {
           "transition": "H\u2192L",
@@ -137,10 +137,10 @@
     {
       "key": "PR",
       "name": "Privileges Required",
-      "total": 1658,
-      "disagree_count": 414,
-      "disagree_rate": 25.0,
-      "nvd_higher_count": 283,
+      "total": 1673,
+      "disagree_count": 415,
+      "disagree_rate": 24.8,
+      "nvd_higher_count": 284,
       "gh_higher_count": 131,
       "top_transitions": [
         {
@@ -157,7 +157,7 @@
         },
         {
           "transition": "N\u2192H",
-          "count": 34
+          "count": 35
         },
         {
           "transition": "H\u2192N",
@@ -168,11 +168,11 @@
     {
       "key": "UI",
       "name": "User Interaction",
-      "total": 1658,
-      "disagree_count": 241,
+      "total": 1673,
+      "disagree_count": 242,
       "disagree_rate": 14.5,
       "nvd_higher_count": 124,
-      "gh_higher_count": 117,
+      "gh_higher_count": 118,
       "top_transitions": [
         {
           "transition": "N\u2192R",
@@ -180,22 +180,22 @@
         },
         {
           "transition": "R\u2192N",
-          "count": 117
+          "count": 118
         }
       ]
     },
     {
       "key": "AV",
       "name": "Attack Vector",
-      "total": 1658,
-      "disagree_count": 106,
-      "disagree_rate": 6.4,
-      "nvd_higher_count": 86,
+      "total": 1673,
+      "disagree_count": 108,
+      "disagree_rate": 6.5,
+      "nvd_higher_count": 88,
       "gh_higher_count": 20,
       "top_transitions": [
         {
           "transition": "N\u2192L",
-          "count": 69
+          "count": 70
         },
         {
           "transition": "L\u2192N",
@@ -203,7 +203,7 @@
         },
         {
           "transition": "N\u2192A",
-          "count": 13
+          "count": 14
         },
         {
           "transition": "A\u2192N",
