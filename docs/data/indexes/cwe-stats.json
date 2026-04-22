@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T12:27:02Z",
+  "generated_at": "2026-04-22T18:30:17Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -36,9 +36,9 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 62,
+      "conflict_count": 63,
       "avg_variance": 1.19,
-      "nvd_higher_count": 32,
+      "nvd_higher_count": 33,
       "gh_higher_count": 30
     },
     {
@@ -76,26 +76,34 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 41,
+      "conflict_count": 42,
       "avg_variance": 1.79,
-      "nvd_higher_count": 33,
+      "nvd_higher_count": 34,
       "gh_higher_count": 8
     },
     {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
-      "conflict_count": 37,
-      "avg_variance": 1.14,
+      "conflict_count": 38,
+      "avg_variance": 1.17,
       "nvd_higher_count": 24,
-      "gh_higher_count": 13
+      "gh_higher_count": 14
     },
     {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
-      "conflict_count": 31,
-      "avg_variance": 1.51,
-      "nvd_higher_count": 20,
+      "conflict_count": 32,
+      "avg_variance": 1.55,
+      "nvd_higher_count": 21,
       "gh_higher_count": 11
+    },
+    {
+      "cwe_id": "CWE-400",
+      "name": "Uncontrolled Resource Consumption",
+      "conflict_count": 31,
+      "avg_variance": 1.98,
+      "nvd_higher_count": 27,
+      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-287",
@@ -104,14 +112,6 @@
       "avg_variance": 1.43,
       "nvd_higher_count": 19,
       "gh_higher_count": 11
-    },
-    {
-      "cwe_id": "CWE-400",
-      "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 30,
-      "avg_variance": 2.02,
-      "nvd_higher_count": 26,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-862",
@@ -194,20 +194,20 @@
       "gh_higher_count": 14
     },
     {
+      "cwe_id": "CWE-74",
+      "name": "CWE-74",
+      "conflict_count": 16,
+      "avg_variance": 1.37,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-122",
       "name": "CWE-122",
       "conflict_count": 16,
       "avg_variance": 1.89,
       "nvd_higher_count": 8,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-74",
-      "name": "CWE-74",
-      "conflict_count": 15,
-      "avg_variance": 1.27,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-787",
@@ -218,20 +218,20 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-290",
+      "name": "CWE-290",
+      "conflict_count": 15,
+      "avg_variance": 1.43,
+      "nvd_higher_count": 10,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-306",
       "name": "Missing Authentication",
       "conflict_count": 14,
       "avg_variance": 0.86,
       "nvd_higher_count": 8,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-290",
-      "name": "CWE-290",
-      "conflict_count": 14,
-      "avg_variance": 1.41,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-532",
@@ -346,6 +346,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-416",
+      "name": "Use After Free",
+      "conflict_count": 10,
+      "avg_variance": 2.38,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 1
+    },
+    {
       "cwe_id": "CWE-276",
       "name": "Incorrect Default Permissions",
       "conflict_count": 9,
@@ -384,6 +392,14 @@
       "avg_variance": 0.89,
       "nvd_higher_count": 4,
       "gh_higher_count": 4
+    },
+    {
+      "cwe_id": "CWE-668",
+      "name": "Exposure of Resource to Wrong Sphere",
+      "conflict_count": 8,
+      "avg_variance": 1.74,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-732",
@@ -434,14 +450,6 @@
       "gh_higher_count": 5
     },
     {
-      "cwe_id": "CWE-668",
-      "name": "Exposure of Resource to Wrong Sphere",
-      "conflict_count": 7,
-      "avg_variance": 1.67,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 3
-    },
-    {
       "cwe_id": "CWE-312",
       "name": "CWE-312",
       "conflict_count": 7,
@@ -456,14 +464,6 @@
       "avg_variance": 1.06,
       "nvd_higher_count": 2,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-416",
-      "name": "Use After Free",
-      "conflict_count": 7,
-      "avg_variance": 2.53,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-476",
