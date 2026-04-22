@@ -30,7 +30,7 @@ CVE-2024-47819,4.5,8.7,3.1,4.2,3.1,github,Analyzed,2024-10-22
 CVE-2025-25274,4.5,8.8,3.1,4.3,3.1,mattermost,Analyzed,2025-03-21
 CVE-2026-25983,4.5,9.8,3.1,5.3,3.1,github,Analyzed,2026-02-24
 CVE-2026-25986,4.5,9.8,3.1,5.3,3.1,github,Analyzed,2026-02-24
-CVE-2026-29184,4.5,6.5,3.1,2.0,3.1,github,Analyzed,2026-03-07
+CVE-2026-29184,4.5,6.5,3.1,2.0,3.1,github,Undergoing Analysis,2026-03-07
 CVE-2024-28103,4.4,9.8,3.1,5.4,3.1,github,Modified,2024-06-04
 CVE-2024-45054,4.4,6.7,3.1,2.3,3.1,github,Analyzed,2024-08-28
 CVE-2024-45395,4.4,7.5,3.1,3.1,3.1,github,Analyzed,2024-09-04
@@ -1243,6 +1243,7 @@ CVE-2026-39390,0.7,4.8,3.1,5.5,3.1,github,Analyzed,2026-04-08
 CVE-2026-39392,0.7,4.8,3.1,5.5,3.1,github,Analyzed,2026-04-08
 CVE-2026-40112,0.7,6.1,3.1,5.4,3.1,github,Analyzed,2026-04-09
 CVE-2026-40169,0.7,5.5,3.1,6.2,3.1,github,Analyzed,2026-04-13
+CVE-2026-40242,0.7,6.5,3.1,7.2,3.1,github,Analyzed,2026-04-10
 CVE-2026-40312,0.7,5.5,3.1,6.2,3.1,github,Analyzed,2026-04-13
 CVE-2022-25774,0.6,5.4,3.1,4.8,3.1,mautic,Analyzed,2024-09-18
 CVE-2022-25775,0.6,7.2,3.1,6.6,3.1,mautic,Analyzed,2024-09-18
@@ -1571,9 +1572,9 @@ CVE-2026-30929,0.1,7.8,3.1,7.7,3.1,github,Analyzed,2026-03-10
 CVE-2026-30956,0.1,9.9,3.1,10.0,3.1,github,Analyzed,2026-03-10
 CVE-2026-30957,0.1,9.9,3.1,10.0,3.1,github,Analyzed,2026-03-10
 CVE-2026-32306,0.1,9.9,3.1,10.0,3.1,github,Analyzed,2026-03-13
-CVE-2026-32604,0.1,9.9,3.1,10.0,3.1,github,Awaiting Analysis,2026-04-20
+CVE-2026-32604,0.1,9.9,3.1,10.0,3.1,github,Undergoing Analysis,2026-04-20
 CVE-2026-32606,0.1,7.6,3.1,7.7,3.1,github,Awaiting Analysis,2026-03-18
-CVE-2026-32613,0.1,9.9,3.1,10.0,3.1,github,Awaiting Analysis,2026-04-20
+CVE-2026-32613,0.1,9.9,3.1,10.0,3.1,github,Undergoing Analysis,2026-04-20
 CVE-2026-32731,0.1,9.9,3.1,10.0,3.1,github,Analyzed,2026-03-18
 CVE-2026-33309,0.1,9.9,3.1,10.0,3.1,github,Analyzed,2026-03-24
 CVE-2026-33435,0.1,8.0,3.1,8.1,3.1,github,Analyzed,2026-04-15
@@ -1603,16 +1604,17 @@ CVE-2026-40088,0.1,9.6,3.1,9.7,3.1,github,Analyzed,2026-04-09
 CVE-2026-40321,0.1,8.0,3.1,8.1,3.1,github,Undergoing Analysis,2026-04-17
 CVE-2026-40477,0.1,9.0,3.1,9.1,3.1,github,Undergoing Analysis,2026-04-17
 CVE-2026-40478,0.1,9.0,3.1,9.1,3.1,github,Undergoing Analysis,2026-04-17
+CVE-2026-40933,0.1,9.9,3.1,10.0,3.1,github,Received,2026-04-21
 CVE-2026-4740,0.1,8.2,3.1,8.3,3.1,redhat,Awaiting Analysis,2026-04-07
 CVE-2026-5412,0.1,9.9,3.1,10.0,3.1,ubuntu,Awaiting Analysis,2026-04-10
 CVE-2026-6290,0.1,8.0,3.1,8.1,3.1,rapid7,Undergoing Analysis,2026-04-15
 CVE-2006-1547,0.0,7.5,3.1,7.5,3.1,redhat,Analyzed,2006-03-30
-CVE-2013-2251,0.0,9.8,3.1,9.8,3.1,redhat,Modified,2013-07-20
-CVE-2014-0130,0.0,7.5,3.1,7.5,3.1,redhat,Modified,2014-05-07
+CVE-2013-2251,0.0,9.8,3.1,9.8,3.1,redhat,Undergoing Analysis,2013-07-20
+CVE-2014-0130,0.0,7.5,3.1,7.5,3.1,redhat,Analyzed,2014-05-07
 CVE-2014-3120,0.0,8.1,3.1,8.1,3.1,mitre,Undergoing Analysis,2014-07-28
-CVE-2015-5317,0.0,7.5,3.1,7.5,3.1,redhat,Modified,2015-11-25
+CVE-2015-5317,0.0,7.5,3.1,7.5,3.1,redhat,Undergoing Analysis,2015-11-25
 CVE-2016-10033,0.0,9.8,3.1,9.8,3.1,mitre,Analyzed,2016-12-30
-CVE-2016-4437,0.0,9.8,3.1,9.8,3.1,redhat,Modified,2016-06-07
+CVE-2016-4437,0.0,9.8,3.1,9.8,3.1,redhat,Undergoing Analysis,2016-06-07
 CVE-2017-9791,0.0,9.8,3.1,9.8,3.1,apache,Analyzed,2017-07-10
 CVE-2017-9841,0.0,9.8,3.1,9.8,3.1,mitre,Analyzed,2017-06-27
 CVE-2022-25777,0.0,6.5,3.1,6.5,3.1,mautic,Analyzed,2024-09-18

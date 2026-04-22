@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T18:29:17Z",
+  "generated_at": "2026-04-22T00:28:38Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -36,10 +36,10 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 61,
-      "avg_variance": 1.2,
+      "conflict_count": 62,
+      "avg_variance": 1.19,
       "nvd_higher_count": 32,
-      "gh_higher_count": 29
+      "gh_higher_count": 30
     },
     {
       "cwe_id": "CWE-284",
@@ -60,10 +60,10 @@
     {
       "cwe_id": "CWE-78",
       "name": "OS Command Injection",
-      "conflict_count": 49,
-      "avg_variance": 1.08,
+      "conflict_count": 50,
+      "avg_variance": 1.06,
       "nvd_higher_count": 22,
-      "gh_higher_count": 27
+      "gh_higher_count": 28
     },
     {
       "cwe_id": "CWE-89",
