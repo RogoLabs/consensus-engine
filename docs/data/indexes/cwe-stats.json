@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23T12:35:41Z",
+  "generated_at": "2026-04-23T18:40:41Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -226,20 +226,20 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-532",
+      "name": "Log Injection / Information Exposure Through Log",
+      "conflict_count": 15,
+      "avg_variance": 2.1,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-306",
       "name": "Missing Authentication",
       "conflict_count": 14,
       "avg_variance": 0.86,
       "nvd_higher_count": 8,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-532",
-      "name": "Log Injection / Information Exposure Through Log",
-      "conflict_count": 14,
-      "avg_variance": 2.14,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-190",
@@ -306,6 +306,22 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-347",
+      "name": "CWE-347",
+      "conflict_count": 12,
+      "avg_variance": 1.59,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 6
+    },
+    {
+      "cwe_id": "CWE-59",
+      "name": "CWE-59",
+      "conflict_count": 12,
+      "avg_variance": 1.32,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-1336",
       "name": "CWE-1336",
       "conflict_count": 12,
@@ -320,22 +336,6 @@
       "avg_variance": 1.32,
       "nvd_higher_count": 6,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-347",
-      "name": "CWE-347",
-      "conflict_count": 11,
-      "avg_variance": 1.65,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-59",
-      "name": "CWE-59",
-      "conflict_count": 11,
-      "avg_variance": 1.39,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-23",
@@ -394,6 +394,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-88",
+      "name": "CWE-88",
+      "conflict_count": 8,
+      "avg_variance": 0.59,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-668",
       "name": "Exposure of Resource to Wrong Sphere",
       "conflict_count": 8,
@@ -442,14 +450,6 @@
       "gh_higher_count": 4
     },
     {
-      "cwe_id": "CWE-88",
-      "name": "CWE-88",
-      "conflict_count": 7,
-      "avg_variance": 0.64,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 5
-    },
-    {
       "cwe_id": "CWE-312",
       "name": "CWE-312",
       "conflict_count": 7,
@@ -464,6 +464,14 @@
       "avg_variance": 1.06,
       "nvd_higher_count": 2,
       "gh_higher_count": 5
+    },
+    {
+      "cwe_id": "CWE-266",
+      "name": "CWE-266",
+      "conflict_count": 7,
+      "avg_variance": 0.94,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-476",
@@ -512,14 +520,6 @@
       "avg_variance": 2.0,
       "nvd_higher_count": 5,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-266",
-      "name": "CWE-266",
-      "conflict_count": 6,
-      "avg_variance": 0.93,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-362",
