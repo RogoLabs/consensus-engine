@@ -13001,9 +13001,9 @@
   },
   {
     "cve_id": "CVE-2026-35035",
-    "nvd_score": 7.2,
+    "nvd_score": 9.0,
     "github_score": 9.1,
-    "cvss_variance": 1.9,
+    "cvss_variance": 0.1,
     "assigning_cna": "github",
     "published_date": "2026-04-06"
   },
