@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T12:27:27Z",
+  "generated_at": "2026-04-24T18:21:22Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,10 +12,10 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 97,
+      "conflict_count": 96,
       "avg_variance": 1.25,
       "nvd_higher_count": 36,
-      "gh_higher_count": 61
+      "gh_higher_count": 60
     },
     {
       "cwe_id": "CWE-94",
@@ -36,10 +36,10 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 63,
+      "conflict_count": 64,
       "avg_variance": 1.19,
       "nvd_higher_count": 33,
-      "gh_higher_count": 30
+      "gh_higher_count": 31
     },
     {
       "cwe_id": "CWE-284",
@@ -98,20 +98,20 @@
       "gh_higher_count": 11
     },
     {
-      "cwe_id": "CWE-400",
-      "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 31,
-      "avg_variance": 1.98,
-      "nvd_higher_count": 27,
-      "gh_higher_count": 4
-    },
-    {
       "cwe_id": "CWE-287",
       "name": "Improper Authentication",
       "conflict_count": 30,
       "avg_variance": 1.43,
       "nvd_higher_count": 19,
       "gh_higher_count": 11
+    },
+    {
+      "cwe_id": "CWE-400",
+      "name": "Uncontrolled Resource Consumption",
+      "conflict_count": 30,
+      "avg_variance": 2.01,
+      "nvd_higher_count": 26,
+      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-862",
@@ -514,6 +514,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-346",
+      "name": "CWE-346",
+      "conflict_count": 6,
+      "avg_variance": 1.22,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 1
+    },
+    {
       "cwe_id": "CWE-674",
       "name": "CWE-674",
       "conflict_count": 6,
@@ -610,14 +618,6 @@
       "gh_higher_count": 2
     },
     {
-      "cwe_id": "CWE-346",
-      "name": "CWE-346",
-      "conflict_count": 5,
-      "avg_variance": 1.14,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 1
-    },
-    {
       "cwe_id": "CWE-1284",
       "name": "CWE-1284",
       "conflict_count": 5,
@@ -632,14 +632,6 @@
       "avg_variance": 1.94,
       "nvd_higher_count": 3,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-835",
-      "name": "CWE-835",
-      "conflict_count": 5,
-      "avg_variance": 2.58,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-706",
