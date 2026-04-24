@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23T18:40:41Z",
+  "generated_at": "2026-04-24T06:45:44Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -29,9 +29,9 @@
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
       "conflict_count": 71,
-      "avg_variance": 1.24,
-      "nvd_higher_count": 45,
-      "gh_higher_count": 26
+      "avg_variance": 1.26,
+      "nvd_higher_count": 46,
+      "gh_higher_count": 25
     },
     {
       "cwe_id": "CWE-918",
@@ -164,10 +164,10 @@
     {
       "cwe_id": "CWE-285",
       "name": "CWE-285",
-      "conflict_count": 20,
-      "avg_variance": 1.42,
+      "conflict_count": 21,
+      "avg_variance": 1.4,
       "nvd_higher_count": 10,
-      "gh_higher_count": 10
+      "gh_higher_count": 11
     },
     {
       "cwe_id": "CWE-639",

@@ -9544,6 +9544,14 @@
     "published_date": "2026-02-12"
   },
   {
+    "cve_id": "CVE-2026-21724",
+    "nvd_score": 4.3,
+    "github_score": 5.4,
+    "cvss_variance": 1.1,
+    "assigning_cna": "grafana",
+    "published_date": "2026-03-26"
+  },
+  {
     "cve_id": "CVE-2026-21859",
     "nvd_score": 5.3,
     "github_score": 5.8,
@@ -13537,9 +13545,9 @@
   },
   {
     "cve_id": "CVE-2026-6290",
-    "nvd_score": 8.0,
+    "nvd_score": 9.1,
     "github_score": 8.1,
-    "cvss_variance": 0.1,
+    "cvss_variance": 1.0,
     "assigning_cna": "rapid7",
     "published_date": "2026-04-15"
   }
