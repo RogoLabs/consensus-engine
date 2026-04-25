@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T18:21:22Z",
+  "generated_at": "2026-04-25T00:28:50Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,10 +12,10 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 96,
-      "avg_variance": 1.25,
-      "nvd_higher_count": 36,
-      "gh_higher_count": 60
+      "conflict_count": 98,
+      "avg_variance": 1.26,
+      "nvd_higher_count": 37,
+      "gh_higher_count": 61
     },
     {
       "cwe_id": "CWE-94",
@@ -36,10 +36,10 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 64,
-      "avg_variance": 1.19,
-      "nvd_higher_count": 33,
-      "gh_higher_count": 31
+      "conflict_count": 65,
+      "avg_variance": 1.18,
+      "nvd_higher_count": 32,
+      "gh_higher_count": 33
     },
     {
       "cwe_id": "CWE-284",
@@ -108,9 +108,9 @@
     {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 30,
-      "avg_variance": 2.01,
-      "nvd_higher_count": 26,
+      "conflict_count": 29,
+      "avg_variance": 2.0,
+      "nvd_higher_count": 25,
       "gh_higher_count": 4
     },
     {
@@ -148,9 +148,9 @@
     {
       "cwe_id": "CWE-434",
       "name": "Unrestricted File Upload",
-      "conflict_count": 24,
-      "avg_variance": 1.05,
-      "nvd_higher_count": 9,
+      "conflict_count": 25,
+      "avg_variance": 1.07,
+      "nvd_higher_count": 10,
       "gh_higher_count": 15
     },
     {
@@ -306,14 +306,6 @@
       "gh_higher_count": 3
     },
     {
-      "cwe_id": "CWE-347",
-      "name": "CWE-347",
-      "conflict_count": 12,
-      "avg_variance": 1.59,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 6
-    },
-    {
       "cwe_id": "CWE-59",
       "name": "CWE-59",
       "conflict_count": 12,
@@ -336,6 +328,14 @@
       "avg_variance": 1.32,
       "nvd_higher_count": 6,
       "gh_higher_count": 5
+    },
+    {
+      "cwe_id": "CWE-347",
+      "name": "CWE-347",
+      "conflict_count": 11,
+      "avg_variance": 1.65,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-23",
@@ -466,6 +466,14 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-201",
+      "name": "CWE-201",
+      "conflict_count": 7,
+      "avg_variance": 1.36,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-266",
       "name": "CWE-266",
       "conflict_count": 7,
@@ -488,14 +496,6 @@
       "avg_variance": 0.37,
       "nvd_higher_count": 0,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-201",
-      "name": "CWE-201",
-      "conflict_count": 6,
-      "avg_variance": 1.38,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-401",
