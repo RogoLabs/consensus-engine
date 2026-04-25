@@ -1,5 +1,5 @@
 {
-  "total_cves": 159597,
+  "total_cves": 159598,
   "comparable_count": 6472,
   "conflict_count": 1698,
   "conflict_rate": 26.2,
@@ -157,5 +157,5 @@
   },
   "avg_days_to_analysis": 2883.8,
   "p90_days_to_analysis": 7765,
-  "generated_at": "2026-04-25T00:28:50Z"
+  "generated_at": "2026-04-25T06:36:11Z"
 }

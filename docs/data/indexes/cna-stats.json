@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T00:28:50Z",
+  "generated_at": "2026-04-25T06:36:11Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -35,17 +35,6 @@
       "top_cve": "CVE-2025-2946"
     },
     {
-      "name": "ERIC",
-      "total": 23,
-      "comparable": 5,
-      "conflicts": 3,
-      "conflict_rate": 60.0,
-      "avg_drift": 0.73,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2025-40843"
-    },
-    {
       "name": "cisco",
       "total": 1283,
       "comparable": 5,
@@ -57,6 +46,17 @@
       "top_cve": "CVE-2024-29073"
     },
     {
+      "name": "ERIC",
+      "total": 23,
+      "comparable": 5,
+      "conflicts": 3,
+      "conflict_rate": 60.0,
+      "avg_drift": 0.73,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2025-40843"
+    },
+    {
       "name": "mattermost",
       "total": 242,
       "comparable": 183,
@@ -66,17 +66,6 @@
       "nvd_higher_count": 61,
       "gh_higher_count": 34,
       "top_cve": "CVE-2025-1412"
-    },
-    {
-      "name": "elastic",
-      "total": 86,
-      "comparable": 18,
-      "conflicts": 9,
-      "conflict_rate": 50.0,
-      "avg_drift": 1.46,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2024-23444"
     },
     {
       "name": "mautic",
@@ -99,6 +88,17 @@
       "nvd_higher_count": 4,
       "gh_higher_count": 1,
       "top_cve": "CVE-2025-10713"
+    },
+    {
+      "name": "elastic",
+      "total": 86,
+      "comparable": 18,
+      "conflicts": 9,
+      "conflict_rate": 50.0,
+      "avg_drift": 1.46,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2024-23444"
     },
     {
       "name": "hackerone",
@@ -399,7 +399,7 @@
     },
     {
       "name": "snyk",
-      "total": 108,
+      "total": 109,
       "comparable": 92,
       "conflicts": 6,
       "conflict_rate": 6.5,
@@ -475,9 +475,9 @@
       "top_cve": "CVE-2024-9440"
     },
     {
-      "name": "or",
-      "total": 596,
-      "comparable": 8,
+      "name": "Checkmarx",
+      "total": 12,
+      "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -497,28 +497,6 @@
       "top_cve": null
     },
     {
-      "name": "VulDB",
-      "total": 28,
-      "comparable": 10,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "vuldb.com",
-      "total": 345,
-      "comparable": 6,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
       "name": "DSF",
       "total": 17,
       "comparable": 10,
@@ -530,9 +508,31 @@
       "top_cve": null
     },
     {
-      "name": "Checkmarx",
-      "total": 12,
-      "comparable": 5,
+      "name": "VulDB",
+      "total": 28,
+      "comparable": 10,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "or",
+      "total": 596,
+      "comparable": 8,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "vuldb.com",
+      "total": 345,
+      "comparable": 6,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
