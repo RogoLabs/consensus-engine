@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T06:58:07Z",
+  "generated_at": "2026-04-27T12:38:38Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -201,7 +201,7 @@
     },
     {
       "name": "mitre",
-      "total": 47483,
+      "total": 47484,
       "comparable": 714,
       "conflicts": 205,
       "conflict_rate": 28.7,
@@ -289,7 +289,7 @@
     },
     {
       "name": "apache",
-      "total": 503,
+      "total": 514,
       "comparable": 269,
       "conflicts": 47,
       "conflict_rate": 17.5,
@@ -454,7 +454,7 @@
     },
     {
       "name": "vuldb",
-      "total": 9594,
+      "total": 9621,
       "comparable": 174,
       "conflicts": 1,
       "conflict_rate": 0.6,
@@ -475,42 +475,9 @@
       "top_cve": "CVE-2024-9440"
     },
     {
-      "name": "AMZN",
-      "total": 79,
-      "comparable": 25,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "trendmicro",
-      "total": 1869,
-      "comparable": 12,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "or",
-      "total": 598,
-      "comparable": 8,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "Checkmarx",
-      "total": 12,
-      "comparable": 5,
+      "name": "DSF",
+      "total": 17,
+      "comparable": 10,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -530,6 +497,17 @@
       "top_cve": null
     },
     {
+      "name": "or",
+      "total": 598,
+      "comparable": 8,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
       "name": "VulDB",
       "total": 28,
       "comparable": 10,
@@ -541,9 +519,31 @@
       "top_cve": null
     },
     {
-      "name": "DSF",
-      "total": 17,
-      "comparable": 10,
+      "name": "AMZN",
+      "total": 79,
+      "comparable": 25,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "Checkmarx",
+      "total": 12,
+      "comparable": 5,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "trendmicro",
+      "total": 1869,
+      "comparable": 12,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
