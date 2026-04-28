@@ -10360,6 +10360,14 @@
     "published_date": "2026-02-19"
   },
   {
+    "cve_id": "CVE-2026-25773",
+    "nvd_score": 6.5,
+    "github_score": 8.1,
+    "cvss_variance": 1.6,
+    "assigning_cna": "mattermost.com",
+    "published_date": "2026-04-03"
+  },
+  {
     "cve_id": "CVE-2026-25795",
     "nvd_score": 7.5,
     "github_score": 5.3,
