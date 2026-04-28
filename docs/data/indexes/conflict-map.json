@@ -7800,14 +7800,6 @@
     "published_date": "2025-07-23"
   },
   {
-    "cve_id": "CVE-2025-54265",
-    "nvd_score": 7.5,
-    "github_score": 5.9,
-    "cvss_variance": 1.6,
-    "assigning_cna": "adobe",
-    "published_date": "2025-10-14"
-  },
-  {
     "cve_id": "CVE-2025-54314",
     "nvd_score": 2.8,
     "github_score": 7.9,
@@ -13492,6 +13484,14 @@
     "nvd_score": 9.9,
     "github_score": 10.0,
     "cvss_variance": 0.1,
+    "assigning_cna": "github",
+    "published_date": "2026-04-21"
+  },
+  {
+    "cve_id": "CVE-2026-40938",
+    "nvd_score": 8.5,
+    "github_score": 7.5,
+    "cvss_variance": 1.0,
     "assigning_cna": "github",
     "published_date": "2026-04-21"
   },

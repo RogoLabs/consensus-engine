@@ -1,7 +1,7 @@
 {
   "comparable_conflicts": 1702,
   "vector_only_conflicts": 68,
-  "generated_at": "2026-04-28T12:41:36Z",
+  "generated_at": "2026-04-28T18:38:07Z",
   "metrics": [
     {
       "key": "A",
@@ -69,9 +69,9 @@
       "key": "S",
       "name": "Scope",
       "total": 1702,
-      "disagree_count": 471,
+      "disagree_count": 472,
       "disagree_rate": 27.7,
-      "nvd_higher_count": 183,
+      "nvd_higher_count": 184,
       "gh_higher_count": 288,
       "top_transitions": [
         {
@@ -80,7 +80,7 @@
         },
         {
           "transition": "C\u2192U",
-          "count": 183
+          "count": 184
         }
       ]
     },
@@ -119,14 +119,14 @@
       "key": "AC",
       "name": "Attack Complexity",
       "total": 1702,
-      "disagree_count": 453,
+      "disagree_count": 452,
       "disagree_rate": 26.6,
-      "nvd_higher_count": 417,
+      "nvd_higher_count": 416,
       "gh_higher_count": 36,
       "top_transitions": [
         {
           "transition": "L\u2192H",
-          "count": 417
+          "count": 416
         },
         {
           "transition": "H\u2192L",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T12:41:36Z",
+  "generated_at": "2026-04-28T18:38:08Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -28,9 +28,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 70,
+      "conflict_count": 69,
       "avg_variance": 1.26,
-      "nvd_higher_count": 45,
+      "nvd_higher_count": 44,
       "gh_higher_count": 25
     },
     {
@@ -354,6 +354,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-88",
+      "name": "CWE-88",
+      "conflict_count": 9,
+      "avg_variance": 0.63,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-276",
       "name": "Incorrect Default Permissions",
       "conflict_count": 9,
@@ -392,14 +400,6 @@
       "avg_variance": 0.89,
       "nvd_higher_count": 4,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-88",
-      "name": "CWE-88",
-      "conflict_count": 8,
-      "avg_variance": 0.59,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-668",
