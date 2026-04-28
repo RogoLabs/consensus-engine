@@ -10440,14 +10440,6 @@
     "published_date": "2026-02-24"
   },
   {
-    "cve_id": "CVE-2026-25917",
-    "nvd_score": 7.2,
-    "github_score": 9.8,
-    "cvss_variance": 2.6,
-    "assigning_cna": "apache",
-    "published_date": "2026-04-18"
-  },
-  {
     "cve_id": "CVE-2026-25960",
     "nvd_score": 9.8,
     "github_score": 5.4,

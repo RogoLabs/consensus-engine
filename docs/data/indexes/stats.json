@@ -1,9 +1,9 @@
 {
-  "total_cves": 159939,
-  "comparable_count": 6522,
-  "conflict_count": 1703,
+  "total_cves": 159972,
+  "comparable_count": 6523,
+  "conflict_count": 1702,
   "conflict_rate": 26.1,
-  "gap_count": 154870,
+  "gap_count": 154904,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -13,7 +13,7 @@
   "median_variance": 1.2,
   "direction_asymmetry": {
     "nvd_higher_count": 922,
-    "gh_higher_count": 781
+    "gh_higher_count": 780
   },
   "conflict_by_year": {
     "2006": 1,
@@ -25,7 +25,7 @@
     "2022": 1,
     "2024": 582,
     "2025": 545,
-    "2026": 566
+    "2026": 565
   },
   "conflict_direction_by_year": {
     "2024": {
@@ -40,17 +40,17 @@
     },
     "2026": {
       "nvd_higher": 298,
-      "gh_higher": 268,
-      "comparable": 2346
+      "gh_higher": 267,
+      "comparable": 2347
     }
   },
-  "severity_flip_count": 876,
+  "severity_flip_count": 875,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 139,
     "Critical\u2192High": 105,
     "Critical\u2192Medium": 49,
     "Critical\u2192Low": 8,
-    "High\u2192Critical": 78,
+    "High\u2192Critical": 77,
     "High\u2192High": 230,
     "High\u2192Medium": 259,
     "High\u2192Low": 24,
@@ -66,12 +66,12 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 301,
-      "High": 591,
+      "High": 590,
       "Medium": 770,
       "Low": 41
     },
     "gh": {
-      "Critical": 249,
+      "Critical": 248,
       "High": 531,
       "Medium": 757,
       "Low": 166
@@ -106,7 +106,7 @@
     {
       "bucket": "2.5-3.0",
       "min": 2.5,
-      "count": 98
+      "count": 97
     },
     {
       "bucket": "3.0-3.5",
@@ -151,11 +151,11 @@
   ],
   "severity_distribution": {
     "Critical": 301,
-    "High": 591,
+    "High": 590,
     "Medium": 770,
     "Low": 41
   },
-  "avg_days_to_analysis": 2873.0,
+  "avg_days_to_analysis": 2872.9,
   "p90_days_to_analysis": 7765,
-  "generated_at": "2026-04-28T00:35:41Z"
+  "generated_at": "2026-04-28T07:00:04Z"
 }
