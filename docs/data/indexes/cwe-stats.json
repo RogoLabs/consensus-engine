@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-28T18:38:08Z",
+  "generated_at": "2026-04-29T00:35:59Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 289,
-      "avg_variance": 1.46,
+      "conflict_count": 290,
+      "avg_variance": 1.47,
       "nvd_higher_count": 82,
-      "gh_higher_count": 207
+      "gh_higher_count": 208
     },
     {
       "cwe_id": "CWE-22",
@@ -58,20 +58,20 @@
       "gh_higher_count": 24
     },
     {
+      "cwe_id": "CWE-89",
+      "name": "SQL Injection",
+      "conflict_count": 50,
+      "avg_variance": 1.81,
+      "nvd_higher_count": 25,
+      "gh_higher_count": 25
+    },
+    {
       "cwe_id": "CWE-78",
       "name": "OS Command Injection",
       "conflict_count": 50,
       "avg_variance": 1.06,
       "nvd_higher_count": 22,
       "gh_higher_count": 28
-    },
-    {
-      "cwe_id": "CWE-89",
-      "name": "SQL Injection",
-      "conflict_count": 49,
-      "avg_variance": 1.79,
-      "nvd_higher_count": 25,
-      "gh_higher_count": 24
     },
     {
       "cwe_id": "CWE-770",
