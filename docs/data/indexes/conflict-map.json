@@ -8,6 +8,14 @@
     "published_date": "2006-03-30"
   },
   {
+    "cve_id": "CVE-2012-3363",
+    "nvd_score": 9.1,
+    "github_score": 7.3,
+    "cvss_variance": 1.8,
+    "assigning_cna": "redhat",
+    "published_date": "2013-02-13"
+  },
+  {
     "cve_id": "CVE-2013-2251",
     "nvd_score": 9.8,
     "github_score": 9.8,
@@ -22,6 +30,14 @@
     "cvss_variance": 0.0,
     "assigning_cna": "redhat",
     "published_date": "2014-05-07"
+  },
+  {
+    "cve_id": "CVE-2014-0808",
+    "nvd_score": 9.1,
+    "github_score": 5.3,
+    "cvss_variance": 3.8,
+    "assigning_cna": "or",
+    "published_date": "2014-01-22"
   },
   {
     "cve_id": "CVE-2014-3120",
