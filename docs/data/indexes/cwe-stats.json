@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T18:29:19Z",
+  "generated_at": "2026-05-02T00:35:04Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,10 +12,10 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 90,
-      "avg_variance": 1.36,
-      "nvd_higher_count": 37,
-      "gh_higher_count": 53
+      "conflict_count": 92,
+      "avg_variance": 1.35,
+      "nvd_higher_count": 38,
+      "gh_higher_count": 54
     },
     {
       "cwe_id": "CWE-863",
@@ -306,6 +306,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-416",
+      "name": "Use After Free",
+      "conflict_count": 12,
+      "avg_variance": 2.43,
+      "nvd_higher_count": 10,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-347",
       "name": "CWE-347",
       "conflict_count": 11,
@@ -320,14 +328,6 @@
       "avg_variance": 2.01,
       "nvd_higher_count": 5,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-416",
-      "name": "Use After Free",
-      "conflict_count": 11,
-      "avg_variance": 2.36,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-295",
