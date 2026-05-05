@@ -12456,10 +12456,34 @@
     "published_date": "2026-04-22"
   },
   {
+    "cve_id": "CVE-2026-35358",
+    "nvd_score": 5.5,
+    "github_score": 4.4,
+    "cvss_variance": 1.1,
+    "assigning_cna": "ubuntu",
+    "published_date": "2026-04-22"
+  },
+  {
     "cve_id": "CVE-2026-35361",
     "nvd_score": 4.4,
     "github_score": 3.4,
     "cvss_variance": 1.0,
+    "assigning_cna": "ubuntu",
+    "published_date": "2026-04-22"
+  },
+  {
+    "cve_id": "CVE-2026-35373",
+    "nvd_score": 5.5,
+    "github_score": 3.3,
+    "cvss_variance": 2.2,
+    "assigning_cna": "ubuntu",
+    "published_date": "2026-04-22"
+  },
+  {
+    "cve_id": "CVE-2026-35376",
+    "nvd_score": 5.8,
+    "github_score": 4.5,
+    "cvss_variance": 1.3,
     "assigning_cna": "ubuntu",
     "published_date": "2026-04-22"
   },
@@ -12940,6 +12964,30 @@
     "nvd_score": 9.1,
     "github_score": 8.1,
     "cvss_variance": 1.0,
+    "assigning_cna": "github",
+    "published_date": "2026-04-24"
+  },
+  {
+    "cve_id": "CVE-2026-42041",
+    "nvd_score": 6.5,
+    "github_score": 4.8,
+    "cvss_variance": 1.7,
+    "assigning_cna": "github",
+    "published_date": "2026-04-24"
+  },
+  {
+    "cve_id": "CVE-2026-42043",
+    "nvd_score": 10.0,
+    "github_score": 7.2,
+    "cvss_variance": 2.8,
+    "assigning_cna": "github",
+    "published_date": "2026-04-24"
+  },
+  {
+    "cve_id": "CVE-2026-42044",
+    "nvd_score": 9.1,
+    "github_score": 6.5,
+    "cvss_variance": 2.6,
     "assigning_cna": "github",
     "published_date": "2026-04-24"
   },

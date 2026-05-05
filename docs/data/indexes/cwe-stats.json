@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T18:37:55Z",
+  "generated_at": "2026-05-05T00:35:35Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -18,20 +18,20 @@
       "gh_higher_count": 54
     },
     {
+      "cwe_id": "CWE-918",
+      "name": "Server-Side Request Forgery (SSRF)",
+      "conflict_count": 67,
+      "avg_variance": 1.25,
+      "nvd_higher_count": 35,
+      "gh_higher_count": 32
+    },
+    {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
       "conflict_count": 67,
       "avg_variance": 1.29,
       "nvd_higher_count": 44,
       "gh_higher_count": 23
-    },
-    {
-      "cwe_id": "CWE-918",
-      "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 66,
-      "avg_variance": 1.23,
-      "nvd_higher_count": 34,
-      "gh_higher_count": 32
     },
     {
       "cwe_id": "CWE-94",
@@ -100,9 +100,9 @@
     {
       "cwe_id": "CWE-287",
       "name": "Improper Authentication",
-      "conflict_count": 31,
-      "avg_variance": 1.46,
-      "nvd_higher_count": 20,
+      "conflict_count": 32,
+      "avg_variance": 1.47,
+      "nvd_higher_count": 21,
       "gh_higher_count": 11
     },
     {
@@ -202,6 +202,14 @@
       "gh_higher_count": 8
     },
     {
+      "cwe_id": "CWE-1321",
+      "name": "Prototype Pollution",
+      "conflict_count": 16,
+      "avg_variance": 1.82,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-80",
       "name": "CWE-80",
       "conflict_count": 15,
@@ -258,28 +266,20 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-367",
+      "name": "CWE-367",
+      "conflict_count": 14,
+      "avg_variance": 1.94,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 9
+    },
+    {
       "cwe_id": "CWE-1333",
       "name": "Inefficient Regular Expression",
       "conflict_count": 14,
       "avg_variance": 2.09,
       "nvd_higher_count": 11,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-1321",
-      "name": "Prototype Pollution",
-      "conflict_count": 14,
-      "avg_variance": 1.77,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-367",
-      "name": "CWE-367",
-      "conflict_count": 13,
-      "avg_variance": 1.98,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 9
     },
     {
       "cwe_id": "CWE-611",
@@ -522,6 +522,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-706",
+      "name": "CWE-706",
+      "conflict_count": 6,
+      "avg_variance": 1.23,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 1
+    },
+    {
       "cwe_id": "CWE-121",
       "name": "CWE-121",
       "conflict_count": 6,
@@ -594,14 +602,6 @@
       "gh_higher_count": 1
     },
     {
-      "cwe_id": "CWE-706",
-      "name": "CWE-706",
-      "conflict_count": 5,
-      "avg_variance": 1.26,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 1
-    },
-    {
       "cwe_id": "CWE-193",
       "name": "CWE-193",
       "conflict_count": 5,
@@ -616,6 +616,14 @@
       "avg_variance": 2.04,
       "nvd_higher_count": 1,
       "gh_higher_count": 4
+    },
+    {
+      "cwe_id": "CWE-441",
+      "name": "CWE-441",
+      "conflict_count": 5,
+      "avg_variance": 1.44,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-1004",
