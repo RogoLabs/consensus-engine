@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T07:02:21Z",
+  "generated_at": "2026-05-06T12:42:38Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -36,9 +36,9 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 55,
-      "avg_variance": 1.12,
-      "nvd_higher_count": 30,
+      "conflict_count": 56,
+      "avg_variance": 1.1,
+      "nvd_higher_count": 31,
       "gh_higher_count": 25
     },
     {
@@ -170,20 +170,20 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-693",
+      "name": "CWE-693",
+      "conflict_count": 18,
+      "avg_variance": 0.92,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-77",
       "name": "CWE-77",
       "conflict_count": 18,
       "avg_variance": 1.48,
       "nvd_higher_count": 11,
       "gh_higher_count": 7
-    },
-    {
-      "cwe_id": "CWE-693",
-      "name": "CWE-693",
-      "conflict_count": 17,
-      "avg_variance": 0.96,
-      "nvd_higher_count": 11,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-74",

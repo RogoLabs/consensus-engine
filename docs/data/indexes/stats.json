@@ -1,18 +1,18 @@
 {
-  "total_cves": 181986,
+  "total_cves": 182239,
   "comparable_count": 6870,
-  "conflict_count": 1633,
+  "conflict_count": 1634,
   "conflict_rate": 23.8,
-  "gap_count": 176965,
+  "gap_count": 177217,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
   "max_variance": 6.9,
   "max_variance_cve": "CVE-2025-47735",
-  "avg_variance": 1.54,
+  "avg_variance": 1.53,
   "median_variance": 1.2,
   "direction_asymmetry": {
-    "nvd_higher_count": 947,
+    "nvd_higher_count": 948,
     "gh_higher_count": 686
   },
   "conflict_by_year": {
@@ -26,7 +26,7 @@
     "2023": 1,
     "2024": 563,
     "2025": 512,
-    "2026": 545
+    "2026": 546
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -45,14 +45,14 @@
       "comparable": 2255
     },
     "2026": {
-      "nvd_higher": 321,
+      "nvd_higher": 322,
       "gh_higher": 224,
       "comparable": 2544
     }
   },
   "severity_flip_count": 894,
   "severity_flip_matrix": {
-    "Critical\u2192Critical": 73,
+    "Critical\u2192Critical": 74,
     "Critical\u2192High": 108,
     "Critical\u2192Medium": 52,
     "Critical\u2192Low": 8,
@@ -71,13 +71,13 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 241,
+      "Critical": 242,
       "High": 567,
       "Medium": 784,
       "Low": 41
     },
     "gh": {
-      "Critical": 183,
+      "Critical": 184,
       "High": 508,
       "Medium": 771,
       "Low": 171
@@ -87,7 +87,7 @@
     {
       "bucket": "0.0-0.5",
       "min": 0.0,
-      "count": 228
+      "count": 229
     },
     {
       "bucket": "0.5-1.0",
@@ -156,12 +156,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 241,
+    "Critical": 242,
     "High": 567,
     "Medium": 784,
     "Low": 41
   },
-  "avg_days_to_analysis": 3193.8,
+  "avg_days_to_analysis": 3193.6,
   "p90_days_to_analysis": 7576,
-  "generated_at": "2026-05-06T07:02:20Z"
+  "generated_at": "2026-05-06T12:42:38Z"
 }
