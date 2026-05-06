@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T12:42:38Z",
+  "generated_at": "2026-05-06T18:39:45Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -44,9 +44,9 @@
     {
       "cwe_id": "CWE-284",
       "name": "CWE-284",
-      "conflict_count": 50,
-      "avg_variance": 1.23,
-      "nvd_higher_count": 30,
+      "conflict_count": 51,
+      "avg_variance": 1.24,
+      "nvd_higher_count": 31,
       "gh_higher_count": 20
     },
     {
@@ -194,6 +194,14 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-306",
+      "name": "Missing Authentication",
+      "conflict_count": 16,
+      "avg_variance": 0.97,
+      "nvd_higher_count": 10,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-122",
       "name": "CWE-122",
       "conflict_count": 16,
@@ -240,14 +248,6 @@
       "avg_variance": 2.55,
       "nvd_higher_count": 13,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-306",
-      "name": "Missing Authentication",
-      "conflict_count": 14,
-      "avg_variance": 0.86,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-290",
