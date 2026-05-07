@@ -1,14 +1,14 @@
 {
-  "total": 15128,
-  "avg_github_score": 6.96,
+  "total": 15144,
+  "avg_github_score": 6.97,
   "severity_distribution": {
-    "critical": 2352,
-    "high": 5529,
-    "medium": 6669,
-    "low": 578
+    "critical": 2362,
+    "high": 5533,
+    "medium": 6672,
+    "low": 577
   },
   "nvd_status_breakdown": {
-    "No NVD Record": 15101,
+    "No NVD Record": 15117,
     "Rejected": 25,
     "Deferred": 2
   },
@@ -657,6 +657,33 @@
       "github_score": 10.0,
       "github_cvss_version": "3.1",
       "ghsa_id": "GHSA-246w-jgmq-88fg",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
+    },
+    {
+      "cve_id": "CVE-2026-43997",
+      "github_score": 10.0,
+      "github_cvss_version": "3.1",
+      "ghsa_id": "GHSA-47x8-96vw-5wg6",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
+    },
+    {
+      "cve_id": "CVE-2026-44005",
+      "github_score": 10.0,
+      "github_cvss_version": "3.1",
+      "ghsa_id": "GHSA-vwrp-x96c-mhwq",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
+    },
+    {
+      "cve_id": "CVE-2026-44006",
+      "github_score": 10.0,
+      "github_cvss_version": "3.1",
+      "ghsa_id": "GHSA-qcp4-v2jj-fjx8",
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
@@ -1589,6 +1616,15 @@
       "published_date": null
     },
     {
+      "cve_id": "CVE-2026-41050",
+      "github_score": 9.9,
+      "github_cvss_version": "3.1",
+      "ghsa_id": "GHSA-765j-qfrp-hm3j",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
+    },
+    {
       "cve_id": "CVE-2026-42864",
       "github_score": 9.9,
       "github_cvss_version": "3.1",
@@ -1602,6 +1638,15 @@
       "github_score": 9.9,
       "github_cvss_version": "3.1",
       "ghsa_id": "GHSA-mhc8-p3jx-84mm",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
+    },
+    {
+      "cve_id": "CVE-2026-43999",
+      "github_score": 9.9,
+      "github_cvss_version": "3.1",
+      "ghsa_id": "GHSA-947f-4v7f-x2v8",
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
@@ -4467,52 +4512,7 @@
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
-    },
-    {
-      "cve_id": "CVE-2018-20996",
-      "github_score": 9.8,
-      "github_cvss_version": "3.0",
-      "ghsa_id": "GHSA-c3cw-c387-pj65",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
-    },
-    {
-      "cve_id": "CVE-2018-20997",
-      "github_score": 9.8,
-      "github_cvss_version": "3.0",
-      "ghsa_id": "GHSA-xjxc-vfw2-cg96",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
-    },
-    {
-      "cve_id": "CVE-2018-20998",
-      "github_score": 9.8,
-      "github_cvss_version": "3.0",
-      "ghsa_id": "GHSA-69fv-gw6g-8ccg",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
-    },
-    {
-      "cve_id": "CVE-2018-21000",
-      "github_score": 9.8,
-      "github_cvss_version": "3.0",
-      "ghsa_id": "GHSA-2v78-j59h-fmpf",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
-    },
-    {
-      "cve_id": "CVE-2018-21025",
-      "github_score": 9.8,
-      "github_cvss_version": "3.1",
-      "ghsa_id": "GHSA-f24j-f97w-65h8",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
     }
   ],
-  "generated_at": "2026-05-07T00:43:04Z"
+  "generated_at": "2026-05-07T07:24:33Z"
 }

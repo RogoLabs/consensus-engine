@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-07T00:43:04Z",
+  "generated_at": "2026-05-07T07:24:33Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 282,
+      "conflict_count": 283,
       "avg_variance": 1.5,
-      "nvd_higher_count": 82,
+      "nvd_higher_count": 83,
       "gh_higher_count": 200
     },
     {
@@ -20,17 +20,17 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 68,
-      "avg_variance": 1.25,
-      "nvd_higher_count": 36,
+      "conflict_count": 69,
+      "avg_variance": 1.24,
+      "nvd_higher_count": 37,
       "gh_higher_count": 32
     },
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 67,
-      "avg_variance": 1.29,
-      "nvd_higher_count": 44,
+      "conflict_count": 68,
+      "avg_variance": 1.28,
+      "nvd_higher_count": 45,
       "gh_higher_count": 23
     },
     {
@@ -474,6 +474,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-829",
+      "name": "CWE-829",
+      "conflict_count": 6,
+      "avg_variance": 0.95,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-789",
       "name": "CWE-789",
       "conflict_count": 6,
@@ -552,14 +560,6 @@
       "avg_variance": 1.94,
       "nvd_higher_count": 5,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-829",
-      "name": "CWE-829",
-      "conflict_count": 5,
-      "avg_variance": 1.04,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-212",
