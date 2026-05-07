@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T07:24:32Z",
+  "generated_at": "2026-05-07T12:45:08Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -57,17 +57,6 @@
       "top_cve": "CVE-2025-40843"
     },
     {
-      "name": "WSO2",
-      "total": 49,
-      "comparable": 10,
-      "conflicts": 5,
-      "conflict_rate": 50.0,
-      "avg_drift": 1.6,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2025-10713"
-    },
-    {
       "name": "mattermost",
       "total": 242,
       "comparable": 188,
@@ -88,6 +77,17 @@
       "nvd_higher_count": 7,
       "gh_higher_count": 5,
       "top_cve": "CVE-2021-27917"
+    },
+    {
+      "name": "WSO2",
+      "total": 49,
+      "comparable": 10,
+      "conflicts": 5,
+      "conflict_rate": 50.0,
+      "avg_drift": 1.6,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2025-10713"
     },
     {
       "name": "elastic",
@@ -168,8 +168,8 @@
     },
     {
       "name": "github",
-      "total": 9005,
-      "comparable": 3365,
+      "total": 9009,
+      "comparable": 3368,
       "conflicts": 990,
       "conflict_rate": 29.4,
       "avg_drift": 1.45,
@@ -266,6 +266,17 @@
       "top_cve": "CVE-2024-5520"
     },
     {
+      "name": "google",
+      "total": 2106,
+      "comparable": 11,
+      "conflicts": 2,
+      "conflict_rate": 18.2,
+      "avg_drift": 1.6,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 0,
+      "top_cve": "CVE-2024-4128"
+    },
+    {
       "name": "openjs",
       "total": 33,
       "comparable": 23,
@@ -310,17 +321,6 @@
       "top_cve": "CVE-2024-45856"
     },
     {
-      "name": "liferay",
-      "total": 152,
-      "comparable": 16,
-      "conflicts": 2,
-      "conflict_rate": 12.5,
-      "avg_drift": 1.85,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 2,
-      "top_cve": "CVE-2024-8980"
-    },
-    {
       "name": "jfrog",
       "total": 52,
       "comparable": 32,
@@ -332,6 +332,17 @@
       "top_cve": "CVE-2024-34391"
     },
     {
+      "name": "liferay",
+      "total": 152,
+      "comparable": 16,
+      "conflicts": 2,
+      "conflict_rate": 12.5,
+      "avg_drift": 1.85,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 2,
+      "top_cve": "CVE-2024-8980"
+    },
+    {
       "name": "cert",
       "total": 2848,
       "comparable": 27,
@@ -341,17 +352,6 @@
       "nvd_higher_count": 2,
       "gh_higher_count": 1,
       "top_cve": "CVE-2025-14894"
-    },
-    {
-      "name": "google",
-      "total": 2105,
-      "comparable": 10,
-      "conflicts": 1,
-      "conflict_rate": 10.0,
-      "avg_drift": 1.7,
-      "nvd_higher_count": 1,
-      "gh_higher_count": 0,
-      "top_cve": "CVE-2024-4128"
     },
     {
       "name": "fb",
@@ -388,7 +388,7 @@
     },
     {
       "name": "redhat",
-      "total": 7061,
+      "total": 7062,
       "comparable": 528,
       "conflicts": 30,
       "conflict_rate": 5.7,
@@ -497,19 +497,8 @@
       "top_cve": "CVE-2024-9440"
     },
     {
-      "name": "Checkmarx",
-      "total": 12,
-      "comparable": 5,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "VulDB",
-      "total": 28,
+      "name": "DSF",
+      "total": 20,
       "comparable": 10,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -522,6 +511,17 @@
       "name": "AMZN",
       "total": 87,
       "comparable": 27,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "debian",
+      "total": 415,
+      "comparable": 23,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -552,8 +552,8 @@
       "top_cve": null
     },
     {
-      "name": "DSF",
-      "total": 20,
+      "name": "VulDB",
+      "total": 28,
       "comparable": 10,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -563,9 +563,9 @@
       "top_cve": null
     },
     {
-      "name": "debian",
-      "total": 415,
-      "comparable": 23,
+      "name": "Checkmarx",
+      "total": 12,
+      "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,

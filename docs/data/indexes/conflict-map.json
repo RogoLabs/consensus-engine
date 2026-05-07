@@ -416,6 +416,14 @@
     "published_date": "2025-07-28"
   },
   {
+    "cve_id": "CVE-2023-6460",
+    "nvd_score": 5.5,
+    "github_score": 4.0,
+    "cvss_variance": 1.5,
+    "assigning_cna": "google",
+    "published_date": "2023-12-04"
+  },
+  {
     "cve_id": "CVE-2023-6787",
     "nvd_score": 8.8,
     "github_score": 6.5,

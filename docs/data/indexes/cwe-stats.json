@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T07:24:33Z",
+  "generated_at": "2026-05-07T12:45:08Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -202,6 +202,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-532",
+      "name": "Log Injection / Information Exposure Through Log",
+      "conflict_count": 16,
+      "avg_variance": 2.06,
+      "nvd_higher_count": 10,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-122",
       "name": "CWE-122",
       "conflict_count": 16,
@@ -232,14 +240,6 @@
       "avg_variance": 2.1,
       "nvd_higher_count": 10,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-532",
-      "name": "Log Injection / Information Exposure Through Log",
-      "conflict_count": 15,
-      "avg_variance": 2.1,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-125",
