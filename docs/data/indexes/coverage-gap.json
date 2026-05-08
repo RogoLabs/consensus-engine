@@ -8,10 +8,10 @@
     "low": 578
   },
   "nvd_status_breakdown": {
-    "No NVD Record": 15095,
+    "No NVD Record": 15094,
     "Rejected": 25,
     "Deferred": 2,
-    "Received": 1
+    "Received": 2
   },
   "entries": [
     {
@@ -4515,5 +4515,5 @@
       "published_date": null
     }
   ],
-  "generated_at": "2026-05-08T06:43:10Z"
+  "generated_at": "2026-05-08T12:34:37Z"
 }
