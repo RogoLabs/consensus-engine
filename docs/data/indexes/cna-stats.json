@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T00:36:41Z",
+  "generated_at": "2026-05-08T06:43:10Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -35,17 +35,6 @@
       "top_cve": "CVE-2026-24157"
     },
     {
-      "name": "cisco",
-      "total": 3355,
-      "comparable": 5,
-      "conflicts": 3,
-      "conflict_rate": 60.0,
-      "avg_drift": 1.07,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2024-29073"
-    },
-    {
       "name": "ERIC",
       "total": 23,
       "comparable": 5,
@@ -57,15 +46,15 @@
       "top_cve": "CVE-2025-40843"
     },
     {
-      "name": "mautic",
-      "total": 29,
-      "comparable": 24,
-      "conflicts": 12,
-      "conflict_rate": 50.0,
-      "avg_drift": 0.91,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 5,
-      "top_cve": "CVE-2021-27917"
+      "name": "cisco",
+      "total": 3355,
+      "comparable": 5,
+      "conflicts": 3,
+      "conflict_rate": 60.0,
+      "avg_drift": 1.07,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2024-29073"
     },
     {
       "name": "WSO2",
@@ -77,6 +66,17 @@
       "nvd_higher_count": 4,
       "gh_higher_count": 1,
       "top_cve": "CVE-2025-10713"
+    },
+    {
+      "name": "mautic",
+      "total": 29,
+      "comparable": 24,
+      "conflicts": 12,
+      "conflict_rate": 50.0,
+      "avg_drift": 0.91,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 5,
+      "top_cve": "CVE-2021-27917"
     },
     {
       "name": "mattermost",
@@ -168,10 +168,10 @@
     },
     {
       "name": "github",
-      "total": 9051,
-      "comparable": 3388,
+      "total": 9078,
+      "comparable": 3399,
       "conflicts": 991,
-      "conflict_rate": 29.3,
+      "conflict_rate": 29.2,
       "avg_drift": 1.45,
       "nvd_higher_count": 550,
       "gh_higher_count": 441,
@@ -212,7 +212,7 @@
     },
     {
       "name": "mitre",
-      "total": 62028,
+      "total": 62047,
       "comparable": 975,
       "conflicts": 207,
       "conflict_rate": 21.2,
@@ -476,7 +476,7 @@
     },
     {
       "name": "vuldb",
-      "total": 9953,
+      "total": 9971,
       "comparable": 215,
       "conflicts": 1,
       "conflict_rate": 0.5,
@@ -488,7 +488,7 @@
     {
       "name": "vulncheck",
       "total": 3824,
-      "comparable": 246,
+      "comparable": 260,
       "conflicts": 1,
       "conflict_rate": 0.4,
       "avg_drift": 0.7,
@@ -497,9 +497,20 @@
       "top_cve": "CVE-2024-9440"
     },
     {
-      "name": "vuldb.com",
-      "total": 368,
-      "comparable": 6,
+      "name": "AMZN",
+      "total": 87,
+      "comparable": 27,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "Checkmarx",
+      "total": 12,
+      "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -519,9 +530,20 @@
       "top_cve": null
     },
     {
-      "name": "debian",
-      "total": 415,
-      "comparable": 23,
+      "name": "DSF",
+      "total": 20,
+      "comparable": 10,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "vuldb.com",
+      "total": 368,
+      "comparable": 6,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -541,31 +563,9 @@
       "top_cve": null
     },
     {
-      "name": "AMZN",
-      "total": 87,
-      "comparable": 27,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "DSF",
-      "total": 20,
-      "comparable": 10,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "Checkmarx",
-      "total": 12,
-      "comparable": 5,
+      "name": "debian",
+      "total": 415,
+      "comparable": 23,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
