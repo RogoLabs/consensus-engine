@@ -1,19 +1,19 @@
 {
-  "total_cves": 201945,
-  "comparable_count": 7541,
-  "conflict_count": 1647,
+  "total_cves": 202211,
+  "comparable_count": 7586,
+  "conflict_count": 1650,
   "conflict_rate": 21.8,
-  "gap_count": 196906,
+  "gap_count": 197168,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
   "max_variance": 6.9,
   "max_variance_cve": "CVE-2025-47735",
   "avg_variance": 1.54,
-  "median_variance": 1.2,
+  "median_variance": 1.25,
   "direction_asymmetry": {
-    "nvd_higher_count": 959,
-    "gh_higher_count": 688
+    "nvd_higher_count": 961,
+    "gh_higher_count": 689
   },
   "conflict_by_year": {
     "2006": 1,
@@ -26,7 +26,7 @@
     "2023": 2,
     "2024": 563,
     "2025": 512,
-    "2026": 557
+    "2026": 560
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -65,20 +65,20 @@
       "comparable": 2259
     },
     "2026": {
-      "nvd_higher": 332,
-      "gh_higher": 225,
-      "comparable": 2735
+      "nvd_higher": 334,
+      "gh_higher": 226,
+      "comparable": 2780
     }
   },
-  "severity_flip_count": 902,
+  "severity_flip_count": 904,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 74,
     "Critical\u2192High": 111,
     "Critical\u2192Medium": 53,
     "Critical\u2192Low": 8,
-    "High\u2192Critical": 77,
-    "High\u2192High": 205,
-    "High\u2192Medium": 267,
+    "High\u2192Critical": 78,
+    "High\u2192High": 206,
+    "High\u2192Medium": 268,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 32,
     "Medium\u2192High": 197,
@@ -92,14 +92,14 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 246,
-      "High": 573,
+      "High": 576,
       "Medium": 787,
       "Low": 41
     },
     "gh": {
-      "Critical": 184,
-      "High": 514,
-      "Medium": 777,
+      "Critical": 185,
+      "High": 515,
+      "Medium": 778,
       "Low": 172
     }
   },
@@ -117,7 +117,7 @@
     {
       "bucket": "1.0-1.5",
       "min": 1.0,
-      "count": 377
+      "count": 378
     },
     {
       "bucket": "1.5-2.0",
@@ -132,7 +132,7 @@
     {
       "bucket": "2.5-3.0",
       "min": 2.5,
-      "count": 102
+      "count": 104
     },
     {
       "bucket": "3.0-3.5",
@@ -177,11 +177,11 @@
   ],
   "severity_distribution": {
     "Critical": 246,
-    "High": 573,
+    "High": 576,
     "Medium": 787,
     "Low": 41
   },
-  "avg_days_to_analysis": 3283.3,
+  "avg_days_to_analysis": 3281.8,
   "p90_days_to_analysis": 7419,
-  "generated_at": "2026-05-08T12:34:37Z"
+  "generated_at": "2026-05-08T18:36:20Z"
 }

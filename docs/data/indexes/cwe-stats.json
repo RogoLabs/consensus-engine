@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T12:34:37Z",
+  "generated_at": "2026-05-08T18:36:21Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 69,
-      "avg_variance": 1.24,
-      "nvd_higher_count": 37,
+      "conflict_count": 70,
+      "avg_variance": 1.26,
+      "nvd_higher_count": 38,
       "gh_higher_count": 32
     },
     {
@@ -36,9 +36,9 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 56,
+      "conflict_count": 57,
       "avg_variance": 1.1,
-      "nvd_higher_count": 31,
+      "nvd_higher_count": 32,
       "gh_higher_count": 25
     },
     {
