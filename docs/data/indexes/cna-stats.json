@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T18:58:17Z",
+  "generated_at": "2026-05-08T00:36:41Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -35,6 +35,17 @@
       "top_cve": "CVE-2026-24157"
     },
     {
+      "name": "cisco",
+      "total": 3355,
+      "comparable": 5,
+      "conflicts": 3,
+      "conflict_rate": 60.0,
+      "avg_drift": 1.07,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2024-29073"
+    },
+    {
       "name": "ERIC",
       "total": 23,
       "comparable": 5,
@@ -46,15 +57,15 @@
       "top_cve": "CVE-2025-40843"
     },
     {
-      "name": "cisco",
-      "total": 3355,
-      "comparable": 5,
-      "conflicts": 3,
-      "conflict_rate": 60.0,
-      "avg_drift": 1.07,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2024-29073"
+      "name": "mautic",
+      "total": 29,
+      "comparable": 24,
+      "conflicts": 12,
+      "conflict_rate": 50.0,
+      "avg_drift": 0.91,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 5,
+      "top_cve": "CVE-2021-27917"
     },
     {
       "name": "WSO2",
@@ -79,15 +90,15 @@
       "top_cve": "CVE-2025-1412"
     },
     {
-      "name": "mautic",
-      "total": 29,
-      "comparable": 24,
-      "conflicts": 12,
-      "conflict_rate": 50.0,
-      "avg_drift": 0.91,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 5,
-      "top_cve": "CVE-2021-27917"
+      "name": "elastic",
+      "total": 87,
+      "comparable": 19,
+      "conflicts": 9,
+      "conflict_rate": 47.4,
+      "avg_drift": 1.46,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2024-23444"
     },
     {
       "name": "eclipse",
@@ -99,17 +110,6 @@
       "nvd_higher_count": 6,
       "gh_higher_count": 3,
       "top_cve": "CVE-2024-6762"
-    },
-    {
-      "name": "elastic",
-      "total": 87,
-      "comparable": 19,
-      "conflicts": 9,
-      "conflict_rate": 47.4,
-      "avg_drift": 1.46,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2024-23444"
     },
     {
       "name": "mozilla",
@@ -168,12 +168,12 @@
     },
     {
       "name": "github",
-      "total": 9026,
-      "comparable": 3378,
-      "conflicts": 990,
+      "total": 9051,
+      "comparable": 3388,
+      "conflicts": 991,
       "conflict_rate": 29.3,
       "avg_drift": 1.45,
-      "nvd_higher_count": 549,
+      "nvd_higher_count": 550,
       "gh_higher_count": 441,
       "top_cve": "CVE-2024-47821"
     },
@@ -212,7 +212,7 @@
     },
     {
       "name": "mitre",
-      "total": 62022,
+      "total": 62028,
       "comparable": 975,
       "conflicts": 207,
       "conflict_rate": 21.2,
@@ -244,17 +244,6 @@
       "top_cve": "CVE-2024-5138"
     },
     {
-      "name": "openssl",
-      "total": 39,
-      "comparable": 5,
-      "conflicts": 1,
-      "conflict_rate": 20.0,
-      "avg_drift": 2.3,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2022-3602"
-    },
-    {
       "name": "incibe",
       "total": 706,
       "comparable": 5,
@@ -264,6 +253,17 @@
       "nvd_higher_count": 0,
       "gh_higher_count": 1,
       "top_cve": "CVE-2024-5520"
+    },
+    {
+      "name": "openssl",
+      "total": 39,
+      "comparable": 5,
+      "conflicts": 1,
+      "conflict_rate": 20.0,
+      "avg_drift": 2.3,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2022-3602"
     },
     {
       "name": "google",
@@ -344,7 +344,7 @@
     },
     {
       "name": "cert",
-      "total": 2848,
+      "total": 2849,
       "comparable": 27,
       "conflicts": 3,
       "conflict_rate": 11.1,
@@ -409,17 +409,6 @@
       "top_cve": "CVE-2024-38229"
     },
     {
-      "name": "suse",
-      "total": 83,
-      "comparable": 38,
-      "conflicts": 2,
-      "conflict_rate": 5.3,
-      "avg_drift": 2.7,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 2,
-      "top_cve": "CVE-2025-67601"
-    },
-    {
       "name": "snyk",
       "total": 110,
       "comparable": 94,
@@ -429,6 +418,17 @@
       "nvd_higher_count": 5,
       "gh_higher_count": 0,
       "top_cve": "CVE-2024-21539"
+    },
+    {
+      "name": "suse",
+      "total": 83,
+      "comparable": 38,
+      "conflicts": 2,
+      "conflict_rate": 5.3,
+      "avg_drift": 2.7,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 2,
+      "top_cve": "CVE-2025-67601"
     },
     {
       "name": "adobe",
@@ -443,7 +443,7 @@
     },
     {
       "name": "golang",
-      "total": 120,
+      "total": 131,
       "comparable": 20,
       "conflicts": 1,
       "conflict_rate": 5.0,
@@ -476,8 +476,8 @@
     },
     {
       "name": "vuldb",
-      "total": 9940,
-      "comparable": 210,
+      "total": 9953,
+      "comparable": 215,
       "conflicts": 1,
       "conflict_rate": 0.5,
       "avg_drift": 2.8,
@@ -487,7 +487,7 @@
     },
     {
       "name": "vulncheck",
-      "total": 3822,
+      "total": 3824,
       "comparable": 246,
       "conflicts": 1,
       "conflict_rate": 0.4,
@@ -495,17 +495,6 @@
       "nvd_higher_count": 1,
       "gh_higher_count": 0,
       "top_cve": "CVE-2024-9440"
-    },
-    {
-      "name": "trendmicro",
-      "total": 1871,
-      "comparable": 13,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
     },
     {
       "name": "vuldb.com",
@@ -533,6 +522,17 @@
       "name": "debian",
       "total": 415,
       "comparable": 23,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "trendmicro",
+      "total": 1871,
+      "comparable": 13,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
