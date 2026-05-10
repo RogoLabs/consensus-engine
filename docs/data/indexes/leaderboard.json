@@ -2532,7 +2532,7 @@
     "assigning_cna": "mitre",
     "nvd_score": 8.7,
     "nvd_cvss_version": "3.1",
-    "nvd_status": "Analyzed",
+    "nvd_status": "Modified",
     "github_score": 5.4,
     "github_cvss_version": "3.1",
     "published_date": "2026-03-25"
