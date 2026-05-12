@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-12T12:46:20Z",
+  "generated_at": "2026-05-12T18:44:26Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 284,
+      "conflict_count": 286,
       "avg_variance": 1.5,
       "nvd_higher_count": 83,
-      "gh_higher_count": 201
+      "gh_higher_count": 203
     },
     {
       "cwe_id": "CWE-22",
@@ -60,9 +60,9 @@
     {
       "cwe_id": "CWE-89",
       "name": "SQL Injection",
-      "conflict_count": 48,
-      "avg_variance": 1.88,
-      "nvd_higher_count": 25,
+      "conflict_count": 49,
+      "avg_variance": 1.87,
+      "nvd_higher_count": 26,
       "gh_higher_count": 23
     },
     {
@@ -250,6 +250,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-367",
+      "name": "CWE-367",
+      "conflict_count": 15,
+      "avg_variance": 1.87,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 9
+    },
+    {
       "cwe_id": "CWE-59",
       "name": "CWE-59",
       "conflict_count": 14,
@@ -274,14 +282,6 @@
       "gh_higher_count": 2
     },
     {
-      "cwe_id": "CWE-367",
-      "name": "CWE-367",
-      "conflict_count": 14,
-      "avg_variance": 1.94,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 9
-    },
-    {
       "cwe_id": "CWE-1333",
       "name": "Inefficient Regular Expression",
       "conflict_count": 14,
@@ -298,20 +298,20 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-522",
+      "name": "Insufficiently Protected Credentials",
+      "conflict_count": 13,
+      "avg_variance": 2.03,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-611",
       "name": "XXE",
       "conflict_count": 12,
       "avg_variance": 1.36,
       "nvd_higher_count": 7,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-522",
-      "name": "Insufficiently Protected Credentials",
-      "conflict_count": 12,
-      "avg_variance": 1.97,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-416",
