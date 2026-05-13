@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T18:44:26Z",
+  "generated_at": "2026-05-13T00:40:10Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -122,20 +122,20 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-862",
+      "name": "Missing Authorization",
+      "conflict_count": 27,
+      "avg_variance": 1.19,
+      "nvd_higher_count": 14,
+      "gh_higher_count": 13
+    },
+    {
       "cwe_id": "CWE-352",
       "name": "Cross-Site Request Forgery",
       "conflict_count": 27,
       "avg_variance": 1.74,
       "nvd_higher_count": 18,
       "gh_higher_count": 9
-    },
-    {
-      "cwe_id": "CWE-862",
-      "name": "Missing Authorization",
-      "conflict_count": 26,
-      "avg_variance": 1.2,
-      "nvd_higher_count": 13,
-      "gh_higher_count": 13
     },
     {
       "cwe_id": "CWE-269",
