@@ -1,0 +1,140 @@
+<h2>LinkedIn Post Draft (v2)</h2>
+<p class="subtitle">Builder/hacker tone — showcasing the Consensus Engine</p>
+
+<div class="section">
+  <h3>Post Copy</h3>
+  <div
+    style="
+      background: #1a1a2e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 24px;
+      font-family: -apple-system, sans-serif;
+      line-height: 1.7;
+      color: #e0e0e0;
+    "
+  >
+    <p style="font-size: 1.1em; margin-bottom: 16px">
+      <strong
+        >25.6% of CVEs scored by both NVD and GitHub Advisory have meaningful
+        scoring conflicts.</strong
+      >
+    </p>
+
+    <p style="margin-bottom: 16px">I built something to track this at scale.</p>
+
+    <p style="margin-bottom: 16px">
+      The Consensus Engine monitors 138,000+ CVEs daily, comparing CVSS scores
+      between NVD and GitHub Advisory Database. When both sources score the same
+      vulnerability differently, I flag it — and the results are wild:
+    </p>
+
+    <p style="margin-bottom: 8px">→ 1,585 active scoring conflicts</p>
+    <p style="margin-bottom: 8px">
+      → 849 CVEs that cross severity band boundaries (Critical → Medium, etc.)
+    </p>
+    <p style="margin-bottom: 8px">
+      → Maximum observed drift: 6.9 points on the same CVE
+    </p>
+    <p style="margin-bottom: 16px">
+      → NVD and GitHub disagree on MongoDB's CVEs 88.9% of the time
+    </p>
+
+    <p style="margin-bottom: 16px">
+      The stack: No backend. No database. The repo IS the database — flat JSON
+      files, GitHub Actions pipeline running every 6 hours, and a static
+      frontend on GitHub Pages. All open source.
+    </p>
+
+    <p style="margin-bottom: 16px">
+      If your patching SLA says "Critical = 7 days" but one source says Critical
+      and the other says Medium... which clock are you on?
+    </p>
+
+    <p style="margin-bottom: 16px">
+      🔗 https://rogolabs.github.io/consensus-engine/
+    </p>
+
+    <p style="color: #888; font-size: 0.9em">
+      #cybersecurity #vulnerabilitymanagement #cvss #opensource #infosec
+    </p>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 32px">
+  <h3>Image Composition Plan</h3>
+  <p>Composite screenshot (1200×627px for LinkedIn) with two panels:</p>
+
+  <div style="display: flex; gap: 16px; margin-top: 16px">
+    <div
+      style="
+        flex: 1;
+        background: #1a1a2e;
+        border: 1px solid #444;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      "
+    >
+      <div style="font-size: 0.8em; color: #888; margin-bottom: 8px">
+        LEFT PANEL (40%)
+      </div>
+      <div style="background: #0f0f23; border-radius: 4px; padding: 20px">
+        <p style="font-size: 2em; color: #60a5fa; margin: 0">25.6%</p>
+        <p style="font-size: 0.8em; color: #aaa; margin: 4px 0">
+          conflict rate
+        </p>
+        <p style="font-size: 2em; color: #fb923c; margin: 8px 0 0">849</p>
+        <p style="font-size: 0.8em; color: #aaa; margin: 4px 0">
+          severity flips
+        </p>
+        <p style="font-size: 2em; color: #dc2626; margin: 8px 0 0">Δ 1.51</p>
+        <p style="font-size: 0.8em; color: #aaa; margin: 4px 0">avg gap</p>
+      </div>
+      <p style="font-size: 0.75em; color: #666; margin-top: 8px">
+        Stat row from index.html
+      </p>
+    </div>
+    <div
+      style="
+        flex: 1.5;
+        background: #1a1a2e;
+        border: 1px solid #444;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      "
+    >
+      <div style="font-size: 0.8em; color: #888; margin-bottom: 8px">
+        RIGHT PANEL (60%)
+      </div>
+      <div
+        style="
+          background: #0f0f23;
+          border-radius: 4px;
+          padding: 20px;
+          min-height: 120px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <div>
+          <p style="color: #60a5fa; font-size: 1.2em">
+            NVD vs GitHub Scatter Plot
+          </p>
+          <p style="color: #666; font-size: 0.8em; margin-top: 8px">
+            Red dots = severity boundary crossings<br />Blue/orange =
+            directional bias
+          </p>
+          <p style="color: #444; font-size: 0.7em; margin-top: 12px">
+            (Captured from patterns.html scatterChart)
+          </p>
+        </div>
+      </div>
+      <p style="font-size: 0.75em; color: #666; margin-top: 8px">
+        Scatter plot from patterns.html
+      </p>
+    </div>
+  </div>
+</div>

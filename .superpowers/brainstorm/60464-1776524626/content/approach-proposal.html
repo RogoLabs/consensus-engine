@@ -1,0 +1,947 @@
+<h2>Proposed Site Architecture</h2>
+<p class="subtitle">
+  4 pages + detail + methodology. Editorial tone, ruthless chart curation,
+  narrative flow.
+</p>
+
+<div class="section">
+  <h3>Page 1: Homepage — "The Thesis"</h3>
+  <div class="mockup">
+    <div class="mockup-header">Homepage</div>
+    <div class="mockup-body" style="padding: 0; background: #0f1117">
+      <!-- Hero -->
+      <div style="padding: 48px 40px 32px; border-bottom: 1px solid #1e2433">
+        <div
+          style="
+            color: #6b7280;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+            font-family: Inter, sans-serif;
+          "
+        >
+          The Consensus Engine
+        </div>
+        <div
+          style="
+            color: #f3f4f6;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            font-family: Inter, sans-serif;
+          "
+        >
+          Two authorities score the same vulnerability.<br /><span
+            style="color: #f59e0b"
+            >They disagree 68% of the time.</span
+          >
+        </div>
+        <div
+          style="
+            color: #9ca3af;
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 560px;
+            font-family: Inter, sans-serif;
+          "
+        >
+          When NVD and GitHub Advisory both assign a CVSS score to the same CVE,
+          their scores differ more often than they agree — and the disagreement
+          isn't random. It follows predictable patterns across vulnerability
+          types, scoring organizations, and individual CVSS metrics.
+        </div>
+      </div>
+      <!-- Key stats row -->
+      <div style="display: flex; gap: 0; border-bottom: 1px solid #1e2433">
+        <div
+          style="flex: 1; padding: 24px 40px; border-right: 1px solid #1e2433"
+        >
+          <div
+            style="
+              color: #f3f4f6;
+              font-size: 32px;
+              font-weight: 300;
+              font-family: Inter, sans-serif;
+            "
+          >
+            68.4<span style="font-size: 18px; color: #6b7280">%</span>
+          </div>
+          <div
+            style="
+              color: #6b7280;
+              font-size: 12px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            of dual-scored CVEs conflict
+          </div>
+        </div>
+        <div
+          style="flex: 1; padding: 24px 40px; border-right: 1px solid #1e2433"
+        >
+          <div
+            style="
+              color: #ef4444;
+              font-size: 32px;
+              font-weight: 300;
+              font-family: Inter, sans-serif;
+            "
+          >
+            1,247
+          </div>
+          <div
+            style="
+              color: #6b7280;
+              font-size: 12px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            cross severity band boundaries
+          </div>
+        </div>
+        <div style="flex: 1; padding: 24px 40px">
+          <div
+            style="
+              color: #f59e0b;
+              font-size: 32px;
+              font-weight: 300;
+              font-family: Inter, sans-serif;
+            "
+          >
+            Δ 2.4
+          </div>
+          <div
+            style="
+              color: #6b7280;
+              font-size: 12px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            average score gap
+          </div>
+        </div>
+      </div>
+      <!-- Hero chart: Conflicts by Year (the ONE chart) -->
+      <div style="padding: 32px 40px">
+        <div
+          style="
+            color: #9ca3af;
+            font-size: 13px;
+            margin-bottom: 16px;
+            font-family: Inter, sans-serif;
+          "
+        >
+          The problem is growing. Conflicts by year, colored by direction:
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            height: 120px;
+            display: flex;
+            align-items: flex-end;
+            padding: 16px 20px;
+            gap: 8px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 2px;
+              flex: 1;
+            "
+          >
+            <div style="width: 100%; display: flex; flex-direction: column">
+              <div
+                style="
+                  background: #fb923c;
+                  height: 18px;
+                  border-radius: 2px 2px 0 0;
+                "
+              ></div>
+              <div
+                style="
+                  background: #60a5fa;
+                  height: 14px;
+                  border-radius: 0 0 2px 2px;
+                "
+              ></div>
+            </div>
+            <span style="color: #6b7280; font-size: 9px">2020</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 2px;
+              flex: 1;
+            "
+          >
+            <div style="width: 100%; display: flex; flex-direction: column">
+              <div
+                style="
+                  background: #fb923c;
+                  height: 28px;
+                  border-radius: 2px 2px 0 0;
+                "
+              ></div>
+              <div
+                style="
+                  background: #60a5fa;
+                  height: 20px;
+                  border-radius: 0 0 2px 2px;
+                "
+              ></div>
+            </div>
+            <span style="color: #6b7280; font-size: 9px">2021</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 2px;
+              flex: 1;
+            "
+          >
+            <div style="width: 100%; display: flex; flex-direction: column">
+              <div
+                style="
+                  background: #fb923c;
+                  height: 40px;
+                  border-radius: 2px 2px 0 0;
+                "
+              ></div>
+              <div
+                style="
+                  background: #60a5fa;
+                  height: 30px;
+                  border-radius: 0 0 2px 2px;
+                "
+              ></div>
+            </div>
+            <span style="color: #6b7280; font-size: 9px">2022</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 2px;
+              flex: 1;
+            "
+          >
+            <div style="width: 100%; display: flex; flex-direction: column">
+              <div
+                style="
+                  background: #fb923c;
+                  height: 55px;
+                  border-radius: 2px 2px 0 0;
+                "
+              ></div>
+              <div
+                style="
+                  background: #60a5fa;
+                  height: 35px;
+                  border-radius: 0 0 2px 2px;
+                "
+              ></div>
+            </div>
+            <span style="color: #6b7280; font-size: 9px">2023</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 2px;
+              flex: 1;
+            "
+          >
+            <div style="width: 100%; display: flex; flex-direction: column">
+              <div
+                style="
+                  background: #fb923c;
+                  height: 70px;
+                  border-radius: 2px 2px 0 0;
+                "
+              ></div>
+              <div
+                style="
+                  background: #60a5fa;
+                  height: 42px;
+                  border-radius: 0 0 2px 2px;
+                "
+              ></div>
+            </div>
+            <span style="color: #6b7280; font-size: 9px">2024</span>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation cards to deeper pages -->
+      <div
+        style="
+          padding: 0 40px 32px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 12px;
+        "
+      >
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            padding: 16px;
+          "
+        >
+          <div
+            style="
+              color: #f3f4f6;
+              font-size: 14px;
+              font-weight: 600;
+              margin-bottom: 4px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            How They Disagree →
+          </div>
+          <div
+            style="
+              color: #6b7280;
+              font-size: 12px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            Patterns in directional bias, metrics, and severity
+          </div>
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            padding: 16px;
+          "
+        >
+          <div
+            style="
+              color: #f3f4f6;
+              font-size: 14px;
+              font-weight: 600;
+              margin-bottom: 4px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            Who Disagrees →
+          </div>
+          <div
+            style="
+              color: #6b7280;
+              font-size: 12px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            Which CNAs and CWE types drive the most conflict
+          </div>
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            padding: 16px;
+          "
+        >
+          <div
+            style="
+              color: #f3f4f6;
+              font-size: 14px;
+              font-weight: 600;
+              margin-bottom: 4px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            The Data →
+          </div>
+          <div
+            style="
+              color: #6b7280;
+              font-size: 12px;
+              font-family: Inter, sans-serif;
+            "
+          >
+            Explore all conflicts, search by CVE, filter by drift
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Page 2: "How They Disagree" — Patterns</h3>
+  <div class="mockup">
+    <div class="mockup-header">How They Disagree</div>
+    <div
+      class="mockup-body"
+      style="
+        padding: 32px 40px;
+        background: #0f1117;
+        font-family: Inter, sans-serif;
+      "
+    >
+      <div
+        style="
+          color: #f3f4f6;
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 8px;
+        "
+      >
+        How They Disagree
+      </div>
+      <div
+        style="
+          color: #9ca3af;
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 28px;
+          max-width: 540px;
+        "
+      >
+        The scoring divergence follows predictable patterns — certain CVSS
+        metrics drive most of the disagreement, and the bias skews consistently
+        in one direction.
+      </div>
+
+      <!-- Section 1: Directional Bias callout -->
+      <div
+        style="
+          background: rgba(245, 158, 11, 0.08);
+          border: 1px solid rgba(245, 158, 11, 0.2);
+          border-radius: 8px;
+          padding: 20px;
+          margin-bottom: 24px;
+        "
+      >
+        <div
+          style="
+            color: #f59e0b;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+          "
+        >
+          STRONGEST BIAS
+        </div>
+        <div style="color: #f3f4f6; font-size: 15px; line-height: 1.5">
+          When NVD and GitHub disagree on <strong>Scope</strong>, NVD assigns
+          the more severe value <strong style="color: #fb923c">78%</strong> of
+          the time. This is systematic, not noise.
+        </div>
+      </div>
+
+      <!-- Section 2: Metric cards (compact, 2x4 grid) -->
+      <div
+        style="
+          color: #6b7280;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 12px;
+        "
+      >
+        Per-metric disagreement rate
+      </div>
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 8px;
+          margin-bottom: 24px;
+        "
+      >
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+          "
+        >
+          <div style="color: #ef4444; font-size: 20px; font-weight: 600">
+            28%
+          </div>
+          <div style="color: #9ca3af; font-size: 11px">Scope</div>
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+          "
+        >
+          <div style="color: #f59e0b; font-size: 20px; font-weight: 600">
+            19%
+          </div>
+          <div style="color: #9ca3af; font-size: 11px">Confidentiality</div>
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+          "
+        >
+          <div style="color: #f59e0b; font-size: 20px; font-weight: 600">
+            15%
+          </div>
+          <div style="color: #9ca3af; font-size: 11px">Integrity</div>
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+          "
+        >
+          <div style="color: #4ade80; font-size: 20px; font-weight: 600">
+            8%
+          </div>
+          <div style="color: #9ca3af; font-size: 11px">Attack Vector</div>
+        </div>
+      </div>
+
+      <!-- Section 3: One chart — Directional Bias Over Time -->
+      <div
+        style="
+          color: #6b7280;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 8px;
+        "
+      >
+        Directional bias over time
+      </div>
+      <div style="color: #9ca3af; font-size: 13px; margin-bottom: 12px">
+        NVD has scored higher than GitHub in every year since 2019.
+      </div>
+      <div
+        style="
+          background: #1a1d2e;
+          border: 1px solid #2d3748;
+          border-radius: 8px;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <span style="color: #4b5563; font-size: 12px"
+          >[Line chart: NVD higher % vs GH higher % by year]</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Page 3: "Who Disagrees" — CNAs + CWEs</h3>
+  <div class="mockup">
+    <div class="mockup-header">Who Disagrees</div>
+    <div
+      class="mockup-body"
+      style="
+        padding: 32px 40px;
+        background: #0f1117;
+        font-family: Inter, sans-serif;
+      "
+    >
+      <div
+        style="
+          color: #f3f4f6;
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 8px;
+        "
+      >
+        Who Disagrees
+      </div>
+      <div
+        style="
+          color: #9ca3af;
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 28px;
+          max-width: 540px;
+        "
+      >
+        Conflict isn't uniformly distributed. Certain CVE Numbering Authorities
+        and vulnerability types account for disproportionate disagreement.
+      </div>
+
+      <!-- CNA section -->
+      <div style="margin-bottom: 28px">
+        <div
+          style="
+            color: #6b7280;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+          "
+        >
+          By CNA (scoring organization)
+        </div>
+        <div style="color: #9ca3af; font-size: 13px; margin-bottom: 12px">
+          One chart — top 15 CNAs by conflict rate. Then a searchable table
+          below.
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <span style="color: #4b5563; font-size: 12px"
+            >[Horizontal bar chart: top CNAs by conflict rate]</span
+          >
+        </div>
+      </div>
+
+      <!-- CWE section -->
+      <div>
+        <div
+          style="
+            color: #6b7280;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+          "
+        >
+          By CWE (vulnerability type)
+        </div>
+        <div style="color: #9ca3af; font-size: 13px; margin-bottom: 12px">
+          One chart — top 15 CWEs by avg drift. Then a searchable table below.
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <span style="color: #4b5563; font-size: 12px"
+            >[Horizontal bar chart: top CWEs by avg drift]</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Page 4: "The Data" — Explorer</h3>
+  <div class="mockup">
+    <div class="mockup-header">The Data</div>
+    <div
+      class="mockup-body"
+      style="
+        padding: 32px 40px;
+        background: #0f1117;
+        font-family: Inter, sans-serif;
+      "
+    >
+      <div
+        style="
+          color: #f3f4f6;
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 8px;
+        "
+      >
+        The Data
+      </div>
+      <div
+        style="
+          color: #9ca3af;
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 20px;
+        "
+      >
+        Search, filter, and explore all scoring conflicts. Updated daily.
+      </div>
+
+      <!-- Clean filter bar -->
+      <div
+        style="
+          display: flex;
+          gap: 12px;
+          margin-bottom: 16px;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            padding: 8px 14px;
+            color: #9ca3af;
+            font-size: 13px;
+            flex: 1;
+          "
+        >
+          Search by CVE ID...
+        </div>
+        <div style="display: flex; gap: 4px">
+          <div
+            style="
+              background: #3b82f6;
+              color: white;
+              border-radius: 6px;
+              padding: 6px 12px;
+              font-size: 12px;
+            "
+          >
+            All
+          </div>
+          <div
+            style="
+              background: #1a1d2e;
+              border: 1px solid #2d3748;
+              color: #9ca3af;
+              border-radius: 6px;
+              padding: 6px 12px;
+              font-size: 12px;
+            "
+          >
+            ≥ Δ1.0
+          </div>
+          <div
+            style="
+              background: #1a1d2e;
+              border: 1px solid #2d3748;
+              color: #9ca3af;
+              border-radius: 6px;
+              padding: 6px 12px;
+              font-size: 12px;
+            "
+          >
+            ≥ Δ2.0
+          </div>
+        </div>
+      </div>
+
+      <!-- Table preview -->
+      <div
+        style="
+          background: #1a1d2e;
+          border: 1px solid #2d3748;
+          border-radius: 8px;
+          overflow: hidden;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            padding: 10px 16px;
+            border-bottom: 1px solid #2d3748;
+            color: #6b7280;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          "
+        >
+          <span style="flex: 2">CVE</span>
+          <span style="flex: 1; text-align: right">NVD</span>
+          <span style="flex: 1; text-align: right">GitHub</span>
+          <span style="flex: 1; text-align: right">Drift</span>
+          <span style="flex: 1.5; text-align: right">CNA</span>
+        </div>
+        <div
+          style="
+            display: flex;
+            padding: 10px 16px;
+            border-bottom: 1px solid #1e2433;
+            color: #d1d5db;
+            font-size: 13px;
+          "
+        >
+          <span style="flex: 2; color: #60a5fa; font-family: monospace"
+            >CVE-2024-1234</span
+          >
+          <span style="flex: 1; text-align: right">9.8</span>
+          <span style="flex: 1; text-align: right">2.6</span>
+          <span
+            style="flex: 1; text-align: right; color: #ef4444; font-weight: 600"
+            >Δ 7.2</span
+          >
+          <span style="flex: 1.5; text-align: right; color: #9ca3af"
+            >GitHub, Inc.</span
+          >
+        </div>
+        <div
+          style="
+            display: flex;
+            padding: 10px 16px;
+            border-bottom: 1px solid #1e2433;
+            color: #d1d5db;
+            font-size: 13px;
+          "
+        >
+          <span style="flex: 2; color: #60a5fa; font-family: monospace"
+            >CVE-2024-5678</span
+          >
+          <span style="flex: 1; text-align: right">8.1</span>
+          <span style="flex: 1; text-align: right">3.7</span>
+          <span
+            style="flex: 1; text-align: right; color: #f59e0b; font-weight: 600"
+            >Δ 4.4</span
+          >
+          <span style="flex: 1.5; text-align: right; color: #9ca3af"
+            >Red Hat</span
+          >
+        </div>
+        <div
+          style="
+            padding: 10px 16px;
+            color: #4b5563;
+            font-size: 12px;
+            text-align: center;
+          "
+        >
+          ... 6,103 total conflicts
+        </div>
+      </div>
+
+      <!-- Coverage gap section below -->
+      <div
+        style="
+          margin-top: 28px;
+          padding-top: 24px;
+          border-top: 1px solid #1e2433;
+        "
+      >
+        <div
+          style="
+            color: #6b7280;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+          "
+        >
+          Coverage Gaps
+        </div>
+        <div style="color: #9ca3af; font-size: 13px; margin-bottom: 12px">
+          CVEs scored by GitHub but missing from NVD — invisible to NVD-only
+          tools.
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <span style="color: #4b5563; font-size: 12px"
+            >[Same table format, filtered to gap CVEs]</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>What gets cut or demoted</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+    <div>
+      <div class="label" style="color: #ef4444">CUT</div>
+      <ul
+        style="
+          color: #d1d5db;
+          font-size: 14px;
+          line-height: 1.8;
+          padding-left: 20px;
+        "
+      >
+        <li>
+          <strong>Scatter plot</strong> — visually busy, doesn't support
+          "systematic" thesis
+        </li>
+        <li>
+          <strong>Drift histogram</strong> — methodology detail, not narrative
+        </li>
+        <li>
+          <strong>Severity flip matrix</strong> — becomes a stat callout instead
+        </li>
+        <li>
+          <strong>CWE bar chart as separate page</strong> — folds into "Who
+          Disagrees"
+        </li>
+        <li>
+          <strong>Lightning bolt emoji</strong> — replaced by clean typography
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div class="label" style="color: #4ade80">KEEP</div>
+      <ul
+        style="
+          color: #d1d5db;
+          font-size: 14px;
+          line-height: 1.8;
+          padding-left: 20px;
+        "
+      >
+        <li>
+          <strong>Conflicts by Year</strong> — hero chart on homepage, shows
+          growth
+        </li>
+        <li>
+          <strong>Directional Bias line chart</strong> — proves "systematic"
+          thesis
+        </li>
+        <li>
+          <strong>Vector breakdown metric cards</strong> — compact, informative
+        </li>
+        <li><strong>CNA bar chart</strong> — names names, compelling</li>
+        <li>
+          <strong>CWE bar chart</strong> — shows which vuln types are worst
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

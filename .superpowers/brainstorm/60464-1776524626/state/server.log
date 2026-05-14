@@ -1,0 +1,10 @@
+{"type":"server-started","port":60280,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:60280","screen_dir":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content","state_dir":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/state"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content/visual-tone.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content/visual-tone.html"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content/approach-proposal.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content/approach-proposal.html"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content/theme-direction.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content/theme-direction.html"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content/waiting.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/60464-1776524626/content/waiting.html"}
+{"type":"server-stopped","reason":"idle timeout"}

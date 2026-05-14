@@ -1,0 +1,14 @@
+{"type":"server-started","port":63619,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:63619","screen_dir":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content","state_dir":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/state"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft.html"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft-v2.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft-v2.html"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft-v3.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft-v3.html"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft-v4.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft-v4.html"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft-v5.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/post-draft-v5.html"}
+{"type":"screen-added","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/waiting.html"}
+{"type":"screen-updated","file":"/Users/gamblin/Documents/Github/consensus-engine/.superpowers/brainstorm/81102-1776691560/content/waiting.html"}
+{"type":"server-stopped","reason":"idle timeout"}

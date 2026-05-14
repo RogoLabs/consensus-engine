@@ -1,0 +1,366 @@
+<h2>What visual tone should the site have?</h2>
+<p class="subtitle">
+  This sets the overall feel — typography, density, spacing, how "editorial" vs
+  "dashboard" it reads
+</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 24px; background: #0f1117">
+      <!-- Data Dashboard tone -->
+      <div style="font-family: Inter, sans-serif">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+          "
+        >
+          <div
+            style="
+              background: #1a1d2e;
+              border: 1px solid #2d3748;
+              border-radius: 8px;
+              padding: 12px;
+            "
+          >
+            <div style="color: #3b82f6; font-size: 28px; font-weight: 700">
+              68.4%
+            </div>
+            <div style="color: #6b7280; font-size: 11px; margin-top: 4px">
+              CONFLICT RATE
+            </div>
+          </div>
+          <div
+            style="
+              background: #1a1d2e;
+              border: 1px solid #2d3748;
+              border-radius: 8px;
+              padding: 12px;
+            "
+          >
+            <div style="color: #f59e0b; font-size: 28px; font-weight: 700">
+              Δ 2.41
+            </div>
+            <div style="color: #6b7280; font-size: 11px; margin-top: 4px">
+              AVG DRIFT
+            </div>
+          </div>
+          <div
+            style="
+              background: #1a1d2e;
+              border: 1px solid #2d3748;
+              border-radius: 8px;
+              padding: 12px;
+            "
+          >
+            <div style="color: #ef4444; font-size: 28px; font-weight: 700">
+              1,247
+            </div>
+            <div style="color: #6b7280; font-size: 11px; margin-top: 4px">
+              SEVERITY FLIPS
+            </div>
+          </div>
+          <div
+            style="
+              background: #1a1d2e;
+              border: 1px solid #2d3748;
+              border-radius: 8px;
+              padding: 12px;
+            "
+          >
+            <div style="color: #10b981; font-size: 28px; font-weight: 700">
+              6,103
+            </div>
+            <div style="color: #6b7280; font-size: 11px; margin-top: 4px">
+              DUAL-SCORED
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            padding: 16px;
+          "
+        >
+          <div
+            style="
+              color: #9ca3af;
+              font-size: 11px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 8px;
+            "
+          >
+            Top Conflicts
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding: 8px 0;
+              border-bottom: 1px solid #2d3748;
+            "
+          >
+            <span
+              style="color: #3b82f6; font-family: monospace; font-size: 13px"
+              >CVE-2024-1234</span
+            >
+            <span
+              style="color: #ef4444; font-family: monospace; font-size: 13px"
+              >Δ 7.2</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding: 8px 0;
+              border-bottom: 1px solid #2d3748;
+            "
+          >
+            <span
+              style="color: #3b82f6; font-family: monospace; font-size: 13px"
+              >CVE-2024-5678</span
+            >
+            <span
+              style="color: #f59e0b; font-family: monospace; font-size: 13px"
+              >Δ 5.8</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding: 8px 0;
+            "
+          >
+            <span
+              style="color: #3b82f6; font-family: monospace; font-size: 13px"
+              >CVE-2023-9012</span
+            >
+            <span
+              style="color: #f59e0b; font-family: monospace; font-size: 13px"
+              >Δ 4.1</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Dense Dashboard</h3>
+      <p>
+        Current feel, refined. Stat cards + tables dominate. Information-dense,
+        built for practitioners who want data fast. Risk: intimidates
+        non-technical visitors.
+      </p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 32px 40px; background: #0f1117">
+      <!-- Editorial / Data Journalism tone -->
+      <div style="font-family: Inter, sans-serif">
+        <div style="margin-bottom: 32px">
+          <div
+            style="
+              color: #6b7280;
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              margin-bottom: 12px;
+            "
+          >
+            The Consensus Engine
+          </div>
+          <div
+            style="
+              color: #f3f4f6;
+              font-size: 32px;
+              font-weight: 700;
+              line-height: 1.2;
+              margin-bottom: 16px;
+            "
+          >
+            Two authorities score the same vulnerability.<br /><span
+              style="color: #f59e0b"
+              >They disagree 68% of the time.</span
+            >
+          </div>
+          <div
+            style="
+              color: #9ca3af;
+              font-size: 15px;
+              line-height: 1.7;
+              max-width: 540px;
+            "
+          >
+            When NVD and GitHub Advisory both assign a CVSS score to the same
+            CVE, their scores differ more often than they agree. The
+            disagreement isn't random — it follows predictable patterns.
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            gap: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #2d3748;
+          "
+        >
+          <div>
+            <div style="color: #f3f4f6; font-size: 36px; font-weight: 300">
+              68.4<span style="font-size: 20px; color: #6b7280">%</span>
+            </div>
+            <div style="color: #6b7280; font-size: 12px; margin-top: 2px">
+              conflict rate
+            </div>
+          </div>
+          <div>
+            <div style="color: #f3f4f6; font-size: 36px; font-weight: 300">
+              1,247
+            </div>
+            <div style="color: #6b7280; font-size: 12px; margin-top: 2px">
+              severity flips
+            </div>
+          </div>
+          <div>
+            <div style="color: #f3f4f6; font-size: 36px; font-weight: 300">
+              6,103
+            </div>
+            <div style="color: #6b7280; font-size: 12px; margin-top: 2px">
+              CVEs compared
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Editorial / Data Journalism</h3>
+      <p>
+        Narrative-first. Big headline, supporting prose, stats as punctuation.
+        Think The Pudding or NYT Upshot. Breathes. Tells a story. Practitioners
+        still get their tables — deeper in the page.
+      </p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 32px; background: #0f1117">
+      <!-- Hybrid: Research Report tone -->
+      <div style="font-family: Inter, sans-serif">
+        <div style="margin-bottom: 24px">
+          <div
+            style="
+              color: #f3f4f6;
+              font-size: 24px;
+              font-weight: 600;
+              margin-bottom: 8px;
+            "
+          >
+            The Consensus Engine
+          </div>
+          <div
+            style="
+              color: #9ca3af;
+              font-size: 14px;
+              line-height: 1.6;
+              margin-bottom: 20px;
+            "
+          >
+            Tracking systematic CVSS scoring divergence between NVD and GitHub
+            Advisory Database across 6,103 dual-scored CVEs.
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+          "
+        >
+          <div
+            style="
+              background: #1a1d2e;
+              border: 1px solid #2d3748;
+              border-radius: 8px;
+              padding: 20px;
+            "
+          >
+            <div style="color: #6b7280; font-size: 12px; margin-bottom: 8px">
+              Key Finding
+            </div>
+            <div
+              style="
+                color: #f3f4f6;
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 4px;
+              "
+            >
+              68.4% conflict rate
+            </div>
+            <div style="color: #9ca3af; font-size: 13px; line-height: 1.5">
+              Among CVEs scored by both authorities using the same CVSS version,
+              more than two-thirds have different scores.
+            </div>
+          </div>
+          <div
+            style="
+              background: #1a1d2e;
+              border: 1px solid #2d3748;
+              border-radius: 8px;
+              padding: 20px;
+            "
+          >
+            <div style="color: #6b7280; font-size: 12px; margin-bottom: 8px">
+              Why It Matters
+            </div>
+            <div
+              style="
+                color: #f3f4f6;
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 4px;
+              "
+            >
+              1,247 severity flips
+            </div>
+            <div style="color: #9ca3af; font-size: 13px; line-height: 1.5">
+              These conflicts cross severity band boundaries — a "High" in one
+              source is a "Medium" or "Critical" in the other.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: #1a1d2e;
+            border-left: 3px solid #3b82f6;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+          "
+        >
+          <div style="color: #9ca3af; font-size: 13px; line-height: 1.5">
+            The disagreement follows predictable patterns — certain CWE types,
+            CNAs, and CVSS metrics drive disproportionate conflict.
+            <a style="color: #60a5fa; text-decoration: none"
+              >Explore the data →</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C: Research Report Hybrid</h3>
+      <p>
+        Structured like a paper abstract — key finding, significance, then
+        "explore the data." Cards explain meaning, not just numbers. More
+        breathing room than A, more structured than B.
+      </p>
+    </div>
+  </div>
+</div>
