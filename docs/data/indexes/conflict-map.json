@@ -13040,6 +13040,30 @@
     "published_date": "2026-04-28"
   },
   {
+    "cve_id": "CVE-2026-40970",
+    "nvd_score": 6.8,
+    "github_score": 5.0,
+    "cvss_variance": 1.8,
+    "assigning_cna": "vmware",
+    "published_date": "2026-04-27"
+  },
+  {
+    "cve_id": "CVE-2026-40971",
+    "nvd_score": 9.1,
+    "github_score": 5.0,
+    "cvss_variance": 4.1,
+    "assigning_cna": "vmware",
+    "published_date": "2026-04-27"
+  },
+  {
+    "cve_id": "CVE-2026-40974",
+    "nvd_score": 9.8,
+    "github_score": 5.0,
+    "cvss_variance": 4.8,
+    "assigning_cna": "vmware",
+    "published_date": "2026-04-28"
+  },
+  {
     "cve_id": "CVE-2026-40975",
     "nvd_score": 7.5,
     "github_score": 4.8,
@@ -13232,6 +13256,14 @@
     "published_date": "2026-05-01"
   },
   {
+    "cve_id": "CVE-2026-42606",
+    "nvd_score": 8.8,
+    "github_score": 8.1,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2026-05-09"
+  },
+  {
     "cve_id": "CVE-2026-42612",
     "nvd_score": 5.4,
     "github_score": 8.5,
@@ -13296,6 +13328,38 @@
     "published_date": "2026-05-08"
   },
   {
+    "cve_id": "CVE-2026-44000",
+    "nvd_score": 7.2,
+    "github_score": 6.5,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2026-05-13"
+  },
+  {
+    "cve_id": "CVE-2026-44003",
+    "nvd_score": 5.8,
+    "github_score": 5.3,
+    "cvss_variance": 0.5,
+    "assigning_cna": "github",
+    "published_date": "2026-05-13"
+  },
+  {
+    "cve_id": "CVE-2026-44015",
+    "nvd_score": 9.9,
+    "github_score": 8.5,
+    "cvss_variance": 1.4,
+    "assigning_cna": "github",
+    "published_date": "2026-05-12"
+  },
+  {
+    "cve_id": "CVE-2026-44222",
+    "nvd_score": 7.5,
+    "github_score": 6.5,
+    "cvss_variance": 1.0,
+    "assigning_cna": "github",
+    "published_date": "2026-05-12"
+  },
+  {
     "cve_id": "CVE-2026-44298",
     "nvd_score": 4.9,
     "github_score": 4.1,
@@ -13310,6 +13374,14 @@
     "cvss_variance": 1.4,
     "assigning_cna": "github",
     "published_date": "2026-05-13"
+  },
+  {
+    "cve_id": "CVE-2026-44742",
+    "nvd_score": 6.1,
+    "github_score": 7.2,
+    "cvss_variance": 1.1,
+    "assigning_cna": "mitre",
+    "published_date": "2026-05-07"
   },
   {
     "cve_id": "CVE-2026-4525",

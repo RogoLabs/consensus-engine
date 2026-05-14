@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-14T14:26:19Z",
+  "generated_at": "2026-05-14T18:43:31Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 286,
+      "conflict_count": 287,
       "avg_variance": 1.5,
       "nvd_higher_count": 83,
-      "gh_higher_count": 203
+      "gh_higher_count": 204
     },
     {
       "cwe_id": "CWE-22",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 70,
+      "conflict_count": 71,
       "avg_variance": 1.26,
-      "nvd_higher_count": 38,
+      "nvd_higher_count": 39,
       "gh_higher_count": 32
     },
     {
@@ -162,19 +162,19 @@
       "gh_higher_count": 10
     },
     {
+      "cwe_id": "CWE-693",
+      "name": "CWE-693",
+      "conflict_count": 20,
+      "avg_variance": 0.89,
+      "nvd_higher_count": 14,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-639",
       "name": "Authorization Bypass Through User-Controlled Key",
       "conflict_count": 19,
       "avg_variance": 1.44,
       "nvd_higher_count": 13,
-      "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-693",
-      "name": "CWE-693",
-      "conflict_count": 18,
-      "avg_variance": 0.92,
-      "nvd_higher_count": 12,
       "gh_higher_count": 6
     },
     {
@@ -306,6 +306,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-295",
+      "name": "CWE-295",
+      "conflict_count": 13,
+      "avg_variance": 2.3,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-611",
       "name": "XXE",
       "conflict_count": 12,
@@ -335,14 +343,6 @@
       "conflict_count": 11,
       "avg_variance": 2.01,
       "nvd_higher_count": 5,
-      "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-295",
-      "name": "CWE-295",
-      "conflict_count": 10,
-      "avg_variance": 1.92,
-      "nvd_higher_count": 4,
       "gh_higher_count": 6
     },
     {
