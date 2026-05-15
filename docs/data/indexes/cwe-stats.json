@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T18:43:31Z",
+  "generated_at": "2026-05-15T00:37:58Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -76,10 +76,10 @@
     {
       "cwe_id": "CWE-78",
       "name": "OS Command Injection",
-      "conflict_count": 41,
-      "avg_variance": 1.28,
+      "conflict_count": 42,
+      "avg_variance": 1.29,
       "nvd_higher_count": 22,
-      "gh_higher_count": 19
+      "gh_higher_count": 20
     },
     {
       "cwe_id": "CWE-502",
@@ -434,6 +434,14 @@
       "gh_higher_count": 1
     },
     {
+      "cwe_id": "CWE-674",
+      "name": "CWE-674",
+      "conflict_count": 8,
+      "avg_variance": 2.05,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-829",
       "name": "CWE-829",
       "conflict_count": 7,
@@ -456,14 +464,6 @@
       "avg_variance": 1.96,
       "nvd_higher_count": 5,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-674",
-      "name": "CWE-674",
-      "conflict_count": 7,
-      "avg_variance": 2.2,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-266",
