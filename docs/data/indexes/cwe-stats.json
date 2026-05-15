@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T12:43:03Z",
+  "generated_at": "2026-05-15T18:39:04Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,10 +12,10 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 95,
+      "conflict_count": 96,
       "avg_variance": 1.36,
       "nvd_higher_count": 40,
-      "gh_higher_count": 55
+      "gh_higher_count": 56
     },
     {
       "cwe_id": "CWE-918",
@@ -68,9 +68,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 44,
-      "avg_variance": 1.85,
-      "nvd_higher_count": 36,
+      "conflict_count": 45,
+      "avg_variance": 1.82,
+      "nvd_higher_count": 37,
       "gh_higher_count": 8
     },
     {
@@ -622,6 +622,14 @@
       "name": "Insufficient Session Expiration",
       "conflict_count": 5,
       "avg_variance": 2.02,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 2
+    },
+    {
+      "cwe_id": "CWE-36",
+      "name": "CWE-36",
+      "conflict_count": 5,
+      "avg_variance": 1.46,
       "nvd_higher_count": 3,
       "gh_higher_count": 2
     },
