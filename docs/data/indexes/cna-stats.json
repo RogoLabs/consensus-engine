@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T00:37:12Z",
+  "generated_at": "2026-05-16T06:52:58Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -388,7 +388,7 @@
     },
     {
       "name": "snyk",
-      "total": 110,
+      "total": 112,
       "comparable": 94,
       "conflicts": 5,
       "conflict_rate": 5.3,
@@ -431,17 +431,6 @@
       "top_cve": "CVE-2025-67601"
     },
     {
-      "name": "huntr",
-      "total": 743,
-      "comparable": 292,
-      "conflicts": 14,
-      "conflict_rate": 4.8,
-      "avg_drift": 1.36,
-      "nvd_higher_count": 12,
-      "gh_higher_count": 2,
-      "top_cve": "CVE-2024-5998"
-    },
-    {
       "name": "redhat",
       "total": 7548,
       "comparable": 644,
@@ -451,6 +440,17 @@
       "nvd_higher_count": 17,
       "gh_higher_count": 14,
       "top_cve": "CVE-2024-3056"
+    },
+    {
+      "name": "huntr",
+      "total": 743,
+      "comparable": 292,
+      "conflicts": 14,
+      "conflict_rate": 4.8,
+      "avg_drift": 1.36,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 2,
+      "top_cve": "CVE-2024-5998"
     },
     {
       "name": "liggitt",
@@ -519,8 +519,52 @@
       "top_cve": null
     },
     {
-      "name": "debian",
-      "total": 547,
+      "name": "Checkmarx",
+      "total": 12,
+      "comparable": 5,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "emc",
+      "total": 971,
+      "comparable": 24,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "oracle",
+      "total": 4912,
+      "comparable": 5,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "vuldb.com",
+      "total": 368,
+      "comparable": 6,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "AMZN",
+      "total": 91,
       "comparable": 28,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -530,8 +574,8 @@
       "top_cve": null
     },
     {
-      "name": "Checkmarx",
-      "total": 12,
+      "name": "TYPO3",
+      "total": 21,
       "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -563,52 +607,8 @@
       "top_cve": null
     },
     {
-      "name": "vuldb.com",
-      "total": 368,
-      "comparable": 6,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "oracle",
-      "total": 4912,
-      "comparable": 5,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "emc",
-      "total": 971,
-      "comparable": 24,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "TYPO3",
-      "total": 21,
-      "comparable": 5,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "AMZN",
-      "total": 91,
+      "name": "debian",
+      "total": 547,
       "comparable": 28,
       "conflicts": 0,
       "conflict_rate": 0.0,
