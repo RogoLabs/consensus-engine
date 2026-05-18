@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T07:28:24Z",
+  "generated_at": "2026-05-18T13:19:47Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -92,10 +92,18 @@
     {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
-      "conflict_count": 32,
+      "conflict_count": 33,
       "avg_variance": 1.58,
-      "nvd_higher_count": 22,
+      "nvd_higher_count": 23,
       "gh_higher_count": 10
+    },
+    {
+      "cwe_id": "CWE-400",
+      "name": "Uncontrolled Resource Consumption",
+      "conflict_count": 33,
+      "avg_variance": 2.04,
+      "nvd_higher_count": 29,
+      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-287",
@@ -104,14 +112,6 @@
       "avg_variance": 1.47,
       "nvd_higher_count": 21,
       "gh_higher_count": 11
-    },
-    {
-      "cwe_id": "CWE-400",
-      "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 31,
-      "avg_variance": 2.05,
-      "nvd_higher_count": 27,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-601",
@@ -346,6 +346,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-444",
+      "name": "CWE-444",
+      "conflict_count": 10,
+      "avg_variance": 1.42,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-276",
       "name": "Incorrect Default Permissions",
       "conflict_count": 9,
@@ -392,14 +400,6 @@
       "avg_variance": 1.32,
       "nvd_higher_count": 3,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-444",
-      "name": "CWE-444",
-      "conflict_count": 8,
-      "avg_variance": 1.43,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-23",

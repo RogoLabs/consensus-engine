@@ -13280,6 +13280,30 @@
     "published_date": "2026-05-01"
   },
   {
+    "cve_id": "CVE-2026-42579",
+    "nvd_score": 9.1,
+    "github_score": 7.5,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-05-13"
+  },
+  {
+    "cve_id": "CVE-2026-42584",
+    "nvd_score": 9.1,
+    "github_score": 7.3,
+    "cvss_variance": 1.8,
+    "assigning_cna": "github",
+    "published_date": "2026-05-13"
+  },
+  {
+    "cve_id": "CVE-2026-42585",
+    "nvd_score": 7.5,
+    "github_score": 6.5,
+    "cvss_variance": 1.0,
+    "assigning_cna": "github",
+    "published_date": "2026-05-13"
+  },
+  {
     "cve_id": "CVE-2026-42606",
     "nvd_score": 8.8,
     "github_score": 8.1,
@@ -13382,6 +13406,14 @@
     "cvss_variance": 1.0,
     "assigning_cna": "github",
     "published_date": "2026-05-12"
+  },
+  {
+    "cve_id": "CVE-2026-44248",
+    "nvd_score": 7.5,
+    "github_score": 5.3,
+    "cvss_variance": 2.2,
+    "assigning_cna": "github",
+    "published_date": "2026-05-13"
   },
   {
     "cve_id": "CVE-2026-44298",
