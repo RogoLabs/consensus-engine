@@ -144,6 +144,14 @@
     "published_date": "2024-06-21"
   },
   {
+    "cve_id": "CVE-2022-23650",
+    "nvd_score": 8.8,
+    "github_score": 7.2,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2022-02-18"
+  },
+  {
     "cve_id": "CVE-2022-25768",
     "nvd_score": 6.5,
     "github_score": 7.0,
@@ -13160,6 +13168,14 @@
     "published_date": "2026-05-07"
   },
   {
+    "cve_id": "CVE-2026-41432",
+    "nvd_score": 8.2,
+    "github_score": 7.1,
+    "cvss_variance": 1.1,
+    "assigning_cna": "github",
+    "published_date": "2026-05-08"
+  },
+  {
     "cve_id": "CVE-2026-41484",
     "nvd_score": 5.9,
     "github_score": 5.3,
@@ -13182,6 +13198,14 @@
     "cvss_variance": 1.2,
     "assigning_cna": "github",
     "published_date": "2026-05-07"
+  },
+  {
+    "cve_id": "CVE-2026-41520",
+    "nvd_score": 4.4,
+    "github_score": 7.9,
+    "cvss_variance": 3.5,
+    "assigning_cna": "github",
+    "published_date": "2026-05-08"
   },
   {
     "cve_id": "CVE-2026-41640",
@@ -13272,6 +13296,14 @@
     "published_date": "2026-05-11"
   },
   {
+    "cve_id": "CVE-2026-42354",
+    "nvd_score": 9.8,
+    "github_score": 9.1,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2026-05-08"
+  },
+  {
     "cve_id": "CVE-2026-42404",
     "nvd_score": 7.2,
     "github_score": 6.5,
@@ -13288,6 +13320,14 @@
     "published_date": "2026-05-13"
   },
   {
+    "cve_id": "CVE-2026-42581",
+    "nvd_score": 9.8,
+    "github_score": 5.8,
+    "cvss_variance": 4.0,
+    "assigning_cna": "github",
+    "published_date": "2026-05-13"
+  },
+  {
     "cve_id": "CVE-2026-42584",
     "nvd_score": 9.1,
     "github_score": 7.3,
@@ -13300,6 +13340,14 @@
     "nvd_score": 7.5,
     "github_score": 6.5,
     "cvss_variance": 1.0,
+    "assigning_cna": "github",
+    "published_date": "2026-05-13"
+  },
+  {
+    "cve_id": "CVE-2026-42586",
+    "nvd_score": 7.1,
+    "github_score": 6.8,
+    "cvss_variance": 0.3,
     "assigning_cna": "github",
     "published_date": "2026-05-13"
   },
@@ -13494,6 +13542,14 @@
     "cvss_variance": 3.4,
     "assigning_cna": "ubuntu",
     "published_date": "2026-04-10"
+  },
+  {
+    "cve_id": "CVE-2026-6402",
+    "nvd_score": 6.5,
+    "github_score": 5.3,
+    "cvss_variance": 1.2,
+    "assigning_cna": "openjs",
+    "published_date": "2026-05-12"
   },
   {
     "cve_id": "CVE-2026-6654",
