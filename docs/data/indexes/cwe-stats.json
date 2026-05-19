@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T18:43:45Z",
+  "generated_at": "2026-05-19T00:41:33Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 71,
+      "conflict_count": 72,
       "avg_variance": 1.26,
-      "nvd_higher_count": 39,
+      "nvd_higher_count": 40,
       "gh_higher_count": 32
     },
     {
@@ -530,6 +530,14 @@
       "gh_higher_count": 0
     },
     {
+      "cwe_id": "CWE-36",
+      "name": "CWE-36",
+      "conflict_count": 6,
+      "avg_variance": 1.75,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-362",
       "name": "Race Condition",
       "conflict_count": 6,
@@ -622,14 +630,6 @@
       "name": "Insufficient Session Expiration",
       "conflict_count": 5,
       "avg_variance": 2.02,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-36",
-      "name": "CWE-36",
-      "conflict_count": 5,
-      "avg_variance": 1.46,
       "nvd_higher_count": 3,
       "gh_higher_count": 2
     },
