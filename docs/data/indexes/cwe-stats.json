@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-19T13:09:57Z",
+  "generated_at": "2026-05-19T18:44:05Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 287,
+      "conflict_count": 288,
       "avg_variance": 1.5,
-      "nvd_higher_count": 83,
+      "nvd_higher_count": 84,
       "gh_higher_count": 204
     },
     {
@@ -386,6 +386,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-674",
+      "name": "CWE-674",
+      "conflict_count": 9,
+      "avg_variance": 2.07,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-256",
       "name": "CWE-256",
       "conflict_count": 9,
@@ -432,14 +440,6 @@
       "avg_variance": 1.57,
       "nvd_higher_count": 7,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-674",
-      "name": "CWE-674",
-      "conflict_count": 8,
-      "avg_variance": 2.05,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-749",
