@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T18:44:05Z",
+  "generated_at": "2026-05-20T00:43:56Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,9 +12,9 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 96,
-      "avg_variance": 1.36,
-      "nvd_higher_count": 40,
+      "conflict_count": 97,
+      "avg_variance": 1.37,
+      "nvd_higher_count": 41,
       "gh_higher_count": 56
     },
     {
@@ -148,9 +148,9 @@
     {
       "cwe_id": "CWE-434",
       "name": "Unrestricted File Upload",
-      "conflict_count": 22,
-      "avg_variance": 1.2,
-      "nvd_higher_count": 10,
+      "conflict_count": 23,
+      "avg_variance": 1.25,
+      "nvd_higher_count": 11,
       "gh_higher_count": 12
     },
     {

@@ -1,9 +1,9 @@
 {
-  "total_cves": 218153,
-  "comparable_count": 8827,
-  "conflict_count": 1700,
+  "total_cves": 218260,
+  "comparable_count": 8830,
+  "conflict_count": 1701,
   "conflict_rate": 19.3,
-  "gap_count": 213049,
+  "gap_count": 213155,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 997,
+    "nvd_higher_count": 998,
     "gh_higher_count": 703
   },
   "conflict_by_year": {
@@ -26,7 +26,7 @@
     "2023": 3,
     "2024": 564,
     "2025": 511,
-    "2026": 607
+    "2026": 608
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -65,15 +65,15 @@
       "comparable": 2262
     },
     "2026": {
-      "nvd_higher": 367,
+      "nvd_higher": 368,
       "gh_higher": 240,
-      "comparable": 3228
+      "comparable": 3231
     }
   },
-  "severity_flip_count": 932,
+  "severity_flip_count": 933,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 76,
-    "Critical\u2192High": 117,
+    "Critical\u2192High": 118,
     "Critical\u2192Medium": 57,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 80,
@@ -91,14 +91,14 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 258,
+      "Critical": 259,
       "High": 594,
       "Medium": 807,
       "Low": 41
     },
     "gh": {
       "Critical": 189,
-      "High": 534,
+      "High": 535,
       "Medium": 805,
       "Low": 172
     }
@@ -132,7 +132,7 @@
     {
       "bucket": "2.5-3.0",
       "min": 2.5,
-      "count": 106
+      "count": 107
     },
     {
       "bucket": "3.0-3.5",
@@ -176,12 +176,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 258,
+    "Critical": 259,
     "High": 594,
     "Medium": 807,
     "Low": 41
   },
-  "avg_days_to_analysis": 3244.6,
-  "p90_days_to_analysis": 7334,
-  "generated_at": "2026-05-19T18:44:04Z"
+  "avg_days_to_analysis": 3243.1,
+  "p90_days_to_analysis": 7332,
+  "generated_at": "2026-05-20T00:43:56Z"
 }
