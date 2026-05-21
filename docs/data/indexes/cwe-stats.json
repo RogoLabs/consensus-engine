@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T18:54:59Z",
+  "generated_at": "2026-05-21T00:42:43Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -90,20 +90,20 @@
       "gh_higher_count": 10
     },
     {
+      "cwe_id": "CWE-400",
+      "name": "Uncontrolled Resource Consumption",
+      "conflict_count": 34,
+      "avg_variance": 2.04,
+      "nvd_higher_count": 30,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
       "conflict_count": 33,
       "avg_variance": 1.58,
       "nvd_higher_count": 23,
       "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-400",
-      "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 33,
-      "avg_variance": 2.04,
-      "nvd_higher_count": 29,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-287",
@@ -210,6 +210,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-787",
+      "name": "Out-of-bounds Write",
+      "conflict_count": 16,
+      "avg_variance": 2.08,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-532",
       "name": "Log Injection / Information Exposure Through Log",
       "conflict_count": 16,
@@ -232,14 +240,6 @@
       "avg_variance": 1.63,
       "nvd_higher_count": 3,
       "gh_higher_count": 12
-    },
-    {
-      "cwe_id": "CWE-787",
-      "name": "Out-of-bounds Write",
-      "conflict_count": 15,
-      "avg_variance": 2.1,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-290",
