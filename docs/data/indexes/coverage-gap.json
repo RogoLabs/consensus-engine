@@ -1,14 +1,14 @@
 {
-  "total": 14388,
+  "total": 14392,
   "avg_github_score": 6.94,
   "severity_distribution": {
     "critical": 2223,
     "high": 5223,
-    "medium": 6374,
+    "medium": 6378,
     "low": 568
   },
   "nvd_status_breakdown": {
-    "No NVD Record": 14360,
+    "No NVD Record": 14364,
     "Rejected": 25,
     "Deferred": 2,
     "Analyzed": 1
@@ -4515,5 +4515,5 @@
       "published_date": null
     }
   ],
-  "generated_at": "2026-05-22T07:19:34Z"
+  "generated_at": "2026-05-22T14:25:09Z"
 }
