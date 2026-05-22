@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T18:45:51Z",
+  "generated_at": "2026-05-22T00:42:09Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -44,9 +44,9 @@
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 52,
-      "avg_variance": 1.75,
-      "nvd_higher_count": 28,
+      "conflict_count": 53,
+      "avg_variance": 1.72,
+      "nvd_higher_count": 29,
       "gh_higher_count": 24
     },
     {
@@ -194,20 +194,20 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-306",
+      "name": "Missing Authentication",
+      "conflict_count": 17,
+      "avg_variance": 0.92,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-1321",
       "name": "Prototype Pollution",
       "conflict_count": 17,
       "avg_variance": 1.81,
       "nvd_higher_count": 13,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-306",
-      "name": "Missing Authentication",
-      "conflict_count": 16,
-      "avg_variance": 0.97,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-787",
