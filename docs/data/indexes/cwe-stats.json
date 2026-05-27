@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-26T18:55:42Z",
+  "generated_at": "2026-05-27T00:43:33Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 288,
-      "avg_variance": 1.5,
-      "nvd_higher_count": 84,
+      "conflict_count": 289,
+      "avg_variance": 1.49,
+      "nvd_higher_count": 85,
       "gh_higher_count": 204
     },
     {
@@ -116,9 +116,9 @@
     {
       "cwe_id": "CWE-601",
       "name": "Open Redirect",
-      "conflict_count": 28,
+      "conflict_count": 29,
       "avg_variance": 1.36,
-      "nvd_higher_count": 24,
+      "nvd_higher_count": 25,
       "gh_higher_count": 4
     },
     {
