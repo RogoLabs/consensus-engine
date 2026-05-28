@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T18:52:45Z",
+  "generated_at": "2026-05-28T00:40:22Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -28,9 +28,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 69,
+      "conflict_count": 70,
       "avg_variance": 1.27,
-      "nvd_higher_count": 46,
+      "nvd_higher_count": 47,
       "gh_higher_count": 23
     },
     {
@@ -162,19 +162,19 @@
       "gh_higher_count": 10
     },
     {
+      "cwe_id": "CWE-639",
+      "name": "Authorization Bypass Through User-Controlled Key",
+      "conflict_count": 20,
+      "avg_variance": 1.43,
+      "nvd_higher_count": 14,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-693",
       "name": "CWE-693",
       "conflict_count": 20,
       "avg_variance": 0.89,
       "nvd_higher_count": 14,
-      "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-639",
-      "name": "Authorization Bypass Through User-Controlled Key",
-      "conflict_count": 19,
-      "avg_variance": 1.44,
-      "nvd_higher_count": 13,
       "gh_higher_count": 6
     },
     {
