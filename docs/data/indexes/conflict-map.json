@@ -136,6 +136,14 @@
     "published_date": "2025-01-29"
   },
   {
+    "cve_id": "CVE-2021-45105",
+    "nvd_score": 5.9,
+    "github_score": 8.6,
+    "cvss_variance": 2.7,
+    "assigning_cna": "apache",
+    "published_date": "2021-12-18"
+  },
+  {
     "cve_id": "CVE-2021-47621",
     "nvd_score": 7.5,
     "github_score": 6.5,
@@ -13262,6 +13270,22 @@
     "cvss_variance": 1.3,
     "assigning_cna": "github",
     "published_date": "2026-05-07"
+  },
+  {
+    "cve_id": "CVE-2026-41691",
+    "nvd_score": 9.1,
+    "github_score": 6.5,
+    "cvss_variance": 2.6,
+    "assigning_cna": "github",
+    "published_date": "2026-05-07"
+  },
+  {
+    "cve_id": "CVE-2026-41900",
+    "nvd_score": 10.0,
+    "github_score": 8.8,
+    "cvss_variance": 1.2,
+    "assigning_cna": "github",
+    "published_date": "2026-05-08"
   },
   {
     "cve_id": "CVE-2026-42038",
