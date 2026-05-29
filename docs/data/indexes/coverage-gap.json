@@ -1,14 +1,14 @@
 {
-  "total": 14318,
+  "total": 14308,
   "avg_github_score": 6.94,
   "severity_distribution": {
-    "critical": 2218,
-    "high": 5185,
+    "critical": 2215,
+    "high": 5178,
     "medium": 6349,
     "low": 566
   },
   "nvd_status_breakdown": {
-    "No NVD Record": 14290,
+    "No NVD Record": 14280,
     "Rejected": 25,
     "Deferred": 2,
     "Analyzed": 1
@@ -4506,14 +4506,14 @@
       "published_date": null
     },
     {
-      "cve_id": "CVE-2019-11068",
+      "cve_id": "CVE-2019-11202",
       "github_score": 9.8,
       "github_cvss_version": "3.0",
-      "ghsa_id": "GHSA-qxcg-xjjg-66mj",
+      "ghsa_id": "GHSA-xh8x-j8h3-m5ph",
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
     }
   ],
-  "generated_at": "2026-05-28T18:59:06Z"
+  "generated_at": "2026-05-29T00:46:03Z"
 }
