@@ -1,7 +1,7 @@
 {
   "comparable_conflicts": 1722,
   "vector_only_conflicts": 67,
-  "generated_at": "2026-06-01T07:50:12Z",
+  "generated_at": "2026-06-01T14:08:19Z",
   "metrics": [
     {
       "key": "A",
@@ -138,10 +138,10 @@
       "key": "PR",
       "name": "Privileges Required",
       "total": 1722,
-      "disagree_count": 442,
+      "disagree_count": 443,
       "disagree_rate": 25.7,
       "nvd_higher_count": 302,
-      "gh_higher_count": 140,
+      "gh_higher_count": 141,
       "top_transitions": [
         {
           "transition": "N\u2192L",
@@ -149,7 +149,7 @@
         },
         {
           "transition": "L\u2192N",
-          "count": 107
+          "count": 108
         },
         {
           "transition": "L\u2192H",
@@ -188,14 +188,14 @@
       "key": "AV",
       "name": "Attack Vector",
       "total": 1722,
-      "disagree_count": 125,
+      "disagree_count": 126,
       "disagree_rate": 7.3,
-      "nvd_higher_count": 101,
+      "nvd_higher_count": 102,
       "gh_higher_count": 24,
       "top_transitions": [
         {
           "transition": "N\u2192L",
-          "count": 74
+          "count": 75
         },
         {
           "transition": "N\u2192A",
