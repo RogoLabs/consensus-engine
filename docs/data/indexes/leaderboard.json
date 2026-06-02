@@ -8964,6 +8964,24 @@
     "published_date": "2026-04-04"
   },
   {
+    "cve_id": "CVE-2026-37980",
+    "drift_score": 2.1,
+    "drift_type": "conflict",
+    "cvss_variance": 2.1,
+    "metadata_conflict": 0.2,
+    "severity_flip": false,
+    "nvd_severity": null,
+    "gh_severity": null,
+    "source_count": 2,
+    "assigning_cna": "redhat",
+    "nvd_score": 4.8,
+    "nvd_cvss_version": "3.1",
+    "nvd_status": "Analyzed",
+    "github_score": 6.9,
+    "github_cvss_version": "3.1",
+    "published_date": "2026-04-14"
+  },
+  {
     "cve_id": "CVE-2026-39411",
     "drift_score": 2.1,
     "drift_type": "conflict",
@@ -8980,23 +8998,5 @@
     "github_score": 5.0,
     "github_cvss_version": "3.1",
     "published_date": "2026-04-08"
-  },
-  {
-    "cve_id": "CVE-2026-40046",
-    "drift_score": 2.1,
-    "drift_type": "conflict",
-    "cvss_variance": 2.1,
-    "metadata_conflict": 0.2,
-    "severity_flip": true,
-    "nvd_severity": "High",
-    "gh_severity": "Medium",
-    "source_count": 2,
-    "assigning_cna": "apache",
-    "nvd_score": 7.5,
-    "nvd_cvss_version": "3.1",
-    "nvd_status": "Awaiting Analysis",
-    "github_score": 5.4,
-    "github_cvss_version": "3.1",
-    "published_date": "2026-04-09"
   }
 ]

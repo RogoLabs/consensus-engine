@@ -1,19 +1,19 @@
 {
-  "total_cves": 221733,
-  "comparable_count": 9089,
-  "conflict_count": 1735,
+  "total_cves": 221812,
+  "comparable_count": 9102,
+  "conflict_count": 1740,
   "conflict_rate": 19.1,
-  "gap_count": 216579,
+  "gap_count": 216651,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
   "max_variance": 6.9,
   "max_variance_cve": "CVE-2025-47735",
   "avg_variance": 1.53,
-  "median_variance": 1.2,
+  "median_variance": 1.25,
   "direction_asymmetry": {
-    "nvd_higher_count": 1024,
-    "gh_higher_count": 711
+    "nvd_higher_count": 1027,
+    "gh_higher_count": 713
   },
   "conflict_by_year": {
     "2006": 1,
@@ -27,7 +27,7 @@
     "2023": 4,
     "2024": 564,
     "2025": 511,
-    "2026": 640
+    "2026": 645
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -66,24 +66,24 @@
       "comparable": 2263
     },
     "2026": {
-      "nvd_higher": 393,
-      "gh_higher": 247,
-      "comparable": 3465
+      "nvd_higher": 396,
+      "gh_higher": 249,
+      "comparable": 3478
     }
   },
-  "severity_flip_count": 949,
+  "severity_flip_count": 952,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 76,
-    "Critical\u2192High": 119,
+    "Critical\u2192High": 120,
     "Critical\u2192Medium": 58,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 80,
-    "High\u2192High": 215,
-    "High\u2192Medium": 285,
+    "High\u2192High": 216,
+    "High\u2192Medium": 287,
     "High\u2192Low": 23,
     "Medium\u2192Critical": 32,
     "Medium\u2192High": 204,
-    "Medium\u2192Medium": 470,
+    "Medium\u2192Medium": 471,
     "Medium\u2192Low": 123,
     "Low\u2192Critical": 1,
     "Low\u2192High": 1,
@@ -92,15 +92,15 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 261,
-      "High": 603,
-      "Medium": 829,
+      "Critical": 262,
+      "High": 606,
+      "Medium": 830,
       "Low": 42
     },
     "gh": {
       "Critical": 189,
-      "High": 539,
-      "Medium": 828,
+      "High": 541,
+      "Medium": 831,
       "Low": 179
     }
   },
@@ -108,12 +108,12 @@
     {
       "bucket": "0.0-0.5",
       "min": 0.0,
-      "count": 233
+      "count": 234
     },
     {
       "bucket": "0.5-1.0",
       "min": 0.5,
-      "count": 316
+      "count": 317
     },
     {
       "bucket": "1.0-1.5",
@@ -123,12 +123,12 @@
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 255
+      "count": 257
     },
     {
       "bucket": "2.0-2.5",
       "min": 2.0,
-      "count": 226
+      "count": 227
     },
     {
       "bucket": "2.5-3.0",
@@ -177,12 +177,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 261,
-    "High": 603,
-    "Medium": 829,
+    "Critical": 262,
+    "High": 606,
+    "Medium": 830,
     "Low": 42
   },
-  "avg_days_to_analysis": 3217.1,
+  "avg_days_to_analysis": 3214.0,
   "p90_days_to_analysis": 7323,
-  "generated_at": "2026-06-02T13:21:08Z"
+  "generated_at": "2026-06-02T19:20:06Z"
 }

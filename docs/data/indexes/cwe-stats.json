@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-02T13:21:08Z",
+  "generated_at": "2026-06-02T19:20:06Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 291,
-      "avg_variance": 1.49,
+      "conflict_count": 292,
+      "avg_variance": 1.5,
       "nvd_higher_count": 87,
-      "gh_higher_count": 204
+      "gh_higher_count": 205
     },
     {
       "cwe_id": "CWE-22",
@@ -68,9 +68,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 46,
-      "avg_variance": 1.83,
-      "nvd_higher_count": 38,
+      "conflict_count": 47,
+      "avg_variance": 1.8,
+      "nvd_higher_count": 39,
       "gh_higher_count": 8
     },
     {
@@ -80,6 +80,14 @@
       "avg_variance": 1.29,
       "nvd_higher_count": 23,
       "gh_higher_count": 20
+    },
+    {
+      "cwe_id": "CWE-400",
+      "name": "Uncontrolled Resource Consumption",
+      "conflict_count": 35,
+      "avg_variance": 1.99,
+      "nvd_higher_count": 31,
+      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-502",
@@ -96,14 +104,6 @@
       "avg_variance": 1.62,
       "nvd_higher_count": 23,
       "gh_higher_count": 11
-    },
-    {
-      "cwe_id": "CWE-400",
-      "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 34,
-      "avg_variance": 2.04,
-      "nvd_higher_count": 30,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-287",
@@ -204,9 +204,9 @@
     {
       "cwe_id": "CWE-1321",
       "name": "Prototype Pollution",
-      "conflict_count": 17,
-      "avg_variance": 1.81,
-      "nvd_higher_count": 13,
+      "conflict_count": 18,
+      "avg_variance": 1.79,
+      "nvd_higher_count": 14,
       "gh_higher_count": 4
     },
     {
