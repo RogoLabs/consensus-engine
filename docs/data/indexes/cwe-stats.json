@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T19:25:37Z",
+  "generated_at": "2026-06-04T00:52:57Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -28,9 +28,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 72,
+      "conflict_count": 73,
       "avg_variance": 1.26,
-      "nvd_higher_count": 49,
+      "nvd_higher_count": 50,
       "gh_higher_count": 23
     },
     {
@@ -84,10 +84,18 @@
     {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 36,
-      "avg_variance": 1.98,
-      "nvd_higher_count": 32,
+      "conflict_count": 37,
+      "avg_variance": 1.96,
+      "nvd_higher_count": 33,
       "gh_higher_count": 4
+    },
+    {
+      "cwe_id": "CWE-20",
+      "name": "Improper Input Validation",
+      "conflict_count": 35,
+      "avg_variance": 1.61,
+      "nvd_higher_count": 23,
+      "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-502",
@@ -96,14 +104,6 @@
       "avg_variance": 1.26,
       "nvd_higher_count": 25,
       "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-20",
-      "name": "Improper Input Validation",
-      "conflict_count": 34,
-      "avg_variance": 1.62,
-      "nvd_higher_count": 23,
-      "gh_higher_count": 11
     },
     {
       "cwe_id": "CWE-287",
