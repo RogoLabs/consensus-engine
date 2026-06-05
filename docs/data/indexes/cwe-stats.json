@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T13:06:58Z",
+  "generated_at": "2026-06-05T18:46:20Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -28,9 +28,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 73,
-      "avg_variance": 1.26,
-      "nvd_higher_count": 50,
+      "conflict_count": 74,
+      "avg_variance": 1.27,
+      "nvd_higher_count": 51,
       "gh_higher_count": 23
     },
     {
@@ -90,20 +90,20 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-502",
+      "name": "Deserialization of Untrusted Data",
+      "conflict_count": 36,
+      "avg_variance": 1.25,
+      "nvd_higher_count": 26,
+      "gh_higher_count": 10
+    },
+    {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
       "conflict_count": 35,
       "avg_variance": 1.61,
       "nvd_higher_count": 23,
       "gh_higher_count": 12
-    },
-    {
-      "cwe_id": "CWE-502",
-      "name": "Deserialization of Untrusted Data",
-      "conflict_count": 35,
-      "avg_variance": 1.26,
-      "nvd_higher_count": 25,
-      "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-287",
