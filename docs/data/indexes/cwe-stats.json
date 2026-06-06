@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-05T18:46:20Z",
+  "generated_at": "2026-06-06T00:44:08Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 293,
-      "avg_variance": 1.5,
+      "conflict_count": 297,
+      "avg_variance": 1.53,
       "nvd_higher_count": 87,
-      "gh_higher_count": 206
+      "gh_higher_count": 210
     },
     {
       "cwe_id": "CWE-22",
@@ -44,9 +44,9 @@
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 53,
-      "avg_variance": 1.72,
-      "nvd_higher_count": 29,
+      "conflict_count": 54,
+      "avg_variance": 1.71,
+      "nvd_higher_count": 30,
       "gh_higher_count": 24
     },
     {
@@ -68,9 +68,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 48,
+      "conflict_count": 49,
       "avg_variance": 1.78,
-      "nvd_higher_count": 40,
+      "nvd_higher_count": 41,
       "gh_higher_count": 8
     },
     {
@@ -386,6 +386,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-201",
+      "name": "CWE-201",
+      "conflict_count": 9,
+      "avg_variance": 1.33,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-754",
       "name": "Improper Check for Unusual Conditions",
       "conflict_count": 9,
@@ -440,14 +448,6 @@
       "avg_variance": 1.14,
       "nvd_higher_count": 3,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-201",
-      "name": "CWE-201",
-      "conflict_count": 8,
-      "avg_variance": 1.35,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-476",
