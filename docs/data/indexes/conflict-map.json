@@ -320,6 +320,14 @@
     "published_date": "2025-03-05"
   },
   {
+    "cve_id": "CVE-2023-42456",
+    "nvd_score": 8.1,
+    "github_score": 3.3,
+    "cvss_variance": 4.8,
+    "assigning_cna": "github",
+    "published_date": "2023-09-21"
+  },
+  {
     "cve_id": "CVE-2023-44487",
     "nvd_score": 7.5,
     "github_score": 5.3,
