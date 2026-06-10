@@ -1344,6 +1344,14 @@
     "published_date": "2024-05-14"
   },
   {
+    "cve_id": "CVE-2024-34252",
+    "nvd_score": 7.5,
+    "github_score": 9.8,
+    "cvss_variance": 2.3,
+    "assigning_cna": "mitre",
+    "published_date": "2024-05-06"
+  },
+  {
     "cve_id": "CVE-2024-34343",
     "nvd_score": 6.1,
     "github_score": 6.3,

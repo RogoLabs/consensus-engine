@@ -1,14 +1,14 @@
 {
-  "total": 14381,
+  "total": 14373,
   "avg_github_score": 6.95,
   "severity_distribution": {
-    "critical": 2227,
-    "high": 5214,
-    "medium": 6376,
+    "critical": 2228,
+    "high": 5208,
+    "medium": 6373,
     "low": 564
   },
   "nvd_status_breakdown": {
-    "No NVD Record": 14353,
+    "No NVD Record": 14345,
     "Rejected": 25,
     "Deferred": 2,
     "Analyzed": 1
@@ -1675,6 +1675,15 @@
       "github_score": 9.9,
       "github_cvss_version": "3.1",
       "ghsa_id": "GHSA-598g-h2vc-h5vg",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
+    },
+    {
+      "cve_id": "CVE-2026-48030",
+      "github_score": 9.9,
+      "github_cvss_version": "3.1",
+      "ghsa_id": "GHSA-jvc5-6g7q-c843",
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
@@ -4504,16 +4513,7 @@
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
-    },
-    {
-      "cve_id": "CVE-2019-10842",
-      "github_score": 9.8,
-      "github_cvss_version": "3.0",
-      "ghsa_id": "GHSA-vqqv-v9m2-48p2",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
     }
   ],
-  "generated_at": "2026-06-09T18:50:25Z"
+  "generated_at": "2026-06-10T00:46:55Z"
 }
