@@ -14086,5 +14086,13 @@
     "cvss_variance": 2.7,
     "assigning_cna": "rapid7",
     "published_date": "2026-05-06"
+  },
+  {
+    "cve_id": "CVE-2026-9087",
+    "nvd_score": 8.1,
+    "github_score": 6.4,
+    "cvss_variance": 1.7,
+    "assigning_cna": "redhat",
+    "published_date": "2026-05-20"
   }
 ]

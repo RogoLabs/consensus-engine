@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T13:23:05Z",
+  "generated_at": "2026-06-11T19:06:39Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -154,20 +154,20 @@
       "gh_higher_count": 12
     },
     {
+      "cwe_id": "CWE-639",
+      "name": "Authorization Bypass Through User-Controlled Key",
+      "conflict_count": 22,
+      "avg_variance": 1.5,
+      "nvd_higher_count": 16,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-285",
       "name": "CWE-285",
       "conflict_count": 21,
       "avg_variance": 1.63,
       "nvd_higher_count": 11,
       "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-639",
-      "name": "Authorization Bypass Through User-Controlled Key",
-      "conflict_count": 21,
-      "avg_variance": 1.49,
-      "nvd_higher_count": 15,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-693",
