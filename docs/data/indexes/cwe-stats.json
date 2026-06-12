@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T00:49:01Z",
+  "generated_at": "2026-06-12T07:44:15Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -442,12 +442,28 @@
       "gh_higher_count": 0
     },
     {
+      "cwe_id": "CWE-668",
+      "name": "Exposure of Resource to Wrong Sphere",
+      "conflict_count": 8,
+      "avg_variance": 1.75,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-73",
       "name": "CWE-73",
       "conflict_count": 8,
       "avg_variance": 1.14,
       "nvd_higher_count": 3,
       "gh_higher_count": 5
+    },
+    {
+      "cwe_id": "CWE-345",
+      "name": "CWE-345",
+      "conflict_count": 8,
+      "avg_variance": 0.82,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-476",
@@ -482,28 +498,12 @@
       "gh_higher_count": 5
     },
     {
-      "cwe_id": "CWE-668",
-      "name": "Exposure of Resource to Wrong Sphere",
-      "conflict_count": 7,
-      "avg_variance": 1.96,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 2
-    },
-    {
       "cwe_id": "CWE-401",
       "name": "Memory Leak",
       "conflict_count": 7,
       "avg_variance": 2.31,
       "nvd_higher_count": 7,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-345",
-      "name": "CWE-345",
-      "conflict_count": 7,
-      "avg_variance": 0.9,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-266",
