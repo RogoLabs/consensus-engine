@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T18:46:03Z",
+  "generated_at": "2026-06-13T00:49:11Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -18,20 +18,20 @@
       "gh_higher_count": 56
     },
     {
-      "cwe_id": "CWE-918",
-      "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 74,
-      "avg_variance": 1.25,
-      "nvd_higher_count": 41,
-      "gh_higher_count": 33
-    },
-    {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 74,
+      "conflict_count": 76,
       "avg_variance": 1.27,
-      "nvd_higher_count": 51,
-      "gh_higher_count": 23
+      "nvd_higher_count": 52,
+      "gh_higher_count": 24
+    },
+    {
+      "cwe_id": "CWE-918",
+      "name": "Server-Side Request Forgery (SSRF)",
+      "conflict_count": 75,
+      "avg_variance": 1.25,
+      "nvd_higher_count": 41,
+      "gh_higher_count": 34
     },
     {
       "cwe_id": "CWE-94",
@@ -114,6 +114,14 @@
       "gh_higher_count": 11
     },
     {
+      "cwe_id": "CWE-601",
+      "name": "Open Redirect",
+      "conflict_count": 30,
+      "avg_variance": 1.34,
+      "nvd_higher_count": 26,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-352",
       "name": "Cross-Site Request Forgery",
       "conflict_count": 29,
@@ -122,19 +130,11 @@
       "gh_higher_count": 10
     },
     {
-      "cwe_id": "CWE-601",
-      "name": "Open Redirect",
-      "conflict_count": 29,
-      "avg_variance": 1.36,
-      "nvd_higher_count": 25,
-      "gh_higher_count": 4
-    },
-    {
       "cwe_id": "CWE-862",
       "name": "Missing Authorization",
-      "conflict_count": 27,
-      "avg_variance": 1.19,
-      "nvd_higher_count": 14,
+      "conflict_count": 28,
+      "avg_variance": 1.21,
+      "nvd_higher_count": 15,
       "gh_higher_count": 13
     },
     {
