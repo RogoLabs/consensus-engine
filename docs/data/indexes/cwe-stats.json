@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T13:49:52Z",
+  "generated_at": "2026-06-16T19:20:19Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -234,6 +234,14 @@
       "gh_higher_count": 8
     },
     {
+      "cwe_id": "CWE-59",
+      "name": "CWE-59",
+      "conflict_count": 15,
+      "avg_variance": 1.33,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-80",
       "name": "CWE-80",
       "conflict_count": 15,
@@ -272,14 +280,6 @@
       "avg_variance": 1.87,
       "nvd_higher_count": 6,
       "gh_higher_count": 9
-    },
-    {
-      "cwe_id": "CWE-59",
-      "name": "CWE-59",
-      "conflict_count": 14,
-      "avg_variance": 1.39,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-1333",

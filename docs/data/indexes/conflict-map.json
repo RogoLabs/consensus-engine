@@ -13888,6 +13888,14 @@
     "published_date": "2026-05-14"
   },
   {
+    "cve_id": "CVE-2026-45491",
+    "nvd_score": 6.2,
+    "github_score": 6.8,
+    "cvss_variance": 0.6,
+    "assigning_cna": "microsoft",
+    "published_date": "2026-06-09"
+  },
+  {
     "cve_id": "CVE-2026-45609",
     "nvd_score": 6.5,
     "github_score": 7.2,
