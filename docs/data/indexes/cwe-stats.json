@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-06-18T13:17:10Z",
+  "generated_at": "2026-06-18T18:56:54Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 298,
+      "conflict_count": 299,
       "avg_variance": 1.53,
-      "nvd_higher_count": 87,
+      "nvd_higher_count": 88,
       "gh_higher_count": 211
     },
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 100,
-      "avg_variance": 1.41,
+      "conflict_count": 101,
+      "avg_variance": 1.43,
       "nvd_higher_count": 44,
-      "gh_higher_count": 56
+      "gh_higher_count": 57
     },
     {
       "cwe_id": "CWE-863",
@@ -458,6 +458,14 @@
       "gh_higher_count": 0
     },
     {
+      "cwe_id": "CWE-184",
+      "name": "CWE-184",
+      "conflict_count": 8,
+      "avg_variance": 1.6,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-668",
       "name": "Exposure of Resource to Wrong Sphere",
       "conflict_count": 8,
@@ -496,14 +504,6 @@
       "avg_variance": 1.16,
       "nvd_higher_count": 5,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-184",
-      "name": "CWE-184",
-      "conflict_count": 7,
-      "avg_variance": 1.63,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-346",
