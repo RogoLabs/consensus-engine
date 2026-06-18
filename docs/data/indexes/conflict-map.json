@@ -11704,6 +11704,22 @@
     "published_date": "2026-03-23"
   },
   {
+    "cve_id": "CVE-2026-33380",
+    "nvd_score": 6.5,
+    "github_score": 6.3,
+    "cvss_variance": 0.2,
+    "assigning_cna": "grafana",
+    "published_date": "2026-05-13"
+  },
+  {
+    "cve_id": "CVE-2026-33381",
+    "nvd_score": 8.1,
+    "github_score": 5.9,
+    "cvss_variance": 2.2,
+    "assigning_cna": "grafana",
+    "published_date": "2026-05-13"
+  },
+  {
     "cve_id": "CVE-2026-33486",
     "nvd_score": 6.5,
     "github_score": 6.8,
@@ -13528,6 +13544,14 @@
     "published_date": "2026-05-01"
   },
   {
+    "cve_id": "CVE-2026-42510",
+    "nvd_score": 7.2,
+    "github_score": 6.6,
+    "cvss_variance": 0.6,
+    "assigning_cna": "mitre",
+    "published_date": "2026-04-28"
+  },
+  {
     "cve_id": "CVE-2026-42572",
     "nvd_score": 6.5,
     "github_score": 5.3,
@@ -13848,6 +13872,14 @@
     "published_date": "2026-05-26"
   },
   {
+    "cve_id": "CVE-2026-44919",
+    "nvd_score": 6.5,
+    "github_score": 4.3,
+    "cvss_variance": 2.2,
+    "assigning_cna": "mitre",
+    "published_date": "2026-05-14"
+  },
+  {
     "cve_id": "CVE-2026-44966",
     "nvd_score": 9.8,
     "github_score": 8.3,
@@ -13889,9 +13921,9 @@
   },
   {
     "cve_id": "CVE-2026-45491",
-    "nvd_score": 6.2,
+    "nvd_score": 5.5,
     "github_score": 6.8,
-    "cvss_variance": 0.6,
+    "cvss_variance": 1.3,
     "assigning_cna": "microsoft",
     "published_date": "2026-06-09"
   },
@@ -14088,6 +14120,14 @@
     "published_date": "2026-05-29"
   },
   {
+    "cve_id": "CVE-2026-5038",
+    "nvd_score": 7.5,
+    "github_score": 5.3,
+    "cvss_variance": 2.2,
+    "assigning_cna": "openjs",
+    "published_date": "2026-06-15"
+  },
+  {
     "cve_id": "CVE-2026-5052",
     "nvd_score": 8.6,
     "github_score": 5.3,
@@ -14182,5 +14222,13 @@
     "cvss_variance": 1.7,
     "assigning_cna": "redhat",
     "published_date": "2026-05-20"
+  },
+  {
+    "cve_id": "CVE-2026-9595",
+    "nvd_score": 4.3,
+    "github_score": 5.3,
+    "cvss_variance": 1.0,
+    "assigning_cna": "openjs",
+    "published_date": "2026-06-15"
   }
 ]
