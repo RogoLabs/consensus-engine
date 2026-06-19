@@ -14224,6 +14224,14 @@
     "published_date": "2026-05-06"
   },
   {
+    "cve_id": "CVE-2026-9082",
+    "nvd_score": 6.5,
+    "github_score": 9.8,
+    "cvss_variance": 3.3,
+    "assigning_cna": "drupal",
+    "published_date": "2026-05-20"
+  },
+  {
     "cve_id": "CVE-2026-9087",
     "nvd_score": 8.1,
     "github_score": 6.4,
