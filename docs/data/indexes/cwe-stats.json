@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T14:01:48Z",
+  "generated_at": "2026-06-22T19:14:14Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -18,20 +18,20 @@
       "gh_higher_count": 57
     },
     {
+      "cwe_id": "CWE-918",
+      "name": "Server-Side Request Forgery (SSRF)",
+      "conflict_count": 76,
+      "avg_variance": 1.25,
+      "nvd_higher_count": 42,
+      "gh_higher_count": 34
+    },
+    {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
       "conflict_count": 76,
       "avg_variance": 1.27,
       "nvd_higher_count": 52,
       "gh_higher_count": 24
-    },
-    {
-      "cwe_id": "CWE-918",
-      "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 75,
-      "avg_variance": 1.25,
-      "nvd_higher_count": 41,
-      "gh_higher_count": 34
     },
     {
       "cwe_id": "CWE-94",
@@ -42,20 +42,20 @@
       "gh_higher_count": 26
     },
     {
+      "cwe_id": "CWE-284",
+      "name": "CWE-284",
+      "conflict_count": 54,
+      "avg_variance": 1.26,
+      "nvd_higher_count": 34,
+      "gh_higher_count": 20
+    },
+    {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
       "conflict_count": 54,
       "avg_variance": 1.71,
       "nvd_higher_count": 30,
       "gh_higher_count": 24
-    },
-    {
-      "cwe_id": "CWE-284",
-      "name": "CWE-284",
-      "conflict_count": 53,
-      "avg_variance": 1.25,
-      "nvd_higher_count": 33,
-      "gh_higher_count": 20
     },
     {
       "cwe_id": "CWE-89",
@@ -90,20 +90,20 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-20",
+      "name": "Improper Input Validation",
+      "conflict_count": 36,
+      "avg_variance": 1.61,
+      "nvd_higher_count": 24,
+      "gh_higher_count": 12
+    },
+    {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
       "conflict_count": 36,
       "avg_variance": 1.25,
       "nvd_higher_count": 26,
       "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-20",
-      "name": "Improper Input Validation",
-      "conflict_count": 35,
-      "avg_variance": 1.61,
-      "nvd_higher_count": 23,
-      "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-287",
@@ -290,6 +290,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-611",
+      "name": "XXE",
+      "conflict_count": 13,
+      "avg_variance": 1.38,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-88",
       "name": "CWE-88",
       "conflict_count": 13,
@@ -312,14 +320,6 @@
       "avg_variance": 2.3,
       "nvd_higher_count": 7,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-611",
-      "name": "XXE",
-      "conflict_count": 12,
-      "avg_variance": 1.36,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-347",

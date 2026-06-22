@@ -1832,6 +1832,14 @@
     "published_date": "2024-06-06"
   },
   {
+    "cve_id": "CVE-2024-37155",
+    "nvd_score": 8.2,
+    "github_score": 6.5,
+    "cvss_variance": 1.7,
+    "assigning_cna": "github",
+    "published_date": "2024-11-18"
+  },
+  {
     "cve_id": "CVE-2024-37182",
     "nvd_score": 6.1,
     "github_score": 4.7,
@@ -7838,6 +7846,14 @@
     "cvss_variance": 1.7,
     "assigning_cna": "github",
     "published_date": "2025-08-28"
+  },
+  {
+    "cve_id": "CVE-2025-58175",
+    "nvd_score": 8.2,
+    "github_score": 6.5,
+    "cvss_variance": 1.7,
+    "assigning_cna": "github",
+    "published_date": "2026-06-18"
   },
   {
     "cve_id": "CVE-2025-58177",
