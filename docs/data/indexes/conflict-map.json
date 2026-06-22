@@ -216,6 +216,14 @@
     "published_date": "2024-09-18"
   },
   {
+    "cve_id": "CVE-2022-25898",
+    "nvd_score": 9.8,
+    "github_score": 8.6,
+    "cvss_variance": 1.2,
+    "assigning_cna": "snyk",
+    "published_date": "2022-07-01"
+  },
+  {
     "cve_id": "CVE-2022-29946",
     "nvd_score": 6.3,
     "github_score": 6.5,
@@ -622,6 +630,14 @@
     "cvss_variance": 1.9,
     "assigning_cna": "ubuntu",
     "published_date": "2024-07-25"
+  },
+  {
+    "cve_id": "CVE-2024-21484",
+    "nvd_score": 5.9,
+    "github_score": 7.5,
+    "cvss_variance": 1.6,
+    "assigning_cna": "snyk",
+    "published_date": "2024-01-22"
   },
   {
     "cve_id": "CVE-2024-21514",
