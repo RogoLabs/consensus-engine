@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T13:05:58Z",
+  "generated_at": "2026-06-23T18:50:49Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,10 +20,10 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 76,
-      "avg_variance": 1.25,
+      "conflict_count": 77,
+      "avg_variance": 1.24,
       "nvd_higher_count": 42,
-      "gh_higher_count": 34
+      "gh_higher_count": 35
     },
     {
       "cwe_id": "CWE-863",
@@ -82,20 +82,20 @@
       "gh_higher_count": 20
     },
     {
+      "cwe_id": "CWE-20",
+      "name": "Improper Input Validation",
+      "conflict_count": 38,
+      "avg_variance": 1.57,
+      "nvd_higher_count": 24,
+      "gh_higher_count": 14
+    },
+    {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
       "conflict_count": 38,
       "avg_variance": 1.96,
       "nvd_higher_count": 34,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-20",
-      "name": "Improper Input Validation",
-      "conflict_count": 36,
-      "avg_variance": 1.61,
-      "nvd_higher_count": 24,
-      "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-502",
