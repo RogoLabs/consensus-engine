@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-22T19:14:14Z",
+  "generated_at": "2026-06-23T00:46:56Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 299,
+      "conflict_count": 300,
       "avg_variance": 1.53,
-      "nvd_higher_count": 88,
+      "nvd_higher_count": 89,
       "gh_higher_count": 211
     },
     {
@@ -218,6 +218,14 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-80",
+      "name": "CWE-80",
+      "conflict_count": 16,
+      "avg_variance": 1.59,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 13
+    },
+    {
       "cwe_id": "CWE-532",
       "name": "Log Injection / Information Exposure Through Log",
       "conflict_count": 16,
@@ -240,14 +248,6 @@
       "avg_variance": 1.38,
       "nvd_higher_count": 9,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-80",
-      "name": "CWE-80",
-      "conflict_count": 15,
-      "avg_variance": 1.63,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-290",
