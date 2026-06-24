@@ -1,9 +1,9 @@
 {
-  "total_cves": 227373,
-  "comparable_count": 9635,
-  "conflict_count": 1790,
-  "conflict_rate": 18.6,
-  "gap_count": 222101,
+  "total_cves": 227417,
+  "comparable_count": 9673,
+  "conflict_count": 1791,
+  "conflict_rate": 18.5,
+  "gap_count": 222143,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1060,
+    "nvd_higher_count": 1061,
     "gh_higher_count": 730
   },
   "conflict_by_year": {
@@ -27,7 +27,7 @@
     "2023": 6,
     "2024": 567,
     "2025": 511,
-    "2026": 689
+    "2026": 690
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -71,15 +71,15 @@
       "comparable": 2274
     },
     "2026": {
-      "nvd_higher": 426,
+      "nvd_higher": 427,
       "gh_higher": 263,
-      "comparable": 3964
+      "comparable": 4002
     }
   },
-  "severity_flip_count": 986,
+  "severity_flip_count": 987,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 76,
-    "Critical\u2192High": 124,
+    "Critical\u2192High": 125,
     "Critical\u2192Medium": 58,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 81,
@@ -97,14 +97,14 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 266,
+      "Critical": 267,
       "High": 624,
       "Medium": 857,
       "Low": 43
     },
     "gh": {
       "Critical": 191,
-      "High": 557,
+      "High": 558,
       "Medium": 858,
       "Low": 184
     }
@@ -128,7 +128,7 @@
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 269
+      "count": 270
     },
     {
       "bucket": "2.0-2.5",
@@ -182,12 +182,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 266,
+    "Critical": 267,
     "High": 624,
     "Medium": 857,
     "Low": 43
   },
-  "avg_days_to_analysis": 3159.3,
+  "avg_days_to_analysis": 3158.8,
   "p90_days_to_analysis": 7306,
-  "generated_at": "2026-06-23T18:50:48Z"
+  "generated_at": "2026-06-24T00:40:12Z"
 }

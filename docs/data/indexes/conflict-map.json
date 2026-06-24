@@ -14168,6 +14168,14 @@
     "published_date": "2026-05-29"
   },
   {
+    "cve_id": "CVE-2026-4858",
+    "nvd_score": 9.9,
+    "github_score": 8.0,
+    "cvss_variance": 1.9,
+    "assigning_cna": "mattermost",
+    "published_date": "2026-05-21"
+  },
+  {
     "cve_id": "CVE-2026-49401",
     "nvd_score": 7.3,
     "github_score": 5.2,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T18:50:49Z",
+  "generated_at": "2026-06-24T00:40:12Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,9 +12,9 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 101,
+      "conflict_count": 102,
       "avg_variance": 1.43,
-      "nvd_higher_count": 44,
+      "nvd_higher_count": 45,
       "gh_higher_count": 57
     },
     {
