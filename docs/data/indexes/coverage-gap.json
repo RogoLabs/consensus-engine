@@ -1,14 +1,14 @@
 {
-  "total": 14399,
-  "avg_github_score": 6.95,
+  "total": 14381,
+  "avg_github_score": 6.94,
   "severity_distribution": {
-    "critical": 2229,
-    "high": 5212,
-    "medium": 6393,
-    "low": 565
+    "critical": 2226,
+    "high": 5204,
+    "medium": 6387,
+    "low": 564
   },
   "nvd_status_breakdown": {
-    "No NVD Record": 14370,
+    "No NVD Record": 14352,
     "Rejected": 25,
     "Deferred": 3,
     "Analyzed": 1
@@ -676,15 +676,6 @@
       "github_score": 10.0,
       "github_cvss_version": "3.1",
       "ghsa_id": "GHSA-8v3q-9vmx-36vc",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
-    },
-    {
-      "cve_id": "CVE-2026-52813",
-      "github_score": 10.0,
-      "github_cvss_version": "3.1",
-      "ghsa_id": "GHSA-c39w-43gm-34h5",
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
@@ -1666,15 +1657,6 @@
       "github_score": 9.9,
       "github_cvss_version": "3.1",
       "ghsa_id": "GHSA-jvc5-6g7q-c843",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
-    },
-    {
-      "cve_id": "CVE-2026-52806",
-      "github_score": 9.9,
-      "github_cvss_version": "3.1",
-      "ghsa_id": "GHSA-qf6p-p7ww-cwr9",
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
@@ -4513,7 +4495,25 @@
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
+    },
+    {
+      "cve_id": "CVE-2019-10844",
+      "github_score": 9.8,
+      "github_cvss_version": "3.0",
+      "ghsa_id": "GHSA-4q2w-rw7m-xqw6",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
+    },
+    {
+      "cve_id": "CVE-2019-10910",
+      "github_score": 9.8,
+      "github_cvss_version": "3.0",
+      "ghsa_id": "GHSA-pgwj-prpq-jpc2",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
     }
   ],
-  "generated_at": "2026-06-24T18:49:40Z"
+  "generated_at": "2026-06-25T00:46:08Z"
 }
