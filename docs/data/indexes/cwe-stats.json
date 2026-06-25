@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-25T12:55:59Z",
+  "generated_at": "2026-06-25T18:51:45Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 300,
-      "avg_variance": 1.53,
+      "conflict_count": 301,
+      "avg_variance": 1.54,
       "nvd_higher_count": 89,
-      "gh_higher_count": 211
+      "gh_higher_count": 212
     },
     {
       "cwe_id": "CWE-22",
