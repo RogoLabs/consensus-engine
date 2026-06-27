@@ -13792,6 +13792,14 @@
     "published_date": "2026-05-08"
   },
   {
+    "cve_id": "CVE-2026-44311",
+    "nvd_score": 6.1,
+    "github_score": 5.4,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2026-06-22"
+  },
+  {
     "cve_id": "CVE-2026-44318",
     "nvd_score": 5.3,
     "github_score": 6.5,
@@ -14208,10 +14216,34 @@
     "published_date": "2026-06-17"
   },
   {
+    "cve_id": "CVE-2026-49356",
+    "nvd_score": 3.6,
+    "github_score": 3.2,
+    "cvss_variance": 0.4,
+    "assigning_cna": "github",
+    "published_date": "2026-06-22"
+  },
+  {
     "cve_id": "CVE-2026-49401",
     "nvd_score": 8.4,
     "github_score": 5.2,
     "cvss_variance": 3.2,
+    "assigning_cna": "github",
+    "published_date": "2026-06-23"
+  },
+  {
+    "cve_id": "CVE-2026-50019",
+    "nvd_score": 7.4,
+    "github_score": 6.1,
+    "cvss_variance": 1.3,
+    "assigning_cna": "github",
+    "published_date": "2026-06-23"
+  },
+  {
+    "cve_id": "CVE-2026-50023",
+    "nvd_score": 9.6,
+    "github_score": 8.3,
+    "cvss_variance": 1.3,
     "assigning_cna": "github",
     "published_date": "2026-06-23"
   },
@@ -14240,12 +14272,28 @@
     "published_date": "2026-04-17"
   },
   {
+    "cve_id": "CVE-2026-50574",
+    "nvd_score": 9.6,
+    "github_score": 8.3,
+    "cvss_variance": 1.3,
+    "assigning_cna": "github",
+    "published_date": "2026-06-23"
+  },
+  {
     "cve_id": "CVE-2026-53441",
     "nvd_score": 5.4,
     "github_score": 8.0,
     "cvss_variance": 2.6,
     "assigning_cna": "googlegroups",
     "published_date": "2026-06-10"
+  },
+  {
+    "cve_id": "CVE-2026-53537",
+    "nvd_score": 5.3,
+    "github_score": 3.7,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-06-22"
   },
   {
     "cve_id": "CVE-2026-54011",
@@ -14270,6 +14318,14 @@
     "cvss_variance": 3.4,
     "assigning_cna": "ubuntu",
     "published_date": "2026-04-10"
+  },
+  {
+    "cve_id": "CVE-2026-54282",
+    "nvd_score": 5.3,
+    "github_score": 3.7,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-06-22"
   },
   {
     "cve_id": "CVE-2026-54298",
