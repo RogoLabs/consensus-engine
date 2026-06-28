@@ -6,13 +6,13 @@
   "undergoing_analysis_count": 167,
   "deferred_count": 37776,
   "status_breakdown": {
-    "Modified": 111547,
+    "Modified": 111548,
     "Rejected": 3488,
-    "Analyzed": 58546,
+    "Analyzed": 58545,
     "Deferred": 37776,
     "Unknown": 15066,
     "Awaiting Analysis": 1627,
-    "Received": 597,
+    "Received": 605,
     "Undergoing Analysis": 167
   },
   "distribution_buckets": [
@@ -41,5 +41,5 @@
       "count": 104180
     }
   ],
-  "generated_at": "2026-06-28T07:27:52Z"
+  "generated_at": "2026-06-28T12:34:23Z"
 }
