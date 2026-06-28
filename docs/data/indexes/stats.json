@@ -1,7 +1,7 @@
 {
-  "total_cves": 228797,
+  "total_cves": 228799,
   "comparable_count": 9803,
-  "conflict_count": 1804,
+  "conflict_count": 1806,
   "conflict_rate": 18.4,
   "gap_count": 223505,
   "rejected_scored_count": 0,
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1072,
+    "nvd_higher_count": 1074,
     "gh_higher_count": 732
   },
   "conflict_by_year": {
@@ -27,7 +27,7 @@
     "2023": 6,
     "2024": 567,
     "2025": 511,
-    "2026": 703
+    "2026": 705
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -71,20 +71,20 @@
       "comparable": 2274
     },
     "2026": {
-      "nvd_higher": 438,
+      "nvd_higher": 440,
       "gh_higher": 265,
       "comparable": 4128
     }
   },
-  "severity_flip_count": 998,
+  "severity_flip_count": 999,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 76,
     "Critical\u2192High": 128,
     "Critical\u2192Medium": 59,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 81,
-    "High\u2192High": 218,
-    "High\u2192Medium": 304,
+    "High\u2192High": 219,
+    "High\u2192Medium": 305,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 33,
     "Medium\u2192High": 215,
@@ -98,14 +98,14 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 271,
-      "High": 627,
+      "High": 629,
       "Medium": 861,
       "Low": 45
     },
     "gh": {
       "Critical": 191,
-      "High": 562,
-      "Medium": 864,
+      "High": 563,
+      "Medium": 865,
       "Low": 187
     }
   },
@@ -123,12 +123,12 @@
     {
       "bucket": "1.0-1.5",
       "min": 1.0,
-      "count": 421
+      "count": 422
     },
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 274
+      "count": 275
     },
     {
       "bucket": "2.0-2.5",
@@ -183,11 +183,11 @@
   ],
   "severity_distribution": {
     "Critical": 271,
-    "High": 627,
+    "High": 629,
     "Medium": 861,
     "Low": 45
   },
-  "avg_days_to_analysis": 3145.4,
+  "avg_days_to_analysis": 3144.2,
   "p90_days_to_analysis": 7301,
-  "generated_at": "2026-06-27T18:31:48Z"
+  "generated_at": "2026-06-28T00:45:38Z"
 }

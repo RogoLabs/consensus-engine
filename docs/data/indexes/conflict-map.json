@@ -13752,6 +13752,14 @@
     "published_date": "2026-05-12"
   },
   {
+    "cve_id": "CVE-2026-44018",
+    "nvd_score": 7.1,
+    "github_score": 5.5,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-06-26"
+  },
+  {
     "cve_id": "CVE-2026-44214",
     "nvd_score": 5.3,
     "github_score": 5.8,
@@ -14390,6 +14398,14 @@
     "cvss_variance": 2.2,
     "assigning_cna": "mozilla",
     "published_date": "2026-04-20"
+  },
+  {
+    "cve_id": "CVE-2026-6734",
+    "nvd_score": 8.8,
+    "github_score": 7.5,
+    "cvss_variance": 1.3,
+    "assigning_cna": "openjs",
+    "published_date": "2026-06-17"
   },
   {
     "cve_id": "CVE-2026-7572",

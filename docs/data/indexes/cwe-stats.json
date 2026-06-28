@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T18:31:49Z",
+  "generated_at": "2026-06-28T00:45:39Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -282,20 +282,20 @@
       "gh_higher_count": 9
     },
     {
+      "cwe_id": "CWE-611",
+      "name": "XXE",
+      "conflict_count": 14,
+      "avg_variance": 1.4,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-1333",
       "name": "Inefficient Regular Expression",
       "conflict_count": 14,
       "avg_variance": 2.09,
       "nvd_higher_count": 11,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-611",
-      "name": "XXE",
-      "conflict_count": 13,
-      "avg_variance": 1.38,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-88",
@@ -490,6 +490,14 @@
       "gh_higher_count": 0
     },
     {
+      "cwe_id": "CWE-346",
+      "name": "CWE-346",
+      "conflict_count": 8,
+      "avg_variance": 1.19,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-476",
       "name": "NULL Pointer Dereference",
       "conflict_count": 8,
@@ -502,14 +510,6 @@
       "name": "CWE-749",
       "conflict_count": 7,
       "avg_variance": 1.16,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-346",
-      "name": "CWE-346",
-      "conflict_count": 7,
-      "avg_variance": 1.17,
       "nvd_higher_count": 5,
       "gh_higher_count": 2
     },
