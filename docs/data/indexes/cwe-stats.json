@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T13:34:20Z",
+  "generated_at": "2026-06-29T18:49:34Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -18,6 +18,14 @@
       "gh_higher_count": 57
     },
     {
+      "cwe_id": "CWE-918",
+      "name": "Server-Side Request Forgery (SSRF)",
+      "conflict_count": 78,
+      "avg_variance": 1.24,
+      "nvd_higher_count": 42,
+      "gh_higher_count": 36
+    },
+    {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
       "conflict_count": 78,
@@ -26,19 +34,11 @@
       "gh_higher_count": 25
     },
     {
-      "cwe_id": "CWE-918",
-      "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 77,
-      "avg_variance": 1.24,
-      "nvd_higher_count": 42,
-      "gh_higher_count": 35
-    },
-    {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 59,
-      "avg_variance": 1.09,
-      "nvd_higher_count": 33,
+      "conflict_count": 60,
+      "avg_variance": 1.07,
+      "nvd_higher_count": 34,
       "gh_higher_count": 26
     },
     {
@@ -696,6 +696,14 @@
       "avg_variance": 2.04,
       "nvd_higher_count": 1,
       "gh_higher_count": 4
+    },
+    {
+      "cwe_id": "CWE-913",
+      "name": "CWE-913",
+      "conflict_count": 5,
+      "avg_variance": 0.56,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-1004",
