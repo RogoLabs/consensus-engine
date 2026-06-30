@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T18:49:34Z",
+  "generated_at": "2026-06-30T00:46:52Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -162,20 +162,20 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-693",
+      "name": "CWE-693",
+      "conflict_count": 22,
+      "avg_variance": 0.92,
+      "nvd_higher_count": 16,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-285",
       "name": "CWE-285",
       "conflict_count": 21,
       "avg_variance": 1.63,
       "nvd_higher_count": 11,
       "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-693",
-      "name": "CWE-693",
-      "conflict_count": 21,
-      "avg_variance": 0.9,
-      "nvd_higher_count": 15,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-74",
@@ -290,20 +290,20 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-88",
+      "name": "CWE-88",
+      "conflict_count": 14,
+      "avg_variance": 0.86,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 7
+    },
+    {
       "cwe_id": "CWE-1333",
       "name": "Inefficient Regular Expression",
       "conflict_count": 14,
       "avg_variance": 2.09,
       "nvd_higher_count": 11,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-88",
-      "name": "CWE-88",
-      "conflict_count": 13,
-      "avg_variance": 0.85,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-522",
@@ -354,20 +354,20 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-345",
+      "name": "CWE-345",
+      "conflict_count": 11,
+      "avg_variance": 0.95,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-674",
       "name": "CWE-674",
       "conflict_count": 10,
       "avg_variance": 2.13,
       "nvd_higher_count": 7,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-345",
-      "name": "CWE-345",
-      "conflict_count": 10,
-      "avg_variance": 0.92,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-276",
@@ -394,6 +394,14 @@
       "gh_higher_count": 0
     },
     {
+      "cwe_id": "CWE-829",
+      "name": "CWE-829",
+      "conflict_count": 9,
+      "avg_variance": 1.0,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-312",
       "name": "CWE-312",
       "conflict_count": 9,
@@ -418,6 +426,14 @@
       "gh_higher_count": 1
     },
     {
+      "cwe_id": "CWE-346",
+      "name": "CWE-346",
+      "conflict_count": 9,
+      "avg_variance": 1.2,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-1336",
       "name": "CWE-1336",
       "conflict_count": 9,
@@ -438,14 +454,6 @@
       "name": "Incorrect Permission Assignment",
       "conflict_count": 8,
       "avg_variance": 1.1,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-829",
-      "name": "CWE-829",
-      "conflict_count": 8,
-      "avg_variance": 0.96,
       "nvd_higher_count": 4,
       "gh_higher_count": 4
     },
@@ -488,14 +496,6 @@
       "avg_variance": 2.3,
       "nvd_higher_count": 8,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-346",
-      "name": "CWE-346",
-      "conflict_count": 8,
-      "avg_variance": 1.19,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-476",

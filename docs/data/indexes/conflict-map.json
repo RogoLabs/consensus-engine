@@ -14240,12 +14240,28 @@
     "published_date": "2026-06-23"
   },
   {
+    "cve_id": "CVE-2026-50014",
+    "nvd_score": 7.3,
+    "github_score": 6.4,
+    "cvss_variance": 0.9,
+    "assigning_cna": "github",
+    "published_date": "2026-06-25"
+  },
+  {
     "cve_id": "CVE-2026-50019",
     "nvd_score": 7.4,
     "github_score": 6.1,
     "cvss_variance": 1.3,
     "assigning_cna": "github",
     "published_date": "2026-06-23"
+  },
+  {
+    "cve_id": "CVE-2026-50021",
+    "nvd_score": 8.1,
+    "github_score": 6.8,
+    "cvss_variance": 1.3,
+    "assigning_cna": "github",
+    "published_date": "2026-06-25"
   },
   {
     "cve_id": "CVE-2026-50023",
@@ -14278,6 +14294,14 @@
     "cvss_variance": 3.3,
     "assigning_cna": "hashicorp",
     "published_date": "2026-04-17"
+  },
+  {
+    "cve_id": "CVE-2026-50573",
+    "nvd_score": 8.1,
+    "github_score": 6.8,
+    "cvss_variance": 1.3,
+    "assigning_cna": "github",
+    "published_date": "2026-06-25"
   },
   {
     "cve_id": "CVE-2026-50574",
@@ -14366,6 +14390,14 @@
     "cvss_variance": 0.0,
     "assigning_cna": "github",
     "published_date": "2026-06-22"
+  },
+  {
+    "cve_id": "CVE-2026-55487",
+    "nvd_score": 8.8,
+    "github_score": 7.5,
+    "cvss_variance": 1.3,
+    "assigning_cna": "github",
+    "published_date": "2026-06-25"
   },
   {
     "cve_id": "CVE-2026-6333",
