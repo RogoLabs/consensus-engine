@@ -1,9 +1,9 @@
 {
-  "total_cves": 229830,
-  "comparable_count": 9855,
-  "conflict_count": 1818,
+  "total_cves": 230009,
+  "comparable_count": 9862,
+  "conflict_count": 1819,
   "conflict_rate": 18.4,
-  "gap_count": 224514,
+  "gap_count": 224692,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1082,
+    "nvd_higher_count": 1083,
     "gh_higher_count": 736
   },
   "conflict_by_year": {
@@ -27,7 +27,7 @@
     "2023": 6,
     "2024": 567,
     "2025": 511,
-    "2026": 717
+    "2026": 718
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -68,12 +68,12 @@
     "2025": {
       "nvd_higher": 327,
       "gh_higher": 184,
-      "comparable": 2277
+      "comparable": 2281
     },
     "2026": {
-      "nvd_higher": 448,
+      "nvd_higher": 449,
       "gh_higher": 269,
-      "comparable": 4176
+      "comparable": 4179
     }
   },
   "severity_flip_count": 1005,
@@ -83,7 +83,7 @@
     "Critical\u2192Medium": 59,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 81,
-    "High\u2192High": 223,
+    "High\u2192High": 224,
     "High\u2192Medium": 309,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 33,
@@ -98,13 +98,13 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 274,
-      "High": 637,
+      "High": 638,
       "Medium": 862,
       "Low": 45
     },
     "gh": {
       "Critical": 193,
-      "High": 569,
+      "High": 570,
       "Medium": 869,
       "Low": 187
     }
@@ -113,7 +113,7 @@
     {
       "bucket": "0.0-0.5",
       "min": 0.0,
-      "count": 242
+      "count": 243
     },
     {
       "bucket": "0.5-1.0",
@@ -183,11 +183,11 @@
   ],
   "severity_distribution": {
     "Critical": 274,
-    "High": 637,
+    "High": 638,
     "Medium": 862,
     "Low": 45
   },
-  "avg_days_to_analysis": 3139.0,
+  "avg_days_to_analysis": 3135.5,
   "p90_days_to_analysis": 7300,
-  "generated_at": "2026-07-01T13:05:25Z"
+  "generated_at": "2026-07-01T18:46:26Z"
 }
