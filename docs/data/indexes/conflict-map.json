@@ -14550,5 +14550,21 @@
     "cvss_variance": 1.0,
     "assigning_cna": "openjs",
     "published_date": "2026-06-15"
+  },
+  {
+    "cve_id": "CVE-2026-9704",
+    "nvd_score": 8.8,
+    "github_score": 6.8,
+    "cvss_variance": 2.0,
+    "assigning_cna": "redhat",
+    "published_date": "2026-05-27"
+  },
+  {
+    "cve_id": "CVE-2026-9793",
+    "nvd_score": 7.5,
+    "github_score": 5.9,
+    "cvss_variance": 1.6,
+    "assigning_cna": "redhat",
+    "published_date": "2026-05-28"
   }
 ]

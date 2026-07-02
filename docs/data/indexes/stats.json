@@ -1,9 +1,9 @@
 {
-  "total_cves": 230009,
-  "comparable_count": 9862,
-  "conflict_count": 1819,
+  "total_cves": 230145,
+  "comparable_count": 9898,
+  "conflict_count": 1821,
   "conflict_rate": 18.4,
-  "gap_count": 224692,
+  "gap_count": 224825,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1083,
+    "nvd_higher_count": 1085,
     "gh_higher_count": 736
   },
   "conflict_by_year": {
@@ -27,7 +27,7 @@
     "2023": 6,
     "2024": 567,
     "2025": 511,
-    "2026": 718
+    "2026": 720
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -71,12 +71,12 @@
       "comparable": 2281
     },
     "2026": {
-      "nvd_higher": 449,
+      "nvd_higher": 451,
       "gh_higher": 269,
-      "comparable": 4179
+      "comparable": 4215
     }
   },
-  "severity_flip_count": 1005,
+  "severity_flip_count": 1007,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 78,
     "Critical\u2192High": 129,
@@ -84,7 +84,7 @@
     "Critical\u2192Low": 8,
     "High\u2192Critical": 81,
     "High\u2192High": 224,
-    "High\u2192Medium": 309,
+    "High\u2192Medium": 311,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 33,
     "Medium\u2192High": 216,
@@ -98,14 +98,14 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 274,
-      "High": 638,
+      "High": 640,
       "Medium": 862,
       "Low": 45
     },
     "gh": {
       "Critical": 193,
       "High": 570,
-      "Medium": 869,
+      "Medium": 871,
       "Low": 187
     }
   },
@@ -128,12 +128,12 @@
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 275
+      "count": 276
     },
     {
       "bucket": "2.0-2.5",
       "min": 2.0,
-      "count": 234
+      "count": 235
     },
     {
       "bucket": "2.5-3.0",
@@ -183,11 +183,11 @@
   ],
   "severity_distribution": {
     "Critical": 274,
-    "High": 638,
+    "High": 640,
     "Medium": 862,
     "Low": 45
   },
-  "avg_days_to_analysis": 3135.5,
+  "avg_days_to_analysis": 3133.3,
   "p90_days_to_analysis": 7300,
-  "generated_at": "2026-07-01T18:46:26Z"
+  "generated_at": "2026-07-02T00:45:51Z"
 }
