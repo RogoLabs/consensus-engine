@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T13:52:51Z",
+  "generated_at": "2026-07-02T19:23:38Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -18,20 +18,20 @@
       "gh_higher_count": 57
     },
     {
+      "cwe_id": "CWE-863",
+      "name": "Incorrect Authorization",
+      "conflict_count": 82,
+      "avg_variance": 1.38,
+      "nvd_higher_count": 57,
+      "gh_higher_count": 25
+    },
+    {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
       "conflict_count": 79,
       "avg_variance": 1.24,
       "nvd_higher_count": 42,
       "gh_higher_count": 37
-    },
-    {
-      "cwe_id": "CWE-863",
-      "name": "Incorrect Authorization",
-      "conflict_count": 78,
-      "avg_variance": 1.32,
-      "nvd_higher_count": 53,
-      "gh_higher_count": 25
     },
     {
       "cwe_id": "CWE-94",
@@ -148,17 +148,17 @@
     {
       "cwe_id": "CWE-434",
       "name": "Unrestricted File Upload",
-      "conflict_count": 23,
-      "avg_variance": 1.25,
-      "nvd_higher_count": 11,
+      "conflict_count": 24,
+      "avg_variance": 1.38,
+      "nvd_higher_count": 12,
       "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-639",
       "name": "Authorization Bypass Through User-Controlled Key",
-      "conflict_count": 22,
-      "avg_variance": 1.5,
-      "nvd_higher_count": 16,
+      "conflict_count": 23,
+      "avg_variance": 1.56,
+      "nvd_higher_count": 17,
       "gh_higher_count": 6
     },
     {
@@ -442,6 +442,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-266",
+      "name": "CWE-266",
+      "conflict_count": 9,
+      "avg_variance": 1.19,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-256",
       "name": "CWE-256",
       "conflict_count": 9,
@@ -496,14 +504,6 @@
       "avg_variance": 2.3,
       "nvd_higher_count": 8,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-266",
-      "name": "CWE-266",
-      "conflict_count": 8,
-      "avg_variance": 0.99,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-476",
