@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T13:13:20Z",
+  "generated_at": "2026-07-04T19:06:37Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -36,10 +36,10 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 61,
-      "avg_variance": 1.08,
+      "conflict_count": 62,
+      "avg_variance": 1.12,
       "nvd_higher_count": 34,
-      "gh_higher_count": 27
+      "gh_higher_count": 28
     },
     {
       "cwe_id": "CWE-200",
@@ -204,9 +204,9 @@
     {
       "cwe_id": "CWE-77",
       "name": "CWE-77",
-      "conflict_count": 18,
-      "avg_variance": 1.48,
-      "nvd_higher_count": 11,
+      "conflict_count": 19,
+      "avg_variance": 1.53,
+      "nvd_higher_count": 12,
       "gh_higher_count": 7
     },
     {

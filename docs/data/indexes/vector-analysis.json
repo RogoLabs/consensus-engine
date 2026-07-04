@@ -1,20 +1,20 @@
 {
-  "comparable_conflicts": 1826,
+  "comparable_conflicts": 1828,
   "vector_only_conflicts": 69,
-  "generated_at": "2026-07-04T13:13:19Z",
+  "generated_at": "2026-07-04T19:06:37Z",
   "metrics": [
     {
       "key": "A",
       "name": "Availability",
-      "total": 1826,
-      "disagree_count": 588,
-      "disagree_rate": 32.2,
-      "nvd_higher_count": 356,
-      "gh_higher_count": 232,
+      "total": 1828,
+      "disagree_count": 590,
+      "disagree_rate": 32.3,
+      "nvd_higher_count": 357,
+      "gh_higher_count": 233,
       "top_transitions": [
         {
           "transition": "H\u2192L",
-          "count": 203
+          "count": 204
         },
         {
           "transition": "N\u2192L",
@@ -26,7 +26,7 @@
         },
         {
           "transition": "N\u2192H",
-          "count": 82
+          "count": 83
         },
         {
           "transition": "L\u2192N",
@@ -37,19 +37,19 @@
     {
       "key": "C",
       "name": "Confidentiality",
-      "total": 1826,
-      "disagree_count": 546,
-      "disagree_rate": 29.9,
-      "nvd_higher_count": 278,
-      "gh_higher_count": 268,
+      "total": 1828,
+      "disagree_count": 548,
+      "disagree_rate": 30.0,
+      "nvd_higher_count": 279,
+      "gh_higher_count": 269,
       "top_transitions": [
         {
           "transition": "H\u2192L",
-          "count": 181
+          "count": 182
         },
         {
           "transition": "L\u2192H",
-          "count": 164
+          "count": 165
         },
         {
           "transition": "N\u2192L",
@@ -68,7 +68,7 @@
     {
       "key": "AC",
       "name": "Attack Complexity",
-      "total": 1826,
+      "total": 1828,
       "disagree_count": 544,
       "disagree_rate": 29.8,
       "nvd_higher_count": 503,
@@ -87,10 +87,10 @@
     {
       "key": "S",
       "name": "Scope",
-      "total": 1826,
-      "disagree_count": 521,
-      "disagree_rate": 28.5,
-      "nvd_higher_count": 201,
+      "total": 1828,
+      "disagree_count": 522,
+      "disagree_rate": 28.6,
+      "nvd_higher_count": 202,
       "gh_higher_count": 320,
       "top_transitions": [
         {
@@ -99,26 +99,26 @@
         },
         {
           "transition": "C\u2192U",
-          "count": 201
+          "count": 202
         }
       ]
     },
     {
       "key": "I",
       "name": "Integrity",
-      "total": 1826,
-      "disagree_count": 511,
-      "disagree_rate": 28.0,
-      "nvd_higher_count": 286,
-      "gh_higher_count": 225,
+      "total": 1828,
+      "disagree_count": 513,
+      "disagree_rate": 28.1,
+      "nvd_higher_count": 287,
+      "gh_higher_count": 226,
       "top_transitions": [
         {
           "transition": "H\u2192L",
-          "count": 151
+          "count": 152
         },
         {
           "transition": "L\u2192H",
-          "count": 132
+          "count": 133
         },
         {
           "transition": "L\u2192N",
@@ -137,11 +137,11 @@
     {
       "key": "PR",
       "name": "Privileges Required",
-      "total": 1826,
-      "disagree_count": 459,
-      "disagree_rate": 25.1,
+      "total": 1828,
+      "disagree_count": 460,
+      "disagree_rate": 25.2,
       "nvd_higher_count": 310,
-      "gh_higher_count": 149,
+      "gh_higher_count": 150,
       "top_transitions": [
         {
           "transition": "N\u2192L",
@@ -149,7 +149,7 @@
         },
         {
           "transition": "L\u2192N",
-          "count": 115
+          "count": 116
         },
         {
           "transition": "L\u2192H",
@@ -168,7 +168,7 @@
     {
       "key": "UI",
       "name": "User Interaction",
-      "total": 1826,
+      "total": 1828,
       "disagree_count": 259,
       "disagree_rate": 14.2,
       "nvd_higher_count": 136,
@@ -187,9 +187,9 @@
     {
       "key": "AV",
       "name": "Attack Vector",
-      "total": 1826,
+      "total": 1828,
       "disagree_count": 127,
-      "disagree_rate": 7.0,
+      "disagree_rate": 6.9,
       "nvd_higher_count": 103,
       "gh_higher_count": 24,
       "top_transitions": [
