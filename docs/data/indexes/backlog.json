@@ -10,9 +10,9 @@
     "Rejected": 3501,
     "Analyzed": 58720,
     "Deferred": 38415,
-    "Unknown": 15148,
+    "Unknown": 15139,
     "Awaiting Analysis": 1744,
-    "Received": 493,
+    "Received": 589,
     "Undergoing Analysis": 186
   },
   "distribution_buckets": [
@@ -41,5 +41,5 @@
       "count": 104192
     }
   ],
-  "generated_at": "2026-07-03T19:13:41Z"
+  "generated_at": "2026-07-04T02:17:59Z"
 }
