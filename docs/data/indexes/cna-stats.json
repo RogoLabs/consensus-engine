@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T08:34:16Z",
+  "generated_at": "2026-07-04T13:13:19Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -321,17 +321,6 @@
       "top_cve": "CVE-2025-47735"
     },
     {
-      "name": "liferay",
-      "total": 152,
-      "comparable": 16,
-      "conflicts": 2,
-      "conflict_rate": 12.5,
-      "avg_drift": 1.85,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 2,
-      "top_cve": "CVE-2024-8980"
-    },
-    {
       "name": "jfrog",
       "total": 53,
       "comparable": 32,
@@ -341,6 +330,17 @@
       "nvd_higher_count": 3,
       "gh_higher_count": 1,
       "top_cve": "CVE-2024-34391"
+    },
+    {
+      "name": "liferay",
+      "total": 152,
+      "comparable": 16,
+      "conflicts": 2,
+      "conflict_rate": 12.5,
+      "avg_drift": 1.85,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 2,
+      "top_cve": "CVE-2024-8980"
     },
     {
       "name": "apache",
@@ -398,17 +398,6 @@
       "top_cve": "CVE-2025-27591"
     },
     {
-      "name": "adobe",
-      "total": 4033,
-      "comparable": 96,
-      "conflicts": 5,
-      "conflict_rate": 5.2,
-      "avg_drift": 1.74,
-      "nvd_higher_count": 2,
-      "gh_higher_count": 3,
-      "top_cve": "CVE-2024-34107"
-    },
-    {
       "name": "redhat",
       "total": 7768,
       "comparable": 677,
@@ -418,6 +407,17 @@
       "nvd_higher_count": 20,
       "gh_higher_count": 15,
       "top_cve": "CVE-2024-3056"
+    },
+    {
+      "name": "adobe",
+      "total": 4033,
+      "comparable": 96,
+      "conflicts": 5,
+      "conflict_rate": 5.2,
+      "avg_drift": 1.74,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 3,
+      "top_cve": "CVE-2024-34107"
     },
     {
       "name": "microsoft",
@@ -487,7 +487,7 @@
     },
     {
       "name": "vuldb",
-      "total": 10856,
+      "total": 10862,
       "comparable": 277,
       "conflicts": 1,
       "conflict_rate": 0.4,
@@ -508,8 +508,52 @@
       "top_cve": "CVE-2024-9440"
     },
     {
-      "name": "Checkmarx",
-      "total": 14,
+      "name": "AMZN",
+      "total": 111,
+      "comparable": 34,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "debian",
+      "total": 549,
+      "comparable": 28,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "TuranSec",
+      "total": 33,
+      "comparable": 6,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "VulDB",
+      "total": 72,
+      "comparable": 13,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "oracle",
+      "total": 5204,
       "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -519,20 +563,9 @@
       "top_cve": null
     },
     {
-      "name": "trendmicro",
-      "total": 2002,
-      "comparable": 14,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "AMZN",
-      "total": 111,
-      "comparable": 34,
+      "name": "Checkmarx",
+      "total": 14,
+      "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -552,8 +585,19 @@
       "top_cve": null
     },
     {
-      "name": "blacklanternsecurity",
-      "total": 15,
+      "name": "TYPO3",
+      "total": 44,
+      "comparable": 5,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "EEF",
+      "total": 115,
       "comparable": 8,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -574,20 +618,9 @@
       "top_cve": null
     },
     {
-      "name": "oracle",
-      "total": 5204,
-      "comparable": 5,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "TYPO3",
-      "total": 44,
-      "comparable": 5,
+      "name": "harborist",
+      "total": 11,
+      "comparable": 7,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -607,8 +640,8 @@
       "top_cve": null
     },
     {
-      "name": "EEF",
-      "total": 115,
+      "name": "Gitea",
+      "total": 50,
       "comparable": 8,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -618,9 +651,9 @@
       "top_cve": null
     },
     {
-      "name": "TuranSec",
-      "total": 33,
-      "comparable": 6,
+      "name": "trendmicro",
+      "total": 2002,
+      "comparable": 14,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -629,41 +662,8 @@
       "top_cve": null
     },
     {
-      "name": "harborist",
-      "total": 11,
-      "comparable": 7,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "VulDB",
-      "total": 72,
-      "comparable": 13,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "debian",
-      "total": 549,
-      "comparable": 28,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "Gitea",
-      "total": 50,
+      "name": "blacklanternsecurity",
+      "total": 15,
       "comparable": 8,
       "conflicts": 0,
       "conflict_rate": 0.0,
