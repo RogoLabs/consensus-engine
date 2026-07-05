@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-07-04T19:06:37Z",
+  "generated_at": "2026-07-05T02:32:12Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 302,
+      "conflict_count": 303,
       "avg_variance": 1.53,
       "nvd_higher_count": 90,
-      "gh_higher_count": 212
+      "gh_higher_count": 213
     },
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 105,
-      "avg_variance": 1.45,
-      "nvd_higher_count": 48,
+      "conflict_count": 107,
+      "avg_variance": 1.44,
+      "nvd_higher_count": 50,
       "gh_higher_count": 57
     },
     {
@@ -36,9 +36,9 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 62,
-      "avg_variance": 1.12,
-      "nvd_higher_count": 34,
+      "conflict_count": 63,
+      "avg_variance": 1.13,
+      "nvd_higher_count": 35,
       "gh_higher_count": 28
     },
     {
@@ -60,10 +60,10 @@
     {
       "cwe_id": "CWE-89",
       "name": "SQL Injection",
-      "conflict_count": 51,
-      "avg_variance": 1.86,
+      "conflict_count": 52,
+      "avg_variance": 1.88,
       "nvd_higher_count": 26,
-      "gh_higher_count": 25
+      "gh_higher_count": 26
     },
     {
       "cwe_id": "CWE-770",
@@ -522,6 +522,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-203",
+      "name": "CWE-203",
+      "conflict_count": 7,
+      "avg_variance": 1.46,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-362",
       "name": "Race Condition",
       "conflict_count": 7,
@@ -560,14 +568,6 @@
       "avg_variance": 1.44,
       "nvd_higher_count": 5,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-203",
-      "name": "CWE-203",
-      "conflict_count": 6,
-      "avg_variance": 1.53,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-209",
