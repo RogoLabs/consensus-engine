@@ -1,28 +1,28 @@
 {
-  "total_with_analysis_date": 172110,
-  "avg_days_to_analysis": 3117.5,
+  "total_with_analysis_date": 172176,
+  "avg_days_to_analysis": 3116.3,
   "p90_days_to_analysis": 7294,
-  "awaiting_analysis_count": 1734,
-  "undergoing_analysis_count": 197,
+  "awaiting_analysis_count": 1702,
+  "undergoing_analysis_count": 163,
   "deferred_count": 38418,
   "status_breakdown": {
-    "Modified": 113919,
+    "Modified": 113912,
     "Rejected": 3501,
-    "Analyzed": 58161,
+    "Analyzed": 58234,
     "Deferred": 38418,
-    "Unknown": 15001,
-    "Awaiting Analysis": 1734,
-    "Received": 813,
-    "Undergoing Analysis": 197
+    "Unknown": 14999,
+    "Awaiting Analysis": 1702,
+    "Received": 830,
+    "Undergoing Analysis": 163
   },
   "distribution_buckets": [
     {
       "range": "0\u20137 days",
-      "count": 24407
+      "count": 24439
     },
     {
       "range": "8\u201330 days",
-      "count": 11861
+      "count": 11895
     },
     {
       "range": "31\u201390 days",
@@ -41,5 +41,5 @@
       "count": 105424
     }
   ],
-  "generated_at": "2026-07-06T10:09:17Z"
+  "generated_at": "2026-07-06T15:24:34Z"
 }
