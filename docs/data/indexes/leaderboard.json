@@ -5250,7 +5250,7 @@
     "assigning_cna": "googlegroups",
     "nvd_score": 5.4,
     "nvd_cvss_version": "3.1",
-    "nvd_status": "Analyzed",
+    "nvd_status": "Modified",
     "github_score": 8.0,
     "github_cvss_version": "3.1",
     "published_date": "2026-06-10"
