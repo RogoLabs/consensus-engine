@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-07T14:21:06Z",
+  "generated_at": "2026-07-07T19:52:53Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 303,
+      "conflict_count": 306,
       "avg_variance": 1.53,
       "nvd_higher_count": 90,
-      "gh_higher_count": 213
+      "gh_higher_count": 216
     },
     {
       "cwe_id": "CWE-22",
@@ -178,20 +178,20 @@
       "gh_higher_count": 10
     },
     {
+      "cwe_id": "CWE-1321",
+      "name": "Prototype Pollution",
+      "conflict_count": 21,
+      "avg_variance": 1.98,
+      "nvd_higher_count": 17,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-74",
       "name": "CWE-74",
       "conflict_count": 20,
       "avg_variance": 1.39,
       "nvd_higher_count": 14,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-1321",
-      "name": "Prototype Pollution",
-      "conflict_count": 20,
-      "avg_variance": 1.86,
-      "nvd_higher_count": 16,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-306",
