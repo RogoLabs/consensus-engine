@@ -11496,14 +11496,6 @@
     "published_date": "2026-03-13"
   },
   {
-    "cve_id": "CVE-2026-3260",
-    "nvd_score": 7.5,
-    "github_score": 5.9,
-    "cvss_variance": 1.6,
-    "assigning_cna": "redhat",
-    "published_date": "2026-03-24"
-  },
-  {
     "cve_id": "CVE-2026-32611",
     "nvd_score": 9.1,
     "github_score": 7.0,

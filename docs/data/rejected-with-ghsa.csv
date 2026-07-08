@@ -20,6 +20,7 @@ CVE-2026-34508,GHSA-8288-jpqp-95fx,https://github.com/advisories/GHSA-8288-jpqp-
 CVE-2024-6484,GHSA-9mvj-f7w8-pvh2,https://github.com/advisories/GHSA-9mvj-f7w8-pvh2,6.4,3.1,Rejected,HeroDevs
 CVE-2024-6531,GHSA-vc8w-jr9v-vj7f,https://github.com/advisories/GHSA-vc8w-jr9v-vj7f,6.4,3.1,Rejected,HeroDevs
 CVE-2026-33817,GHSA-6jwv-w5xf-7j27,https://github.com/advisories/GHSA-6jwv-w5xf-7j27,6.2,3.1,Rejected,golang
+CVE-2026-3260,GHSA-3x3v-w654-m28m,https://github.com/advisories/GHSA-3x3v-w654-m28m,5.9,3.1,Rejected,redhat
 CVE-2025-2901,GHSA-f7jh-m6wp-jm7f,https://github.com/advisories/GHSA-f7jh-m6wp-jm7f,4.6,3.1,Rejected,redhat
 CVE-2024-4460,GHSA-7gjr-hcc3-xfr4,https://github.com/advisories/GHSA-7gjr-hcc3-xfr4,4.3,3.0,Rejected,huntr
 CVE-2026-25984,GHSA-273h-m46v-96q4,https://github.com/advisories/GHSA-273h-m46v-96q4,3.7,3.1,Rejected,github
