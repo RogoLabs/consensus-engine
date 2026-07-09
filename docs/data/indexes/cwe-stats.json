@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T09:42:04Z",
+  "generated_at": "2026-07-09T14:47:24Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -68,9 +68,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 49,
-      "avg_variance": 1.8,
-      "nvd_higher_count": 41,
+      "conflict_count": 50,
+      "avg_variance": 1.78,
+      "nvd_higher_count": 42,
       "gh_higher_count": 8
     },
     {
@@ -362,6 +362,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-674",
+      "name": "CWE-674",
+      "conflict_count": 11,
+      "avg_variance": 2.01,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-829",
       "name": "CWE-829",
       "conflict_count": 11,
@@ -384,14 +392,6 @@
       "avg_variance": 1.39,
       "nvd_higher_count": 7,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-674",
-      "name": "CWE-674",
-      "conflict_count": 10,
-      "avg_variance": 2.13,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-276",
