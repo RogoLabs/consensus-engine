@@ -1,9 +1,9 @@
 {
-  "total_cves": 232640,
-  "comparable_count": 10189,
-  "conflict_count": 1845,
+  "total_cves": 232741,
+  "comparable_count": 10224,
+  "conflict_count": 1846,
   "conflict_rate": 18.1,
-  "gap_count": 227286,
+  "gap_count": 227384,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1101,
+    "nvd_higher_count": 1102,
     "gh_higher_count": 744
   },
   "conflict_by_year": {
@@ -27,7 +27,7 @@
     "2023": 8,
     "2024": 572,
     "2025": 511,
-    "2026": 735
+    "2026": 736
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -81,15 +81,15 @@
       "comparable": 2281
     },
     "2026": {
-      "nvd_higher": 462,
+      "nvd_higher": 463,
       "gh_higher": 273,
-      "comparable": 4367
+      "comparable": 4402
     }
   },
-  "severity_flip_count": 1019,
+  "severity_flip_count": 1020,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 79,
-    "Critical\u2192High": 130,
+    "Critical\u2192High": 131,
     "Critical\u2192Medium": 60,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 81,
@@ -107,14 +107,14 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 277,
+      "Critical": 278,
       "High": 647,
       "Medium": 875,
       "Low": 46
     },
     "gh": {
       "Critical": 195,
-      "High": 576,
+      "High": 577,
       "Medium": 887,
       "Low": 187
     }
@@ -138,7 +138,7 @@
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 279
+      "count": 280
     },
     {
       "bucket": "2.0-2.5",
@@ -192,12 +192,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 277,
+    "Critical": 278,
     "High": 647,
     "Medium": 875,
     "Low": 46
   },
-  "avg_days_to_analysis": 3101.4,
+  "avg_days_to_analysis": 3100.4,
   "p90_days_to_analysis": 7288,
-  "generated_at": "2026-07-09T19:37:00Z"
+  "generated_at": "2026-07-10T02:19:42Z"
 }
