@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T19:28:11Z",
+  "generated_at": "2026-07-11T02:05:24Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -100,9 +100,9 @@
     {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
-      "conflict_count": 36,
-      "avg_variance": 1.25,
-      "nvd_higher_count": 26,
+      "conflict_count": 37,
+      "avg_variance": 1.23,
+      "nvd_higher_count": 27,
       "gh_higher_count": 10
     },
     {
@@ -122,20 +122,20 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-862",
+      "name": "Missing Authorization",
+      "conflict_count": 29,
+      "avg_variance": 1.2,
+      "nvd_higher_count": 15,
+      "gh_higher_count": 14
+    },
+    {
       "cwe_id": "CWE-352",
       "name": "Cross-Site Request Forgery",
       "conflict_count": 29,
       "avg_variance": 1.68,
       "nvd_higher_count": 19,
       "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-862",
-      "name": "Missing Authorization",
-      "conflict_count": 28,
-      "avg_variance": 1.21,
-      "nvd_higher_count": 15,
-      "gh_higher_count": 13
     },
     {
       "cwe_id": "CWE-269",
