@@ -1,7 +1,7 @@
 {
-  "total_cves": 233176,
-  "comparable_count": 10250,
-  "conflict_count": 1848,
+  "total_cves": 233178,
+  "comparable_count": 10252,
+  "conflict_count": 1850,
   "conflict_rate": 18.0,
   "gap_count": 227812,
   "rejected_scored_count": 0,
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1103,
+    "nvd_higher_count": 1105,
     "gh_higher_count": 745
   },
   "conflict_by_year": {
@@ -27,7 +27,7 @@
     "2023": 8,
     "2024": 572,
     "2025": 511,
-    "2026": 738
+    "2026": 740
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -81,12 +81,12 @@
       "comparable": 2281
     },
     "2026": {
-      "nvd_higher": 464,
+      "nvd_higher": 466,
       "gh_higher": 274,
-      "comparable": 4428
+      "comparable": 4430
     }
   },
-  "severity_flip_count": 1020,
+  "severity_flip_count": 1022,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 79,
     "Critical\u2192High": 131,
@@ -94,12 +94,12 @@
     "Critical\u2192Low": 8,
     "High\u2192Critical": 81,
     "High\u2192High": 228,
-    "High\u2192Medium": 316,
+    "High\u2192Medium": 317,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 34,
     "Medium\u2192High": 219,
     "Medium\u2192Medium": 494,
-    "Medium\u2192Low": 128,
+    "Medium\u2192Low": 129,
     "Low\u2192Critical": 1,
     "Low\u2192High": 1,
     "Low\u2192Medium": 17,
@@ -108,15 +108,15 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 278,
-      "High": 649,
-      "Medium": 875,
+      "High": 650,
+      "Medium": 876,
       "Low": 46
     },
     "gh": {
       "Critical": 195,
       "High": 579,
-      "Medium": 887,
-      "Low": 187
+      "Medium": 888,
+      "Low": 188
     }
   },
   "variance_distribution": [
@@ -138,12 +138,12 @@
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 280
+      "count": 281
     },
     {
       "bucket": "2.0-2.5",
       "min": 2.0,
-      "count": 237
+      "count": 238
     },
     {
       "bucket": "2.5-3.0",
@@ -193,11 +193,11 @@
   ],
   "severity_distribution": {
     "Critical": 278,
-    "High": 649,
-    "Medium": 875,
+    "High": 650,
+    "Medium": 876,
     "Low": 46
   },
   "avg_days_to_analysis": 3098.4,
   "p90_days_to_analysis": 7287,
-  "generated_at": "2026-07-11T18:57:23Z"
+  "generated_at": "2026-07-12T02:07:30Z"
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T18:57:23Z",
+  "generated_at": "2026-07-12T02:07:31Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -68,9 +68,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 50,
+      "conflict_count": 51,
       "avg_variance": 1.78,
-      "nvd_higher_count": 42,
+      "nvd_higher_count": 43,
       "gh_higher_count": 8
     },
     {
@@ -338,6 +338,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-444",
+      "name": "CWE-444",
+      "conflict_count": 12,
+      "avg_variance": 1.65,
+      "nvd_higher_count": 10,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-416",
       "name": "Use After Free",
       "conflict_count": 12,
@@ -376,14 +384,6 @@
       "avg_variance": 0.98,
       "nvd_higher_count": 7,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-444",
-      "name": "CWE-444",
-      "conflict_count": 11,
-      "avg_variance": 1.65,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-201",
