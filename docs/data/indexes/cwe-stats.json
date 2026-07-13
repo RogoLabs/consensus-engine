@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T14:22:57Z",
+  "generated_at": "2026-07-13T19:23:49Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -124,10 +124,10 @@
     {
       "cwe_id": "CWE-862",
       "name": "Missing Authorization",
-      "conflict_count": 29,
-      "avg_variance": 1.2,
+      "conflict_count": 30,
+      "avg_variance": 1.19,
       "nvd_higher_count": 15,
-      "gh_higher_count": 14
+      "gh_higher_count": 15
     },
     {
       "cwe_id": "CWE-352",
@@ -242,6 +242,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-190",
+      "name": "CWE-190",
+      "conflict_count": 16,
+      "avg_variance": 1.89,
+      "nvd_higher_count": 14,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-367",
       "name": "CWE-367",
       "conflict_count": 16,
@@ -264,14 +272,6 @@
       "avg_variance": 1.47,
       "nvd_higher_count": 11,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-190",
-      "name": "CWE-190",
-      "conflict_count": 15,
-      "avg_variance": 2.01,
-      "nvd_higher_count": 13,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-125",
