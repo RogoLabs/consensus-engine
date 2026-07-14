@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T19:23:49Z",
+  "generated_at": "2026-07-14T01:56:02Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -108,9 +108,9 @@
     {
       "cwe_id": "CWE-287",
       "name": "Improper Authentication",
-      "conflict_count": 33,
-      "avg_variance": 1.47,
-      "nvd_higher_count": 22,
+      "conflict_count": 34,
+      "avg_variance": 1.46,
+      "nvd_higher_count": 23,
       "gh_higher_count": 11
     },
     {
