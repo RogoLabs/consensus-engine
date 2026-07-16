@@ -9,7 +9,9 @@ CVE-2025-0655,GHSA-gjxm-x497-4h6h,https://github.com/advisories/GHSA-gjxm-x497-4
 CVE-2021-47853,GHSA-86gh-c8r8-xwhq,https://github.com/advisories/GHSA-86gh-c8r8-xwhq,8.8,3.1,Rejected,vulncheck
 CVE-2024-36811,GHSA-cr7j-rwmv-vgch,https://github.com/advisories/GHSA-cr7j-rwmv-vgch,8.8,3.1,Rejected,mitre
 CVE-2025-8022,GHSA-4j66-8f4r-3pjx,https://github.com/advisories/GHSA-4j66-8f4r-3pjx,8.8,3.1,Rejected,snyk
+CVE-2024-7039,GHSA-pqwr-phvv-v49f,https://github.com/advisories/GHSA-pqwr-phvv-v49f,8.3,3.0,Rejected,huntr
 CVE-2024-4642,GHSA-cqh9-jfqr-h9jj,https://github.com/advisories/GHSA-cqh9-jfqr-h9jj,7.7,3.0,Rejected,huntr
+CVE-2024-7959,GHSA-x757-hv69-jr45,https://github.com/advisories/GHSA-x757-hv69-jr45,7.7,3.0,Rejected,huntr
 CVE-2024-4109,GHSA-22c5-cpvr-cfvq,https://github.com/advisories/GHSA-22c5-cpvr-cfvq,7.5,3.1,Rejected,redhat
 CVE-2025-54371,GHSA-rm8p-cx58-hcvx,https://github.com/advisories/GHSA-rm8p-cx58-hcvx,7.5,3.1,Rejected,github
 CVE-2025-63700,GHSA-3mm3-wfpv-q85g,https://github.com/advisories/GHSA-3mm3-wfpv-q85g,7.5,3.1,Rejected,mitre
@@ -17,6 +19,8 @@ CVE-2026-4427,GHSA-x6gf-mpr2-68h6,https://github.com/advisories/GHSA-x6gf-mpr2-6
 CVE-2026-40500,GHSA-gmwr-9j4p-96vm,https://github.com/advisories/GHSA-gmwr-9j4p-96vm,6.8,3.1,Rejected,vulncheck
 CVE-2024-34511,GHSA-34rf-p3r3-58x2,https://github.com/advisories/GHSA-34rf-p3r3-58x2,6.5,3.1,Rejected,mitre
 CVE-2024-40430,GHSA-x72p-g37q-4xr9,https://github.com/advisories/GHSA-x72p-g37q-4xr9,6.5,3.1,Rejected,mitre
+CVE-2024-7033,GHSA-3p9q-7w63-3f8q,https://github.com/advisories/GHSA-3p9q-7w63-3f8q,6.5,3.0,Rejected,huntr
+CVE-2024-7034,GHSA-crh6-pj8c-xrhc,https://github.com/advisories/GHSA-crh6-pj8c-xrhc,6.5,3.0,Rejected,huntr
 CVE-2026-34508,GHSA-8288-jpqp-95fx,https://github.com/advisories/GHSA-8288-jpqp-95fx,6.5,3.1,Rejected,vulncheck
 CVE-2024-6484,GHSA-9mvj-f7w8-pvh2,https://github.com/advisories/GHSA-9mvj-f7w8-pvh2,6.4,3.1,Rejected,HeroDevs
 CVE-2024-6531,GHSA-vc8w-jr9v-vj7f,https://github.com/advisories/GHSA-vc8w-jr9v-vj7f,6.4,3.1,Rejected,HeroDevs
@@ -26,6 +30,7 @@ CVE-2025-2901,GHSA-f7jh-m6wp-jm7f,https://github.com/advisories/GHSA-f7jh-m6wp-j
 CVE-2024-4460,GHSA-7gjr-hcc3-xfr4,https://github.com/advisories/GHSA-7gjr-hcc3-xfr4,4.3,3.0,Rejected,huntr
 CVE-2026-25984,GHSA-273h-m46v-96q4,https://github.com/advisories/GHSA-273h-m46v-96q4,3.7,3.1,Rejected,github
 CVE-2025-2967,GHSA-xfqf-5rhg-5c73,https://github.com/advisories/GHSA-xfqf-5rhg-5c73,3.5,3.1,Rejected,VulDB
+CVE-2024-7038,GHSA-mq92-jr35-ffpc,https://github.com/advisories/GHSA-mq92-jr35-ffpc,2.7,3.0,Rejected,huntr
 CVE-2024-43372,GHSA-rhm7-7469-rcpw,https://github.com/advisories/GHSA-rhm7-7469-rcpw,,,Rejected,github
 CVE-2024-51999,GHSA-pj86-cfqh-vqx6,https://github.com/advisories/GHSA-pj86-cfqh-vqx6,,,Rejected,github
 CVE-2025-11569,GHSA-gj5f-73vh-wpf7,https://github.com/advisories/GHSA-gj5f-73vh-wpf7,,,Rejected,snyk
