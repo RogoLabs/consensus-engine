@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T19:08:10Z",
+  "generated_at": "2026-07-16T02:06:02Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -68,9 +68,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 51,
-      "avg_variance": 1.78,
-      "nvd_higher_count": 43,
+      "conflict_count": 52,
+      "avg_variance": 1.79,
+      "nvd_higher_count": 44,
       "gh_higher_count": 8
     },
     {
@@ -100,9 +100,9 @@
     {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
-      "conflict_count": 37,
-      "avg_variance": 1.23,
-      "nvd_higher_count": 27,
+      "conflict_count": 38,
+      "avg_variance": 1.25,
+      "nvd_higher_count": 28,
       "gh_higher_count": 10
     },
     {

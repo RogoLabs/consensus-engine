@@ -14592,6 +14592,14 @@
     "published_date": "2026-06-23"
   },
   {
+    "cve_id": "CVE-2026-50589",
+    "nvd_score": 7.5,
+    "github_score": 5.3,
+    "cvss_variance": 2.2,
+    "assigning_cna": "mitre",
+    "published_date": "2026-06-05"
+  },
+  {
     "cve_id": "CVE-2026-53441",
     "nvd_score": 5.4,
     "github_score": 8.0,
