@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T13:23:46Z",
+  "generated_at": "2026-07-17T19:06:42Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 82,
+      "conflict_count": 83,
       "avg_variance": 1.38,
-      "nvd_higher_count": 57,
+      "nvd_higher_count": 58,
       "gh_higher_count": 25
     },
     {
@@ -44,9 +44,9 @@
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 56,
-      "avg_variance": 1.68,
-      "nvd_higher_count": 32,
+      "conflict_count": 57,
+      "avg_variance": 1.67,
+      "nvd_higher_count": 33,
       "gh_higher_count": 24
     },
     {
@@ -84,9 +84,9 @@
     {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
-      "conflict_count": 39,
-      "avg_variance": 1.57,
-      "nvd_higher_count": 25,
+      "conflict_count": 40,
+      "avg_variance": 1.56,
+      "nvd_higher_count": 26,
       "gh_higher_count": 14
     },
     {
@@ -410,6 +410,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-732",
+      "name": "Incorrect Permission Assignment",
+      "conflict_count": 9,
+      "avg_variance": 1.02,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-311",
       "name": "CWE-311",
       "conflict_count": 9,
@@ -464,14 +472,6 @@
       "avg_variance": 1.68,
       "nvd_higher_count": 8,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-732",
-      "name": "Incorrect Permission Assignment",
-      "conflict_count": 8,
-      "avg_variance": 1.1,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-184",
@@ -672,6 +672,14 @@
       "avg_variance": 1.42,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
+    },
+    {
+      "cwe_id": "CWE-307",
+      "name": "CWE-307",
+      "conflict_count": 5,
+      "avg_variance": 1.78,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-326",
