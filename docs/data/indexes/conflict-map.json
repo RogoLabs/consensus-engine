@@ -8856,6 +8856,14 @@
     "published_date": "2025-12-11"
   },
   {
+    "cve_id": "CVE-2025-67724",
+    "nvd_score": 6.1,
+    "github_score": 5.4,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2025-12-12"
+  },
+  {
     "cve_id": "CVE-2025-67737",
     "nvd_score": 3.7,
     "github_score": 3.1,
