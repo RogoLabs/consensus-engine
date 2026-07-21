@@ -13,6 +13,7 @@ CVE-2024-7039,GHSA-pqwr-phvv-v49f,https://github.com/advisories/GHSA-pqwr-phvv-v
 CVE-2024-4642,GHSA-cqh9-jfqr-h9jj,https://github.com/advisories/GHSA-cqh9-jfqr-h9jj,7.7,3.0,Rejected,huntr
 CVE-2024-7959,GHSA-x757-hv69-jr45,https://github.com/advisories/GHSA-x757-hv69-jr45,7.7,3.0,Rejected,huntr
 CVE-2024-4109,GHSA-22c5-cpvr-cfvq,https://github.com/advisories/GHSA-22c5-cpvr-cfvq,7.5,3.1,Rejected,redhat
+CVE-2024-47220,GHSA-6f62-3596-g6w7,https://github.com/advisories/GHSA-6f62-3596-g6w7,7.5,3.1,Rejected,mitre
 CVE-2025-54371,GHSA-rm8p-cx58-hcvx,https://github.com/advisories/GHSA-rm8p-cx58-hcvx,7.5,3.1,Rejected,github
 CVE-2025-63700,GHSA-3mm3-wfpv-q85g,https://github.com/advisories/GHSA-3mm3-wfpv-q85g,7.5,3.1,Rejected,mitre
 CVE-2026-4427,GHSA-x6gf-mpr2-68h6,https://github.com/advisories/GHSA-x6gf-mpr2-68h6,7.5,3.1,Rejected,redhat
