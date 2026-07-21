@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T19:37:27Z",
+  "generated_at": "2026-07-21T02:08:41Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -50,6 +50,14 @@
       "gh_higher_count": 24
     },
     {
+      "cwe_id": "CWE-770",
+      "name": "Allocation of Resources Without Limits",
+      "conflict_count": 55,
+      "avg_variance": 1.81,
+      "nvd_higher_count": 47,
+      "gh_higher_count": 8
+    },
+    {
       "cwe_id": "CWE-284",
       "name": "CWE-284",
       "conflict_count": 54,
@@ -64,14 +72,6 @@
       "avg_variance": 1.88,
       "nvd_higher_count": 26,
       "gh_higher_count": 26
-    },
-    {
-      "cwe_id": "CWE-770",
-      "name": "Allocation of Resources Without Limits",
-      "conflict_count": 52,
-      "avg_variance": 1.79,
-      "nvd_higher_count": 44,
-      "gh_higher_count": 8
     },
     {
       "cwe_id": "CWE-78",
@@ -250,6 +250,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-125",
+      "name": "Out-of-bounds Read",
+      "conflict_count": 16,
+      "avg_variance": 2.45,
+      "nvd_higher_count": 14,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-367",
       "name": "CWE-367",
       "conflict_count": 16,
@@ -272,14 +280,6 @@
       "avg_variance": 1.47,
       "nvd_higher_count": 11,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-125",
-      "name": "Out-of-bounds Read",
-      "conflict_count": 15,
-      "avg_variance": 2.55,
-      "nvd_higher_count": 13,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-611",
@@ -330,6 +330,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-346",
+      "name": "CWE-346",
+      "conflict_count": 13,
+      "avg_variance": 1.22,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-116",
       "name": "CWE-116",
       "conflict_count": 12,
@@ -350,14 +358,6 @@
       "name": "Use After Free",
       "conflict_count": 12,
       "avg_variance": 2.43,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-346",
-      "name": "CWE-346",
-      "conflict_count": 12,
-      "avg_variance": 1.2,
       "nvd_higher_count": 10,
       "gh_higher_count": 2
     },
@@ -506,6 +506,14 @@
       "gh_higher_count": 0
     },
     {
+      "cwe_id": "CWE-835",
+      "name": "CWE-835",
+      "conflict_count": 8,
+      "avg_variance": 2.25,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-476",
       "name": "NULL Pointer Dereference",
       "conflict_count": 8,
@@ -624,14 +632,6 @@
       "avg_variance": 1.4,
       "nvd_higher_count": 5,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-835",
-      "name": "CWE-835",
-      "conflict_count": 6,
-      "avg_variance": 2.27,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-193",
