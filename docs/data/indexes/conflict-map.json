@@ -232,6 +232,14 @@
     "published_date": "2022-07-01"
   },
   {
+    "cve_id": "CVE-2022-2712",
+    "nvd_score": 7.5,
+    "github_score": 6.5,
+    "cvss_variance": 1.0,
+    "assigning_cna": "eclipse",
+    "published_date": "2023-01-27"
+  },
+  {
     "cve_id": "CVE-2022-29946",
     "nvd_score": 6.3,
     "github_score": 6.5,
@@ -14662,6 +14670,14 @@
     "cvss_variance": 3.3,
     "assigning_cna": "hashicorp",
     "published_date": "2026-04-17"
+  },
+  {
+    "cve_id": "CVE-2026-50526",
+    "nvd_score": 5.5,
+    "github_score": 7.0,
+    "cvss_variance": 1.5,
+    "assigning_cna": "microsoft",
+    "published_date": "2026-07-14"
   },
   {
     "cve_id": "CVE-2026-50573",
