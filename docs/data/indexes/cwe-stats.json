@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T13:42:49Z",
+  "generated_at": "2026-07-23T19:12:50Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -68,10 +68,10 @@
     {
       "cwe_id": "CWE-89",
       "name": "SQL Injection",
-      "conflict_count": 52,
-      "avg_variance": 1.88,
+      "conflict_count": 51,
+      "avg_variance": 1.85,
       "nvd_higher_count": 26,
-      "gh_higher_count": 26
+      "gh_higher_count": 25
     },
     {
       "cwe_id": "CWE-78",
