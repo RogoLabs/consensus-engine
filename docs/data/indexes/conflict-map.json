@@ -14440,6 +14440,14 @@
     "published_date": "2026-06-12"
   },
   {
+    "cve_id": "CVE-2026-47304",
+    "nvd_score": 9.8,
+    "github_score": 8.1,
+    "cvss_variance": 1.7,
+    "assigning_cna": "microsoft",
+    "published_date": "2026-07-14"
+  },
+  {
     "cve_id": "CVE-2026-47673",
     "nvd_score": 6.5,
     "github_score": 4.8,
@@ -14880,6 +14888,14 @@
     "published_date": "2026-07-15"
   },
   {
+    "cve_id": "CVE-2026-55628",
+    "nvd_score": 5.5,
+    "github_score": 6.1,
+    "cvss_variance": 0.6,
+    "assigning_cna": "github",
+    "published_date": "2026-07-01"
+  },
+  {
     "cve_id": "CVE-2026-55689",
     "nvd_score": 8.1,
     "github_score": 6.8,
@@ -14910,6 +14926,54 @@
     "cvss_variance": 2.2,
     "assigning_cna": "github",
     "published_date": "2026-07-14"
+  },
+  {
+    "cve_id": "CVE-2026-59213",
+    "nvd_score": 5.0,
+    "github_score": 3.5,
+    "cvss_variance": 1.5,
+    "assigning_cna": "github",
+    "published_date": "2026-07-09"
+  },
+  {
+    "cve_id": "CVE-2026-59214",
+    "nvd_score": 9.0,
+    "github_score": 7.3,
+    "cvss_variance": 1.7,
+    "assigning_cna": "github",
+    "published_date": "2026-07-09"
+  },
+  {
+    "cve_id": "CVE-2026-59216",
+    "nvd_score": 9.0,
+    "github_score": 7.7,
+    "cvss_variance": 1.3,
+    "assigning_cna": "github",
+    "published_date": "2026-07-09"
+  },
+  {
+    "cve_id": "CVE-2026-59226",
+    "nvd_score": 4.3,
+    "github_score": 3.1,
+    "cvss_variance": 1.2,
+    "assigning_cna": "github",
+    "published_date": "2026-07-09"
+  },
+  {
+    "cve_id": "CVE-2026-59227",
+    "nvd_score": 5.4,
+    "github_score": 4.3,
+    "cvss_variance": 1.1,
+    "assigning_cna": "github",
+    "published_date": "2026-07-09"
+  },
+  {
+    "cve_id": "CVE-2026-59715",
+    "nvd_score": 6.5,
+    "github_score": 3.1,
+    "cvss_variance": 3.4,
+    "assigning_cna": "github",
+    "published_date": "2026-07-09"
   },
   {
     "cve_id": "CVE-2026-59868",

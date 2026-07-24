@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-24T13:36:50Z",
+  "generated_at": "2026-07-24T19:24:21Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 308,
+      "conflict_count": 309,
       "avg_variance": 1.53,
-      "nvd_higher_count": 92,
+      "nvd_higher_count": 93,
       "gh_higher_count": 216
     },
     {
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 83,
+      "conflict_count": 85,
       "avg_variance": 1.38,
-      "nvd_higher_count": 58,
+      "nvd_higher_count": 60,
       "gh_higher_count": 25
     },
     {
@@ -36,17 +36,17 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 63,
-      "avg_variance": 1.13,
-      "nvd_higher_count": 35,
+      "conflict_count": 64,
+      "avg_variance": 1.14,
+      "nvd_higher_count": 36,
       "gh_higher_count": 28
     },
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 58,
+      "conflict_count": 59,
       "avg_variance": 1.64,
-      "nvd_higher_count": 34,
+      "nvd_higher_count": 35,
       "gh_higher_count": 24
     },
     {
@@ -114,20 +114,20 @@
       "gh_higher_count": 11
     },
     {
+      "cwe_id": "CWE-862",
+      "name": "Missing Authorization",
+      "conflict_count": 34,
+      "avg_variance": 1.17,
+      "nvd_higher_count": 18,
+      "gh_higher_count": 16
+    },
+    {
       "cwe_id": "CWE-601",
       "name": "Open Redirect",
       "conflict_count": 31,
       "avg_variance": 1.35,
       "nvd_higher_count": 26,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-862",
-      "name": "Missing Authorization",
-      "conflict_count": 30,
-      "avg_variance": 1.19,
-      "nvd_higher_count": 15,
-      "gh_higher_count": 15
     },
     {
       "cwe_id": "CWE-352",
@@ -156,10 +156,18 @@
     {
       "cwe_id": "CWE-639",
       "name": "Authorization Bypass Through User-Controlled Key",
-      "conflict_count": 23,
-      "avg_variance": 1.56,
-      "nvd_higher_count": 17,
+      "conflict_count": 24,
+      "avg_variance": 1.55,
+      "nvd_higher_count": 18,
       "gh_higher_count": 6
+    },
+    {
+      "cwe_id": "CWE-285",
+      "name": "CWE-285",
+      "conflict_count": 22,
+      "avg_variance": 1.61,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-693",
@@ -168,14 +176,6 @@
       "avg_variance": 0.92,
       "nvd_higher_count": 16,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-285",
-      "name": "CWE-285",
-      "conflict_count": 21,
-      "avg_variance": 1.63,
-      "nvd_higher_count": 11,
-      "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-1321",
@@ -196,9 +196,9 @@
     {
       "cwe_id": "CWE-306",
       "name": "Missing Authentication",
-      "conflict_count": 19,
-      "avg_variance": 0.97,
-      "nvd_higher_count": 12,
+      "conflict_count": 20,
+      "avg_variance": 1.09,
+      "nvd_higher_count": 13,
       "gh_higher_count": 7
     },
     {
@@ -298,6 +298,14 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-347",
+      "name": "CWE-347",
+      "conflict_count": 14,
+      "avg_variance": 1.61,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-1333",
       "name": "Inefficient Regular Expression",
       "conflict_count": 14,
@@ -322,12 +330,12 @@
       "gh_higher_count": 6
     },
     {
-      "cwe_id": "CWE-347",
-      "name": "CWE-347",
-      "conflict_count": 13,
-      "avg_variance": 1.61,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 6
+      "cwe_id": "CWE-345",
+      "name": "CWE-345",
+      "conflict_count": 14,
+      "avg_variance": 1.05,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-346",
@@ -336,14 +344,6 @@
       "avg_variance": 1.22,
       "nvd_higher_count": 11,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-345",
-      "name": "CWE-345",
-      "conflict_count": 13,
-      "avg_variance": 1.0,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-116",
@@ -442,6 +442,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-73",
+      "name": "CWE-73",
+      "conflict_count": 9,
+      "avg_variance": 1.08,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-754",
       "name": "Improper Check for Unusual Conditions",
       "conflict_count": 9,
@@ -488,14 +496,6 @@
       "avg_variance": 1.75,
       "nvd_higher_count": 6,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-73",
-      "name": "CWE-73",
-      "conflict_count": 8,
-      "avg_variance": 1.14,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-401",
