@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T14:00:02Z",
+  "generated_at": "2026-07-28T19:22:31Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,9 +12,9 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 109,
+      "conflict_count": 110,
       "avg_variance": 1.43,
-      "nvd_higher_count": 52,
+      "nvd_higher_count": 53,
       "gh_higher_count": 57
     },
     {
@@ -354,6 +354,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-829",
+      "name": "CWE-829",
+      "conflict_count": 12,
+      "avg_variance": 1.09,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-444",
       "name": "CWE-444",
       "conflict_count": 12,
@@ -384,14 +392,6 @@
       "avg_variance": 2.01,
       "nvd_higher_count": 8,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-829",
-      "name": "CWE-829",
-      "conflict_count": 11,
-      "avg_variance": 0.98,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-23",
@@ -482,6 +482,14 @@
       "gh_higher_count": 1
     },
     {
+      "cwe_id": "CWE-362",
+      "name": "Race Condition",
+      "conflict_count": 8,
+      "avg_variance": 2.46,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-184",
       "name": "CWE-184",
       "conflict_count": 8,
@@ -552,14 +560,6 @@
       "avg_variance": 1.61,
       "nvd_higher_count": 5,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-362",
-      "name": "Race Condition",
-      "conflict_count": 7,
-      "avg_variance": 2.8,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-706",
