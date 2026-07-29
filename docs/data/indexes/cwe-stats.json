@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T14:00:26Z",
+  "generated_at": "2026-07-29T19:09:54Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -92,9 +92,9 @@
     {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 38,
-      "avg_variance": 1.96,
-      "nvd_higher_count": 34,
+      "conflict_count": 39,
+      "avg_variance": 1.97,
+      "nvd_higher_count": 35,
       "gh_higher_count": 4
     },
     {
@@ -670,6 +670,14 @@
       "name": "CWE-305",
       "conflict_count": 5,
       "avg_variance": 0.8,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 1
+    },
+    {
+      "cwe_id": "CWE-330",
+      "name": "CWE-330",
+      "conflict_count": 5,
+      "avg_variance": 1.36,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
     },
