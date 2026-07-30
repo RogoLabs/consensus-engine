@@ -14632,6 +14632,14 @@
     "published_date": "2026-07-15"
   },
   {
+    "cve_id": "CVE-2026-49834",
+    "nvd_score": 7.5,
+    "github_score": 5.9,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-07-17"
+  },
+  {
     "cve_id": "CVE-2026-49854",
     "nvd_score": 5.3,
     "github_score": 3.7,
