@@ -13640,6 +13640,62 @@
     "published_date": "2026-06-09"
   },
   {
+    "cve_id": "CVE-2026-41844",
+    "nvd_score": 6.1,
+    "github_score": 4.2,
+    "cvss_variance": 1.9,
+    "assigning_cna": "vmware",
+    "published_date": "2026-06-09"
+  },
+  {
+    "cve_id": "CVE-2026-41845",
+    "nvd_score": 6.1,
+    "github_score": 7.1,
+    "cvss_variance": 1.0,
+    "assigning_cna": "vmware",
+    "published_date": "2026-06-09"
+  },
+  {
+    "cve_id": "CVE-2026-41846",
+    "nvd_score": 6.1,
+    "github_score": 5.9,
+    "cvss_variance": 0.2,
+    "assigning_cna": "vmware",
+    "published_date": "2026-06-09"
+  },
+  {
+    "cve_id": "CVE-2026-41847",
+    "nvd_score": 5.3,
+    "github_score": 4.8,
+    "cvss_variance": 0.5,
+    "assigning_cna": "vmware",
+    "published_date": "2026-06-09"
+  },
+  {
+    "cve_id": "CVE-2026-41848",
+    "nvd_score": 7.5,
+    "github_score": 3.7,
+    "cvss_variance": 3.8,
+    "assigning_cna": "vmware",
+    "published_date": "2026-06-09"
+  },
+  {
+    "cve_id": "CVE-2026-41851",
+    "nvd_score": 7.5,
+    "github_score": 5.3,
+    "cvss_variance": 2.2,
+    "assigning_cna": "vmware",
+    "published_date": "2026-06-09"
+  },
+  {
+    "cve_id": "CVE-2026-41852",
+    "nvd_score": 5.3,
+    "github_score": 3.7,
+    "cvss_variance": 1.6,
+    "assigning_cna": "vmware",
+    "published_date": "2026-06-09"
+  },
+  {
     "cve_id": "CVE-2026-41900",
     "nvd_score": 10.0,
     "github_score": 8.8,
@@ -14640,6 +14696,14 @@
     "published_date": "2026-07-17"
   },
   {
+    "cve_id": "CVE-2026-49835",
+    "nvd_score": 7.5,
+    "github_score": 5.9,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-07-17"
+  },
+  {
     "cve_id": "CVE-2026-49854",
     "nvd_score": 5.3,
     "github_score": 3.7,
@@ -14958,6 +15022,14 @@
     "cvss_variance": 1.3,
     "assigning_cna": "github",
     "published_date": "2026-06-25"
+  },
+  {
+    "cve_id": "CVE-2026-56820",
+    "nvd_score": 9.1,
+    "github_score": 7.4,
+    "cvss_variance": 1.7,
+    "assigning_cna": "github",
+    "published_date": "2026-07-21"
   },
   {
     "cve_id": "CVE-2026-59198",

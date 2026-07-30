@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-30T13:52:45Z",
+  "generated_at": "2026-07-30T19:21:39Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 309,
-      "avg_variance": 1.53,
-      "nvd_higher_count": 93,
-      "gh_higher_count": 216
+      "conflict_count": 311,
+      "avg_variance": 1.52,
+      "nvd_higher_count": 94,
+      "gh_higher_count": 217
     },
     {
       "cwe_id": "CWE-22",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 85,
+      "conflict_count": 86,
       "avg_variance": 1.38,
-      "nvd_higher_count": 60,
+      "nvd_higher_count": 61,
       "gh_higher_count": 25
     },
     {
@@ -52,17 +52,17 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 55,
-      "avg_variance": 1.81,
-      "nvd_higher_count": 47,
+      "conflict_count": 57,
+      "avg_variance": 1.82,
+      "nvd_higher_count": 49,
       "gh_higher_count": 8
     },
     {
       "cwe_id": "CWE-284",
       "name": "CWE-284",
-      "conflict_count": 54,
-      "avg_variance": 1.26,
-      "nvd_higher_count": 34,
+      "conflict_count": 55,
+      "avg_variance": 1.25,
+      "nvd_higher_count": 35,
       "gh_higher_count": 20
     },
     {
@@ -124,9 +124,9 @@
     {
       "cwe_id": "CWE-601",
       "name": "Open Redirect",
-      "conflict_count": 31,
-      "avg_variance": 1.35,
-      "nvd_higher_count": 26,
+      "conflict_count": 32,
+      "avg_variance": 1.36,
+      "nvd_higher_count": 27,
       "gh_higher_count": 5
     },
     {
@@ -290,6 +290,22 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-1333",
+      "name": "Inefficient Regular Expression",
+      "conflict_count": 15,
+      "avg_variance": 2.21,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 3
+    },
+    {
+      "cwe_id": "CWE-295",
+      "name": "CWE-295",
+      "conflict_count": 15,
+      "avg_variance": 2.19,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-611",
       "name": "XXE",
       "conflict_count": 14,
@@ -306,28 +322,12 @@
       "gh_higher_count": 7
     },
     {
-      "cwe_id": "CWE-1333",
-      "name": "Inefficient Regular Expression",
-      "conflict_count": 14,
-      "avg_variance": 2.09,
-      "nvd_higher_count": 11,
-      "gh_higher_count": 3
-    },
-    {
       "cwe_id": "CWE-522",
       "name": "Insufficiently Protected Credentials",
       "conflict_count": 14,
       "avg_variance": 2.0,
       "nvd_higher_count": 11,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-295",
-      "name": "CWE-295",
-      "conflict_count": 14,
-      "avg_variance": 2.23,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-345",
