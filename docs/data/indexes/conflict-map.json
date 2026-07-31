@@ -14674,8 +14674,8 @@
   {
     "cve_id": "CVE-2026-49401",
     "nvd_score": 8.4,
-    "github_score": 5.2,
-    "cvss_variance": 3.2,
+    "github_score": 7.3,
+    "cvss_variance": 1.1,
     "assigning_cna": "github",
     "published_date": "2026-06-23"
   },

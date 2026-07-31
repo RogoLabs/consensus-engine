@@ -1,7 +1,7 @@
 {
   "comparable_conflicts": 1908,
   "vector_only_conflicts": 69,
-  "generated_at": "2026-07-31T08:50:15Z",
+  "generated_at": "2026-07-31T13:54:33Z",
   "metrics": [
     {
       "key": "A",
@@ -107,14 +107,14 @@
       "key": "I",
       "name": "Integrity",
       "total": 1908,
-      "disagree_count": 530,
-      "disagree_rate": 27.8,
-      "nvd_higher_count": 294,
+      "disagree_count": 529,
+      "disagree_rate": 27.7,
+      "nvd_higher_count": 293,
       "gh_higher_count": 236,
       "top_transitions": [
         {
           "transition": "H\u2192L",
-          "count": 156
+          "count": 155
         },
         {
           "transition": "L\u2192H",
