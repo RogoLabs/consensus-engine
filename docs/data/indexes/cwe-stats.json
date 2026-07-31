@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T13:54:34Z",
+  "generated_at": "2026-07-31T19:20:16Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -586,6 +586,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-613",
+      "name": "Insufficient Session Expiration",
+      "conflict_count": 6,
+      "avg_variance": 1.87,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-212",
       "name": "CWE-212",
       "conflict_count": 6,
@@ -720,14 +728,6 @@
       "avg_variance": 2.22,
       "nvd_higher_count": 5,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-613",
-      "name": "Insufficient Session Expiration",
-      "conflict_count": 5,
-      "avg_variance": 2.02,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-113",
