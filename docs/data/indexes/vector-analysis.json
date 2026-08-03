@@ -1,20 +1,20 @@
 {
   "comparable_conflicts": 1911,
   "vector_only_conflicts": 69,
-  "generated_at": "2026-08-03T14:29:35Z",
+  "generated_at": "2026-08-03T19:32:02Z",
   "metrics": [
     {
       "key": "A",
       "name": "Availability",
       "total": 1911,
-      "disagree_count": 616,
+      "disagree_count": 615,
       "disagree_rate": 32.2,
-      "nvd_higher_count": 380,
+      "nvd_higher_count": 379,
       "gh_higher_count": 236,
       "top_transitions": [
         {
           "transition": "H\u2192L",
-          "count": 218
+          "count": 217
         },
         {
           "transition": "N\u2192L",
@@ -138,14 +138,14 @@
       "key": "PR",
       "name": "Privileges Required",
       "total": 1911,
-      "disagree_count": 475,
-      "disagree_rate": 24.9,
-      "nvd_higher_count": 322,
+      "disagree_count": 474,
+      "disagree_rate": 24.8,
+      "nvd_higher_count": 321,
       "gh_higher_count": 153,
       "top_transitions": [
         {
           "transition": "N\u2192L",
-          "count": 180
+          "count": 179
         },
         {
           "transition": "L\u2192N",
@@ -171,16 +171,16 @@
       "total": 1911,
       "disagree_count": 269,
       "disagree_rate": 14.1,
-      "nvd_higher_count": 145,
-      "gh_higher_count": 124,
+      "nvd_higher_count": 144,
+      "gh_higher_count": 125,
       "top_transitions": [
         {
           "transition": "N\u2192R",
-          "count": 145
+          "count": 144
         },
         {
           "transition": "R\u2192N",
-          "count": 124
+          "count": 125
         }
       ]
     },

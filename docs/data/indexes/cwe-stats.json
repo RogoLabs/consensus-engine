@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T14:29:36Z",
+  "generated_at": "2026-08-03T19:32:03Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -52,9 +52,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 57,
-      "avg_variance": 1.82,
-      "nvd_higher_count": 49,
+      "conflict_count": 56,
+      "avg_variance": 1.78,
+      "nvd_higher_count": 48,
       "gh_higher_count": 8
     },
     {
@@ -218,6 +218,14 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-190",
+      "name": "CWE-190",
+      "conflict_count": 18,
+      "avg_variance": 1.76,
+      "nvd_higher_count": 15,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-787",
       "name": "Out-of-bounds Write",
       "conflict_count": 17,
@@ -232,14 +240,6 @@
       "avg_variance": 1.99,
       "nvd_higher_count": 11,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-190",
-      "name": "CWE-190",
-      "conflict_count": 17,
-      "avg_variance": 1.84,
-      "nvd_higher_count": 15,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-80",
@@ -290,14 +290,6 @@
       "gh_higher_count": 4
     },
     {
-      "cwe_id": "CWE-1333",
-      "name": "Inefficient Regular Expression",
-      "conflict_count": 15,
-      "avg_variance": 2.21,
-      "nvd_higher_count": 12,
-      "gh_higher_count": 3
-    },
-    {
       "cwe_id": "CWE-295",
       "name": "CWE-295",
       "conflict_count": 15,
@@ -320,6 +312,14 @@
       "avg_variance": 0.86,
       "nvd_higher_count": 7,
       "gh_higher_count": 7
+    },
+    {
+      "cwe_id": "CWE-1333",
+      "name": "Inefficient Regular Expression",
+      "conflict_count": 14,
+      "avg_variance": 2.08,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-522",
