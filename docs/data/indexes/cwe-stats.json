@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T14:02:20Z",
+  "generated_at": "2026-08-04T19:29:04Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -44,9 +44,9 @@
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 59,
+      "conflict_count": 60,
       "avg_variance": 1.64,
-      "nvd_higher_count": 35,
+      "nvd_higher_count": 36,
       "gh_higher_count": 24
     },
     {
@@ -338,6 +338,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-444",
+      "name": "CWE-444",
+      "conflict_count": 13,
+      "avg_variance": 1.65,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-346",
       "name": "CWE-346",
       "conflict_count": 13,
@@ -360,14 +368,6 @@
       "avg_variance": 1.09,
       "nvd_higher_count": 8,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-444",
-      "name": "CWE-444",
-      "conflict_count": 12,
-      "avg_variance": 1.65,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-416",
@@ -562,6 +562,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-93",
+      "name": "CWE-93",
+      "conflict_count": 7,
+      "avg_variance": 1.37,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 1
+    },
+    {
       "cwe_id": "CWE-706",
       "name": "CWE-706",
       "conflict_count": 7,
@@ -626,20 +634,20 @@
       "gh_higher_count": 1
     },
     {
+      "cwe_id": "CWE-436",
+      "name": "CWE-436",
+      "conflict_count": 6,
+      "avg_variance": 1.53,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 0
+    },
+    {
       "cwe_id": "CWE-36",
       "name": "CWE-36",
       "conflict_count": 6,
       "avg_variance": 1.75,
       "nvd_higher_count": 3,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-93",
-      "name": "CWE-93",
-      "conflict_count": 6,
-      "avg_variance": 1.4,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-193",
@@ -736,14 +744,6 @@
       "avg_variance": 0.8,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-436",
-      "name": "CWE-436",
-      "conflict_count": 5,
-      "avg_variance": 1.52,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-1188",

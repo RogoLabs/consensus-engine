@@ -9336,6 +9336,22 @@
     "published_date": "2026-07-09"
   },
   {
+    "cve_id": "CVE-2026-13697",
+    "nvd_score": 9.1,
+    "github_score": 7.4,
+    "cvss_variance": 1.7,
+    "assigning_cna": "openjs",
+    "published_date": "2026-07-29"
+  },
+  {
+    "cve_id": "CVE-2026-14643",
+    "nvd_score": 7.5,
+    "github_score": 5.9,
+    "cvss_variance": 1.6,
+    "assigning_cna": "openjs",
+    "published_date": "2026-07-29"
+  },
+  {
     "cve_id": "CVE-2026-1513",
     "nvd_score": 6.1,
     "github_score": 7.1,
@@ -9344,12 +9360,28 @@
     "published_date": "2026-01-28"
   },
   {
+    "cve_id": "CVE-2026-15157",
+    "nvd_score": 5.4,
+    "github_score": 4.2,
+    "cvss_variance": 1.2,
+    "assigning_cna": "openjs",
+    "published_date": "2026-07-29"
+  },
+  {
     "cve_id": "CVE-2026-1525",
     "nvd_score": 9.8,
     "github_score": 6.5,
     "cvss_variance": 3.3,
     "assigning_cna": "openjs",
     "published_date": "2026-03-12"
+  },
+  {
+    "cve_id": "CVE-2026-16728",
+    "nvd_score": 6.5,
+    "github_score": 4.8,
+    "cvss_variance": 1.7,
+    "assigning_cna": "openjs",
+    "published_date": "2026-07-29"
   },
   {
     "cve_id": "CVE-2026-1707",
