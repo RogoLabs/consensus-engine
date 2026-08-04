@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T08:36:39Z",
+  "generated_at": "2026-08-04T14:02:20Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -28,10 +28,10 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 79,
-      "avg_variance": 1.24,
+      "conflict_count": 80,
+      "avg_variance": 1.23,
       "nvd_higher_count": 42,
-      "gh_higher_count": 37
+      "gh_higher_count": 38
     },
     {
       "cwe_id": "CWE-94",
