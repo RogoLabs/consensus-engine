@@ -1,9 +1,9 @@
 {
-  "total_cves": 241228,
-  "comparable_count": 10917,
+  "total_cves": 241290,
+  "comparable_count": 10918,
   "conflict_count": 1911,
   "conflict_rate": 17.5,
-  "gap_count": 235653,
+  "gap_count": 235715,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -69,17 +69,17 @@
     "2023": {
       "nvd_higher": 5,
       "gh_higher": 4,
-      "comparable": 49
+      "comparable": 50
     },
     "2024": {
       "nvd_higher": 303,
       "gh_higher": 272,
-      "comparable": 1875
+      "comparable": 1876
     },
     "2025": {
       "nvd_higher": 328,
       "gh_higher": 184,
-      "comparable": 2282
+      "comparable": 2281
     },
     "2026": {
       "nvd_higher": 511,
@@ -198,7 +198,7 @@
     "Medium": 904,
     "Low": 47
   },
-  "avg_days_to_analysis": 3040.4,
+  "avg_days_to_analysis": 3040.3,
   "p90_days_to_analysis": 7268,
-  "generated_at": "2026-08-04T01:56:53Z"
+  "generated_at": "2026-08-04T08:36:38Z"
 }
