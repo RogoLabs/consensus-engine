@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T13:57:40Z",
+  "generated_at": "2026-08-05T19:26:16Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -162,6 +162,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-74",
+      "name": "CWE-74",
+      "conflict_count": 22,
+      "avg_variance": 1.4,
+      "nvd_higher_count": 16,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-285",
       "name": "CWE-285",
       "conflict_count": 22,
@@ -175,14 +183,6 @@
       "conflict_count": 22,
       "avg_variance": 0.92,
       "nvd_higher_count": 16,
-      "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-74",
-      "name": "CWE-74",
-      "conflict_count": 21,
-      "avg_variance": 1.38,
-      "nvd_higher_count": 15,
       "gh_higher_count": 6
     },
     {
@@ -402,6 +402,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-311",
+      "name": "CWE-311",
+      "conflict_count": 10,
+      "avg_variance": 2.38,
+      "nvd_higher_count": 10,
+      "gh_higher_count": 0
+    },
+    {
       "cwe_id": "CWE-276",
       "name": "Incorrect Default Permissions",
       "conflict_count": 9,
@@ -416,14 +424,6 @@
       "avg_variance": 1.02,
       "nvd_higher_count": 4,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-311",
-      "name": "CWE-311",
-      "conflict_count": 9,
-      "avg_variance": 2.39,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-789",
