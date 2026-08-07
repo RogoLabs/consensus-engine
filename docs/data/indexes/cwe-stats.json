@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T13:55:57Z",
+  "generated_at": "2026-08-07T00:00:29Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,10 +12,10 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 110,
-      "avg_variance": 1.43,
+      "conflict_count": 111,
+      "avg_variance": 1.46,
       "nvd_higher_count": 53,
-      "gh_higher_count": 57
+      "gh_higher_count": 58
     },
     {
       "cwe_id": "CWE-863",
@@ -28,9 +28,9 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 80,
-      "avg_variance": 1.23,
-      "nvd_higher_count": 42,
+      "conflict_count": 81,
+      "avg_variance": 1.25,
+      "nvd_higher_count": 43,
       "gh_higher_count": 38
     },
     {
@@ -402,14 +402,6 @@
       "gh_higher_count": 4
     },
     {
-      "cwe_id": "CWE-311",
-      "name": "CWE-311",
-      "conflict_count": 10,
-      "avg_variance": 2.38,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 0
-    },
-    {
       "cwe_id": "CWE-276",
       "name": "Incorrect Default Permissions",
       "conflict_count": 9,
@@ -424,6 +416,14 @@
       "avg_variance": 1.02,
       "nvd_higher_count": 4,
       "gh_higher_count": 5
+    },
+    {
+      "cwe_id": "CWE-311",
+      "name": "CWE-311",
+      "conflict_count": 9,
+      "avg_variance": 2.39,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-789",
@@ -514,6 +514,14 @@
       "gh_higher_count": 0
     },
     {
+      "cwe_id": "CWE-93",
+      "name": "CWE-93",
+      "conflict_count": 8,
+      "avg_variance": 1.3,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 1
+    },
+    {
       "cwe_id": "CWE-835",
       "name": "CWE-835",
       "conflict_count": 8,
@@ -560,14 +568,6 @@
       "avg_variance": 1.61,
       "nvd_higher_count": 5,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-93",
-      "name": "CWE-93",
-      "conflict_count": 7,
-      "avg_variance": 1.37,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-706",
