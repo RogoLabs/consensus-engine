@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T00:00:29Z",
+  "generated_at": "2026-08-07T02:21:42Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,9 +12,9 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 111,
+      "conflict_count": 112,
       "avg_variance": 1.46,
-      "nvd_higher_count": 53,
+      "nvd_higher_count": 54,
       "gh_higher_count": 58
     },
     {
@@ -44,9 +44,9 @@
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 60,
+      "conflict_count": 61,
       "avg_variance": 1.64,
-      "nvd_higher_count": 36,
+      "nvd_higher_count": 37,
       "gh_higher_count": 24
     },
     {
