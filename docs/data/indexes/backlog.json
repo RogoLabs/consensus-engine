@@ -12,7 +12,7 @@
     "Deferred": 41730,
     "Unknown": 14868,
     "Awaiting Analysis": 2662,
-    "Received": 1997,
+    "Received": 2019,
     "Undergoing Analysis": 231
   },
   "distribution_buckets": [
@@ -30,7 +30,7 @@
     },
     {
       "range": "91\u2013180 days",
-      "count": 10214
+      "count": 10213
     },
     {
       "range": "181\u2013365 days",
@@ -38,8 +38,8 @@
     },
     {
       "range": ">365 days",
-      "count": 107292
+      "count": 107293
     }
   ],
-  "generated_at": "2026-08-08T12:39:21Z"
+  "generated_at": "2026-08-08T18:33:18Z"
 }
