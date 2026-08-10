@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:00:38Z",
+  "generated_at": "2026-08-10T18:53:38Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -92,10 +92,10 @@
     {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 39,
-      "avg_variance": 1.97,
+      "conflict_count": 40,
+      "avg_variance": 1.92,
       "nvd_higher_count": 35,
-      "gh_higher_count": 4
+      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-502",
