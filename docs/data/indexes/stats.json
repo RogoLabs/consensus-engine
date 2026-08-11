@@ -1,9 +1,9 @@
 {
-  "total_cves": 244191,
+  "total_cves": 244248,
   "comparable_count": 11083,
   "conflict_count": 1925,
   "conflict_rate": 17.4,
-  "gap_count": 238516,
+  "gap_count": 238568,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -198,7 +198,7 @@
     "Medium": 912,
     "Low": 47
   },
-  "avg_days_to_analysis": 3020.4,
+  "avg_days_to_analysis": 3020.3,
   "p90_days_to_analysis": 7259,
-  "generated_at": "2026-08-11T01:14:55Z"
+  "generated_at": "2026-08-11T07:02:45Z"
 }
