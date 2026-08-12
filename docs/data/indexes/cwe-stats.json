@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-12T13:02:35Z",
+  "generated_at": "2026-08-12T19:02:08Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 312,
+      "conflict_count": 313,
       "avg_variance": 1.52,
       "nvd_higher_count": 94,
-      "gh_higher_count": 218
+      "gh_higher_count": 219
     },
     {
       "cwe_id": "CWE-22",
@@ -100,10 +100,10 @@
     {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
-      "conflict_count": 39,
-      "avg_variance": 1.22,
+      "conflict_count": 40,
+      "avg_variance": 1.19,
       "nvd_higher_count": 28,
-      "gh_higher_count": 11
+      "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-862",
@@ -226,6 +226,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-80",
+      "name": "CWE-80",
+      "conflict_count": 17,
+      "avg_variance": 1.56,
+      "nvd_higher_count": 3,
+      "gh_higher_count": 14
+    },
+    {
       "cwe_id": "CWE-787",
       "name": "Out-of-bounds Write",
       "conflict_count": 17,
@@ -242,12 +250,12 @@
       "gh_higher_count": 6
     },
     {
-      "cwe_id": "CWE-80",
-      "name": "CWE-80",
+      "cwe_id": "CWE-347",
+      "name": "CWE-347",
       "conflict_count": 16,
-      "avg_variance": 1.59,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 13
+      "avg_variance": 1.61,
+      "nvd_higher_count": 10,
+      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-125",
@@ -272,14 +280,6 @@
       "avg_variance": 1.89,
       "nvd_higher_count": 8,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-347",
-      "name": "CWE-347",
-      "conflict_count": 15,
-      "avg_variance": 1.61,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-290",
@@ -658,6 +658,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-87",
+      "name": "CWE-87",
+      "conflict_count": 6,
+      "avg_variance": 1.88,
+      "nvd_higher_count": 1,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-798",
       "name": "Hard-coded Credentials",
       "conflict_count": 5,
@@ -760,14 +768,6 @@
       "avg_variance": 1.1,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-87",
-      "name": "CWE-87",
-      "conflict_count": 5,
-      "avg_variance": 2.04,
-      "nvd_higher_count": 1,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-913",
