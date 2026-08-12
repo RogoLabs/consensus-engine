@@ -168,6 +168,14 @@
     "published_date": "2025-01-29"
   },
   {
+    "cve_id": "CVE-2021-44228",
+    "nvd_score": 10.0,
+    "github_score": 10.0,
+    "cvss_variance": 0.0,
+    "assigning_cna": "apache",
+    "published_date": "2021-12-10"
+  },
+  {
     "cve_id": "CVE-2021-45105",
     "nvd_score": 5.9,
     "github_score": 8.6,
@@ -15286,6 +15294,14 @@
     "cvss_variance": 0.8,
     "assigning_cna": "github",
     "published_date": "2026-07-28"
+  },
+  {
+    "cve_id": "CVE-2026-62909",
+    "nvd_score": 7.8,
+    "github_score": 6.7,
+    "cvss_variance": 1.1,
+    "assigning_cna": "microsoft",
+    "published_date": "2026-08-11"
   },
   {
     "cve_id": "CVE-2026-62946",

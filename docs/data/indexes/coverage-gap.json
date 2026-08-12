@@ -1,14 +1,14 @@
 {
-  "total": 14270,
+  "total": 14265,
   "avg_github_score": 6.94,
   "severity_distribution": {
-    "critical": 2204,
-    "high": 5188,
+    "critical": 2202,
+    "high": 5185,
     "medium": 6307,
     "low": 571
   },
   "nvd_status_breakdown": {
-    "No NVD Record": 14232,
+    "No NVD Record": 14227,
     "Rejected": 35,
     "Deferred": 1,
     "Analyzed": 2
@@ -235,15 +235,6 @@
       "github_score": 10.0,
       "github_cvss_version": "3.1",
       "ghsa_id": "GHSA-p9m8-27x8-rg87",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
-    },
-    {
-      "cve_id": "CVE-2021-44228",
-      "github_score": 10.0,
-      "github_cvss_version": "3.1",
-      "ghsa_id": "GHSA-jfh8-c2jp-5v3q",
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
@@ -631,15 +622,6 @@
       "github_score": 10.0,
       "github_cvss_version": "3.1",
       "ghsa_id": "GHSA-hf43-47q4-fhq5",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
-    },
-    {
-      "cve_id": "CVE-2026-45618",
-      "github_score": 10.0,
-      "github_cvss_version": "3.1",
-      "ghsa_id": "GHSA-gf2q-c269-pqgc",
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
@@ -4513,7 +4495,25 @@
       "nvd_status": "No NVD Record",
       "assigning_cna": null,
       "published_date": null
+    },
+    {
+      "cve_id": "CVE-2019-10910",
+      "github_score": 9.8,
+      "github_cvss_version": "3.0",
+      "ghsa_id": "GHSA-pgwj-prpq-jpc2",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
+    },
+    {
+      "cve_id": "CVE-2019-10913",
+      "github_score": 9.8,
+      "github_cvss_version": "3.0",
+      "ghsa_id": "GHSA-x92h-wmg2-6hp7",
+      "nvd_status": "No NVD Record",
+      "assigning_cna": null,
+      "published_date": null
     }
   ],
-  "generated_at": "2026-08-11T18:59:45Z"
+  "generated_at": "2026-08-12T01:26:43Z"
 }
