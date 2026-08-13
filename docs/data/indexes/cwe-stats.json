@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T19:02:08Z",
+  "generated_at": "2026-08-13T01:24:34Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -100,9 +100,9 @@
     {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
-      "conflict_count": 40,
-      "avg_variance": 1.19,
-      "nvd_higher_count": 28,
+      "conflict_count": 41,
+      "avg_variance": 1.24,
+      "nvd_higher_count": 29,
       "gh_higher_count": 12
     },
     {

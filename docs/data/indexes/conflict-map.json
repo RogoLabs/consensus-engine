@@ -14992,6 +14992,14 @@
     "published_date": "2026-06-23"
   },
   {
+    "cve_id": "CVE-2026-53914",
+    "nvd_score": 9.8,
+    "github_score": 6.7,
+    "cvss_variance": 3.1,
+    "assigning_cna": "jetbrains",
+    "published_date": "2026-06-26"
+  },
+  {
     "cve_id": "CVE-2026-54011",
     "nvd_score": 5.4,
     "github_score": 8.7,
