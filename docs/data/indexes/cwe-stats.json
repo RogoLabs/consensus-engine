@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T19:00:47Z",
+  "generated_at": "2026-08-14T01:25:36Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 86,
-      "avg_variance": 1.38,
-      "nvd_higher_count": 61,
+      "conflict_count": 87,
+      "avg_variance": 1.37,
+      "nvd_higher_count": 62,
       "gh_higher_count": 25
     },
     {
@@ -186,20 +186,20 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-306",
+      "name": "Missing Authentication",
+      "conflict_count": 21,
+      "avg_variance": 1.09,
+      "nvd_higher_count": 13,
+      "gh_higher_count": 8
+    },
+    {
       "cwe_id": "CWE-1321",
       "name": "Prototype Pollution",
       "conflict_count": 21,
       "avg_variance": 1.98,
       "nvd_higher_count": 17,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-306",
-      "name": "Missing Authentication",
-      "conflict_count": 20,
-      "avg_variance": 1.09,
-      "nvd_higher_count": 13,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-59",
