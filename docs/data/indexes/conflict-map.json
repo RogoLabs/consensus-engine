@@ -14976,6 +14976,22 @@
     "published_date": "2026-06-10"
   },
   {
+    "cve_id": "CVE-2026-53470",
+    "nvd_score": 8.1,
+    "github_score": 9.6,
+    "cvss_variance": 1.5,
+    "assigning_cna": "redhat",
+    "published_date": "2026-06-10"
+  },
+  {
+    "cve_id": "CVE-2026-53471",
+    "nvd_score": 7.7,
+    "github_score": 9.6,
+    "cvss_variance": 1.9,
+    "assigning_cna": "redhat",
+    "published_date": "2026-06-10"
+  },
+  {
     "cve_id": "CVE-2026-53537",
     "nvd_score": 5.3,
     "github_score": 3.7,
