@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T12:28:47Z",
+  "generated_at": "2026-08-15T18:24:46Z",
   "cnas": [
     {
       "name": "mongodb",
@@ -35,17 +35,6 @@
       "top_cve": "CVE-2025-40843"
     },
     {
-      "name": "WSO2",
-      "total": 80,
-      "comparable": 10,
-      "conflicts": 5,
-      "conflict_rate": 50.0,
-      "avg_drift": 1.6,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2025-10713"
-    },
-    {
       "name": "PostgreSQL",
       "total": 107,
       "comparable": 20,
@@ -66,6 +55,17 @@
       "nvd_higher_count": 3,
       "gh_higher_count": 0,
       "top_cve": "CVE-2026-7573"
+    },
+    {
+      "name": "WSO2",
+      "total": 80,
+      "comparable": 10,
+      "conflicts": 5,
+      "conflict_rate": 50.0,
+      "avg_drift": 1.6,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2025-10713"
     },
     {
       "name": "mattermost",
@@ -201,7 +201,7 @@
     },
     {
       "name": "openjs",
-      "total": 75,
+      "total": 79,
       "comparable": 57,
       "conflicts": 14,
       "conflict_rate": 24.6,
@@ -520,7 +520,7 @@
     },
     {
       "name": "vuldb",
-      "total": 11560,
+      "total": 11570,
       "comparable": 314,
       "conflicts": 1,
       "conflict_rate": 0.3,
@@ -530,9 +530,9 @@
       "top_cve": "CVE-2024-4596"
     },
     {
-      "name": "EEF",
-      "total": 171,
-      "comparable": 8,
+      "name": "debian",
+      "total": 549,
+      "comparable": 28,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -541,9 +541,9 @@
       "top_cve": null
     },
     {
-      "name": "vuldb.com",
-      "total": 430,
-      "comparable": 6,
+      "name": "vulncheck.com",
+      "total": 202,
+      "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -563,28 +563,6 @@
       "top_cve": null
     },
     {
-      "name": "TuranSec",
-      "total": 206,
-      "comparable": 6,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "debian",
-      "total": 549,
-      "comparable": 28,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
       "name": "AMZN",
       "total": 145,
       "comparable": 45,
@@ -596,9 +574,42 @@
       "top_cve": null
     },
     {
+      "name": "EEF",
+      "total": 171,
+      "comparable": 8,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "blacklanternsecurity",
+      "total": 17,
+      "comparable": 8,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
       "name": "VulDB",
       "total": 74,
       "comparable": 13,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "emc",
+      "total": 1088,
+      "comparable": 28,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -629,31 +640,9 @@
       "top_cve": null
     },
     {
-      "name": "emc",
-      "total": 1088,
-      "comparable": 28,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "harborist",
-      "total": 12,
-      "comparable": 8,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "blacklanternsecurity",
-      "total": 17,
-      "comparable": 8,
+      "name": "TuranSec",
+      "total": 206,
+      "comparable": 6,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -673,9 +662,20 @@
       "top_cve": null
     },
     {
-      "name": "vulncheck.com",
-      "total": 202,
-      "comparable": 5,
+      "name": "harborist",
+      "total": 12,
+      "comparable": 8,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "vuldb.com",
+      "total": 430,
+      "comparable": 6,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
