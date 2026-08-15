@@ -5176,6 +5176,14 @@
     "published_date": "2024-07-02"
   },
   {
+    "cve_id": "CVE-2024-6533",
+    "nvd_score": 5.4,
+    "github_score": 3.4,
+    "cvss_variance": 2.0,
+    "assigning_cna": "fluidattacks",
+    "published_date": "2024-08-15"
+  },
+  {
     "cve_id": "CVE-2024-6534",
     "nvd_score": 4.3,
     "github_score": 4.1,
@@ -14992,6 +15000,22 @@
     "published_date": "2026-06-10"
   },
   {
+    "cve_id": "CVE-2026-53474",
+    "nvd_score": 6.5,
+    "github_score": 9.6,
+    "cvss_variance": 3.1,
+    "assigning_cna": "redhat",
+    "published_date": "2026-06-10"
+  },
+  {
+    "cve_id": "CVE-2026-53475",
+    "nvd_score": 7.4,
+    "github_score": 9.3,
+    "cvss_variance": 1.9,
+    "assigning_cna": "redhat",
+    "published_date": "2026-06-10"
+  },
+  {
     "cve_id": "CVE-2026-53537",
     "nvd_score": 5.3,
     "github_score": 3.7,
@@ -15224,6 +15248,14 @@
     "published_date": "2026-06-25"
   },
   {
+    "cve_id": "CVE-2026-56443",
+    "nvd_score": 9.6,
+    "github_score": 4.3,
+    "cvss_variance": 5.3,
+    "assigning_cna": "Gitea",
+    "published_date": "2026-08-13"
+  },
+  {
     "cve_id": "CVE-2026-56820",
     "nvd_score": 9.1,
     "github_score": 7.4,
@@ -15236,6 +15268,14 @@
     "nvd_score": 7.1,
     "github_score": 6.3,
     "cvss_variance": 0.8,
+    "assigning_cna": "Gitea",
+    "published_date": "2026-08-13"
+  },
+  {
+    "cve_id": "CVE-2026-58443",
+    "nvd_score": 9.1,
+    "github_score": 9.6,
+    "cvss_variance": 0.5,
     "assigning_cna": "Gitea",
     "published_date": "2026-08-13"
   },
