@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T12:38:28Z",
+  "generated_at": "2026-08-17T18:37:00Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -36,9 +36,9 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 65,
-      "avg_variance": 1.12,
-      "nvd_higher_count": 36,
+      "conflict_count": 66,
+      "avg_variance": 1.11,
+      "nvd_higher_count": 37,
       "gh_higher_count": 29
     },
     {
@@ -186,20 +186,20 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-1321",
+      "name": "Prototype Pollution",
+      "conflict_count": 22,
+      "avg_variance": 1.92,
+      "nvd_higher_count": 18,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-306",
       "name": "Missing Authentication",
       "conflict_count": 21,
       "avg_variance": 1.09,
       "nvd_higher_count": 13,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-1321",
-      "name": "Prototype Pollution",
-      "conflict_count": 21,
-      "avg_variance": 1.98,
-      "nvd_higher_count": 17,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-59",
@@ -218,6 +218,14 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-787",
+      "name": "Out-of-bounds Write",
+      "conflict_count": 18,
+      "avg_variance": 1.87,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-190",
       "name": "CWE-190",
       "conflict_count": 18,
@@ -232,14 +240,6 @@
       "avg_variance": 1.56,
       "nvd_higher_count": 3,
       "gh_higher_count": 14
-    },
-    {
-      "cwe_id": "CWE-787",
-      "name": "Out-of-bounds Write",
-      "conflict_count": 17,
-      "avg_variance": 1.98,
-      "nvd_higher_count": 12,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-532",
@@ -546,6 +546,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-915",
+      "name": "CWE-915",
+      "conflict_count": 8,
+      "avg_variance": 1.35,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-749",
       "name": "CWE-749",
       "conflict_count": 7,
@@ -582,14 +590,6 @@
       "name": "CWE-121",
       "conflict_count": 7,
       "avg_variance": 0.81,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-915",
-      "name": "CWE-915",
-      "conflict_count": 7,
-      "avg_variance": 1.44,
       "nvd_higher_count": 5,
       "gh_higher_count": 2
     },
