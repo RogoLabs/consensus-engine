@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T12:42:13Z",
+  "generated_at": "2026-08-18T18:37:19Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -52,9 +52,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 56,
+      "conflict_count": 57,
       "avg_variance": 1.78,
-      "nvd_higher_count": 48,
+      "nvd_higher_count": 49,
       "gh_higher_count": 8
     },
     {
@@ -76,9 +76,9 @@
     {
       "cwe_id": "CWE-78",
       "name": "OS Command Injection",
-      "conflict_count": 46,
-      "avg_variance": 1.26,
-      "nvd_higher_count": 25,
+      "conflict_count": 47,
+      "avg_variance": 1.32,
+      "nvd_higher_count": 26,
       "gh_higher_count": 21
     },
     {
@@ -210,6 +210,14 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-190",
+      "name": "CWE-190",
+      "conflict_count": 19,
+      "avg_variance": 1.76,
+      "nvd_higher_count": 16,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-77",
       "name": "CWE-77",
       "conflict_count": 19,
@@ -224,14 +232,6 @@
       "avg_variance": 1.87,
       "nvd_higher_count": 12,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-190",
-      "name": "CWE-190",
-      "conflict_count": 18,
-      "avg_variance": 1.76,
-      "nvd_higher_count": 15,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-80",
