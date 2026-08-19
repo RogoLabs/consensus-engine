@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T12:40:24Z",
+  "generated_at": "2026-08-19T18:31:30Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -194,6 +194,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-787",
+      "name": "Out-of-bounds Write",
+      "conflict_count": 21,
+      "avg_variance": 2.08,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 9
+    },
+    {
       "cwe_id": "CWE-306",
       "name": "Missing Authentication",
       "conflict_count": 21,
@@ -224,14 +232,6 @@
       "avg_variance": 1.53,
       "nvd_higher_count": 12,
       "gh_higher_count": 7
-    },
-    {
-      "cwe_id": "CWE-787",
-      "name": "Out-of-bounds Write",
-      "conflict_count": 18,
-      "avg_variance": 1.87,
-      "nvd_higher_count": 12,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-80",
