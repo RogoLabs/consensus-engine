@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T18:35:12Z",
+  "generated_at": "2026-08-21T01:02:36Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -84,25 +84,33 @@
     {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
-      "conflict_count": 41,
+      "conflict_count": 43,
       "avg_variance": 1.53,
       "nvd_higher_count": 26,
-      "gh_higher_count": 15
-    },
-    {
-      "cwe_id": "CWE-400",
-      "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 41,
-      "avg_variance": 1.87,
-      "nvd_higher_count": 35,
-      "gh_higher_count": 6
+      "gh_higher_count": 17
     },
     {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
-      "conflict_count": 41,
-      "avg_variance": 1.24,
+      "conflict_count": 43,
+      "avg_variance": 1.26,
       "nvd_higher_count": 29,
+      "gh_higher_count": 14
+    },
+    {
+      "cwe_id": "CWE-400",
+      "name": "Uncontrolled Resource Consumption",
+      "conflict_count": 42,
+      "avg_variance": 1.87,
+      "nvd_higher_count": 35,
+      "gh_higher_count": 7
+    },
+    {
+      "cwe_id": "CWE-287",
+      "name": "Improper Authentication",
+      "conflict_count": 36,
+      "avg_variance": 1.48,
+      "nvd_higher_count": 24,
       "gh_higher_count": 12
     },
     {
@@ -112,14 +120,6 @@
       "avg_variance": 1.17,
       "nvd_higher_count": 19,
       "gh_higher_count": 16
-    },
-    {
-      "cwe_id": "CWE-287",
-      "name": "Improper Authentication",
-      "conflict_count": 35,
-      "avg_variance": 1.47,
-      "nvd_higher_count": 24,
-      "gh_higher_count": 11
     },
     {
       "cwe_id": "CWE-601",
@@ -474,6 +474,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-93",
+      "name": "CWE-93",
+      "conflict_count": 9,
+      "avg_variance": 1.48,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-256",
       "name": "CWE-256",
       "conflict_count": 9,
@@ -512,14 +520,6 @@
       "avg_variance": 2.3,
       "nvd_higher_count": 8,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-93",
-      "name": "CWE-93",
-      "conflict_count": 8,
-      "avg_variance": 1.3,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-835",
