@@ -152,6 +152,14 @@
     "published_date": "2020-05-21"
   },
   {
+    "cve_id": "CVE-2020-1938",
+    "nvd_score": 9.8,
+    "github_score": 9.8,
+    "cvss_variance": 0.0,
+    "assigning_cna": "apache",
+    "published_date": "2020-02-24"
+  },
+  {
     "cve_id": "CVE-2020-26623",
     "nvd_score": 3.8,
     "github_score": 6.5,
@@ -190,6 +198,38 @@
     "cvss_variance": 2.0,
     "assigning_cna": "cloudflare",
     "published_date": "2025-01-29"
+  },
+  {
+    "cve_id": "CVE-2021-41164",
+    "nvd_score": 5.4,
+    "github_score": 8.2,
+    "cvss_variance": 2.8,
+    "assigning_cna": "github",
+    "published_date": "2021-11-17"
+  },
+  {
+    "cve_id": "CVE-2021-41182",
+    "nvd_score": 6.1,
+    "github_score": 6.5,
+    "cvss_variance": 0.4,
+    "assigning_cna": "github",
+    "published_date": "2021-10-26"
+  },
+  {
+    "cve_id": "CVE-2021-41183",
+    "nvd_score": 6.1,
+    "github_score": 6.5,
+    "cvss_variance": 0.4,
+    "assigning_cna": "github",
+    "published_date": "2021-10-26"
+  },
+  {
+    "cve_id": "CVE-2021-41184",
+    "nvd_score": 6.1,
+    "github_score": 6.5,
+    "cvss_variance": 0.4,
+    "assigning_cna": "github",
+    "published_date": "2021-10-26"
   },
   {
     "cve_id": "CVE-2021-42279",
@@ -13910,6 +13950,14 @@
     "cvss_variance": 0.3,
     "assigning_cna": "github",
     "published_date": "2026-05-08"
+  },
+  {
+    "cve_id": "CVE-2026-42188",
+    "nvd_score": 4.3,
+    "github_score": 2.4,
+    "cvss_variance": 1.9,
+    "assigning_cna": "github",
+    "published_date": "2026-05-11"
   },
   {
     "cve_id": "CVE-2026-42191",

@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-25T12:40:45Z",
+  "generated_at": "2026-08-25T18:37:23Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 314,
+      "conflict_count": 318,
       "avg_variance": 1.52,
       "nvd_higher_count": 95,
-      "gh_higher_count": 219
+      "gh_higher_count": 223
     },
     {
       "cwe_id": "CWE-22",
@@ -28,9 +28,9 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 81,
+      "conflict_count": 82,
       "avg_variance": 1.25,
-      "nvd_higher_count": 43,
+      "nvd_higher_count": 44,
       "gh_higher_count": 38
     },
     {
