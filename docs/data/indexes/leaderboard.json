@@ -354,7 +354,7 @@
     "assigning_cna": "Gitea",
     "nvd_score": 9.6,
     "nvd_cvss_version": "3.1",
-    "nvd_status": "Received",
+    "nvd_status": "Deferred",
     "github_score": 4.3,
     "github_cvss_version": "3.1",
     "published_date": "2026-08-13"
