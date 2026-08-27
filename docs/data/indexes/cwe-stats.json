@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T19:48:20Z",
+  "generated_at": "2026-08-27T06:34:13Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -82,20 +82,20 @@
       "gh_higher_count": 21
     },
     {
+      "cwe_id": "CWE-20",
+      "name": "Improper Input Validation",
+      "conflict_count": 44,
+      "avg_variance": 1.54,
+      "nvd_higher_count": 27,
+      "gh_higher_count": 17
+    },
+    {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
       "conflict_count": 44,
       "avg_variance": 1.27,
       "nvd_higher_count": 30,
       "gh_higher_count": 14
-    },
-    {
-      "cwe_id": "CWE-20",
-      "name": "Improper Input Validation",
-      "conflict_count": 43,
-      "avg_variance": 1.53,
-      "nvd_higher_count": 26,
-      "gh_higher_count": 17
     },
     {
       "cwe_id": "CWE-400",
