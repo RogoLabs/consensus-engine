@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T08:26:56Z",
+  "generated_at": "2026-08-28T21:47:15Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -100,9 +100,9 @@
     {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 42,
-      "avg_variance": 1.87,
-      "nvd_higher_count": 35,
+      "conflict_count": 43,
+      "avg_variance": 1.93,
+      "nvd_higher_count": 36,
       "gh_higher_count": 7
     },
     {
@@ -354,6 +354,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-674",
+      "name": "CWE-674",
+      "conflict_count": 12,
+      "avg_variance": 2.22,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-116",
       "name": "CWE-116",
       "conflict_count": 12,
@@ -384,14 +392,6 @@
       "avg_variance": 1.38,
       "nvd_higher_count": 8,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-674",
-      "name": "CWE-674",
-      "conflict_count": 11,
-      "avg_variance": 2.01,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-23",
@@ -482,6 +482,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-835",
+      "name": "CWE-835",
+      "conflict_count": 9,
+      "avg_variance": 2.5,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-256",
       "name": "CWE-256",
       "conflict_count": 9,
@@ -520,14 +528,6 @@
       "avg_variance": 2.3,
       "nvd_higher_count": 8,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-835",
-      "name": "CWE-835",
-      "conflict_count": 8,
-      "avg_variance": 2.25,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-476",
