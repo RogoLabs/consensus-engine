@@ -15120,6 +15120,14 @@
     "published_date": "2026-06-12"
   },
   {
+    "cve_id": "CVE-2026-52831",
+    "nvd_score": 8.0,
+    "github_score": 10.0,
+    "cvss_variance": 2.0,
+    "assigning_cna": "github",
+    "published_date": "2026-09-02"
+  },
+  {
     "cve_id": "CVE-2026-53441",
     "nvd_score": 5.4,
     "github_score": 8.0,

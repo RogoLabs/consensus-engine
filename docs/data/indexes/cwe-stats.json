@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T15:55:34Z",
+  "generated_at": "2026-09-02T20:29:26Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -76,10 +76,10 @@
     {
       "cwe_id": "CWE-78",
       "name": "OS Command Injection",
-      "conflict_count": 47,
-      "avg_variance": 1.32,
+      "conflict_count": 48,
+      "avg_variance": 1.33,
       "nvd_higher_count": 26,
-      "gh_higher_count": 21
+      "gh_higher_count": 22
     },
     {
       "cwe_id": "CWE-20",
