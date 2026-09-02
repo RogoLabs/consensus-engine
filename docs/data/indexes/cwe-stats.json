@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T10:28:24Z",
+  "generated_at": "2026-09-02T15:55:34Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -84,10 +84,10 @@
     {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
-      "conflict_count": 44,
-      "avg_variance": 1.54,
+      "conflict_count": 45,
+      "avg_variance": 1.5,
       "nvd_higher_count": 27,
-      "gh_higher_count": 17
+      "gh_higher_count": 18
     },
     {
       "cwe_id": "CWE-502",
