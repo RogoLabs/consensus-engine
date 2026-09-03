@@ -15712,6 +15712,14 @@
     "published_date": "2026-08-11"
   },
   {
+    "cve_id": "CVE-2026-73292",
+    "nvd_score": 8.3,
+    "github_score": 7.6,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2026-08-12"
+  },
+  {
     "cve_id": "CVE-2026-7572",
     "nvd_score": 5.5,
     "github_score": 4.4,
