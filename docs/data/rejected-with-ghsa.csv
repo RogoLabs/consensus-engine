@@ -12,6 +12,7 @@ CVE-2025-8022,GHSA-4j66-8f4r-3pjx,https://github.com/advisories/GHSA-4j66-8f4r-3
 CVE-2024-7990,GHSA-gj27-76gq-5v3p,https://github.com/advisories/GHSA-gj27-76gq-5v3p,8.4,3.0,Rejected,huntr
 CVE-2024-7039,GHSA-pqwr-phvv-v49f,https://github.com/advisories/GHSA-pqwr-phvv-v49f,8.3,3.0,Rejected,huntr
 CVE-2024-8060,GHSA-ff5c-56m7-vc75,https://github.com/advisories/GHSA-ff5c-56m7-vc75,8.1,3.0,Rejected,huntr
+CVE-2024-7806,GHSA-85jc-8h5p-8vw8,https://github.com/advisories/GHSA-85jc-8h5p-8vw8,8.0,3.0,Rejected,huntr
 CVE-2024-4642,GHSA-cqh9-jfqr-h9jj,https://github.com/advisories/GHSA-cqh9-jfqr-h9jj,7.7,3.0,Rejected,huntr
 CVE-2024-7959,GHSA-x757-hv69-jr45,https://github.com/advisories/GHSA-x757-hv69-jr45,7.7,3.0,Rejected,huntr
 CVE-2024-7053,GHSA-43g4-487m-5q6m,https://github.com/advisories/GHSA-43g4-487m-5q6m,7.6,3.0,Rejected,huntr
