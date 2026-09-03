@@ -1,9 +1,9 @@
 {
-  "total_cves": 255505,
-  "comparable_count": 11801,
-  "conflict_count": 1968,
+  "total_cves": 255506,
+  "comparable_count": 11825,
+  "conflict_count": 1970,
   "conflict_rate": 16.7,
-  "gap_count": 249398,
+  "gap_count": 249397,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -13,7 +13,7 @@
   "median_variance": 1.3,
   "direction_asymmetry": {
     "nvd_higher_count": 1179,
-    "gh_higher_count": 789
+    "gh_higher_count": 791
   },
   "conflict_by_year": {
     "2006": 1,
@@ -30,7 +30,7 @@
     "2023": 12,
     "2024": 576,
     "2025": 512,
-    "2026": 836
+    "2026": 838
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -90,11 +90,11 @@
     },
     "2026": {
       "nvd_higher": 532,
-      "gh_higher": 304,
-      "comparable": 5878
+      "gh_higher": 306,
+      "comparable": 5902
     }
   },
-  "severity_flip_count": 1092,
+  "severity_flip_count": 1094,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 84,
     "Critical\u2192High": 140,
@@ -105,7 +105,7 @@
     "High\u2192Medium": 341,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 35,
-    "Medium\u2192High": 231,
+    "Medium\u2192High": 233,
     "Medium\u2192Medium": 525,
     "Medium\u2192Low": 140,
     "Low\u2192Critical": 1,
@@ -117,12 +117,12 @@
     "nvd": {
       "Critical": 296,
       "High": 693,
-      "Medium": 931,
+      "Medium": 933,
       "Low": 48
     },
     "gh": {
       "Critical": 209,
-      "High": 611,
+      "High": 613,
       "Medium": 948,
       "Low": 200
     }
@@ -151,7 +151,7 @@
     {
       "bucket": "2.0-2.5",
       "min": 2.0,
-      "count": 254
+      "count": 256
     },
     {
       "bucket": "2.5-3.0",
@@ -202,10 +202,10 @@
   "severity_distribution": {
     "Critical": 296,
     "High": 693,
-    "Medium": 931,
+    "Medium": 933,
     "Low": 48
   },
-  "avg_days_to_analysis": 2951.6,
+  "avg_days_to_analysis": 2951.3,
   "p90_days_to_analysis": 7237,
-  "generated_at": "2026-09-02T20:29:26Z"
+  "generated_at": "2026-09-03T02:31:40Z"
 }

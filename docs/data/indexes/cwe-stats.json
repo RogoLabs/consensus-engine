@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T20:29:26Z",
+  "generated_at": "2026-09-03T02:31:40Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -52,10 +52,10 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 57,
+      "conflict_count": 58,
       "avg_variance": 1.78,
       "nvd_higher_count": 49,
-      "gh_higher_count": 8
+      "gh_higher_count": 9
     },
     {
       "cwe_id": "CWE-284",
@@ -90,20 +90,20 @@
       "gh_higher_count": 18
     },
     {
+      "cwe_id": "CWE-400",
+      "name": "Uncontrolled Resource Consumption",
+      "conflict_count": 45,
+      "avg_variance": 1.94,
+      "nvd_higher_count": 36,
+      "gh_higher_count": 9
+    },
+    {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
       "conflict_count": 44,
       "avg_variance": 1.27,
       "nvd_higher_count": 30,
       "gh_higher_count": 14
-    },
-    {
-      "cwe_id": "CWE-400",
-      "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 43,
-      "avg_variance": 1.93,
-      "nvd_higher_count": 36,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-287",
