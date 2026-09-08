@@ -1,9 +1,9 @@
 {
-  "total_cves": 257045,
-  "comparable_count": 11949,
-  "conflict_count": 1971,
+  "total_cves": 258365,
+  "comparable_count": 11975,
+  "conflict_count": 1972,
   "conflict_rate": 16.5,
-  "gap_count": 250911,
+  "gap_count": 252228,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1180,
+    "nvd_higher_count": 1181,
     "gh_higher_count": 791
   },
   "conflict_by_year": {
@@ -30,7 +30,7 @@
     "2023": 12,
     "2024": 576,
     "2025": 512,
-    "2026": 839
+    "2026": 840
   },
   "conflict_direction_by_year": {
     "2013": {
@@ -89,15 +89,15 @@
       "comparable": 2274
     },
     "2026": {
-      "nvd_higher": 533,
+      "nvd_higher": 534,
       "gh_higher": 306,
-      "comparable": 6020
+      "comparable": 6046
     }
   },
-  "severity_flip_count": 1094,
+  "severity_flip_count": 1095,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 84,
-    "Critical\u2192High": 140,
+    "Critical\u2192High": 141,
     "Critical\u2192Medium": 64,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 89,
@@ -115,14 +115,14 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 296,
+      "Critical": 297,
       "High": 694,
       "Medium": 933,
       "Low": 48
     },
     "gh": {
       "Critical": 209,
-      "High": 614,
+      "High": 615,
       "Medium": 948,
       "Low": 200
     }
@@ -146,7 +146,7 @@
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 310
+      "count": 311
     },
     {
       "bucket": "2.0-2.5",
@@ -200,12 +200,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 296,
+    "Critical": 297,
     "High": 694,
     "Medium": 933,
     "Low": 48
   },
-  "avg_days_to_analysis": 2942.8,
-  "p90_days_to_analysis": 7233,
-  "generated_at": "2026-09-08T15:54:54Z"
+  "avg_days_to_analysis": 2941.4,
+  "p90_days_to_analysis": 7232,
+  "generated_at": "2026-09-08T20:41:01Z"
 }

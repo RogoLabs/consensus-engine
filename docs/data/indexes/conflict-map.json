@@ -13904,6 +13904,14 @@
     "published_date": "2026-06-09"
   },
   {
+    "cve_id": "CVE-2026-41855",
+    "nvd_score": 9.8,
+    "github_score": 8.1,
+    "cvss_variance": 1.7,
+    "assigning_cna": "vmware",
+    "published_date": "2026-06-09"
+  },
+  {
     "cve_id": "CVE-2026-41900",
     "nvd_score": 10.0,
     "github_score": 8.8,
