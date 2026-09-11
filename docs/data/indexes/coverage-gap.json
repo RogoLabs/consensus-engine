@@ -3,8 +3,8 @@
   "avg_github_score": 6.94,
   "severity_distribution": {
     "critical": 2182,
-    "high": 5127,
-    "medium": 6234,
+    "high": 5129,
+    "medium": 6232,
     "low": 564
   },
   "nvd_status_breakdown": {
@@ -4515,5 +4515,5 @@
       "published_date": null
     }
   ],
-  "generated_at": "2026-09-10T20:26:12Z"
+  "generated_at": "2026-09-11T02:28:46Z"
 }
