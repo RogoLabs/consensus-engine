@@ -12,8 +12,8 @@
     "Deferred": 48363,
     "Unknown": 14631,
     "Awaiting Analysis": 4430,
-    "Undergoing Analysis": 653,
-    "Received": 3394
+    "Received": 3414,
+    "Undergoing Analysis": 653
   },
   "distribution_buckets": [
     {
@@ -41,5 +41,5 @@
       "count": 108764
     }
   ],
-  "generated_at": "2026-09-13T15:32:14Z"
+  "generated_at": "2026-09-13T20:12:48Z"
 }
