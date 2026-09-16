@@ -4,15 +4,15 @@
   "p90_days_to_analysis": 7223,
   "awaiting_analysis_count": 4293,
   "undergoing_analysis_count": 669,
-  "deferred_count": 48711,
+  "deferred_count": 48710,
   "status_breakdown": {
     "Modified": 118224,
-    "Rejected": 4198,
+    "Rejected": 4200,
     "Analyzed": 66938,
-    "Deferred": 48711,
+    "Deferred": 48710,
     "Unknown": 14413,
     "Awaiting Analysis": 4293,
-    "Received": 5018,
+    "Received": 5188,
     "Undergoing Analysis": 669
   },
   "distribution_buckets": [
@@ -41,5 +41,5 @@
       "count": 108787
     }
   ],
-  "generated_at": "2026-09-16T02:51:35Z"
+  "generated_at": "2026-09-16T10:44:28Z"
 }
