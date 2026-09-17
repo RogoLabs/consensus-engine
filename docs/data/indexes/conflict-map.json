@@ -16,6 +16,14 @@
     "published_date": "2013-02-13"
   },
   {
+    "cve_id": "CVE-2012-5825",
+    "nvd_score": 7.4,
+    "github_score": 5.3,
+    "cvss_variance": 2.1,
+    "assigning_cna": "mitre",
+    "published_date": "2012-11-04"
+  },
+  {
     "cve_id": "CVE-2013-0335",
     "nvd_score": 7.6,
     "github_score": 6.5,
