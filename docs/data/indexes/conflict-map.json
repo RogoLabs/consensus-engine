@@ -689,9 +689,9 @@
   },
   {
     "cve_id": "CVE-2023-53159",
-    "nvd_score": 9.1,
+    "nvd_score": 3.3,
     "github_score": 4.5,
-    "cvss_variance": 4.6,
+    "cvss_variance": 1.2,
     "assigning_cna": "mitre",
     "published_date": "2025-07-28"
   },

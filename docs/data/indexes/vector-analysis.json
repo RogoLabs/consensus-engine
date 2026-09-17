@@ -1,7 +1,7 @@
 {
   "comparable_conflicts": 1978,
   "vector_only_conflicts": 75,
-  "generated_at": "2026-09-17T16:08:00Z",
+  "generated_at": "2026-09-17T20:57:41Z",
   "metrics": [
     {
       "key": "A",
@@ -9,16 +9,16 @@
       "total": 1978,
       "disagree_count": 632,
       "disagree_rate": 32.0,
-      "nvd_higher_count": 388,
-      "gh_higher_count": 244,
+      "nvd_higher_count": 387,
+      "gh_higher_count": 245,
       "top_transitions": [
         {
           "transition": "H\u2192L",
-          "count": 222
+          "count": 221
         },
         {
           "transition": "N\u2192L",
-          "count": 142
+          "count": 143
         },
         {
           "transition": "H\u2192N",
@@ -57,14 +57,14 @@
       "key": "C",
       "name": "Confidentiality",
       "total": 1978,
-      "disagree_count": 586,
+      "disagree_count": 585,
       "disagree_rate": 29.6,
-      "nvd_higher_count": 294,
+      "nvd_higher_count": 293,
       "gh_higher_count": 292,
       "top_transitions": [
         {
           "transition": "H\u2192L",
-          "count": 187
+          "count": 186
         },
         {
           "transition": "L\u2192H",
@@ -138,10 +138,10 @@
       "key": "PR",
       "name": "Privileges Required",
       "total": 1978,
-      "disagree_count": 486,
+      "disagree_count": 487,
       "disagree_rate": 24.6,
       "nvd_higher_count": 329,
-      "gh_higher_count": 157,
+      "gh_higher_count": 158,
       "top_transitions": [
         {
           "transition": "N\u2192L",
@@ -149,7 +149,7 @@
         },
         {
           "transition": "L\u2192N",
-          "count": 121
+          "count": 122
         },
         {
           "transition": "L\u2192H",
@@ -188,14 +188,14 @@
       "key": "AV",
       "name": "Attack Vector",
       "total": 1978,
-      "disagree_count": 139,
+      "disagree_count": 138,
       "disagree_rate": 7.0,
-      "nvd_higher_count": 113,
+      "nvd_higher_count": 112,
       "gh_higher_count": 26,
       "top_transitions": [
         {
           "transition": "N\u2192L",
-          "count": 79
+          "count": 78
         },
         {
           "transition": "N\u2192A",
