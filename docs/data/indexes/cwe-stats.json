@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-18T10:29:11Z",
+  "generated_at": "2026-09-18T15:45:16Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 319,
-      "avg_variance": 1.51,
+      "conflict_count": 321,
+      "avg_variance": 1.52,
       "nvd_higher_count": 95,
-      "gh_higher_count": 224
+      "gh_higher_count": 226
     },
     {
       "cwe_id": "CWE-22",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 91,
+      "conflict_count": 92,
       "avg_variance": 1.38,
-      "nvd_higher_count": 64,
+      "nvd_higher_count": 65,
       "gh_higher_count": 27
     },
     {
@@ -106,20 +106,20 @@
       "gh_higher_count": 14
     },
     {
-      "cwe_id": "CWE-287",
-      "name": "Improper Authentication",
-      "conflict_count": 36,
-      "avg_variance": 1.48,
-      "nvd_higher_count": 24,
-      "gh_higher_count": 12
-    },
-    {
       "cwe_id": "CWE-862",
       "name": "Missing Authorization",
-      "conflict_count": 35,
+      "conflict_count": 38,
       "avg_variance": 1.17,
-      "nvd_higher_count": 19,
+      "nvd_higher_count": 22,
       "gh_higher_count": 16
+    },
+    {
+      "cwe_id": "CWE-287",
+      "name": "Improper Authentication",
+      "conflict_count": 37,
+      "avg_variance": 1.45,
+      "nvd_higher_count": 25,
+      "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-601",
@@ -702,6 +702,14 @@
       "name": "CWE-330",
       "conflict_count": 5,
       "avg_variance": 1.36,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 1
+    },
+    {
+      "cwe_id": "CWE-1021",
+      "name": "CWE-1021",
+      "conflict_count": 5,
+      "avg_variance": 1.74,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
     },
