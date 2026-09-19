@@ -1,17 +1,6 @@
 {
-  "generated_at": "2026-09-19T02:39:42Z",
+  "generated_at": "2026-09-19T10:12:16Z",
   "cnas": [
-    {
-      "name": "mongodb",
-      "total": 246,
-      "comparable": 12,
-      "conflicts": 8,
-      "conflict_rate": 66.7,
-      "avg_drift": 1.82,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 2,
-      "top_cve": "CVE-2024-5629"
-    },
     {
       "name": "nvidia",
       "total": 592,
@@ -24,6 +13,17 @@
       "top_cve": "CVE-2026-24157"
     },
     {
+      "name": "mongodb",
+      "total": 246,
+      "comparable": 12,
+      "conflicts": 8,
+      "conflict_rate": 66.7,
+      "avg_drift": 1.82,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 2,
+      "top_cve": "CVE-2024-5629"
+    },
+    {
       "name": "ERIC",
       "total": 35,
       "comparable": 5,
@@ -33,17 +33,6 @@
       "nvd_higher_count": 2,
       "gh_higher_count": 1,
       "top_cve": "CVE-2025-40843"
-    },
-    {
-      "name": "WSO2",
-      "total": 87,
-      "comparable": 10,
-      "conflicts": 5,
-      "conflict_rate": 50.0,
-      "avg_drift": 1.6,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 1,
-      "top_cve": "CVE-2025-10713"
     },
     {
       "name": "PostgreSQL",
@@ -66,6 +55,17 @@
       "nvd_higher_count": 3,
       "gh_higher_count": 0,
       "top_cve": "CVE-2026-7573"
+    },
+    {
+      "name": "WSO2",
+      "total": 87,
+      "comparable": 10,
+      "conflicts": 5,
+      "conflict_rate": 50.0,
+      "avg_drift": 1.6,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 1,
+      "top_cve": "CVE-2025-10713"
     },
     {
       "name": "mattermost",
@@ -520,7 +520,7 @@
     },
     {
       "name": "vuldb",
-      "total": 12469,
+      "total": 12471,
       "comparable": 332,
       "conflicts": 1,
       "conflict_rate": 0.3,
@@ -530,9 +530,9 @@
       "top_cve": "CVE-2024-4596"
     },
     {
-      "name": "TuranSec",
-      "total": 202,
-      "comparable": 8,
+      "name": "AMZN",
+      "total": 184,
+      "comparable": 45,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -541,19 +541,8 @@
       "top_cve": null
     },
     {
-      "name": "EEF",
-      "total": 304,
-      "comparable": 9,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "cisa-cg",
-      "total": 174,
+      "name": "Checkmarx",
+      "total": 14,
       "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -574,9 +563,9 @@
       "top_cve": null
     },
     {
-      "name": "oracle",
-      "total": 7844,
-      "comparable": 5,
+      "name": "emc",
+      "total": 1324,
+      "comparable": 32,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -585,8 +574,19 @@
       "top_cve": null
     },
     {
-      "name": "Checkmarx",
-      "total": 14,
+      "name": "sap",
+      "total": 511,
+      "comparable": 6,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "oracle",
+      "total": 7844,
       "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
@@ -607,17 +607,6 @@
       "top_cve": null
     },
     {
-      "name": "AMZN",
-      "total": 184,
-      "comparable": 45,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
       "name": "vulncheck.com",
       "total": 233,
       "comparable": 5,
@@ -629,9 +618,9 @@
       "top_cve": null
     },
     {
-      "name": "VulDB",
-      "total": 139,
-      "comparable": 13,
+      "name": "blacklanternsecurity",
+      "total": 17,
+      "comparable": 8,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -651,17 +640,6 @@
       "top_cve": null
     },
     {
-      "name": "TYPO3",
-      "total": 72,
-      "comparable": 5,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
       "name": "debian",
       "total": 550,
       "comparable": 28,
@@ -673,9 +651,42 @@
       "top_cve": null
     },
     {
-      "name": "emc",
-      "total": 1324,
-      "comparable": 32,
+      "name": "TYPO3",
+      "total": 72,
+      "comparable": 5,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "EEF",
+      "total": 304,
+      "comparable": 9,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "TuranSec",
+      "total": 202,
+      "comparable": 8,
+      "conflicts": 0,
+      "conflict_rate": 0.0,
+      "avg_drift": 0,
+      "nvd_higher_count": 0,
+      "gh_higher_count": 0,
+      "top_cve": null
+    },
+    {
+      "name": "cisa-cg",
+      "total": 174,
+      "comparable": 5,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
@@ -695,20 +706,9 @@
       "top_cve": null
     },
     {
-      "name": "sap",
-      "total": 511,
-      "comparable": 6,
-      "conflicts": 0,
-      "conflict_rate": 0.0,
-      "avg_drift": 0,
-      "nvd_higher_count": 0,
-      "gh_higher_count": 0,
-      "top_cve": null
-    },
-    {
-      "name": "blacklanternsecurity",
-      "total": 17,
-      "comparable": 8,
+      "name": "VulDB",
+      "total": 139,
+      "comparable": 13,
       "conflicts": 0,
       "conflict_rate": 0.0,
       "avg_drift": 0,
