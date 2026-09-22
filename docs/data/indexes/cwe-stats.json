@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-21T21:38:50Z",
+  "generated_at": "2026-09-22T02:49:49Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 321,
+      "conflict_count": 322,
       "avg_variance": 1.52,
       "nvd_higher_count": 95,
-      "gh_higher_count": 226
+      "gh_higher_count": 227
     },
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 112,
-      "avg_variance": 1.46,
+      "conflict_count": 113,
+      "avg_variance": 1.45,
       "nvd_higher_count": 54,
-      "gh_higher_count": 58
+      "gh_higher_count": 59
     },
     {
       "cwe_id": "CWE-863",
