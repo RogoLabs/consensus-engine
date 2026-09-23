@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T10:43:22Z",
+  "generated_at": "2026-09-23T16:03:51Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -44,10 +44,10 @@
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 64,
-      "avg_variance": 1.62,
+      "conflict_count": 65,
+      "avg_variance": 1.59,
       "nvd_higher_count": 40,
-      "gh_higher_count": 24
+      "gh_higher_count": 25
     },
     {
       "cwe_id": "CWE-770",
