@@ -1,12 +1,12 @@
 {
-  "comparable_conflicts": 1993,
+  "comparable_conflicts": 1994,
   "vector_only_conflicts": 76,
-  "generated_at": "2026-09-23T16:03:51Z",
+  "generated_at": "2026-09-23T21:04:44Z",
   "metrics": [
     {
       "key": "A",
       "name": "Availability",
-      "total": 1993,
+      "total": 1994,
       "disagree_count": 636,
       "disagree_rate": 31.9,
       "nvd_higher_count": 390,
@@ -37,15 +37,15 @@
     {
       "key": "AC",
       "name": "Attack Complexity",
-      "total": 1993,
-      "disagree_count": 612,
+      "total": 1994,
+      "disagree_count": 613,
       "disagree_rate": 30.7,
-      "nvd_higher_count": 564,
+      "nvd_higher_count": 565,
       "gh_higher_count": 48,
       "top_transitions": [
         {
           "transition": "L\u2192H",
-          "count": 564
+          "count": 565
         },
         {
           "transition": "H\u2192L",
@@ -56,7 +56,7 @@
     {
       "key": "C",
       "name": "Confidentiality",
-      "total": 1993,
+      "total": 1994,
       "disagree_count": 590,
       "disagree_rate": 29.6,
       "nvd_higher_count": 295,
@@ -87,7 +87,7 @@
     {
       "key": "S",
       "name": "Scope",
-      "total": 1993,
+      "total": 1994,
       "disagree_count": 558,
       "disagree_rate": 28.0,
       "nvd_higher_count": 222,
@@ -106,7 +106,7 @@
     {
       "key": "I",
       "name": "Integrity",
-      "total": 1993,
+      "total": 1994,
       "disagree_count": 552,
       "disagree_rate": 27.7,
       "nvd_higher_count": 299,
@@ -137,7 +137,7 @@
     {
       "key": "PR",
       "name": "Privileges Required",
-      "total": 1993,
+      "total": 1994,
       "disagree_count": 488,
       "disagree_rate": 24.5,
       "nvd_higher_count": 330,
@@ -168,7 +168,7 @@
     {
       "key": "UI",
       "name": "User Interaction",
-      "total": 1993,
+      "total": 1994,
       "disagree_count": 279,
       "disagree_rate": 14.0,
       "nvd_higher_count": 151,
@@ -187,7 +187,7 @@
     {
       "key": "AV",
       "name": "Attack Vector",
-      "total": 1993,
+      "total": 1994,
       "disagree_count": 138,
       "disagree_rate": 6.9,
       "nvd_higher_count": 112,
