@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T16:25:59Z",
+  "generated_at": "2026-09-24T21:11:02Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,10 +12,10 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 113,
+      "conflict_count": 114,
       "avg_variance": 1.45,
       "nvd_higher_count": 54,
-      "gh_higher_count": 59
+      "gh_higher_count": 60
     },
     {
       "cwe_id": "CWE-863",
@@ -108,9 +108,9 @@
     {
       "cwe_id": "CWE-862",
       "name": "Missing Authorization",
-      "conflict_count": 38,
-      "avg_variance": 1.17,
-      "nvd_higher_count": 22,
+      "conflict_count": 39,
+      "avg_variance": 1.21,
+      "nvd_higher_count": 23,
       "gh_higher_count": 16
     },
     {

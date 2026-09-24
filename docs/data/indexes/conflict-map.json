@@ -15528,12 +15528,28 @@
     "published_date": "2026-08-13"
   },
   {
+    "cve_id": "CVE-2026-56742",
+    "nvd_score": 8.9,
+    "github_score": 5.9,
+    "cvss_variance": 3.0,
+    "assigning_cna": "github",
+    "published_date": "2026-07-15"
+  },
+  {
     "cve_id": "CVE-2026-56820",
     "nvd_score": 9.1,
     "github_score": 7.4,
     "cvss_variance": 1.7,
     "assigning_cna": "github",
     "published_date": "2026-07-21"
+  },
+  {
+    "cve_id": "CVE-2026-57171",
+    "nvd_score": 7.7,
+    "github_score": 8.4,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2026-08-26"
   },
   {
     "cve_id": "CVE-2026-58191",
