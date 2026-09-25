@@ -1,9 +1,9 @@
 {
-  "total_cves": 267408,
-  "comparable_count": 12558,
-  "conflict_count": 1996,
+  "total_cves": 267556,
+  "comparable_count": 12590,
+  "conflict_count": 1997,
   "conflict_rate": 15.9,
-  "gap_count": 261162,
+  "gap_count": 261306,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.53,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1197,
+    "nvd_higher_count": 1198,
     "gh_higher_count": 799
   },
   "conflict_by_year": {
@@ -31,7 +31,7 @@
     "2023": 17,
     "2024": 576,
     "2025": 512,
-    "2026": 857
+    "2026": 858
   },
   "conflict_direction_by_year": {
     "2012": {
@@ -95,9 +95,9 @@
       "comparable": 2274
     },
     "2026": {
-      "nvd_higher": 545,
+      "nvd_higher": 546,
       "gh_higher": 312,
-      "comparable": 6618
+      "comparable": 6650
     }
   },
   "severity_flip_count": 1107,
@@ -107,7 +107,7 @@
     "Critical\u2192Medium": 63,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 89,
-    "High\u2192High": 242,
+    "High\u2192High": 243,
     "High\u2192Medium": 347,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 35,
@@ -122,13 +122,13 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 296,
-      "High": 702,
+      "High": 703,
       "Medium": 949,
       "Low": 49
     },
     "gh": {
       "Critical": 209,
-      "High": 620,
+      "High": 621,
       "Medium": 964,
       "Low": 203
     }
@@ -147,7 +147,7 @@
     {
       "bucket": "1.0-1.5",
       "min": 1.0,
-      "count": 468
+      "count": 469
     },
     {
       "bucket": "1.5-2.0",
@@ -207,11 +207,11 @@
   ],
   "severity_distribution": {
     "Critical": 296,
-    "High": 702,
+    "High": 703,
     "Medium": 949,
     "Low": 49
   },
-  "avg_days_to_analysis": 2889.3,
-  "p90_days_to_analysis": 7216,
-  "generated_at": "2026-09-25T16:25:06Z"
+  "avg_days_to_analysis": 2888.5,
+  "p90_days_to_analysis": 7211,
+  "generated_at": "2026-09-25T21:06:31Z"
 }
