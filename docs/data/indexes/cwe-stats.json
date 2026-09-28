@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-28T12:42:59Z",
+  "generated_at": "2026-09-28T23:00:16Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 323,
+      "conflict_count": 324,
       "avg_variance": 1.52,
-      "nvd_higher_count": 96,
+      "nvd_higher_count": 97,
       "gh_higher_count": 227
     },
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 114,
+      "conflict_count": 115,
       "avg_variance": 1.45,
-      "nvd_higher_count": 54,
+      "nvd_higher_count": 55,
       "gh_higher_count": 60
     },
     {
@@ -36,9 +36,9 @@
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 66,
+      "conflict_count": 67,
       "avg_variance": 1.59,
-      "nvd_higher_count": 41,
+      "nvd_higher_count": 42,
       "gh_higher_count": 25
     },
     {
@@ -498,6 +498,14 @@
       "gh_higher_count": 1
     },
     {
+      "cwe_id": "CWE-441",
+      "name": "CWE-441",
+      "conflict_count": 9,
+      "avg_variance": 1.37,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-362",
       "name": "Race Condition",
       "conflict_count": 8,
@@ -536,14 +544,6 @@
       "avg_variance": 1.5,
       "nvd_higher_count": 8,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-441",
-      "name": "CWE-441",
-      "conflict_count": 8,
-      "avg_variance": 1.39,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-915",
