@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T03:42:36Z",
+  "generated_at": "2026-09-29T12:04:28Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -108,9 +108,9 @@
     {
       "cwe_id": "CWE-862",
       "name": "Missing Authorization",
-      "conflict_count": 39,
-      "avg_variance": 1.21,
-      "nvd_higher_count": 23,
+      "conflict_count": 40,
+      "avg_variance": 1.23,
+      "nvd_higher_count": 24,
       "gh_higher_count": 16
     },
     {
