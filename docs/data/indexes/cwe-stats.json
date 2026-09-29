@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-29T12:04:28Z",
+  "generated_at": "2026-09-29T17:34:02Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 324,
+      "conflict_count": 327,
       "avg_variance": 1.52,
-      "nvd_higher_count": 97,
-      "gh_higher_count": 227
+      "nvd_higher_count": 98,
+      "gh_higher_count": 229
     },
     {
       "cwe_id": "CWE-22",
@@ -68,10 +68,10 @@
     {
       "cwe_id": "CWE-89",
       "name": "SQL Injection",
-      "conflict_count": 53,
-      "avg_variance": 1.86,
+      "conflict_count": 54,
+      "avg_variance": 1.88,
       "nvd_higher_count": 26,
-      "gh_higher_count": 27
+      "gh_higher_count": 28
     },
     {
       "cwe_id": "CWE-78",
@@ -84,10 +84,18 @@
     {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
-      "conflict_count": 47,
-      "avg_variance": 1.53,
+      "conflict_count": 48,
+      "avg_variance": 1.55,
       "nvd_higher_count": 29,
-      "gh_higher_count": 18
+      "gh_higher_count": 19
+    },
+    {
+      "cwe_id": "CWE-502",
+      "name": "Deserialization of Untrusted Data",
+      "conflict_count": 46,
+      "avg_variance": 1.29,
+      "nvd_higher_count": 32,
+      "gh_higher_count": 14
     },
     {
       "cwe_id": "CWE-400",
@@ -96,14 +104,6 @@
       "avg_variance": 1.94,
       "nvd_higher_count": 36,
       "gh_higher_count": 9
-    },
-    {
-      "cwe_id": "CWE-502",
-      "name": "Deserialization of Untrusted Data",
-      "conflict_count": 45,
-      "avg_variance": 1.28,
-      "nvd_higher_count": 31,
-      "gh_higher_count": 14
     },
     {
       "cwe_id": "CWE-862",

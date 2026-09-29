@@ -3024,6 +3024,24 @@
     "published_date": "2026-06-23"
   },
   {
+    "cve_id": "CVE-2026-63498",
+    "drift_score": 3.3,
+    "drift_type": "conflict",
+    "cvss_variance": 3.3,
+    "metadata_conflict": 0.2,
+    "severity_flip": true,
+    "nvd_severity": "Medium",
+    "gh_severity": "High",
+    "source_count": 2,
+    "assigning_cna": "github",
+    "nvd_score": 5.4,
+    "nvd_cvss_version": "3.1",
+    "nvd_status": "Analyzed",
+    "github_score": 8.7,
+    "github_cvss_version": "3.1",
+    "published_date": "2026-09-24"
+  },
+  {
     "cve_id": "CVE-2026-70492",
     "drift_score": 3.3,
     "drift_type": "conflict",
@@ -4516,6 +4534,24 @@
     "github_score": 8.6,
     "github_cvss_version": "3.1",
     "published_date": "2021-12-18"
+  },
+  {
+    "cve_id": "CVE-2023-22491",
+    "drift_score": 2.7,
+    "drift_type": "conflict",
+    "cvss_variance": 2.7,
+    "metadata_conflict": 0.2,
+    "severity_flip": true,
+    "nvd_severity": "Medium",
+    "gh_severity": "High",
+    "source_count": 2,
+    "assigning_cna": "github",
+    "nvd_score": 5.4,
+    "nvd_cvss_version": "3.1",
+    "nvd_status": "Analyzed",
+    "github_score": 8.1,
+    "github_cvss_version": "3.1",
+    "published_date": "2023-01-13"
   },
   {
     "cve_id": "CVE-2023-38519",
@@ -8962,41 +8998,5 @@
     "github_score": 5.3,
     "github_cvss_version": "3.1",
     "published_date": "2026-04-08"
-  },
-  {
-    "cve_id": "CVE-2026-4054",
-    "drift_score": 2.2,
-    "drift_type": "conflict",
-    "cvss_variance": 2.2,
-    "metadata_conflict": 0.2,
-    "severity_flip": false,
-    "nvd_severity": null,
-    "gh_severity": null,
-    "source_count": 2,
-    "assigning_cna": "mattermost",
-    "nvd_score": 6.5,
-    "nvd_cvss_version": "3.1",
-    "nvd_status": "Analyzed",
-    "github_score": 4.3,
-    "github_cvss_version": "3.1",
-    "published_date": "2026-05-15"
-  },
-  {
-    "cve_id": "CVE-2026-40898",
-    "drift_score": 2.2,
-    "drift_type": "conflict",
-    "cvss_variance": 2.2,
-    "metadata_conflict": 0.2,
-    "severity_flip": true,
-    "nvd_severity": "High",
-    "gh_severity": "Medium",
-    "source_count": 2,
-    "assigning_cna": "github",
-    "nvd_score": 7.5,
-    "nvd_cvss_version": "3.1",
-    "nvd_status": "Analyzed",
-    "github_score": 5.3,
-    "github_cvss_version": "3.1",
-    "published_date": "2026-06-04"
   }
 ]
