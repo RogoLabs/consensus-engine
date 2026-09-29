@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T17:34:02Z",
+  "generated_at": "2026-09-29T21:53:30Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -28,17 +28,17 @@
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 83,
+      "conflict_count": 84,
       "avg_variance": 1.26,
-      "nvd_higher_count": 45,
+      "nvd_higher_count": 46,
       "gh_higher_count": 38
     },
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 67,
+      "conflict_count": 69,
       "avg_variance": 1.59,
-      "nvd_higher_count": 42,
+      "nvd_higher_count": 44,
       "gh_higher_count": 25
     },
     {
@@ -74,20 +74,20 @@
       "gh_higher_count": 28
     },
     {
+      "cwe_id": "CWE-20",
+      "name": "Improper Input Validation",
+      "conflict_count": 49,
+      "avg_variance": 1.55,
+      "nvd_higher_count": 30,
+      "gh_higher_count": 19
+    },
+    {
       "cwe_id": "CWE-78",
       "name": "OS Command Injection",
       "conflict_count": 49,
       "avg_variance": 1.32,
       "nvd_higher_count": 27,
       "gh_higher_count": 22
-    },
-    {
-      "cwe_id": "CWE-20",
-      "name": "Improper Input Validation",
-      "conflict_count": 48,
-      "avg_variance": 1.55,
-      "nvd_higher_count": 29,
-      "gh_higher_count": 19
     },
     {
       "cwe_id": "CWE-502",
@@ -250,6 +250,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-295",
+      "name": "CWE-295",
+      "conflict_count": 17,
+      "avg_variance": 2.15,
+      "nvd_higher_count": 10,
+      "gh_higher_count": 7
+    },
+    {
       "cwe_id": "CWE-347",
       "name": "CWE-347",
       "conflict_count": 16,
@@ -282,14 +290,6 @@
       "gh_higher_count": 8
     },
     {
-      "cwe_id": "CWE-295",
-      "name": "CWE-295",
-      "conflict_count": 16,
-      "avg_variance": 2.17,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 7
-    },
-    {
       "cwe_id": "CWE-290",
       "name": "CWE-290",
       "conflict_count": 15,
@@ -302,6 +302,14 @@
       "name": "Insufficiently Protected Credentials",
       "conflict_count": 15,
       "avg_variance": 1.97,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 3
+    },
+    {
+      "cwe_id": "CWE-345",
+      "name": "CWE-345",
+      "conflict_count": 15,
+      "avg_variance": 1.09,
       "nvd_higher_count": 12,
       "gh_higher_count": 3
     },
@@ -326,14 +334,6 @@
       "name": "Inefficient Regular Expression",
       "conflict_count": 14,
       "avg_variance": 2.08,
-      "nvd_higher_count": 11,
-      "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-345",
-      "name": "CWE-345",
-      "conflict_count": 14,
-      "avg_variance": 1.05,
       "nvd_higher_count": 11,
       "gh_higher_count": 3
     },
@@ -402,6 +402,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-754",
+      "name": "Improper Check for Unusual Conditions",
+      "conflict_count": 10,
+      "avg_variance": 1.64,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 1
+    },
+    {
       "cwe_id": "CWE-276",
       "name": "Incorrect Default Permissions",
       "conflict_count": 9,
@@ -448,14 +456,6 @@
       "avg_variance": 1.08,
       "nvd_higher_count": 3,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-754",
-      "name": "Improper Check for Unusual Conditions",
-      "conflict_count": 9,
-      "avg_variance": 1.64,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-1336",
@@ -602,6 +602,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-248",
+      "name": "CWE-248",
+      "conflict_count": 6,
+      "avg_variance": 1.53,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 0
+    },
+    {
       "cwe_id": "CWE-212",
       "name": "CWE-212",
       "conflict_count": 6,
@@ -648,6 +656,14 @@
       "avg_variance": 1.75,
       "nvd_higher_count": 3,
       "gh_higher_count": 3
+    },
+    {
+      "cwe_id": "CWE-524",
+      "name": "CWE-524",
+      "conflict_count": 6,
+      "avg_variance": 1.42,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-193",
