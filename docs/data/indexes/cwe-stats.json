@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T11:51:24Z",
+  "generated_at": "2026-09-30T17:31:37Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 92,
-      "avg_variance": 1.38,
-      "nvd_higher_count": 65,
+      "conflict_count": 93,
+      "avg_variance": 1.37,
+      "nvd_higher_count": 66,
       "gh_higher_count": 27
     },
     {
