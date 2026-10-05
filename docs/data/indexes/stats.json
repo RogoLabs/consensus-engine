@@ -1,18 +1,18 @@
 {
-  "total_cves": 270732,
-  "comparable_count": 12747,
-  "conflict_count": 2012,
-  "conflict_rate": 15.8,
-  "gap_count": 264427,
+  "total_cves": 270979,
+  "comparable_count": 12788,
+  "conflict_count": 2013,
+  "conflict_rate": 15.7,
+  "gap_count": 264673,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
   "max_variance": 6.9,
   "max_variance_cve": "CVE-2025-47735",
-  "avg_variance": 1.54,
+  "avg_variance": 1.53,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1211,
+    "nvd_higher_count": 1212,
     "gh_higher_count": 801
   },
   "conflict_by_year": {
@@ -31,7 +31,7 @@
     "2023": 19,
     "2024": 576,
     "2025": 512,
-    "2026": 870
+    "2026": 871
   },
   "conflict_direction_by_year": {
     "2012": {
@@ -95,14 +95,14 @@
       "comparable": 2275
     },
     "2026": {
-      "nvd_higher": 557,
+      "nvd_higher": 558,
       "gh_higher": 313,
-      "comparable": 6801
+      "comparable": 6842
     }
   },
   "severity_flip_count": 1117,
   "severity_flip_matrix": {
-    "Critical\u2192Critical": 84,
+    "Critical\u2192Critical": 85,
     "Critical\u2192High": 144,
     "Critical\u2192Medium": 63,
     "Critical\u2192Low": 8,
@@ -121,13 +121,13 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 299,
+      "Critical": 300,
       "High": 708,
       "Medium": 956,
       "Low": 49
     },
     "gh": {
-      "Critical": 209,
+      "Critical": 210,
       "High": 628,
       "Medium": 970,
       "Low": 205
@@ -142,7 +142,7 @@
     {
       "bucket": "0.5-1.0",
       "min": 0.5,
-      "count": 356
+      "count": 357
     },
     {
       "bucket": "1.0-1.5",
@@ -206,12 +206,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 299,
+    "Critical": 300,
     "High": 708,
     "Medium": 956,
     "Low": 49
   },
-  "avg_days_to_analysis": 2878.8,
+  "avg_days_to_analysis": 2876.4,
   "p90_days_to_analysis": 7208,
-  "generated_at": "2026-10-05T13:23:26Z"
+  "generated_at": "2026-10-05T23:41:17Z"
 }

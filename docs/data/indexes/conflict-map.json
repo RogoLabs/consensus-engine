@@ -16072,6 +16072,14 @@
     "published_date": "2026-05-20"
   },
   {
+    "cve_id": "CVE-2026-9205",
+    "nvd_score": 9.8,
+    "github_score": 9.1,
+    "cvss_variance": 0.7,
+    "assigning_cna": "ibm",
+    "published_date": "2026-08-05"
+  },
+  {
     "cve_id": "CVE-2026-9595",
     "nvd_score": 4.3,
     "github_score": 5.3,
