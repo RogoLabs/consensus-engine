@@ -472,6 +472,14 @@
     "published_date": "2023-01-13"
   },
   {
+    "cve_id": "CVE-2023-22894",
+    "nvd_score": 4.9,
+    "github_score": 7.5,
+    "cvss_variance": 2.6,
+    "assigning_cna": "mitre",
+    "published_date": "2023-04-19"
+  },
+  {
     "cve_id": "CVE-2023-25499",
     "nvd_score": 6.5,
     "github_score": 5.7,
@@ -9534,6 +9542,46 @@
     "cvss_variance": 1.1,
     "assigning_cna": "mattermost",
     "published_date": "2026-02-16"
+  },
+  {
+    "cve_id": "CVE-2026-102269",
+    "nvd_score": 5.4,
+    "github_score": 4.8,
+    "cvss_variance": 0.6,
+    "assigning_cna": "github",
+    "published_date": "2026-09-28"
+  },
+  {
+    "cve_id": "CVE-2026-102270",
+    "nvd_score": 4.9,
+    "github_score": 4.4,
+    "cvss_variance": 0.5,
+    "assigning_cna": "github",
+    "published_date": "2026-09-28"
+  },
+  {
+    "cve_id": "CVE-2026-102274",
+    "nvd_score": 7.5,
+    "github_score": 5.9,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-09-28"
+  },
+  {
+    "cve_id": "CVE-2026-102275",
+    "nvd_score": 8.2,
+    "github_score": 6.5,
+    "cvss_variance": 1.7,
+    "assigning_cna": "github",
+    "published_date": "2026-09-28"
+  },
+  {
+    "cve_id": "CVE-2026-10561",
+    "nvd_score": 10.0,
+    "github_score": 9.9,
+    "cvss_variance": 0.1,
+    "assigning_cna": "ibm",
+    "published_date": "2026-06-22"
   },
   {
     "cve_id": "CVE-2026-10601",
