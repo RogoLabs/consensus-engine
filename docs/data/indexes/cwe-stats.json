@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T23:41:18Z",
+  "generated_at": "2026-10-06T04:19:13Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -44,9 +44,9 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 66,
+      "conflict_count": 67,
       "avg_variance": 1.11,
-      "nvd_higher_count": 37,
+      "nvd_higher_count": 38,
       "gh_higher_count": 29
     },
     {
