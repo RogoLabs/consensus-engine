@@ -13,20 +13,20 @@
     "Unknown": 14383,
     "Awaiting Analysis": 6372,
     "Undergoing Analysis": 433,
-    "Received": 4105
+    "Received": 4172
   },
   "distribution_buckets": [
     {
       "range": "0\u20137 days",
-      "count": 32067
+      "count": 32066
     },
     {
       "range": "8\u201330 days",
-      "count": 15443
+      "count": 15440
     },
     {
       "range": "31\u201390 days",
-      "count": 7376
+      "count": 7375
     },
     {
       "range": "91\u2013180 days",
@@ -34,12 +34,12 @@
     },
     {
       "range": "181\u2013365 days",
-      "count": 13941
+      "count": 13946
     },
     {
       "range": ">365 days",
       "count": 109175
     }
   ],
-  "generated_at": "2026-10-06T22:14:56Z"
+  "generated_at": "2026-10-07T03:46:04Z"
 }
