@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T12:34:55Z",
+  "generated_at": "2026-10-07T22:40:19Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,49 +12,57 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 115,
-      "avg_variance": 1.45,
-      "nvd_higher_count": 55,
+      "conflict_count": 116,
+      "avg_variance": 1.44,
+      "nvd_higher_count": 56,
       "gh_higher_count": 60
     },
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 93,
+      "conflict_count": 94,
       "avg_variance": 1.37,
-      "nvd_higher_count": 66,
+      "nvd_higher_count": 67,
       "gh_higher_count": 27
     },
     {
       "cwe_id": "CWE-918",
       "name": "Server-Side Request Forgery (SSRF)",
-      "conflict_count": 84,
-      "avg_variance": 1.26,
-      "nvd_higher_count": 46,
+      "conflict_count": 89,
+      "avg_variance": 1.32,
+      "nvd_higher_count": 51,
       "gh_higher_count": 38
     },
     {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
-      "conflict_count": 69,
-      "avg_variance": 1.59,
-      "nvd_higher_count": 44,
-      "gh_higher_count": 25
+      "conflict_count": 72,
+      "avg_variance": 1.57,
+      "nvd_higher_count": 46,
+      "gh_higher_count": 26
     },
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 68,
-      "avg_variance": 1.1,
-      "nvd_higher_count": 39,
-      "gh_higher_count": 29
+      "conflict_count": 71,
+      "avg_variance": 1.15,
+      "nvd_higher_count": 41,
+      "gh_higher_count": 30
+    },
+    {
+      "cwe_id": "CWE-502",
+      "name": "Deserialization of Untrusted Data",
+      "conflict_count": 59,
+      "avg_variance": 1.63,
+      "nvd_higher_count": 44,
+      "gh_higher_count": 15
     },
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 58,
-      "avg_variance": 1.78,
-      "nvd_higher_count": 49,
+      "conflict_count": 59,
+      "avg_variance": 1.79,
+      "nvd_higher_count": 50,
       "gh_higher_count": 9
     },
     {
@@ -74,6 +82,14 @@
       "gh_higher_count": 28
     },
     {
+      "cwe_id": "CWE-78",
+      "name": "OS Command Injection",
+      "conflict_count": 51,
+      "avg_variance": 1.37,
+      "nvd_higher_count": 29,
+      "gh_higher_count": 22
+    },
+    {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
       "conflict_count": 49,
@@ -82,28 +98,12 @@
       "gh_higher_count": 19
     },
     {
-      "cwe_id": "CWE-78",
-      "name": "OS Command Injection",
-      "conflict_count": 49,
-      "avg_variance": 1.32,
-      "nvd_higher_count": 27,
-      "gh_higher_count": 22
-    },
-    {
-      "cwe_id": "CWE-502",
-      "name": "Deserialization of Untrusted Data",
-      "conflict_count": 46,
-      "avg_variance": 1.29,
-      "nvd_higher_count": 32,
-      "gh_higher_count": 14
-    },
-    {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 45,
+      "conflict_count": 47,
       "avg_variance": 1.94,
-      "nvd_higher_count": 36,
-      "gh_higher_count": 9
+      "nvd_higher_count": 37,
+      "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-862",
@@ -130,6 +130,14 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-434",
+      "name": "Unrestricted File Upload",
+      "conflict_count": 30,
+      "avg_variance": 1.78,
+      "nvd_higher_count": 18,
+      "gh_higher_count": 12
+    },
+    {
       "cwe_id": "CWE-352",
       "name": "Cross-Site Request Forgery",
       "conflict_count": 30,
@@ -152,14 +160,6 @@
       "avg_variance": 1.62,
       "nvd_higher_count": 14,
       "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-434",
-      "name": "Unrestricted File Upload",
-      "conflict_count": 24,
-      "avg_variance": 1.38,
-      "nvd_higher_count": 12,
-      "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-74",
@@ -242,12 +242,28 @@
       "gh_higher_count": 14
     },
     {
+      "cwe_id": "CWE-347",
+      "name": "CWE-347",
+      "conflict_count": 17,
+      "avg_variance": 1.62,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-532",
       "name": "Log Injection / Information Exposure Through Log",
       "conflict_count": 17,
       "avg_variance": 1.99,
       "nvd_higher_count": 11,
       "gh_higher_count": 6
+    },
+    {
+      "cwe_id": "CWE-367",
+      "name": "CWE-367",
+      "conflict_count": 17,
+      "avg_variance": 1.84,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-295",
@@ -258,12 +274,12 @@
       "gh_higher_count": 7
     },
     {
-      "cwe_id": "CWE-347",
-      "name": "CWE-347",
-      "conflict_count": 16,
-      "avg_variance": 1.61,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 6
+      "cwe_id": "CWE-345",
+      "name": "CWE-345",
+      "conflict_count": 17,
+      "avg_variance": 1.16,
+      "nvd_higher_count": 14,
+      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-125",
@@ -274,14 +290,6 @@
       "gh_higher_count": 2
     },
     {
-      "cwe_id": "CWE-367",
-      "name": "CWE-367",
-      "conflict_count": 16,
-      "avg_variance": 1.84,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 10
-    },
-    {
       "cwe_id": "CWE-122",
       "name": "CWE-122",
       "conflict_count": 16,
@@ -290,10 +298,10 @@
       "gh_higher_count": 8
     },
     {
-      "cwe_id": "CWE-345",
-      "name": "CWE-345",
+      "cwe_id": "CWE-522",
+      "name": "Insufficiently Protected Credentials",
       "conflict_count": 16,
-      "avg_variance": 1.12,
+      "avg_variance": 1.95,
       "nvd_higher_count": 13,
       "gh_higher_count": 3
     },
@@ -308,14 +316,6 @@
     {
       "cwe_id": "CWE-1333",
       "name": "Inefficient Regular Expression",
-      "conflict_count": 15,
-      "avg_variance": 1.97,
-      "nvd_higher_count": 12,
-      "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-522",
-      "name": "Insufficiently Protected Credentials",
       "conflict_count": 15,
       "avg_variance": 1.97,
       "nvd_higher_count": 12,
@@ -338,12 +338,28 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-829",
+      "name": "CWE-829",
+      "conflict_count": 13,
+      "avg_variance": 1.09,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-444",
       "name": "CWE-444",
       "conflict_count": 13,
       "avg_variance": 1.65,
       "nvd_higher_count": 11,
       "gh_higher_count": 2
+    },
+    {
+      "cwe_id": "CWE-201",
+      "name": "CWE-201",
+      "conflict_count": 13,
+      "avg_variance": 1.39,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-346",
@@ -370,14 +386,6 @@
       "gh_higher_count": 6
     },
     {
-      "cwe_id": "CWE-829",
-      "name": "CWE-829",
-      "conflict_count": 12,
-      "avg_variance": 1.09,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 4
-    },
-    {
       "cwe_id": "CWE-416",
       "name": "Use After Free",
       "conflict_count": 12,
@@ -386,12 +394,28 @@
       "gh_higher_count": 2
     },
     {
-      "cwe_id": "CWE-201",
-      "name": "CWE-201",
-      "conflict_count": 12,
-      "avg_variance": 1.38,
-      "nvd_higher_count": 8,
+      "cwe_id": "CWE-73",
+      "name": "CWE-73",
+      "conflict_count": 11,
+      "avg_variance": 1.2,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 6
+    },
+    {
+      "cwe_id": "CWE-835",
+      "name": "CWE-835",
+      "conflict_count": 11,
+      "avg_variance": 2.25,
+      "nvd_higher_count": 7,
       "gh_higher_count": 4
+    },
+    {
+      "cwe_id": "CWE-732",
+      "name": "Incorrect Permission Assignment",
+      "conflict_count": 10,
+      "avg_variance": 1.03,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-312",
@@ -426,14 +450,6 @@
       "gh_higher_count": 3
     },
     {
-      "cwe_id": "CWE-732",
-      "name": "Incorrect Permission Assignment",
-      "conflict_count": 9,
-      "avg_variance": 1.02,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 5
-    },
-    {
       "cwe_id": "CWE-311",
       "name": "CWE-311",
       "conflict_count": 9,
@@ -450,12 +466,12 @@
       "gh_higher_count": 0
     },
     {
-      "cwe_id": "CWE-73",
-      "name": "CWE-73",
+      "cwe_id": "CWE-184",
+      "name": "CWE-184",
       "conflict_count": 9,
-      "avg_variance": 1.08,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 6
+      "avg_variance": 1.49,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-1336",
@@ -482,14 +498,6 @@
       "gh_higher_count": 2
     },
     {
-      "cwe_id": "CWE-835",
-      "name": "CWE-835",
-      "conflict_count": 9,
-      "avg_variance": 2.5,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 2
-    },
-    {
       "cwe_id": "CWE-256",
       "name": "CWE-256",
       "conflict_count": 9,
@@ -512,14 +520,6 @@
       "avg_variance": 2.46,
       "nvd_higher_count": 4,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-184",
-      "name": "CWE-184",
-      "conflict_count": 8,
-      "avg_variance": 1.6,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-668",
@@ -578,6 +578,22 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-248",
+      "name": "CWE-248",
+      "conflict_count": 7,
+      "avg_variance": 1.63,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 0
+    },
+    {
+      "cwe_id": "CWE-552",
+      "name": "CWE-552",
+      "conflict_count": 7,
+      "avg_variance": 0.53,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-706",
       "name": "CWE-706",
       "conflict_count": 7,
@@ -602,14 +618,6 @@
       "gh_higher_count": 2
     },
     {
-      "cwe_id": "CWE-248",
-      "name": "CWE-248",
-      "conflict_count": 6,
-      "avg_variance": 1.53,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 0
-    },
-    {
       "cwe_id": "CWE-212",
       "name": "CWE-212",
       "conflict_count": 6,
@@ -624,14 +632,6 @@
       "avg_variance": 1.2,
       "nvd_higher_count": 2,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-552",
-      "name": "CWE-552",
-      "conflict_count": 6,
-      "avg_variance": 0.35,
-      "nvd_higher_count": 1,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-1284",
@@ -662,6 +662,14 @@
       "name": "CWE-524",
       "conflict_count": 6,
       "avg_variance": 1.42,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 1
+    },
+    {
+      "cwe_id": "CWE-1188",
+      "name": "CWE-1188",
+      "conflict_count": 6,
+      "avg_variance": 1.5,
       "nvd_higher_count": 5,
       "gh_higher_count": 1
     },
@@ -774,14 +782,6 @@
       "name": "CWE-113",
       "conflict_count": 5,
       "avg_variance": 0.8,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-1188",
-      "name": "CWE-1188",
-      "conflict_count": 5,
-      "avg_variance": 1.54,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
     },
