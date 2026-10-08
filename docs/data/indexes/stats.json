@@ -1,9 +1,9 @@
 {
-  "total_cves": 272530,
-  "comparable_count": 13000,
-  "conflict_count": 2049,
-  "conflict_rate": 15.8,
-  "gap_count": 266184,
+  "total_cves": 273131,
+  "comparable_count": 13159,
+  "conflict_count": 2057,
+  "conflict_rate": 15.6,
+  "gap_count": 266771,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,8 +12,8 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1243,
-    "gh_higher_count": 806
+    "nvd_higher_count": 1248,
+    "gh_higher_count": 809
   },
   "conflict_by_year": {
     "2006": 1,
@@ -25,13 +25,13 @@
     "2017": 3,
     "2018": 1,
     "2019": 1,
-    "2020": 6,
-    "2021": 23,
-    "2022": 8,
+    "2020": 7,
+    "2021": 25,
+    "2022": 10,
     "2023": 20,
     "2024": 576,
     "2025": 512,
-    "2026": 887
+    "2026": 890
   },
   "conflict_direction_by_year": {
     "2012": {
@@ -57,32 +57,42 @@
     "2016": {
       "nvd_higher": 0,
       "gh_higher": 2,
-      "comparable": 326
+      "comparable": 327
     },
     "2017": {
       "nvd_higher": 1,
       "gh_higher": 2,
-      "comparable": 797
+      "comparable": 798
+    },
+    "2018": {
+      "nvd_higher": 0,
+      "gh_higher": 1,
+      "comparable": 21
+    },
+    "2019": {
+      "nvd_higher": 1,
+      "gh_higher": 0,
+      "comparable": 32
     },
     "2020": {
-      "nvd_higher": 3,
+      "nvd_higher": 4,
       "gh_higher": 3,
-      "comparable": 60
+      "comparable": 81
     },
     "2021": {
-      "nvd_higher": 12,
-      "gh_higher": 11,
-      "comparable": 94
+      "nvd_higher": 13,
+      "gh_higher": 12,
+      "comparable": 118
     },
     "2022": {
       "nvd_higher": 5,
-      "gh_higher": 3,
-      "comparable": 110
+      "gh_higher": 5,
+      "comparable": 120
     },
     "2023": {
       "nvd_higher": 12,
       "gh_higher": 8,
-      "comparable": 73
+      "comparable": 78
     },
     "2024": {
       "nvd_higher": 304,
@@ -95,25 +105,25 @@
       "comparable": 2275
     },
     "2026": {
-      "nvd_higher": 574,
+      "nvd_higher": 577,
       "gh_higher": 313,
-      "comparable": 7009
+      "comparable": 7082
     }
   },
-  "severity_flip_count": 1142,
+  "severity_flip_count": 1148,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 86,
-    "Critical\u2192High": 147,
+    "Critical\u2192High": 150,
     "Critical\u2192Medium": 70,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 90,
-    "High\u2192High": 250,
+    "High\u2192High": 251,
     "High\u2192Medium": 360,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 35,
-    "Medium\u2192High": 241,
-    "Medium\u2192Medium": 543,
-    "Medium\u2192Low": 146,
+    "Medium\u2192High": 243,
+    "Medium\u2192Medium": 544,
+    "Medium\u2192Low": 147,
     "Low\u2192Critical": 1,
     "Low\u2192High": 1,
     "Low\u2192Medium": 19,
@@ -121,16 +131,16 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 311,
-      "High": 724,
-      "Medium": 965,
+      "Critical": 314,
+      "High": 725,
+      "Medium": 969,
       "Low": 49
     },
     "gh": {
       "Critical": 212,
-      "High": 639,
-      "Medium": 992,
-      "Low": 206
+      "High": 645,
+      "Medium": 993,
+      "Low": 207
     }
   },
   "variance_distribution": [
@@ -142,27 +152,27 @@
     {
       "bucket": "0.5-1.0",
       "min": 0.5,
-      "count": 361
+      "count": 362
     },
     {
       "bucket": "1.0-1.5",
       "min": 1.0,
-      "count": 476
+      "count": 478
     },
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 334
+      "count": 335
     },
     {
       "bucket": "2.0-2.5",
       "min": 2.0,
-      "count": 263
+      "count": 266
     },
     {
       "bucket": "2.5-3.0",
       "min": 2.5,
-      "count": 124
+      "count": 125
     },
     {
       "bucket": "3.0-3.5",
@@ -206,12 +216,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 311,
-    "High": 724,
-    "Medium": 965,
+    "Critical": 314,
+    "High": 725,
+    "Medium": 969,
     "Low": 49
   },
-  "avg_days_to_analysis": 2869.2,
-  "p90_days_to_analysis": 7205,
-  "generated_at": "2026-10-08T12:49:07Z"
+  "avg_days_to_analysis": 2864.6,
+  "p90_days_to_analysis": 7204,
+  "generated_at": "2026-10-08T22:53:52Z"
 }
