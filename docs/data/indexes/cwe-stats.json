@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T12:31:59Z",
+  "generated_at": "2026-10-09T22:15:20Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,9 +12,9 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 116,
+      "conflict_count": 117,
       "avg_variance": 1.44,
-      "nvd_higher_count": 56,
+      "nvd_higher_count": 57,
       "gh_higher_count": 60
     },
     {
@@ -44,9 +44,9 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 71,
+      "conflict_count": 72,
       "avg_variance": 1.15,
-      "nvd_higher_count": 41,
+      "nvd_higher_count": 42,
       "gh_higher_count": 30
     },
     {
@@ -194,6 +194,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-59",
+      "name": "CWE-59",
+      "conflict_count": 21,
+      "avg_variance": 1.26,
+      "nvd_higher_count": 14,
+      "gh_higher_count": 7
+    },
+    {
       "cwe_id": "CWE-787",
       "name": "Out-of-bounds Write",
       "conflict_count": 21,
@@ -208,14 +216,6 @@
       "avg_variance": 1.09,
       "nvd_higher_count": 13,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-59",
-      "name": "CWE-59",
-      "conflict_count": 20,
-      "avg_variance": 1.26,
-      "nvd_higher_count": 13,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-77",
@@ -370,6 +370,14 @@
       "gh_higher_count": 2
     },
     {
+      "cwe_id": "CWE-835",
+      "name": "CWE-835",
+      "conflict_count": 12,
+      "avg_variance": 2.27,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-674",
       "name": "CWE-674",
       "conflict_count": 12,
@@ -402,14 +410,6 @@
       "gh_higher_count": 6
     },
     {
-      "cwe_id": "CWE-835",
-      "name": "CWE-835",
-      "conflict_count": 11,
-      "avg_variance": 2.25,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 4
-    },
-    {
       "cwe_id": "CWE-732",
       "name": "Incorrect Permission Assignment",
       "conflict_count": 10,
@@ -440,6 +440,14 @@
       "avg_variance": 1.64,
       "nvd_higher_count": 9,
       "gh_higher_count": 1
+    },
+    {
+      "cwe_id": "CWE-1336",
+      "name": "CWE-1336",
+      "conflict_count": 10,
+      "avg_variance": 1.44,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-668",
@@ -480,14 +488,6 @@
       "avg_variance": 1.49,
       "nvd_higher_count": 4,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-1336",
-      "name": "CWE-1336",
-      "conflict_count": 9,
-      "avg_variance": 1.48,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-266",
@@ -594,6 +594,14 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-436",
+      "name": "CWE-436",
+      "conflict_count": 7,
+      "avg_variance": 1.43,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 0
+    },
+    {
       "cwe_id": "CWE-706",
       "name": "CWE-706",
       "conflict_count": 7,
@@ -648,14 +656,6 @@
       "avg_variance": 1.22,
       "nvd_higher_count": 5,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-436",
-      "name": "CWE-436",
-      "conflict_count": 6,
-      "avg_variance": 1.53,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-36",
