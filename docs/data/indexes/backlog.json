@@ -11,7 +11,7 @@
     "Analyzed": 70519,
     "Deferred": 54816,
     "Unknown": 14245,
-    "Received": 5145,
+    "Received": 5226,
     "Awaiting Analysis": 6337,
     "Undergoing Analysis": 593
   },
@@ -41,5 +41,5 @@
       "count": 109854
     }
   ],
-  "generated_at": "2026-10-13T00:09:57Z"
+  "generated_at": "2026-10-13T06:26:25Z"
 }
