@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T18:54:54Z",
+  "generated_at": "2026-10-14T03:09:13Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -100,9 +100,9 @@
     {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 47,
-      "avg_variance": 1.94,
-      "nvd_higher_count": 37,
+      "conflict_count": 49,
+      "avg_variance": 1.91,
+      "nvd_higher_count": 39,
       "gh_higher_count": 10
     },
     {
@@ -338,6 +338,14 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-835",
+      "name": "CWE-835",
+      "conflict_count": 13,
+      "avg_variance": 2.2,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-829",
       "name": "CWE-829",
       "conflict_count": 13,
@@ -368,14 +376,6 @@
       "avg_variance": 1.22,
       "nvd_higher_count": 11,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-835",
-      "name": "CWE-835",
-      "conflict_count": 12,
-      "avg_variance": 2.27,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-674",
@@ -530,6 +530,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-248",
+      "name": "CWE-248",
+      "conflict_count": 8,
+      "avg_variance": 1.59,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 0
+    },
+    {
       "cwe_id": "CWE-401",
       "name": "Memory Leak",
       "conflict_count": 8,
@@ -576,14 +584,6 @@
       "avg_variance": 1.61,
       "nvd_higher_count": 5,
       "gh_higher_count": 2
-    },
-    {
-      "cwe_id": "CWE-248",
-      "name": "CWE-248",
-      "conflict_count": 7,
-      "avg_variance": 1.63,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-552",
