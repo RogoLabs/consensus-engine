@@ -440,6 +440,14 @@
     "published_date": "2024-06-21"
   },
   {
+    "cve_id": "CVE-2022-2097",
+    "nvd_score": 5.3,
+    "github_score": 7.5,
+    "cvss_variance": 2.2,
+    "assigning_cna": "openssl",
+    "published_date": "2022-07-05"
+  },
+  {
     "cve_id": "CVE-2022-22968",
     "nvd_score": 5.3,
     "github_score": 7.5,

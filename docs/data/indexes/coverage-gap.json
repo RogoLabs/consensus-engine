@@ -1,16 +1,16 @@
 {
-  "total": 13783,
+  "total": 13775,
   "avg_github_score": 6.94,
   "severity_distribution": {
-    "critical": 2130,
-    "high": 4982,
-    "medium": 6113,
+    "critical": 2129,
+    "high": 4980,
+    "medium": 6108,
     "low": 558
   },
   "nvd_status_breakdown": {
-    "No NVD Record": 13726,
+    "No NVD Record": 13717,
     "Rejected": 54,
-    "Deferred": 1,
+    "Deferred": 2,
     "Analyzed": 2
   },
   "entries": [
@@ -1576,9 +1576,9 @@
       "github_score": 9.9,
       "github_cvss_version": "3.1",
       "ghsa_id": "GHSA-x4q3-gcj3-m6cf",
-      "nvd_status": "No NVD Record",
-      "assigning_cna": null,
-      "published_date": null
+      "nvd_status": "Deferred",
+      "assigning_cna": "Gitea",
+      "published_date": "2026-10-14"
     },
     {
       "cve_id": "CVE-2011-1028",
@@ -4515,5 +4515,5 @@
       "published_date": null
     }
   ],
-  "generated_at": "2026-10-14T11:09:01Z"
+  "generated_at": "2026-10-14T16:30:15Z"
 }

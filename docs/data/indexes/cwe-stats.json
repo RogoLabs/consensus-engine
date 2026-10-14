@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T11:09:01Z",
+  "generated_at": "2026-10-14T16:30:15Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -696,6 +696,14 @@
       "avg_variance": 1.88,
       "nvd_higher_count": 1,
       "gh_higher_count": 5
+    },
+    {
+      "cwe_id": "CWE-327",
+      "name": "CWE-327",
+      "conflict_count": 5,
+      "avg_variance": 1.72,
+      "nvd_higher_count": 2,
+      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-798",
