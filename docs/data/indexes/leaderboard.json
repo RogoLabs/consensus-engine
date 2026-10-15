@@ -4764,7 +4764,7 @@
     "assigning_cna": "mitre",
     "nvd_score": 8.6,
     "nvd_cvss_version": "3.1",
-    "nvd_status": "Analyzed",
+    "nvd_status": "Modified",
     "github_score": 5.9,
     "github_cvss_version": "3.1",
     "published_date": "2025-02-10"
