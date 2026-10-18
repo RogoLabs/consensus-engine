@@ -16440,6 +16440,14 @@
     "published_date": "2026-08-13"
   },
   {
+    "cve_id": "CVE-2026-73802",
+    "nvd_score": 8.8,
+    "github_score": 9.9,
+    "cvss_variance": 1.1,
+    "assigning_cna": "Gitea",
+    "published_date": "2026-10-14"
+  },
+  {
     "cve_id": "CVE-2026-7572",
     "nvd_score": 5.5,
     "github_score": 4.4,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T10:19:34Z",
+  "generated_at": "2026-10-18T15:19:55Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -146,20 +146,20 @@
       "gh_higher_count": 10
     },
     {
+      "cwe_id": "CWE-269",
+      "name": "Improper Privilege Management",
+      "conflict_count": 26,
+      "avg_variance": 1.59,
+      "nvd_higher_count": 15,
+      "gh_higher_count": 11
+    },
+    {
       "cwe_id": "CWE-639",
       "name": "Authorization Bypass Through User-Controlled Key",
       "conflict_count": 26,
       "avg_variance": 1.56,
       "nvd_higher_count": 18,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-269",
-      "name": "Improper Privilege Management",
-      "conflict_count": 25,
-      "avg_variance": 1.61,
-      "nvd_higher_count": 15,
-      "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-1321",
