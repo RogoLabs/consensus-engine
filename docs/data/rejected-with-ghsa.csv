@@ -42,6 +42,7 @@ CVE-2026-33817,GHSA-6jwv-w5xf-7j27,https://github.com/advisories/GHSA-6jwv-w5xf-
 CVE-2026-3260,GHSA-3x3v-w654-m28m,https://github.com/advisories/GHSA-3x3v-w654-m28m,5.9,3.1,Rejected,redhat
 CVE-2026-10517,GHSA-698x-9w2p-7vvp,https://github.com/advisories/GHSA-698x-9w2p-7vvp,5.8,3.1,Rejected,redhat
 CVE-2026-0767,GHSA-vh96-p962-544h,https://github.com/advisories/GHSA-vh96-p962-544h,5.3,3.0,Rejected,trendmicro
+CVE-2026-113670,GHSA-2j32-q6rx-h844,https://github.com/advisories/GHSA-2j32-q6rx-h844,5.3,3.1,Rejected,github
 CVE-2026-97058,GHSA-hp3w-g68c-fv3c,https://github.com/advisories/GHSA-hp3w-g68c-fv3c,5.3,3.1,Rejected,vulncheck
 CVE-2024-0227,GHSA-chcr-x7hc-8fp8,https://github.com/advisories/GHSA-chcr-x7hc-8fp8,5.0,3.1,Rejected,synopsys
 CVE-2024-7040,GHSA-cfvq-fj53-j2c7,https://github.com/advisories/GHSA-cfvq-fj53-j2c7,4.9,3.0,Rejected,huntr
