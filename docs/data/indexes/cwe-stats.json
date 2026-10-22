@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T03:17:27Z",
+  "generated_at": "2026-10-22T16:34:32Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,18 +12,18 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 120,
-      "avg_variance": 1.44,
-      "nvd_higher_count": 59,
+      "conflict_count": 122,
+      "avg_variance": 1.43,
+      "nvd_higher_count": 61,
       "gh_higher_count": 61
     },
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 95,
+      "conflict_count": 96,
       "avg_variance": 1.39,
       "nvd_higher_count": 68,
-      "gh_higher_count": 27
+      "gh_higher_count": 28
     },
     {
       "cwe_id": "CWE-918",
@@ -148,10 +148,10 @@
     {
       "cwe_id": "CWE-269",
       "name": "Improper Privilege Management",
-      "conflict_count": 26,
-      "avg_variance": 1.59,
+      "conflict_count": 27,
+      "avg_variance": 1.57,
       "nvd_higher_count": 15,
-      "gh_higher_count": 11
+      "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-639",
@@ -346,6 +346,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-73",
+      "name": "CWE-73",
+      "conflict_count": 13,
+      "avg_variance": 1.07,
+      "nvd_higher_count": 7,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-835",
       "name": "CWE-835",
       "conflict_count": 13,
@@ -376,14 +384,6 @@
       "avg_variance": 1.39,
       "nvd_higher_count": 9,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-73",
-      "name": "CWE-73",
-      "conflict_count": 12,
-      "avg_variance": 1.12,
-      "nvd_higher_count": 6,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-674",
