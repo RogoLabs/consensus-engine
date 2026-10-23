@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T11:01:55Z",
+  "generated_at": "2026-10-23T16:23:55Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,9 +12,9 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 122,
+      "conflict_count": 123,
       "avg_variance": 1.43,
-      "nvd_higher_count": 61,
+      "nvd_higher_count": 62,
       "gh_higher_count": 61
     },
     {
@@ -186,20 +186,20 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-59",
+      "name": "CWE-59",
+      "conflict_count": 22,
+      "avg_variance": 1.26,
+      "nvd_higher_count": 15,
+      "gh_higher_count": 7
+    },
+    {
       "cwe_id": "CWE-285",
       "name": "CWE-285",
       "conflict_count": 22,
       "avg_variance": 1.61,
       "nvd_higher_count": 12,
       "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-59",
-      "name": "CWE-59",
-      "conflict_count": 21,
-      "avg_variance": 1.26,
-      "nvd_higher_count": 14,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-787",
