@@ -1,9 +1,9 @@
 {
-  "total_cves": 288063,
-  "comparable_count": 13453,
-  "conflict_count": 2083,
+  "total_cves": 288107,
+  "comparable_count": 13466,
+  "conflict_count": 2084,
   "conflict_rate": 15.5,
-  "gap_count": 277466,
+  "gap_count": 277509,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -13,7 +13,7 @@
   "median_variance": 1.3,
   "direction_asymmetry": {
     "nvd_higher_count": 1265,
-    "gh_higher_count": 818
+    "gh_higher_count": 819
   },
   "conflict_by_year": {
     "2006": 1,
@@ -31,7 +31,7 @@
     "2023": 20,
     "2024": 576,
     "2025": 512,
-    "2026": 915
+    "2026": 916
   },
   "conflict_direction_by_year": {
     "2012": {
@@ -106,17 +106,17 @@
     },
     "2026": {
       "nvd_higher": 594,
-      "gh_higher": 321,
-      "comparable": 7343
+      "gh_higher": 322,
+      "comparable": 7356
     }
   },
-  "severity_flip_count": 1162,
+  "severity_flip_count": 1163,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 86,
     "Critical\u2192High": 152,
     "Critical\u2192Medium": 70,
     "Critical\u2192Low": 8,
-    "High\u2192Critical": 91,
+    "High\u2192Critical": 92,
     "High\u2192High": 254,
     "High\u2192Medium": 363,
     "High\u2192Low": 24,
@@ -132,12 +132,12 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 316,
-      "High": 732,
+      "High": 733,
       "Medium": 986,
       "Low": 49
     },
     "gh": {
-      "Critical": 213,
+      "Critical": 214,
       "High": 655,
       "Medium": 1005,
       "Low": 210
@@ -152,7 +152,7 @@
     {
       "bucket": "0.5-1.0",
       "min": 0.5,
-      "count": 369
+      "count": 370
     },
     {
       "bucket": "1.0-1.5",
@@ -217,11 +217,11 @@
   ],
   "severity_distribution": {
     "Critical": 316,
-    "High": 732,
+    "High": 733,
     "Medium": 986,
     "Low": 49
   },
-  "avg_days_to_analysis": 2831.9,
-  "p90_days_to_analysis": 7187,
-  "generated_at": "2026-10-23T16:23:55Z"
+  "avg_days_to_analysis": 2830.7,
+  "p90_days_to_analysis": 7184,
+  "generated_at": "2026-10-23T21:01:22Z"
 }
