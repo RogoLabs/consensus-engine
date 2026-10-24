@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T21:01:22Z",
+  "generated_at": "2026-10-24T02:57:43Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -52,9 +52,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 60,
+      "conflict_count": 61,
       "avg_variance": 1.8,
-      "nvd_higher_count": 50,
+      "nvd_higher_count": 51,
       "gh_higher_count": 10
     },
     {
@@ -306,6 +306,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-346",
+      "name": "CWE-346",
+      "conflict_count": 16,
+      "avg_variance": 1.27,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-88",
       "name": "CWE-88",
       "conflict_count": 15,
@@ -330,14 +338,6 @@
       "gh_higher_count": 3
     },
     {
-      "cwe_id": "CWE-346",
-      "name": "CWE-346",
-      "conflict_count": 15,
-      "avg_variance": 1.25,
-      "nvd_higher_count": 11,
-      "gh_higher_count": 4
-    },
-    {
       "cwe_id": "CWE-611",
       "name": "XXE",
       "conflict_count": 14,
@@ -360,6 +360,14 @@
       "avg_variance": 2.2,
       "nvd_higher_count": 9,
       "gh_higher_count": 4
+    },
+    {
+      "cwe_id": "CWE-416",
+      "name": "Use After Free",
+      "conflict_count": 13,
+      "avg_variance": 2.31,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-829",
@@ -408,14 +416,6 @@
       "avg_variance": 1.28,
       "nvd_higher_count": 9,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-416",
-      "name": "Use After Free",
-      "conflict_count": 12,
-      "avg_variance": 2.43,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-732",
