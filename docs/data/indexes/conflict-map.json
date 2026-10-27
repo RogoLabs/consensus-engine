@@ -10120,6 +10120,22 @@
     "published_date": "2026-10-15"
   },
   {
+    "cve_id": "CVE-2026-112395",
+    "nvd_score": 8.2,
+    "github_score": 6.5,
+    "cvss_variance": 1.7,
+    "assigning_cna": "github",
+    "published_date": "2026-10-19"
+  },
+  {
+    "cve_id": "CVE-2026-112396",
+    "nvd_score": 7.5,
+    "github_score": 5.9,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-10-19"
+  },
+  {
     "cve_id": "CVE-2026-12259",
     "nvd_score": 6.5,
     "github_score": 5.3,

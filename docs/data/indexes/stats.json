@@ -1,9 +1,9 @@
 {
-  "total_cves": 288852,
+  "total_cves": 289340,
   "comparable_count": 13511,
-  "conflict_count": 2092,
+  "conflict_count": 2094,
   "conflict_rate": 15.5,
-  "gap_count": 278225,
+  "gap_count": 278701,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.54,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1269,
+    "nvd_higher_count": 1271,
     "gh_higher_count": 823
   },
   "conflict_by_year": {
@@ -31,7 +31,7 @@
     "2023": 24,
     "2024": 576,
     "2025": 512,
-    "2026": 920
+    "2026": 922
   },
   "conflict_direction_by_year": {
     "2012": {
@@ -105,12 +105,12 @@
       "comparable": 2275
     },
     "2026": {
-      "nvd_higher": 596,
+      "nvd_higher": 598,
       "gh_higher": 324,
       "comparable": 7389
     }
   },
-  "severity_flip_count": 1168,
+  "severity_flip_count": 1170,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 86,
     "Critical\u2192High": 152,
@@ -118,7 +118,7 @@
     "Critical\u2192Low": 8,
     "High\u2192Critical": 94,
     "High\u2192High": 256,
-    "High\u2192Medium": 365,
+    "High\u2192Medium": 367,
     "High\u2192Low": 24,
     "Medium\u2192Critical": 35,
     "Medium\u2192High": 249,
@@ -132,14 +132,14 @@
   "severity_matrix_totals": {
     "nvd": {
       "Critical": 316,
-      "High": 739,
+      "High": 741,
       "Medium": 988,
       "Low": 49
     },
     "gh": {
       "Critical": 216,
       "High": 658,
-      "Medium": 1008,
+      "Medium": 1010,
       "Low": 210
     }
   },
@@ -162,7 +162,7 @@
     {
       "bucket": "1.5-2.0",
       "min": 1.5,
-      "count": 341
+      "count": 343
     },
     {
       "bucket": "2.0-2.5",
@@ -217,11 +217,11 @@
   ],
   "severity_distribution": {
     "Critical": 316,
-    "High": 739,
+    "High": 741,
     "Medium": 988,
     "Low": 49
   },
-  "avg_days_to_analysis": 2827.8,
-  "p90_days_to_analysis": 7184,
-  "generated_at": "2026-10-26T18:43:37Z"
+  "avg_days_to_analysis": 2826.9,
+  "p90_days_to_analysis": 7183,
+  "generated_at": "2026-10-27T03:22:01Z"
 }
