@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T17:20:57Z",
+  "generated_at": "2026-10-27T21:50:11Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 96,
+      "conflict_count": 97,
       "avg_variance": 1.39,
-      "nvd_higher_count": 68,
+      "nvd_higher_count": 69,
       "gh_higher_count": 28
     },
     {
@@ -52,9 +52,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 61,
-      "avg_variance": 1.8,
-      "nvd_higher_count": 51,
+      "conflict_count": 62,
+      "avg_variance": 1.79,
+      "nvd_higher_count": 52,
       "gh_higher_count": 10
     },
     {
@@ -100,9 +100,9 @@
     {
       "cwe_id": "CWE-400",
       "name": "Uncontrolled Resource Consumption",
-      "conflict_count": 49,
+      "conflict_count": 50,
       "avg_variance": 1.91,
-      "nvd_higher_count": 39,
+      "nvd_higher_count": 40,
       "gh_higher_count": 10
     },
     {
@@ -116,9 +116,9 @@
     {
       "cwe_id": "CWE-287",
       "name": "Improper Authentication",
-      "conflict_count": 37,
+      "conflict_count": 38,
       "avg_variance": 1.45,
-      "nvd_higher_count": 25,
+      "nvd_higher_count": 26,
       "gh_higher_count": 12
     },
     {
@@ -250,6 +250,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-295",
+      "name": "CWE-295",
+      "conflict_count": 18,
+      "avg_variance": 2.12,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 7
+    },
+    {
       "cwe_id": "CWE-80",
       "name": "CWE-80",
       "conflict_count": 17,
@@ -282,12 +290,12 @@
       "gh_higher_count": 8
     },
     {
-      "cwe_id": "CWE-295",
-      "name": "CWE-295",
+      "cwe_id": "CWE-346",
+      "name": "CWE-346",
       "conflict_count": 17,
-      "avg_variance": 2.15,
-      "nvd_higher_count": 10,
-      "gh_higher_count": 7
+      "avg_variance": 1.29,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-125",
@@ -304,14 +312,6 @@
       "avg_variance": 1.95,
       "nvd_higher_count": 13,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-346",
-      "name": "CWE-346",
-      "conflict_count": 16,
-      "avg_variance": 1.27,
-      "nvd_higher_count": 11,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-88",
@@ -498,6 +498,14 @@
       "gh_higher_count": 0
     },
     {
+      "cwe_id": "CWE-248",
+      "name": "CWE-248",
+      "conflict_count": 9,
+      "avg_variance": 1.59,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 0
+    },
+    {
       "cwe_id": "CWE-184",
       "name": "CWE-184",
       "conflict_count": 9,
@@ -528,14 +536,6 @@
       "avg_variance": 2.46,
       "nvd_higher_count": 4,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-248",
-      "name": "CWE-248",
-      "conflict_count": 8,
-      "avg_variance": 1.59,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-552",
@@ -600,6 +600,14 @@
       "avg_variance": 1.43,
       "nvd_higher_count": 7,
       "gh_higher_count": 0
+    },
+    {
+      "cwe_id": "CWE-524",
+      "name": "CWE-524",
+      "conflict_count": 7,
+      "avg_variance": 1.46,
+      "nvd_higher_count": 6,
+      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-1188",
@@ -672,14 +680,6 @@
       "avg_variance": 1.75,
       "nvd_higher_count": 3,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-524",
-      "name": "CWE-524",
-      "conflict_count": 6,
-      "avg_variance": 1.42,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 1
     },
     {
       "cwe_id": "CWE-193",
