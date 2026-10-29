@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T12:12:07Z",
+  "generated_at": "2026-10-29T22:25:44Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -116,17 +116,17 @@
     {
       "cwe_id": "CWE-287",
       "name": "Improper Authentication",
-      "conflict_count": 38,
-      "avg_variance": 1.45,
-      "nvd_higher_count": 26,
+      "conflict_count": 39,
+      "avg_variance": 1.46,
+      "nvd_higher_count": 27,
       "gh_higher_count": 12
     },
     {
       "cwe_id": "CWE-601",
       "name": "Open Redirect",
-      "conflict_count": 34,
-      "avg_variance": 1.37,
-      "nvd_higher_count": 29,
+      "conflict_count": 35,
+      "avg_variance": 1.35,
+      "nvd_higher_count": 30,
       "gh_higher_count": 5
     },
     {
@@ -162,20 +162,20 @@
       "gh_higher_count": 8
     },
     {
+      "cwe_id": "CWE-693",
+      "name": "CWE-693",
+      "conflict_count": 25,
+      "avg_variance": 1.02,
+      "nvd_higher_count": 17,
+      "gh_higher_count": 8
+    },
+    {
       "cwe_id": "CWE-1321",
       "name": "Prototype Pollution",
       "conflict_count": 24,
       "avg_variance": 1.96,
       "nvd_higher_count": 20,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-693",
-      "name": "CWE-693",
-      "conflict_count": 24,
-      "avg_variance": 1.02,
-      "nvd_higher_count": 16,
-      "gh_higher_count": 8
     },
     {
       "cwe_id": "CWE-74",
@@ -226,6 +226,14 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-347",
+      "name": "CWE-347",
+      "conflict_count": 19,
+      "avg_variance": 1.57,
+      "nvd_higher_count": 13,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-190",
       "name": "CWE-190",
       "conflict_count": 19,
@@ -240,14 +248,6 @@
       "avg_variance": 1.13,
       "nvd_higher_count": 16,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-347",
-      "name": "CWE-347",
-      "conflict_count": 18,
-      "avg_variance": 1.57,
-      "nvd_higher_count": 12,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-295",
@@ -442,6 +442,14 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-184",
+      "name": "CWE-184",
+      "conflict_count": 10,
+      "avg_variance": 1.51,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-754",
       "name": "Improper Check for Unusual Conditions",
       "conflict_count": 10,
@@ -504,14 +512,6 @@
       "avg_variance": 1.59,
       "nvd_higher_count": 9,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-184",
-      "name": "CWE-184",
-      "conflict_count": 9,
-      "avg_variance": 1.49,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-93",
@@ -658,6 +658,14 @@
       "gh_higher_count": 1
     },
     {
+      "cwe_id": "CWE-326",
+      "name": "CWE-326",
+      "conflict_count": 6,
+      "avg_variance": 1.32,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-95",
       "name": "CWE-95",
       "conflict_count": 6,
@@ -752,14 +760,6 @@
       "avg_variance": 1.78,
       "nvd_higher_count": 5,
       "gh_higher_count": 0
-    },
-    {
-      "cwe_id": "CWE-326",
-      "name": "CWE-326",
-      "conflict_count": 5,
-      "avg_variance": 1.24,
-      "nvd_higher_count": 3,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-294",
