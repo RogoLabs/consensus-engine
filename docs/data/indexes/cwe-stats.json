@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T12:06:19Z",
+  "generated_at": "2026-10-30T17:48:06Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -34,20 +34,20 @@
       "gh_higher_count": 38
     },
     {
+      "cwe_id": "CWE-94",
+      "name": "Code Injection",
+      "conflict_count": 73,
+      "avg_variance": 1.18,
+      "nvd_higher_count": 43,
+      "gh_higher_count": 30
+    },
+    {
       "cwe_id": "CWE-200",
       "name": "Information Exposure",
       "conflict_count": 72,
       "avg_variance": 1.57,
       "nvd_higher_count": 46,
       "gh_higher_count": 26
-    },
-    {
-      "cwe_id": "CWE-94",
-      "name": "Code Injection",
-      "conflict_count": 72,
-      "avg_variance": 1.15,
-      "nvd_higher_count": 42,
-      "gh_higher_count": 30
     },
     {
       "cwe_id": "CWE-770",
@@ -74,20 +74,20 @@
       "gh_higher_count": 20
     },
     {
-      "cwe_id": "CWE-89",
-      "name": "SQL Injection",
-      "conflict_count": 54,
-      "avg_variance": 1.88,
-      "nvd_higher_count": 26,
-      "gh_higher_count": 28
-    },
-    {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
       "conflict_count": 53,
       "avg_variance": 1.52,
       "nvd_higher_count": 34,
       "gh_higher_count": 19
+    },
+    {
+      "cwe_id": "CWE-89",
+      "name": "SQL Injection",
+      "conflict_count": 53,
+      "avg_variance": 1.85,
+      "nvd_higher_count": 25,
+      "gh_higher_count": 28
     },
     {
       "cwe_id": "CWE-78",
@@ -181,7 +181,7 @@
       "cwe_id": "CWE-74",
       "name": "CWE-74",
       "conflict_count": 23,
-      "avg_variance": 1.38,
+      "avg_variance": 1.36,
       "nvd_higher_count": 16,
       "gh_higher_count": 7
     },

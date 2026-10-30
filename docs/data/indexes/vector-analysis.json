@@ -1,7 +1,7 @@
 {
   "comparable_conflicts": 2109,
   "vector_only_conflicts": 76,
-  "generated_at": "2026-10-30T12:06:18Z",
+  "generated_at": "2026-10-30T17:48:05Z",
   "metrics": [
     {
       "key": "AC",
@@ -169,14 +169,14 @@
       "key": "UI",
       "name": "User Interaction",
       "total": 2109,
-      "disagree_count": 295,
-      "disagree_rate": 14.0,
-      "nvd_higher_count": 165,
+      "disagree_count": 294,
+      "disagree_rate": 13.9,
+      "nvd_higher_count": 164,
       "gh_higher_count": 130,
       "top_transitions": [
         {
           "transition": "N\u2192R",
-          "count": 165
+          "count": 164
         },
         {
           "transition": "R\u2192N",
