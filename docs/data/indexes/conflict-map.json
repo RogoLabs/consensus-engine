@@ -5960,6 +5960,14 @@
     "published_date": "2025-02-20"
   },
   {
+    "cve_id": "CVE-2025-13204",
+    "nvd_score": 9.8,
+    "github_score": 7.3,
+    "cvss_variance": 2.5,
+    "assigning_cna": "cert",
+    "published_date": "2025-11-14"
+  },
+  {
     "cve_id": "CVE-2025-13324",
     "nvd_score": 3.7,
     "github_score": 4.3,

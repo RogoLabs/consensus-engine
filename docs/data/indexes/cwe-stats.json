@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T17:48:06Z",
+  "generated_at": "2026-10-30T22:01:46Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -162,20 +162,20 @@
       "gh_higher_count": 8
     },
     {
+      "cwe_id": "CWE-1321",
+      "name": "Prototype Pollution",
+      "conflict_count": 25,
+      "avg_variance": 1.98,
+      "nvd_higher_count": 21,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-693",
       "name": "CWE-693",
       "conflict_count": 25,
       "avg_variance": 1.02,
       "nvd_higher_count": 17,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-1321",
-      "name": "Prototype Pollution",
-      "conflict_count": 24,
-      "avg_variance": 1.96,
-      "nvd_higher_count": 20,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-74",
