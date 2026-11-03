@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-03T13:35:05Z",
+  "generated_at": "2026-11-03T22:54:30Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 329,
+      "conflict_count": 330,
       "avg_variance": 1.53,
       "nvd_higher_count": 98,
-      "gh_higher_count": 231
+      "gh_higher_count": 232
     },
     {
       "cwe_id": "CWE-22",
@@ -718,6 +718,14 @@
       "name": "Hard-coded Credentials",
       "conflict_count": 5,
       "avg_variance": 1.54,
+      "nvd_higher_count": 4,
+      "gh_higher_count": 1
+    },
+    {
+      "cwe_id": "CWE-281",
+      "name": "CWE-281",
+      "conflict_count": 5,
+      "avg_variance": 1.62,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
     },
