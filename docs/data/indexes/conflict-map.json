@@ -160,6 +160,14 @@
     "published_date": "2020-05-21"
   },
   {
+    "cve_id": "CVE-2020-11022",
+    "nvd_score": 6.1,
+    "github_score": 6.9,
+    "cvss_variance": 0.8,
+    "assigning_cna": "github",
+    "published_date": "2020-04-29"
+  },
+  {
     "cve_id": "CVE-2020-15250",
     "nvd_score": 5.5,
     "github_score": 4.4,
@@ -296,6 +304,14 @@
     "published_date": "2021-03-23"
   },
   {
+    "cve_id": "CVE-2021-21353",
+    "nvd_score": 9.0,
+    "github_score": 6.8,
+    "cvss_variance": 2.2,
+    "assigning_cna": "github",
+    "published_date": "2021-03-03"
+  },
+  {
     "cve_id": "CVE-2021-23450",
     "nvd_score": 9.8,
     "github_score": 7.5,
@@ -414,6 +430,14 @@
     "cvss_variance": 3.3,
     "assigning_cna": "microsoft",
     "published_date": "2021-11-10"
+  },
+  {
+    "cve_id": "CVE-2021-43809",
+    "nvd_score": 7.3,
+    "github_score": 6.7,
+    "cvss_variance": 0.6,
+    "assigning_cna": "github",
+    "published_date": "2021-12-08"
   },
   {
     "cve_id": "CVE-2021-44228",
@@ -776,6 +800,38 @@
     "published_date": "2023-08-08"
   },
   {
+    "cve_id": "CVE-2023-36049",
+    "nvd_score": 9.8,
+    "github_score": 7.6,
+    "cvss_variance": 2.2,
+    "assigning_cna": "microsoft",
+    "published_date": "2023-11-14"
+  },
+  {
+    "cve_id": "CVE-2023-36464",
+    "nvd_score": 5.5,
+    "github_score": 6.2,
+    "cvss_variance": 0.7,
+    "assigning_cna": "github",
+    "published_date": "2023-06-27"
+  },
+  {
+    "cve_id": "CVE-2023-36807",
+    "nvd_score": 6.5,
+    "github_score": 6.2,
+    "cvss_variance": 0.3,
+    "assigning_cna": "github",
+    "published_date": "2023-06-30"
+  },
+  {
+    "cve_id": "CVE-2023-36810",
+    "nvd_score": 6.5,
+    "github_score": 6.2,
+    "cvss_variance": 0.3,
+    "assigning_cna": "github",
+    "published_date": "2023-06-30"
+  },
+  {
     "cve_id": "CVE-2023-38180",
     "nvd_score": 7.5,
     "github_score": 7.5,
@@ -846,6 +902,14 @@
     "cvss_variance": 1.8,
     "assigning_cna": "github",
     "published_date": "2023-10-25"
+  },
+  {
+    "cve_id": "CVE-2023-46250",
+    "nvd_score": 5.5,
+    "github_score": 5.1,
+    "cvss_variance": 0.4,
+    "assigning_cna": "github",
+    "published_date": "2023-10-31"
   },
   {
     "cve_id": "CVE-2023-46442",

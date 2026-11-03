@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-02T15:28:38Z",
+  "generated_at": "2026-11-03T00:27:11Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
       "name": "Cross-site Scripting (XSS)",
-      "conflict_count": 328,
+      "conflict_count": 329,
       "avg_variance": 1.53,
       "nvd_higher_count": 98,
-      "gh_higher_count": 230
+      "gh_higher_count": 231
     },
     {
       "cwe_id": "CWE-22",
@@ -36,9 +36,9 @@
     {
       "cwe_id": "CWE-94",
       "name": "Code Injection",
-      "conflict_count": 73,
-      "avg_variance": 1.18,
-      "nvd_higher_count": 43,
+      "conflict_count": 74,
+      "avg_variance": 1.19,
+      "nvd_higher_count": 44,
       "gh_higher_count": 30
     },
     {
@@ -76,9 +76,9 @@
     {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
-      "conflict_count": 53,
-      "avg_variance": 1.52,
-      "nvd_higher_count": 34,
+      "conflict_count": 54,
+      "avg_variance": 1.53,
+      "nvd_higher_count": 35,
       "gh_higher_count": 19
     },
     {
@@ -180,9 +180,9 @@
     {
       "cwe_id": "CWE-74",
       "name": "CWE-74",
-      "conflict_count": 23,
-      "avg_variance": 1.36,
-      "nvd_higher_count": 16,
+      "conflict_count": 24,
+      "avg_variance": 1.4,
+      "nvd_higher_count": 17,
       "gh_higher_count": 7
     },
     {
@@ -298,6 +298,22 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-88",
+      "name": "CWE-88",
+      "conflict_count": 16,
+      "avg_variance": 0.89,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 7
+    },
+    {
+      "cwe_id": "CWE-835",
+      "name": "CWE-835",
+      "conflict_count": 16,
+      "avg_variance": 1.88,
+      "nvd_higher_count": 11,
+      "gh_higher_count": 5
+    },
+    {
       "cwe_id": "CWE-1333",
       "name": "Inefficient Regular Expression",
       "conflict_count": 16,
@@ -320,14 +336,6 @@
       "avg_variance": 1.95,
       "nvd_higher_count": 13,
       "gh_higher_count": 3
-    },
-    {
-      "cwe_id": "CWE-88",
-      "name": "CWE-88",
-      "conflict_count": 15,
-      "avg_variance": 0.91,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-290",
@@ -360,14 +368,6 @@
       "avg_variance": 1.07,
       "nvd_higher_count": 7,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-835",
-      "name": "CWE-835",
-      "conflict_count": 13,
-      "avg_variance": 2.2,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-829",
@@ -720,6 +720,14 @@
       "avg_variance": 1.54,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
+    },
+    {
+      "cwe_id": "CWE-407",
+      "name": "CWE-407",
+      "conflict_count": 5,
+      "avg_variance": 1.98,
+      "nvd_higher_count": 5,
+      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-130",
