@@ -1080,6 +1080,14 @@
     "published_date": "2023-12-14"
   },
   {
+    "cve_id": "CVE-2023-6267",
+    "nvd_score": 9.8,
+    "github_score": 8.6,
+    "cvss_variance": 1.2,
+    "assigning_cna": "redhat",
+    "published_date": "2024-01-25"
+  },
+  {
     "cve_id": "CVE-2023-6394",
     "nvd_score": 9.1,
     "github_score": 7.4,
@@ -10326,6 +10334,22 @@
     "cvss_variance": 1.3,
     "assigning_cna": "github",
     "published_date": "2026-10-26"
+  },
+  {
+    "cve_id": "CVE-2026-118775",
+    "nvd_score": 5.3,
+    "github_score": 3.7,
+    "cvss_variance": 1.6,
+    "assigning_cna": "github",
+    "published_date": "2026-10-29"
+  },
+  {
+    "cve_id": "CVE-2026-118777",
+    "nvd_score": 6.5,
+    "github_score": 4.8,
+    "cvss_variance": 1.7,
+    "assigning_cna": "github",
+    "published_date": "2026-10-29"
   },
   {
     "cve_id": "CVE-2026-12259",

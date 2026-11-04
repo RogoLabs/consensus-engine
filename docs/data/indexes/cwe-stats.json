@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T13:46:51Z",
+  "generated_at": "2026-11-04T23:13:11Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -154,20 +154,20 @@
       "gh_higher_count": 12
     },
     {
+      "cwe_id": "CWE-1321",
+      "name": "Prototype Pollution",
+      "conflict_count": 26,
+      "avg_variance": 1.97,
+      "nvd_higher_count": 22,
+      "gh_higher_count": 4
+    },
+    {
       "cwe_id": "CWE-639",
       "name": "Authorization Bypass Through User-Controlled Key",
       "conflict_count": 26,
       "avg_variance": 1.56,
       "nvd_higher_count": 18,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-1321",
-      "name": "Prototype Pollution",
-      "conflict_count": 25,
-      "avg_variance": 1.98,
-      "nvd_higher_count": 21,
-      "gh_higher_count": 4
     },
     {
       "cwe_id": "CWE-693",
@@ -218,6 +218,14 @@
       "gh_higher_count": 8
     },
     {
+      "cwe_id": "CWE-190",
+      "name": "CWE-190",
+      "conflict_count": 20,
+      "avg_variance": 1.75,
+      "nvd_higher_count": 17,
+      "gh_higher_count": 3
+    },
+    {
       "cwe_id": "CWE-77",
       "name": "CWE-77",
       "conflict_count": 20,
@@ -232,14 +240,6 @@
       "avg_variance": 1.57,
       "nvd_higher_count": 13,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-190",
-      "name": "CWE-190",
-      "conflict_count": 19,
-      "avg_variance": 1.76,
-      "nvd_higher_count": 16,
-      "gh_higher_count": 3
     },
     {
       "cwe_id": "CWE-345",
