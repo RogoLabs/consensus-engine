@@ -1,12 +1,12 @@
 {
-  "comparable_conflicts": 2125,
+  "comparable_conflicts": 2127,
   "vector_only_conflicts": 76,
-  "generated_at": "2026-11-05T13:58:17Z",
+  "generated_at": "2026-11-05T23:18:06Z",
   "metrics": [
     {
       "key": "AC",
       "name": "Attack Complexity",
-      "total": 2125,
+      "total": 2127,
       "disagree_count": 689,
       "disagree_rate": 32.4,
       "nvd_higher_count": 636,
@@ -25,11 +25,11 @@
     {
       "key": "A",
       "name": "Availability",
-      "total": 2125,
-      "disagree_count": 662,
+      "total": 2127,
+      "disagree_count": 663,
       "disagree_rate": 31.2,
       "nvd_higher_count": 410,
-      "gh_higher_count": 252,
+      "gh_higher_count": 253,
       "top_transitions": [
         {
           "transition": "H\u2192L",
@@ -45,7 +45,7 @@
         },
         {
           "transition": "N\u2192H",
-          "count": 88
+          "count": 89
         },
         {
           "transition": "L\u2192N",
@@ -56,7 +56,7 @@
     {
       "key": "C",
       "name": "Confidentiality",
-      "total": 2125,
+      "total": 2127,
       "disagree_count": 619,
       "disagree_rate": 29.1,
       "nvd_higher_count": 312,
@@ -87,9 +87,9 @@
     {
       "key": "S",
       "name": "Scope",
-      "total": 2125,
+      "total": 2127,
       "disagree_count": 571,
-      "disagree_rate": 26.9,
+      "disagree_rate": 26.8,
       "nvd_higher_count": 225,
       "gh_higher_count": 346,
       "top_transitions": [
@@ -106,7 +106,7 @@
     {
       "key": "I",
       "name": "Integrity",
-      "total": 2125,
+      "total": 2127,
       "disagree_count": 567,
       "disagree_rate": 26.7,
       "nvd_higher_count": 307,
@@ -137,7 +137,7 @@
     {
       "key": "PR",
       "name": "Privileges Required",
-      "total": 2125,
+      "total": 2127,
       "disagree_count": 508,
       "disagree_rate": 23.9,
       "nvd_higher_count": 341,
@@ -168,7 +168,7 @@
     {
       "key": "UI",
       "name": "User Interaction",
-      "total": 2125,
+      "total": 2127,
       "disagree_count": 300,
       "disagree_rate": 14.1,
       "nvd_higher_count": 166,
@@ -187,15 +187,15 @@
     {
       "key": "AV",
       "name": "Attack Vector",
-      "total": 2125,
-      "disagree_count": 147,
-      "disagree_rate": 6.9,
-      "nvd_higher_count": 119,
+      "total": 2127,
+      "disagree_count": 148,
+      "disagree_rate": 7.0,
+      "nvd_higher_count": 120,
       "gh_higher_count": 28,
       "top_transitions": [
         {
           "transition": "N\u2192L",
-          "count": 83
+          "count": 84
         },
         {
           "transition": "N\u2192A",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T13:58:18Z",
+  "generated_at": "2026-11-05T23:18:07Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -108,9 +108,9 @@
     {
       "cwe_id": "CWE-862",
       "name": "Missing Authorization",
-      "conflict_count": 41,
+      "conflict_count": 42,
       "avg_variance": 1.22,
-      "nvd_higher_count": 25,
+      "nvd_higher_count": 26,
       "gh_higher_count": 16
     },
     {
@@ -146,6 +146,14 @@
       "gh_higher_count": 10
     },
     {
+      "cwe_id": "CWE-639",
+      "name": "Authorization Bypass Through User-Controlled Key",
+      "conflict_count": 28,
+      "avg_variance": 1.51,
+      "nvd_higher_count": 19,
+      "gh_higher_count": 9
+    },
+    {
       "cwe_id": "CWE-269",
       "name": "Improper Privilege Management",
       "conflict_count": 27,
@@ -160,14 +168,6 @@
       "avg_variance": 1.97,
       "nvd_higher_count": 22,
       "gh_higher_count": 4
-    },
-    {
-      "cwe_id": "CWE-639",
-      "name": "Authorization Bypass Through User-Controlled Key",
-      "conflict_count": 26,
-      "avg_variance": 1.56,
-      "nvd_higher_count": 18,
-      "gh_higher_count": 8
     },
     {
       "cwe_id": "CWE-693",
