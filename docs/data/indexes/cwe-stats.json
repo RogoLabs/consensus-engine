@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T04:05:19Z",
+  "generated_at": "2026-11-09T15:01:38Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,10 +20,10 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 97,
-      "avg_variance": 1.39,
+      "conflict_count": 96,
+      "avg_variance": 1.4,
       "nvd_higher_count": 69,
-      "gh_higher_count": 28
+      "gh_higher_count": 27
     },
     {
       "cwe_id": "CWE-918",
@@ -108,10 +108,10 @@
     {
       "cwe_id": "CWE-862",
       "name": "Missing Authorization",
-      "conflict_count": 42,
-      "avg_variance": 1.22,
+      "conflict_count": 41,
+      "avg_variance": 1.25,
       "nvd_higher_count": 26,
-      "gh_higher_count": 16
+      "gh_higher_count": 15
     },
     {
       "cwe_id": "CWE-287",
