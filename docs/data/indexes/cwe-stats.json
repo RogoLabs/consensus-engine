@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T14:12:52Z",
+  "generated_at": "2026-11-10T22:51:47Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -66,20 +66,20 @@
       "gh_higher_count": 15
     },
     {
+      "cwe_id": "CWE-20",
+      "name": "Improper Input Validation",
+      "conflict_count": 55,
+      "avg_variance": 1.53,
+      "nvd_higher_count": 36,
+      "gh_higher_count": 19
+    },
+    {
       "cwe_id": "CWE-284",
       "name": "CWE-284",
       "conflict_count": 55,
       "avg_variance": 1.25,
       "nvd_higher_count": 35,
       "gh_higher_count": 20
-    },
-    {
-      "cwe_id": "CWE-20",
-      "name": "Improper Input Validation",
-      "conflict_count": 54,
-      "avg_variance": 1.53,
-      "nvd_higher_count": 35,
-      "gh_higher_count": 19
     },
     {
       "cwe_id": "CWE-89",
@@ -218,6 +218,14 @@
       "gh_higher_count": 8
     },
     {
+      "cwe_id": "CWE-347",
+      "name": "CWE-347",
+      "conflict_count": 20,
+      "avg_variance": 1.57,
+      "nvd_higher_count": 14,
+      "gh_higher_count": 6
+    },
+    {
       "cwe_id": "CWE-190",
       "name": "CWE-190",
       "conflict_count": 20,
@@ -232,14 +240,6 @@
       "avg_variance": 1.54,
       "nvd_higher_count": 13,
       "gh_higher_count": 7
-    },
-    {
-      "cwe_id": "CWE-347",
-      "name": "CWE-347",
-      "conflict_count": 19,
-      "avg_variance": 1.57,
-      "nvd_higher_count": 13,
-      "gh_higher_count": 6
     },
     {
       "cwe_id": "CWE-345",
@@ -264,6 +264,14 @@
       "avg_variance": 1.56,
       "nvd_higher_count": 3,
       "gh_higher_count": 14
+    },
+    {
+      "cwe_id": "CWE-835",
+      "name": "CWE-835",
+      "conflict_count": 17,
+      "avg_variance": 1.91,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-532",
@@ -304,14 +312,6 @@
       "avg_variance": 0.89,
       "nvd_higher_count": 9,
       "gh_higher_count": 7
-    },
-    {
-      "cwe_id": "CWE-835",
-      "name": "CWE-835",
-      "conflict_count": 16,
-      "avg_variance": 1.88,
-      "nvd_higher_count": 11,
-      "gh_higher_count": 5
     },
     {
       "cwe_id": "CWE-1333",
