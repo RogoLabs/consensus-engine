@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T15:01:38Z",
+  "generated_at": "2026-11-10T01:11:16Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -12,10 +12,10 @@
     {
       "cwe_id": "CWE-22",
       "name": "Path Traversal",
-      "conflict_count": 123,
-      "avg_variance": 1.43,
+      "conflict_count": 126,
+      "avg_variance": 1.45,
       "nvd_higher_count": 62,
-      "gh_higher_count": 61
+      "gh_higher_count": 64
     },
     {
       "cwe_id": "CWE-863",
@@ -188,10 +188,10 @@
     {
       "cwe_id": "CWE-59",
       "name": "CWE-59",
-      "conflict_count": 22,
-      "avg_variance": 1.26,
+      "conflict_count": 23,
+      "avg_variance": 1.31,
       "nvd_higher_count": 15,
-      "gh_higher_count": 7
+      "gh_higher_count": 8
     },
     {
       "cwe_id": "CWE-285",

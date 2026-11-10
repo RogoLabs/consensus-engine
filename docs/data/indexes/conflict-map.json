@@ -10232,6 +10232,14 @@
     "published_date": "2026-10-08"
   },
   {
+    "cve_id": "CVE-2026-108262",
+    "nvd_score": 6.5,
+    "github_score": 8.8,
+    "cvss_variance": 2.3,
+    "assigning_cna": "github",
+    "published_date": "2026-11-06"
+  },
+  {
     "cve_id": "CVE-2026-109383",
     "nvd_score": 9.1,
     "github_score": 7.4,
@@ -16664,6 +16672,14 @@
     "published_date": "2026-05-18"
   },
   {
+    "cve_id": "CVE-2026-63436",
+    "nvd_score": 6.1,
+    "github_score": 8.2,
+    "cvss_variance": 2.1,
+    "assigning_cna": "github",
+    "published_date": "2026-11-03"
+  },
+  {
     "cve_id": "CVE-2026-63498",
     "nvd_score": 5.4,
     "github_score": 8.7,
@@ -16814,6 +16830,14 @@
     "cvss_variance": 1.1,
     "assigning_cna": "Gitea",
     "published_date": "2026-10-14"
+  },
+  {
+    "cve_id": "CVE-2026-75598",
+    "nvd_score": 6.3,
+    "github_score": 8.1,
+    "cvss_variance": 1.8,
+    "assigning_cna": "github",
+    "published_date": "2026-11-06"
   },
   {
     "cve_id": "CVE-2026-7572",
