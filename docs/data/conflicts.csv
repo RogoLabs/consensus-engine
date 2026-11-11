@@ -1178,6 +1178,7 @@ CVE-2025-68477,1.2,6.5,3.1,7.7,3.1,github,Analyzed,2025-12-19
 CVE-2025-7195,1.2,6.4,3.1,5.2,3.1,redhat,Deferred,2025-08-07
 CVE-2026-106508,1.2,6.5,3.1,5.3,3.1,github,Analyzed,2026-10-06
 CVE-2026-106563,1.2,6.5,3.1,5.3,3.1,github,Analyzed,2026-10-07
+CVE-2026-114146,1.2,9.0,3.1,7.8,3.1,microsoft,Awaiting Analysis,2026-11-10
 CVE-2026-12259,1.2,6.5,3.1,5.3,3.1,huntr,Analyzed,2026-08-03
 CVE-2026-12411,1.2,9.6,3.1,8.4,3.1,ubuntu,Analyzed,2026-06-26
 CVE-2026-15157,1.2,5.4,3.1,4.2,3.1,openjs,Analyzed,2026-07-29
@@ -1299,6 +1300,11 @@ CVE-2026-10601,1.1,4.3,3.1,5.4,3.1,grafana,Modified,2026-06-22
 CVE-2026-106492,1.1,6.5,3.1,7.6,3.1,github,Analyzed,2026-10-06
 CVE-2026-106493,1.1,4.1,3.1,3.0,3.1,github,Analyzed,2026-10-06
 CVE-2026-106509,1.1,8.8,3.1,7.7,3.1,github,Analyzed,2026-10-06
+CVE-2026-114151,1.1,8.8,3.1,7.7,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-114152,1.1,8.8,3.1,7.7,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-114158,1.1,8.8,3.1,7.7,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-114159,1.1,8.8,3.1,7.7,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-118745,1.1,8.8,3.1,7.7,3.1,microsoft,Awaiting Analysis,2026-11-10
 CVE-2026-1707,1.1,6.3,3.1,7.4,3.1,PostgreSQL,Modified,2026-02-05
 CVE-2026-21724,1.1,4.3,3.1,5.4,3.1,grafana,Analyzed,2026-03-26
 CVE-2026-21873,1.1,6.1,3.1,7.2,3.1,github,Analyzed,2026-01-08
@@ -1414,6 +1420,16 @@ CVE-2025-68938,1.0,5.3,3.1,4.3,3.1,mitre,Analyzed,2025-12-26
 CVE-2025-69264,1.0,9.8,3.1,8.8,3.1,github,Modified,2026-01-07
 CVE-2026-0528,1.0,7.5,3.1,6.5,3.1,elastic,Analyzed,2026-01-13
 CVE-2026-102677,1.0,8.8,3.1,7.8,3.1,github,Analyzed,2026-09-29
+CVE-2026-109475,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-109478,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-109481,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-114154,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-114155,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-114157,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-118747,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-118748,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-118749,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-118750,1.0,7.5,3.1,6.5,3.1,microsoft,Awaiting Analysis,2026-11-10
 CVE-2026-1513,1.0,6.1,3.1,7.1,3.1,navercorp,Analyzed,2026-01-28
 CVE-2026-22773,1.0,7.5,3.1,6.5,3.1,github,Analyzed,2026-01-10
 CVE-2026-22807,1.0,9.8,3.1,8.8,3.1,github,Modified,2026-01-21
@@ -1501,6 +1517,7 @@ CVE-2025-59539,0.9,5.4,3.1,6.3,3.1,github,Analyzed,2025-09-23
 CVE-2025-6227,0.9,3.1,3.1,2.2,3.1,mattermost,Analyzed,2025-07-18
 CVE-2025-64326,0.9,3.5,3.1,2.6,3.1,github,Analyzed,2025-11-06
 CVE-2026-114614,0.9,3.5,3.1,2.6,3.1,github,Analyzed,2026-10-22
+CVE-2026-118746,0.9,6.8,3.1,5.9,3.1,microsoft,Awaiting Analysis,2026-11-10
 CVE-2026-22798,0.9,5.0,3.1,5.9,3.1,github,Analyzed,2026-01-12
 CVE-2026-22810,0.9,7.3,3.1,8.2,3.1,github,Analyzed,2026-05-18
 CVE-2026-23527,0.9,9.8,3.1,8.9,3.1,github,Modified,2026-01-15
@@ -1575,6 +1592,7 @@ CVE-2025-65105,0.8,5.3,3.1,4.5,3.1,github,Analyzed,2025-12-02
 CVE-2025-66398,0.8,8.8,3.1,9.6,3.1,github,Analyzed,2026-01-01
 CVE-2025-9079,0.8,7.2,3.1,8.0,3.1,mattermost,Analyzed,2025-09-19
 CVE-2026-106505,0.8,8.5,3.1,7.7,3.1,github,Analyzed,2026-10-06
+CVE-2026-114156,0.8,6.5,3.1,5.7,3.1,microsoft,Awaiting Analysis,2026-11-10
 CVE-2026-28413,0.8,6.1,3.1,5.3,3.1,github,Analyzed,2026-03-05
 CVE-2026-28787,0.8,9.0,3.1,8.2,3.1,github,Analyzed,2026-03-06
 CVE-2026-30867,0.8,6.5,3.1,5.7,3.1,github,Analyzed,2026-04-02
@@ -1667,6 +1685,8 @@ CVE-2026-102695,0.7,8.2,3.1,7.5,3.1,github,Deferred,2026-10-14
 CVE-2026-107387,0.7,5.5,3.1,6.2,3.1,github,Analyzed,2026-10-08
 CVE-2026-107388,0.7,5.5,3.1,6.2,3.1,github,Modified,2026-10-08
 CVE-2026-107389,0.7,5.5,3.1,6.2,3.1,github,Analyzed,2026-10-08
+CVE-2026-114150,0.7,5.9,3.1,5.2,3.1,microsoft,Awaiting Analysis,2026-11-10
+CVE-2026-120796,0.7,5.3,3.1,4.6,3.1,microsoft,Awaiting Analysis,2026-11-10
 CVE-2026-25150,0.7,10.0,3.1,9.3,3.1,github,Analyzed,2026-02-03
 CVE-2026-25228,0.7,4.3,3.1,5.0,3.1,github,Analyzed,2026-02-02
 CVE-2026-25755,0.7,8.8,3.1,8.1,3.1,github,Modified,2026-02-19

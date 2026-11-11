@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T22:51:47Z",
+  "generated_at": "2026-11-11T04:09:33Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -20,9 +20,9 @@
     {
       "cwe_id": "CWE-863",
       "name": "Incorrect Authorization",
-      "conflict_count": 96,
+      "conflict_count": 97,
       "avg_variance": 1.4,
-      "nvd_higher_count": 69,
+      "nvd_higher_count": 70,
       "gh_higher_count": 27
     },
     {
@@ -52,17 +52,17 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 62,
-      "avg_variance": 1.79,
-      "nvd_higher_count": 52,
+      "conflict_count": 64,
+      "avg_variance": 1.77,
+      "nvd_higher_count": 54,
       "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-502",
       "name": "Deserialization of Untrusted Data",
-      "conflict_count": 60,
-      "avg_variance": 1.62,
-      "nvd_higher_count": 45,
+      "conflict_count": 61,
+      "avg_variance": 1.61,
+      "nvd_higher_count": 46,
       "gh_higher_count": 15
     },
     {
@@ -130,20 +130,20 @@
       "gh_higher_count": 5
     },
     {
+      "cwe_id": "CWE-352",
+      "name": "Cross-Site Request Forgery",
+      "conflict_count": 31,
+      "avg_variance": 1.63,
+      "nvd_higher_count": 21,
+      "gh_higher_count": 10
+    },
+    {
       "cwe_id": "CWE-434",
       "name": "Unrestricted File Upload",
       "conflict_count": 30,
       "avg_variance": 1.78,
       "nvd_higher_count": 18,
       "gh_higher_count": 12
-    },
-    {
-      "cwe_id": "CWE-352",
-      "name": "Cross-Site Request Forgery",
-      "conflict_count": 30,
-      "avg_variance": 1.65,
-      "nvd_higher_count": 20,
-      "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-639",
@@ -242,12 +242,28 @@
       "gh_higher_count": 7
     },
     {
+      "cwe_id": "CWE-122",
+      "name": "CWE-122",
+      "conflict_count": 20,
+      "avg_variance": 1.76,
+      "nvd_higher_count": 12,
+      "gh_higher_count": 8
+    },
+    {
       "cwe_id": "CWE-345",
       "name": "CWE-345",
       "conflict_count": 19,
       "avg_variance": 1.13,
       "nvd_higher_count": 16,
       "gh_higher_count": 3
+    },
+    {
+      "cwe_id": "CWE-367",
+      "name": "CWE-367",
+      "conflict_count": 18,
+      "avg_variance": 1.79,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 10
     },
     {
       "cwe_id": "CWE-295",
@@ -280,22 +296,6 @@
       "avg_variance": 1.99,
       "nvd_higher_count": 11,
       "gh_higher_count": 6
-    },
-    {
-      "cwe_id": "CWE-367",
-      "name": "CWE-367",
-      "conflict_count": 17,
-      "avg_variance": 1.84,
-      "nvd_higher_count": 7,
-      "gh_higher_count": 10
-    },
-    {
-      "cwe_id": "CWE-122",
-      "name": "CWE-122",
-      "conflict_count": 17,
-      "avg_variance": 1.88,
-      "nvd_higher_count": 9,
-      "gh_higher_count": 8
     },
     {
       "cwe_id": "CWE-346",
@@ -474,11 +474,27 @@
       "gh_higher_count": 4
     },
     {
+      "cwe_id": "CWE-121",
+      "name": "CWE-121",
+      "conflict_count": 10,
+      "avg_variance": 0.89,
+      "nvd_higher_count": 8,
+      "gh_higher_count": 2
+    },
+    {
       "cwe_id": "CWE-441",
       "name": "CWE-441",
       "conflict_count": 10,
       "avg_variance": 1.38,
       "nvd_higher_count": 6,
+      "gh_higher_count": 4
+    },
+    {
+      "cwe_id": "CWE-362",
+      "name": "Race Condition",
+      "conflict_count": 9,
+      "avg_variance": 2.3,
+      "nvd_higher_count": 5,
       "gh_higher_count": 4
     },
     {
@@ -498,6 +514,14 @@
       "gh_higher_count": 3
     },
     {
+      "cwe_id": "CWE-407",
+      "name": "CWE-407",
+      "conflict_count": 9,
+      "avg_variance": 1.51,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 0
+    },
+    {
       "cwe_id": "CWE-311",
       "name": "CWE-311",
       "conflict_count": 9,
@@ -510,6 +534,14 @@
       "name": "CWE-248",
       "conflict_count": 9,
       "avg_variance": 1.59,
+      "nvd_higher_count": 9,
+      "gh_higher_count": 0
+    },
+    {
+      "cwe_id": "CWE-401",
+      "name": "Memory Leak",
+      "conflict_count": 9,
+      "avg_variance": 2.16,
       "nvd_higher_count": 9,
       "gh_higher_count": 0
     },
@@ -530,28 +562,12 @@
       "gh_higher_count": 1
     },
     {
-      "cwe_id": "CWE-362",
-      "name": "Race Condition",
-      "conflict_count": 8,
-      "avg_variance": 2.46,
-      "nvd_higher_count": 4,
-      "gh_higher_count": 4
-    },
-    {
       "cwe_id": "CWE-552",
       "name": "CWE-552",
       "conflict_count": 8,
       "avg_variance": 0.55,
       "nvd_higher_count": 3,
       "gh_higher_count": 5
-    },
-    {
-      "cwe_id": "CWE-401",
-      "name": "Memory Leak",
-      "conflict_count": 8,
-      "avg_variance": 2.3,
-      "nvd_higher_count": 8,
-      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-476",
@@ -624,14 +640,6 @@
       "avg_variance": 1.29,
       "nvd_higher_count": 6,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-121",
-      "name": "CWE-121",
-      "conflict_count": 7,
-      "avg_variance": 0.81,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 2
     },
     {
       "cwe_id": "CWE-613",
@@ -728,14 +736,6 @@
       "avg_variance": 1.62,
       "nvd_higher_count": 4,
       "gh_higher_count": 1
-    },
-    {
-      "cwe_id": "CWE-407",
-      "name": "CWE-407",
-      "conflict_count": 5,
-      "avg_variance": 1.98,
-      "nvd_higher_count": 5,
-      "gh_higher_count": 0
     },
     {
       "cwe_id": "CWE-130",
