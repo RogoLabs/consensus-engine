@@ -2,8 +2,8 @@
   "total": 13676,
   "avg_github_score": 6.93,
   "severity_distribution": {
-    "critical": 2111,
-    "high": 4931,
+    "critical": 2112,
+    "high": 4930,
     "medium": 6078,
     "low": 556
   },
@@ -4515,5 +4515,5 @@
       "published_date": null
     }
   ],
-  "generated_at": "2026-11-18T15:03:25Z"
+  "generated_at": "2026-11-18T23:54:29Z"
 }

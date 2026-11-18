@@ -73,3 +73,4 @@ CVE-2026-30916,GHSA-6f6w-6j58-rq76,https://github.com/advisories/GHSA-6f6w-6j58-
 CVE-2026-32066,GHSA-wr6m-jg37-68xh,https://github.com/advisories/GHSA-wr6m-jg37-68xh,,,Rejected,vulncheck
 CVE-2026-33441,GHSA-hjph-f4mc-wx4c,https://github.com/advisories/GHSA-hjph-f4mc-wx4c,,,Rejected,github
 CVE-2026-39398,GHSA-7853-gqqm-vcwx,https://github.com/advisories/GHSA-7853-gqqm-vcwx,,,Rejected,github
+CVE-2026-49981,GHSA-529h-vh3j-85hq,https://github.com/advisories/GHSA-529h-vh3j-85hq,,,Rejected,github
