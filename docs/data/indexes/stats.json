@@ -1,9 +1,9 @@
 {
-  "total_cves": 304108,
-  "comparable_count": 14115,
-  "conflict_count": 2155,
-  "conflict_rate": 15.3,
-  "gap_count": 292880,
+  "total_cves": 304655,
+  "comparable_count": 14138,
+  "conflict_count": 2156,
+  "conflict_rate": 15.2,
+  "gap_count": 293426,
   "rejected_scored_count": 0,
   "max_drift_score": 6.9,
   "max_drift_cve": "CVE-2025-47735",
@@ -12,7 +12,7 @@
   "avg_variance": 1.53,
   "median_variance": 1.3,
   "direction_asymmetry": {
-    "nvd_higher_count": 1324,
+    "nvd_higher_count": 1325,
     "gh_higher_count": 831
   },
   "conflict_by_year": {
@@ -31,7 +31,7 @@
     "2023": 33,
     "2024": 577,
     "2025": 513,
-    "2026": 968
+    "2026": 969
   },
   "conflict_direction_by_year": {
     "2012": {
@@ -105,15 +105,15 @@
       "comparable": 2275
     },
     "2026": {
-      "nvd_higher": 640,
+      "nvd_higher": 641,
       "gh_higher": 328,
-      "comparable": 7956
+      "comparable": 7979
     }
   },
-  "severity_flip_count": 1208,
+  "severity_flip_count": 1209,
   "severity_flip_matrix": {
     "Critical\u2192Critical": 88,
-    "Critical\u2192High": 163,
+    "Critical\u2192High": 164,
     "Critical\u2192Medium": 71,
     "Critical\u2192Low": 8,
     "High\u2192Critical": 93,
@@ -131,14 +131,14 @@
   },
   "severity_matrix_totals": {
     "nvd": {
-      "Critical": 330,
+      "Critical": 331,
       "High": 763,
       "Medium": 1010,
       "Low": 52
     },
     "gh": {
       "Critical": 218,
-      "High": 680,
+      "High": 681,
       "Medium": 1041,
       "Low": 216
     }
@@ -157,7 +157,7 @@
     {
       "bucket": "1.0-1.5",
       "min": 1.0,
-      "count": 513
+      "count": 514
     },
     {
       "bucket": "1.5-2.0",
@@ -216,12 +216,12 @@
     }
   ],
   "severity_distribution": {
-    "Critical": 330,
+    "Critical": 331,
     "High": 763,
     "Medium": 1010,
     "Low": 52
   },
-  "avg_days_to_analysis": 2762.7,
+  "avg_days_to_analysis": 2762.4,
   "p90_days_to_analysis": 7154,
-  "generated_at": "2026-11-20T00:15:53Z"
+  "generated_at": "2026-11-20T14:51:53Z"
 }
