@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T01:33:15Z",
+  "generated_at": "2026-11-26T16:18:51Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -68,9 +68,9 @@
     {
       "cwe_id": "CWE-20",
       "name": "Improper Input Validation",
-      "conflict_count": 55,
-      "avg_variance": 1.53,
-      "nvd_higher_count": 36,
+      "conflict_count": 56,
+      "avg_variance": 1.54,
+      "nvd_higher_count": 37,
       "gh_higher_count": 19
     },
     {
@@ -226,6 +226,14 @@
       "gh_higher_count": 6
     },
     {
+      "cwe_id": "CWE-295",
+      "name": "CWE-295",
+      "conflict_count": 20,
+      "avg_variance": 2.09,
+      "nvd_higher_count": 13,
+      "gh_higher_count": 7
+    },
+    {
       "cwe_id": "CWE-190",
       "name": "CWE-190",
       "conflict_count": 20,
@@ -248,14 +256,6 @@
       "avg_variance": 1.76,
       "nvd_higher_count": 12,
       "gh_higher_count": 8
-    },
-    {
-      "cwe_id": "CWE-295",
-      "name": "CWE-295",
-      "conflict_count": 19,
-      "avg_variance": 2.09,
-      "nvd_higher_count": 12,
-      "gh_higher_count": 7
     },
     {
       "cwe_id": "CWE-345",
