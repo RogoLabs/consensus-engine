@@ -168,12 +168,36 @@
     "published_date": "2020-04-29"
   },
   {
+    "cve_id": "CVE-2020-11978",
+    "nvd_score": 8.8,
+    "github_score": 8.8,
+    "cvss_variance": 0.0,
+    "assigning_cna": "apache",
+    "published_date": "2020-07-17"
+  },
+  {
+    "cve_id": "CVE-2020-13927",
+    "nvd_score": 9.8,
+    "github_score": 9.8,
+    "cvss_variance": 0.0,
+    "assigning_cna": "apache",
+    "published_date": "2020-11-10"
+  },
+  {
     "cve_id": "CVE-2020-15250",
     "nvd_score": 5.5,
     "github_score": 4.4,
     "cvss_variance": 1.1,
     "assigning_cna": "github",
     "published_date": "2020-10-12"
+  },
+  {
+    "cve_id": "CVE-2020-17511",
+    "nvd_score": 6.5,
+    "github_score": 2.8,
+    "cvss_variance": 3.7,
+    "assigning_cna": "apache",
+    "published_date": "2020-12-14"
   },
   {
     "cve_id": "CVE-2020-1938",
