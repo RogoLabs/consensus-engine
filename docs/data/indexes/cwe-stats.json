@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T16:18:51Z",
+  "generated_at": "2026-11-27T01:31:46Z",
   "cwes": [
     {
       "cwe_id": "CWE-79",
@@ -52,9 +52,9 @@
     {
       "cwe_id": "CWE-770",
       "name": "Allocation of Resources Without Limits",
-      "conflict_count": 64,
-      "avg_variance": 1.77,
-      "nvd_higher_count": 54,
+      "conflict_count": 65,
+      "avg_variance": 1.76,
+      "nvd_higher_count": 55,
       "gh_higher_count": 10
     },
     {
